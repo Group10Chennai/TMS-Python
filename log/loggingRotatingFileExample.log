@@ -1,0 +1,835 @@
+2017-10-10 14:07:20,678 :INFO:  Create a connection to DB 
+2017-10-10 14:07:20,680 :INFO:  DB select_TireDetails_by_VehId 
+2017-10-10 14:07:20,682 :ERROR: no such table: TireDetails
+2017-10-10 14:31:56,733 :INFO:  Create a connection to DB 
+2017-10-10 14:31:56,740 :INFO:  DB select_DeviceDetails_by_id
+2017-10-10 14:31:56,744 :ERROR: no such table: DeviceDetails
+2017-10-10 14:31:56,745 :INFO:  DB select_TireDetails_by_VehId 
+2017-10-10 14:31:56,747 :ERROR: no such table: TireDetails
+2017-10-10 15:41:41,972 :INFO : Create a connection to DB  :
+2017-10-10 15:41:41,978 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 15:41:41,981 :ERROR :no such table: DeviceDetails :
+2017-10-10 15:41:41,982 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-10 15:41:41,983 :ERROR :no such table: TireDetails :
+2017-10-10 16:52:35,160 :INFO : Create a connection to DB  :
+2017-10-10 16:52:35,160 :INFO : Create a connection to DB  :
+2017-10-10 16:52:35,163 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 16:52:35,163 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 16:52:35,176 :INFO :If vehID : 32, vehName : test vehicle, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-10 16:52:35,176 :INFO :If vehID : 32, vehName : test vehicle, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-10 16:52:35,211 :INFO : Create a connection to DB  :
+2017-10-10 16:52:35,211 :INFO : Create a connection to DB  :
+2017-10-10 16:52:35,227 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-10 16:52:35,227 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-10 16:53:09,198 :INFO : Create a connection to DB  :
+2017-10-10 16:53:09,198 :INFO : Create a connection to DB  :
+2017-10-10 16:53:09,202 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 16:53:09,202 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 16:53:09,205 :WARNING :vehDetail None : None. :
+2017-10-10 16:53:09,205 :WARNING :vehDetail None : None. :
+2017-10-10 16:55:05,426 :INFO : Create a connection to DB  :
+2017-10-10 16:55:05,426 :INFO : Create a connection to DB  :
+2017-10-10 16:55:05,429 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 16:55:05,429 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 16:55:05,433 :INFO :If vehID : 32, vehName : test vehicle, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-10 16:55:05,433 :INFO :If vehID : 32, vehName : test vehicle, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-10 16:55:05,520 :INFO : Create a connection to DB  :
+2017-10-10 16:55:05,520 :INFO : Create a connection to DB  :
+2017-10-10 16:55:05,546 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-10 16:55:05,546 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-10 17:14:39,819 :INFO : Create a connection to DB  :
+2017-10-10 17:14:39,819 :INFO : Create a connection to DB  :
+2017-10-10 17:14:39,820 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 17:14:39,820 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 17:14:39,824 :WARNING :vehDetail None : None. :
+2017-10-10 17:14:39,824 :WARNING :vehDetail None : None. :
+2017-10-10 17:20:07,926 :INFO : Create a connection to DB  :
+2017-10-10 17:20:07,926 :INFO : Create a connection to DB  :
+2017-10-10 17:20:07,928 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 17:20:07,928 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 17:20:07,932 :WARNING :vehDetails not Avalable to the Tag ID :e2000016351702081640767f12 :
+2017-10-10 17:20:07,932 :WARNING :vehDetails not Avalable to the Tag ID :e2000016351702081640767f12 :
+2017-10-10 17:20:07,935 :WARNING :vehDetail None : None. :
+2017-10-10 17:20:07,935 :WARNING :vehDetail None : None. :
+2017-10-10 18:27:48,541 :INFO : Create a connection to DB  :
+2017-10-10 18:27:48,541 :INFO : Create a connection to DB  :
+2017-10-10 18:27:48,542 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 18:27:48,542 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 18:27:48,546 :WARNING :vehDetails not Avalable to the Tag ID :e2000016351702081640767f12 :
+2017-10-10 18:27:48,546 :WARNING :vehDetails not Avalable to the Tag ID :e2000016351702081640767f12 :
+2017-10-10 18:27:48,550 :WARNING :vehDetail None : None. :
+2017-10-10 18:27:48,550 :WARNING :vehDetail None : None. :
+2017-10-10 18:29:02,259 :INFO : Create a connection to DB  :
+2017-10-10 18:29:02,259 :INFO : Create a connection to DB  :
+2017-10-10 18:29:02,261 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 18:29:02,261 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 18:29:02,265 :INFO :If vehID : 32, vehName : test vehicle, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-10 18:29:02,265 :INFO :If vehID : 32, vehName : test vehicle, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-10 18:29:02,349 :INFO : Create a connection to DB  :
+2017-10-10 18:29:02,349 :INFO : Create a connection to DB  :
+2017-10-10 18:29:02,374 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-10 18:29:02,374 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-10 18:30:22,027 :INFO : Create a connection to DB  :
+2017-10-10 18:30:22,027 :INFO : Create a connection to DB  :
+2017-10-10 18:30:22,029 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 18:30:22,029 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 18:30:22,033 :WARNING :vehDetails not Avalable to the Tag ID :e2000016351702081640767f3333 :
+2017-10-10 18:30:22,033 :WARNING :vehDetails not Avalable to the Tag ID :e2000016351702081640767f3333 :
+2017-10-10 18:30:22,037 :WARNING :vehDetail None : None. :
+2017-10-10 18:30:22,037 :WARNING :vehDetail None : None. :
+2017-10-10 18:32:30,735 :INFO : Create a connection to DB  :
+2017-10-10 18:32:30,735 :INFO : Create a connection to DB  :
+2017-10-10 18:32:30,736 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 18:32:30,736 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 18:32:30,740 :WARNING :vehDetails not Avalable to the Tag ID :e2000016351702081640767f3333 :
+2017-10-10 18:32:30,740 :WARNING :vehDetails not Avalable to the Tag ID :e2000016351702081640767f3333 :
+2017-10-10 18:32:30,752 :WARNING :vehDetail None : None. :
+2017-10-10 18:32:30,752 :WARNING :vehDetail None : None. :
+2017-10-10 18:36:24,512 :INFO : Create a connection to DB  :
+2017-10-10 18:36:24,512 :INFO : Create a connection to DB  :
+2017-10-10 18:36:24,515 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 18:36:24,515 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 18:36:24,519 :WARNING :vehDetails not Avalable to the Tag ID :e2000016351702081640767f3333 :
+2017-10-10 18:36:24,519 :WARNING :vehDetails not Avalable to the Tag ID :e2000016351702081640767f3333 :
+2017-10-10 18:36:24,523 :WARNING :vehDetail None : None. :
+2017-10-10 18:36:24,523 :WARNING :vehDetail None : None. :
+2017-10-10 18:37:50,427 :INFO : Create a connection to DB  :
+2017-10-10 18:37:50,427 :INFO : Create a connection to DB  :
+2017-10-10 18:37:50,435 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 18:37:50,435 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 18:37:50,439 :WARNING :DB vehDetails not Avalable to the Tag ID :e2000016351702081640767f3333 :
+2017-10-10 18:37:50,439 :WARNING :DB vehDetails not Avalable to the Tag ID :e2000016351702081640767f3333 :
+2017-10-10 18:37:50,445 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-10-10 18:37:50,445 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-10-10 18:39:26,726 :INFO : Create a connection to DB  :
+2017-10-10 18:39:26,726 :INFO : Create a connection to DB  :
+2017-10-10 18:39:26,730 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 18:39:26,730 :INFO : DB select_DeviceDetails_by_id :
+2017-10-10 18:39:26,734 :INFO :If vehID : 32, vehName : test vehicle, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-10 18:39:26,734 :INFO :If vehID : 32, vehName : test vehicle, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-10 18:39:26,821 :INFO : Create a connection to DB  :
+2017-10-10 18:39:26,821 :INFO : Create a connection to DB  :
+2017-10-10 18:39:26,845 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-10 18:39:26,845 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-11 10:50:15,963 :INFO : Create a connection to DB  :
+2017-10-11 10:50:15,963 :INFO : Create a connection to DB  :
+2017-10-11 10:50:15,965 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 10:50:15,965 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 10:50:15,981 :WARNING :DB vehDetails not Avalable to the Tag ID :e2000016351702081640767f111 :
+2017-10-11 10:50:15,981 :WARNING :DB vehDetails not Avalable to the Tag ID :e2000016351702081640767f111 :
+2017-10-11 10:50:15,984 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-10-11 10:50:15,984 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-10-11 10:58:52,204 :INFO : Create a connection to DB  :
+2017-10-11 10:58:52,204 :INFO : Create a connection to DB  :
+2017-10-11 10:58:52,208 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 10:58:52,208 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 10:58:52,211 :WARNING :DB vehDetails not Avalable to the Tag ID :e2000016351702081640767f111 :
+2017-10-11 10:58:52,211 :WARNING :DB vehDetails not Avalable to the Tag ID :e2000016351702081640767f111 :
+2017-10-11 10:58:52,215 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-10-11 10:58:52,215 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-10-11 10:58:52,276 :INFO : Create a connection to DB  :
+2017-10-11 10:58:52,276 :INFO : Create a connection to DB  :
+2017-10-11 10:58:52,294 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-11 10:58:52,294 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-11 11:31:43,438 :INFO : Create a connection to DB  :
+2017-10-11 11:31:43,438 :INFO : Create a connection to DB  :
+2017-10-11 11:31:43,440 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 11:31:43,440 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 11:31:43,444 :WARNING :DB vehDetails not Avalable to the Tag ID :e2000016351702081640767f111 :
+2017-10-11 11:31:43,444 :WARNING :DB vehDetails not Avalable to the Tag ID :e2000016351702081640767f111 :
+2017-10-11 11:31:43,447 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-10-11 11:31:43,447 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-10-11 11:34:49,787 :INFO : Create a connection to DB  :
+2017-10-11 11:34:49,787 :INFO : Create a connection to DB  :
+2017-10-11 11:34:49,790 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 11:34:49,790 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 11:34:49,794 :WARNING :DB vehDetails not Avalable to the Tag ID :e2000016351702081640767f111 :
+2017-10-11 11:34:49,794 :WARNING :DB vehDetails not Avalable to the Tag ID :e2000016351702081640767f111 :
+2017-10-11 11:34:49,798 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-10-11 11:34:49,798 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-10-11 11:39:07,176 :INFO : Create a connection to DB  :
+2017-10-11 11:39:07,176 :INFO : Create a connection to DB  :
+2017-10-11 11:39:07,178 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 11:39:07,178 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 11:39:07,181 :WARNING :DB vehDetails not Avalable to the Tag ID :e2000016351702081640767f111 :
+2017-10-11 11:39:07,181 :WARNING :DB vehDetails not Avalable to the Tag ID :e2000016351702081640767f111 :
+2017-10-11 11:39:07,185 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-10-11 11:39:07,185 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-10-11 11:54:40,673 :INFO : Create a connection to DB  :
+2017-10-11 11:54:40,673 :INFO : Create a connection to DB  :
+2017-10-11 11:54:40,675 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 11:54:40,675 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 11:54:40,678 :INFO :If vehID : 32, vehName : test vehicle, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-11 11:54:40,678 :INFO :If vehID : 32, vehName : test vehicle, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-11 11:55:25,115 :INFO : Create a connection to DB  :
+2017-10-11 11:55:25,115 :INFO : Create a connection to DB  :
+2017-10-11 11:55:25,116 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 11:55:25,116 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 11:55:25,120 :INFO :If vehID : 32, vehName : test vehicle, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-11 11:55:25,120 :INFO :If vehID : 32, vehName : test vehicle, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-11 11:55:25,240 :INFO : Create a connection to DB  :
+2017-10-11 11:55:25,240 :INFO : Create a connection to DB  :
+2017-10-11 11:55:25,265 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-11 11:55:25,265 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-11 11:55:59,670 :INFO : Create a connection to DB  :
+2017-10-11 11:55:59,670 :INFO : Create a connection to DB  :
+2017-10-11 11:55:59,681 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 11:55:59,681 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 11:55:59,687 :INFO :If vehID : 32, vehName : test vehicle, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-11 11:55:59,687 :INFO :If vehID : 32, vehName : test vehicle, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-11 11:55:59,814 :INFO : Create a connection to DB  :
+2017-10-11 11:55:59,814 :INFO : Create a connection to DB  :
+2017-10-11 11:55:59,842 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-11 11:55:59,842 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-11 14:34:42,654 :INFO : Create a connection to DB  :
+2017-10-11 14:34:42,654 :INFO : Create a connection to DB  :
+2017-10-11 14:34:42,657 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 14:34:42,657 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 14:34:42,660 :INFO :If vehID : 32, vehName : test vehicle, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-11 14:34:42,660 :INFO :If vehID : 32, vehName : test vehicle, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-11 14:34:42,771 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-11 14:34:42,771 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-11 15:27:36,897 :INFO : Create a connection to DB  :
+2017-10-11 15:27:36,898 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 15:27:36,901 :ERROR :no such table: DeviceDetails :
+2017-10-11 15:27:36,902 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-11 15:27:36,903 :ERROR :no such table: TireDetails :
+2017-10-11 15:29:34,636 :INFO : Create a connection to DB  :
+2017-10-11 15:29:34,637 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 15:29:34,640 :ERROR :no such table: DeviceDetails :
+2017-10-11 15:29:34,642 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-11 15:29:34,643 :ERROR :no such table: TireDetails :
+2017-10-11 15:32:03,015 :INFO : Create a connection to DB  :
+2017-10-11 15:32:03,017 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 15:32:03,020 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-11 15:55:12,744 :INFO : Create a connection to DB  :
+2017-10-11 15:55:12,745 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 15:55:12,776 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-11 17:31:10,764 :INFO : Create a connection to DB  :
+2017-10-11 17:31:10,764 :INFO : Create a connection to DB  :
+2017-10-11 17:31:10,765 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 17:31:10,765 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 17:31:10,768 :WARNING :DB vehDetails not Avalable to the Tag ID :e2000016351702081640767f :
+2017-10-11 17:31:10,768 :WARNING :DB vehDetails not Avalable to the Tag ID :e2000016351702081640767f :
+2017-10-11 17:31:10,772 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-10-11 17:31:10,772 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-10-11 17:43:35,684 :INFO : Create a connection to DB  :
+2017-10-11 17:43:35,684 :INFO : Create a connection to DB  :
+2017-10-11 17:43:35,728 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 17:43:35,728 :INFO : DB select_DeviceDetails_by_id :
+2017-10-11 17:43:35,730 :WARNING :DB vehDetails not Avalable to the Tag ID :e2000016351702081640767f :
+2017-10-11 17:43:35,730 :WARNING :DB vehDetails not Avalable to the Tag ID :e2000016351702081640767f :
+2017-10-11 17:43:35,734 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-10-11 17:43:35,734 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-10-12 11:19:37,519 :INFO : Create a connection to DB  :
+2017-10-12 11:19:37,519 :INFO : Create a connection to DB  :
+2017-10-12 11:19:37,525 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 11:19:37,525 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 11:20:24,868 :INFO : Create a connection to DB  :
+2017-10-12 11:20:24,868 :INFO : Create a connection to DB  :
+2017-10-12 11:20:24,875 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 11:20:24,875 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 11:20:24,895 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 11:20:24,895 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 11:20:24,964 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 11:20:24,964 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 12:11:07,012 :INFO : Create a connection to DB  :
+2017-10-12 12:11:07,012 :INFO : Create a connection to DB  :
+2017-10-12 12:11:07,014 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 12:11:07,014 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 12:11:07,017 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 12:11:07,017 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 12:11:07,102 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 12:11:07,102 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 12:12:24,741 :INFO : Create a connection to DB  :
+2017-10-12 12:12:24,741 :INFO : Create a connection to DB  :
+2017-10-12 12:12:24,742 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 12:12:24,742 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 12:12:24,745 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 12:12:24,745 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 12:12:24,833 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 12:12:24,833 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 12:18:19,151 :INFO : Create a connection to DB  :
+2017-10-12 12:18:19,151 :INFO : Create a connection to DB  :
+2017-10-12 12:18:19,152 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 12:18:19,152 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 12:18:19,156 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 12:18:19,156 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 12:18:19,240 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 12:18:19,240 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 12:48:58,765 :INFO : Create a connection to DB  :
+2017-10-12 12:48:58,765 :INFO : Create a connection to DB  :
+2017-10-12 12:48:58,766 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 12:48:58,766 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 12:48:58,770 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 12:48:58,770 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 12:48:58,855 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 12:48:58,855 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 12:50:08,064 :INFO : Create a connection to DB  :
+2017-10-12 12:50:08,064 :INFO : Create a connection to DB  :
+2017-10-12 12:50:08,071 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 12:50:08,071 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 12:50:08,075 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 12:50:08,075 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 12:50:08,156 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 12:50:08,156 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 14:31:03,565 :INFO : Create a connection to DB  :
+2017-10-12 14:31:03,565 :INFO : Create a connection to DB  :
+2017-10-12 14:31:03,566 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 14:31:03,566 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 14:31:03,569 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 14:31:03,569 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 14:31:03,651 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 14:31:03,651 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 14:59:29,225 :INFO : Create a connection to DB  :
+2017-10-12 14:59:29,225 :INFO : Create a connection to DB  :
+2017-10-12 14:59:29,226 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 14:59:29,226 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 14:59:29,229 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 14:59:29,229 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 14:59:29,314 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 14:59:29,314 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 15:01:27,282 :INFO : Create a connection to DB  :
+2017-10-12 15:01:27,282 :INFO : Create a connection to DB  :
+2017-10-12 15:01:27,283 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 15:01:27,283 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 15:01:27,287 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 15:01:27,287 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 15:01:27,366 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 15:01:27,366 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 15:04:39,285 :INFO : Create a connection to DB  :
+2017-10-12 15:04:39,285 :INFO : Create a connection to DB  :
+2017-10-12 15:04:39,286 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 15:04:39,286 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 15:04:39,289 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 15:04:39,289 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 15:04:39,381 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 15:04:39,381 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 15:05:47,991 :INFO : Create a connection to DB  :
+2017-10-12 15:05:47,991 :INFO : Create a connection to DB  :
+2017-10-12 15:05:47,992 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 15:05:47,992 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 15:05:47,995 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 15:05:47,995 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 15:05:48,077 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 15:05:48,077 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 15:06:26,874 :INFO : Create a connection to DB  :
+2017-10-12 15:06:26,874 :INFO : Create a connection to DB  :
+2017-10-12 15:06:26,875 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 15:06:26,875 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 15:06:26,879 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 15:06:26,879 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 15:06:26,960 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 15:06:26,960 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 15:09:33,161 :INFO : Create a connection to DB  :
+2017-10-12 15:09:33,161 :INFO : Create a connection to DB  :
+2017-10-12 15:09:33,163 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 15:09:33,163 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 15:09:33,166 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 15:09:33,166 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 15:09:33,248 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 15:09:33,248 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 15:10:42,390 :INFO : Create a connection to DB  :
+2017-10-12 15:10:42,390 :INFO : Create a connection to DB  :
+2017-10-12 15:10:42,390 :INFO : Create a connection to DB  :
+2017-10-12 15:10:42,391 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 15:10:42,391 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 15:10:42,391 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 15:10:42,395 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 15:10:42,395 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 15:10:42,395 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 15:10:42,478 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 15:10:42,478 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 15:10:42,478 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 16:30:23,774 :INFO : Create a connection to DB  :
+2017-10-12 16:30:23,774 :INFO : Create a connection to DB  :
+2017-10-12 16:30:23,774 :INFO : Create a connection to DB  :
+2017-10-12 16:30:23,776 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 16:30:23,776 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 16:30:23,776 :INFO : DB select_DeviceDetails_by_id :
+2017-10-12 16:30:23,780 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 16:30:23,780 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 16:30:23,780 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-12 16:30:23,862 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 16:30:23,862 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-12 16:30:23,862 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 10:32:33,524 :ERROR :(112, 'Host is down') :
+2017-10-13 11:21:35,555 :ERROR :(112, 'Host is down') :
+2017-10-13 11:45:43,308 :ERROR :(112, 'Host is down') :
+2017-10-13 11:50:48,452 :INFO : Create a connection to DB  :
+2017-10-13 11:50:48,452 :INFO : Create a connection to DB  :
+2017-10-13 11:50:48,452 :INFO : Create a connection to DB  :
+2017-10-13 11:50:48,454 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 11:50:48,454 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 11:50:48,454 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 11:50:48,473 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 11:50:48,473 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 11:50:48,473 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 11:50:48,525 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 11:50:48,525 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 11:50:48,525 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 11:51:00,165 :ERROR :(112, 'Host is down') :
+2017-10-13 11:51:00,165 :ERROR :(112, 'Host is down') :
+2017-10-13 11:51:00,165 :ERROR :(112, 'Host is down') :
+2017-10-13 11:51:00,167 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 11:51:00,167 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 11:51:00,167 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 11:52:49,013 :INFO : Create a connection to DB  :
+2017-10-13 11:52:49,013 :INFO : Create a connection to DB  :
+2017-10-13 11:52:49,013 :INFO : Create a connection to DB  :
+2017-10-13 11:52:49,015 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 11:52:49,015 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 11:52:49,015 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 11:52:49,019 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 11:52:49,019 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 11:52:49,019 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 11:52:49,070 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 11:52:49,070 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 11:52:49,070 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 11:52:59,836 :ERROR :(112, 'Host is down') :
+2017-10-13 11:52:59,836 :ERROR :(112, 'Host is down') :
+2017-10-13 11:52:59,836 :ERROR :(112, 'Host is down') :
+2017-10-13 11:52:59,839 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 11:52:59,839 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 11:52:59,839 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 11:55:21,554 :INFO : Create a connection to DB  :
+2017-10-13 11:55:21,554 :INFO : Create a connection to DB  :
+2017-10-13 11:55:21,554 :INFO : Create a connection to DB  :
+2017-10-13 11:55:21,555 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 11:55:21,555 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 11:55:21,555 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 11:55:21,559 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 11:55:21,559 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 11:55:21,559 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 11:55:21,653 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 11:55:21,653 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 11:55:21,653 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 11:55:32,112 :ERROR :(112, 'Host is down') :
+2017-10-13 11:55:32,112 :ERROR :(112, 'Host is down') :
+2017-10-13 11:55:32,112 :ERROR :(112, 'Host is down') :
+2017-10-13 11:55:32,114 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 11:55:32,114 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 11:55:32,114 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 12:18:43,761 :ERROR :(112, 'Host is down') :
+2017-10-13 12:19:32,190 :ERROR :(112, 'Host is down') :
+2017-10-13 12:50:44,281 :INFO : Create a connection to DB  :
+2017-10-13 12:50:44,281 :INFO : Create a connection to DB  :
+2017-10-13 12:50:44,281 :INFO : Create a connection to DB  :
+2017-10-13 12:50:44,284 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 12:50:44,284 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 12:50:44,284 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 12:50:44,287 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 12:50:44,287 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 12:50:44,287 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 12:50:44,340 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 12:50:44,340 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 12:50:44,340 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 12:50:49,624 :ERROR :(112, 'Host is down') :
+2017-10-13 12:50:49,624 :ERROR :(112, 'Host is down') :
+2017-10-13 12:50:49,624 :ERROR :(112, 'Host is down') :
+2017-10-13 12:50:51,636 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 12:50:51,636 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 12:50:51,636 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 14:30:58,231 :INFO : Create a connection to DB  :
+2017-10-13 14:30:58,231 :INFO : Create a connection to DB  :
+2017-10-13 14:30:58,231 :INFO : Create a connection to DB  :
+2017-10-13 14:30:58,233 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 14:30:58,233 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 14:30:58,233 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 14:30:58,237 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 14:30:58,237 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 14:30:58,237 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 14:30:58,289 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 14:30:58,289 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 14:30:58,289 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 14:31:03,603 :ERROR :(112, 'Host is down') :
+2017-10-13 14:31:03,603 :ERROR :(112, 'Host is down') :
+2017-10-13 14:31:03,603 :ERROR :(112, 'Host is down') :
+2017-10-13 14:31:05,613 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 14:31:05,613 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 14:31:05,613 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 15:03:51,465 :INFO : Create a connection to DB  :
+2017-10-13 15:03:51,465 :INFO : Create a connection to DB  :
+2017-10-13 15:03:51,465 :INFO : Create a connection to DB  :
+2017-10-13 15:03:51,467 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 15:03:51,467 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 15:03:51,467 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 15:03:51,471 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 15:03:51,471 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 15:03:51,471 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 15:03:51,549 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 15:03:51,549 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 15:03:51,549 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 15:03:56,883 :ERROR :(112, 'Host is down') :
+2017-10-13 15:03:56,883 :ERROR :(112, 'Host is down') :
+2017-10-13 15:03:56,883 :ERROR :(112, 'Host is down') :
+2017-10-13 15:03:58,887 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 15:03:58,887 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 15:03:58,887 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 15:11:17,049 :INFO : Create a connection to DB  :
+2017-10-13 15:11:17,049 :INFO : Create a connection to DB  :
+2017-10-13 15:11:17,049 :INFO : Create a connection to DB  :
+2017-10-13 15:11:17,050 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 15:11:17,050 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 15:11:17,050 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 15:11:17,054 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 15:11:17,054 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 15:11:17,054 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 15:11:17,153 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 15:11:17,153 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 15:11:17,153 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 15:11:17,431 :ERROR :(107, 'Transport endpoint is not connected') :
+2017-10-13 15:11:17,431 :ERROR :(107, 'Transport endpoint is not connected') :
+2017-10-13 15:11:17,431 :ERROR :(107, 'Transport endpoint is not connected') :
+2017-10-13 15:14:08,998 :INFO : Create a connection to DB  :
+2017-10-13 15:14:08,998 :INFO : Create a connection to DB  :
+2017-10-13 15:14:08,998 :INFO : Create a connection to DB  :
+2017-10-13 15:14:08,999 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 15:14:08,999 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 15:14:08,999 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 15:14:09,003 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 15:14:09,003 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 15:14:09,003 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 15:14:09,094 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 15:14:09,094 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 15:14:09,094 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 15:14:09,391 :ERROR :(107, 'Transport endpoint is not connected') :
+2017-10-13 15:14:09,391 :ERROR :(107, 'Transport endpoint is not connected') :
+2017-10-13 15:14:09,391 :ERROR :(107, 'Transport endpoint is not connected') :
+2017-10-13 15:14:11,395 :WARNING :Data not Available from the Bluetooth Controller:  :
+2017-10-13 15:14:11,395 :WARNING :Data not Available from the Bluetooth Controller:  :
+2017-10-13 15:14:11,395 :WARNING :Data not Available from the Bluetooth Controller:  :
+2017-10-13 15:16:18,538 :INFO : Create a connection to DB  :
+2017-10-13 15:16:18,538 :INFO : Create a connection to DB  :
+2017-10-13 15:16:18,538 :INFO : Create a connection to DB  :
+2017-10-13 15:16:18,540 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 15:16:18,540 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 15:16:18,540 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 15:16:18,544 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 15:16:18,544 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 15:16:18,544 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 15:16:18,632 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 15:16:18,632 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 15:16:18,632 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 15:16:18,911 :ERROR :(107, 'Transport endpoint is not connected') :
+2017-10-13 15:16:18,911 :ERROR :(107, 'Transport endpoint is not connected') :
+2017-10-13 15:16:18,911 :ERROR :(107, 'Transport endpoint is not connected') :
+2017-10-13 15:16:20,915 :WARNING :Data not Available from the Bluetooth Controller:  :
+2017-10-13 15:16:20,915 :WARNING :Data not Available from the Bluetooth Controller:  :
+2017-10-13 15:16:20,915 :WARNING :Data not Available from the Bluetooth Controller:  :
+2017-10-13 15:23:47,815 :ERROR :(112, 'Host is down') :
+2017-10-13 15:28:54,759 :INFO : Create a connection to DB  :
+2017-10-13 15:28:54,759 :INFO : Create a connection to DB  :
+2017-10-13 15:28:54,759 :INFO : Create a connection to DB  :
+2017-10-13 15:28:54,761 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 15:28:54,761 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 15:28:54,761 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 15:28:54,765 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 15:28:54,765 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 15:28:54,765 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 15:28:54,851 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 15:28:54,851 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 15:28:54,851 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 15:29:00,200 :ERROR :(112, 'Host is down') :
+2017-10-13 15:29:00,200 :ERROR :(112, 'Host is down') :
+2017-10-13 15:29:00,200 :ERROR :(112, 'Host is down') :
+2017-10-13 15:29:02,218 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 15:29:02,218 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 15:29:02,218 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 16:18:22,652 :INFO : Create a connection to DB  :
+2017-10-13 16:18:22,652 :INFO : Create a connection to DB  :
+2017-10-13 16:18:22,652 :INFO : Create a connection to DB  :
+2017-10-13 16:18:22,654 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 16:18:22,654 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 16:18:22,654 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 16:18:22,657 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 16:18:22,657 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 16:18:22,657 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 16:18:22,747 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 16:18:22,747 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 16:18:22,747 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 16:23:36,988 :INFO : Create a connection to DB  :
+2017-10-13 16:23:36,988 :INFO : Create a connection to DB  :
+2017-10-13 16:23:36,988 :INFO : Create a connection to DB  :
+2017-10-13 16:23:36,990 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 16:23:36,990 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 16:23:36,990 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 16:23:36,994 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 16:23:36,994 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 16:23:36,994 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 16:23:37,076 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 16:23:37,076 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 16:23:37,076 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 16:23:42,433 :ERROR :(112, 'Host is down') :
+2017-10-13 16:23:42,433 :ERROR :(112, 'Host is down') :
+2017-10-13 16:23:42,433 :ERROR :(112, 'Host is down') :
+2017-10-13 16:23:44,436 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 16:23:44,436 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 16:23:44,436 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 16:53:33,685 :INFO : Create a connection to DB  :
+2017-10-13 16:53:33,685 :INFO : Create a connection to DB  :
+2017-10-13 16:53:33,685 :INFO : Create a connection to DB  :
+2017-10-13 16:53:33,687 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 16:53:33,687 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 16:53:33,687 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 16:53:33,691 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 16:53:33,691 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 16:53:33,691 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 16:53:33,774 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 16:53:33,774 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 16:53:33,774 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 16:54:37,330 :INFO : Create a connection to DB  :
+2017-10-13 16:54:37,330 :INFO : Create a connection to DB  :
+2017-10-13 16:54:37,330 :INFO : Create a connection to DB  :
+2017-10-13 16:54:37,332 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 16:54:37,332 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 16:54:37,332 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 16:54:37,337 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 16:54:37,337 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 16:54:37,337 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 16:54:37,419 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 16:54:37,419 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 16:54:37,419 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 18:11:32,997 :INFO : Create a connection to DB  :
+2017-10-13 18:11:32,997 :INFO : Create a connection to DB  :
+2017-10-13 18:11:32,997 :INFO : Create a connection to DB  :
+2017-10-13 18:11:33,000 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 18:11:33,000 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 18:11:33,000 :INFO : DB select_DeviceDetails_by_id :
+2017-10-13 18:11:33,004 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 18:11:33,004 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 18:11:33,004 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-13 18:11:33,087 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 18:11:33,087 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 18:11:33,087 :INFO : DB select_TireDetails_by_VehId  :
+2017-10-13 18:11:38,435 :ERROR :(112, 'Host is down') :
+2017-10-13 18:11:38,435 :ERROR :(112, 'Host is down') :
+2017-10-13 18:11:38,435 :ERROR :(112, 'Host is down') :
+2017-10-13 18:11:40,439 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 18:11:40,439 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-13 18:11:40,439 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-16 10:57:55,135 :ERROR :(112, 'Host is down') :
+2017-10-16 10:58:45,987 :ERROR :(112, 'Host is down') :
+2017-10-16 11:32:30,787 :ERROR :(112, 'Host is down') :
+2017-10-16 11:32:53,871 :ERROR :<type 'exceptions.AttributeError'> :
+2017-10-16 11:32:59,204 :ERROR :(112, 'Host is down') :
+2017-10-16 11:36:12,682 :ERROR :<type 'exceptions.AttributeError'> :
+2017-10-16 11:36:18,030 :ERROR :(112, 'Host is down') :
+2017-10-16 11:37:21,153 :ERROR :<type 'exceptions.AttributeError'> :
+2017-10-16 11:37:26,493 :ERROR :(112, 'Host is down') :
+2017-10-16 11:37:28,503 :WARNING :Parse data Not Available :
+2017-10-16 11:40:15,100 :ERROR :<type 'exceptions.AttributeError'> :
+2017-10-16 11:40:20,441 :ERROR :(112, 'Host is down') :
+2017-10-16 11:40:22,451 :WARNING :Parse data Not Available :
+2017-10-16 12:22:19,336 :INFO : Create a connection to DB  :
+2017-10-16 12:23:10,827 :INFO : Create a connection to DB  :
+2017-10-16 12:23:31,519 :INFO : Create a connection to DB  :
+2017-10-16 12:23:50,378 :INFO : Create a connection to DB  :
+2017-10-16 12:23:50,382 :WARNING :DB vehDetails not Avalable to the Tag ID :e2000016351702081640767faa :
+2017-10-16 12:24:28,502 :INFO : Create a connection to DB  :
+2017-10-16 12:24:28,506 :WARNING :DB vehDetails not Avalable to the Tag ID :e2000016351702081640767faa :
+2017-10-16 12:25:14,550 :INFO : Create a connection to DB  :
+2017-10-16 12:34:48,164 :INFO : Create a connection to DB  :
+2017-10-16 12:34:48,168 :WARNING :DB vehDetails not Avalable to the Tag ID :e2000016351702081640767faa :
+2017-10-16 12:35:30,183 :INFO : Create a connection to DB  :
+2017-10-16 12:35:30,192 :WARNING :DB vehDetails not Avalable to the Tag ID :e2000016351702081640767faa :
+2017-10-16 12:37:45,739 :INFO : Create a connection to DB  :
+2017-10-16 12:37:45,742 :WARNING :DB vehDetails not Avalable to the Tag ID :e2000016351702081640767faa :
+2017-10-16 12:46:34,572 :INFO : Create a connection to DB  :
+2017-10-16 12:47:28,626 :INFO : Create a connection to DB  :
+2017-10-16 12:47:50,662 :INFO : Create a connection to DB  :
+2017-10-16 12:48:18,180 :INFO : Create a connection to DB  :
+2017-10-16 12:52:57,190 :INFO : Create a connection to DB  :
+2017-10-16 12:53:32,480 :INFO : Create a connection to DB  :
+2017-10-16 12:54:30,251 :INFO : Create a connection to DB  :
+2017-10-16 12:55:17,153 :INFO : Create a connection to DB  :
+2017-10-16 12:55:33,152 :INFO : Create a connection to DB  :
+2017-10-16 14:01:54,463 :INFO : Create a connection to DB  :
+2017-10-16 14:02:16,374 :INFO : Create a connection to DB  :
+2017-10-16 14:02:59,416 :INFO : Create a connection to DB  :
+2017-10-16 14:03:38,741 :INFO : Create a connection to DB  :
+2017-10-16 14:04:50,422 :INFO : Create a connection to DB  :
+2017-10-16 14:05:40,095 :INFO : Create a connection to DB  :
+2017-10-16 14:06:39,327 :INFO : Create a connection to DB  :
+2017-10-16 14:07:17,128 :INFO : Create a connection to DB  :
+2017-10-16 14:15:25,466 :INFO : Create a connection to DB  :
+2017-10-16 14:17:31,065 :INFO : Create a connection to DB  :
+2017-10-16 14:19:10,858 :INFO : Create a connection to DB  :
+2017-10-16 14:19:10,895 :WARNING :Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: 10 :
+2017-10-16 14:19:47,820 :INFO : Create a connection to DB  :
+2017-10-16 14:21:13,289 :INFO : Create a connection to DB  :
+2017-10-16 14:22:56,267 :INFO : Create a connection to DB  :
+2017-10-16 14:22:56,305 :WARNING :Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: 10 :
+2017-10-16 14:23:38,899 :INFO : Create a connection to DB  :
+2017-10-16 14:24:34,440 :INFO : Create a connection to DB  :
+2017-10-16 14:24:51,823 :INFO : Create a connection to DB  :
+2017-10-16 14:24:51,851 :WARNING :Failed - Accessing to DB table TyreDetails by Vehicle ID - None None :
+2017-10-16 14:25:22,121 :INFO : Create a connection to DB  :
+2017-10-16 14:25:22,159 :WARNING :Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: 10 :
+2017-10-16 14:25:59,334 :INFO : Create a connection to DB  :
+2017-10-16 14:25:59,338 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: e2000016351702081640767faa  :
+2017-10-16 14:25:59,404 :WARNING :Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: 10 :
+2017-10-16 14:26:32,674 :INFO : Create a connection to DB  :
+2017-10-16 14:26:32,730 :WARNING :Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: 10 :
+2017-10-23 10:28:50,863 :WARNING :Parse data Not Available :
+2017-10-23 10:35:53,646 :WARNING :Parse data Not Available :
+2017-10-23 11:25:00,647 :ERROR :Failed - Trying to connect (112, 'Host is down') :
+2017-10-23 11:26:03,621 :INFO : Create a connection to DB  :
+2017-10-23 11:26:03,621 :INFO : Create a connection to DB  :
+2017-10-23 11:26:03,621 :INFO : Create a connection to DB  :
+2017-10-23 11:26:03,662 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 11:26:03,662 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 11:26:03,662 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 11:26:09,202 :ERROR :Failed - Trying to connect (112, 'Host is down') :
+2017-10-23 11:26:09,202 :ERROR :Failed - Trying to connect (112, 'Host is down') :
+2017-10-23 11:26:09,202 :ERROR :Failed - Trying to connect (112, 'Host is down') :
+2017-10-23 11:26:11,215 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-23 11:26:11,215 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-23 11:26:11,215 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-23 12:23:54,007 :INFO : Create a connection to DB  :
+2017-10-23 12:23:54,007 :INFO : Create a connection to DB  :
+2017-10-23 12:23:54,007 :INFO : Create a connection to DB  :
+2017-10-23 12:23:54,041 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:23:54,041 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:23:54,041 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:23:59,479 :ERROR :Failed - Trying to connect (112, 'Host is down') :
+2017-10-23 12:23:59,479 :ERROR :Failed - Trying to connect (112, 'Host is down') :
+2017-10-23 12:23:59,479 :ERROR :Failed - Trying to connect (112, 'Host is down') :
+2017-10-23 12:24:01,603 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-23 12:24:01,603 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-23 12:24:01,603 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-23 12:24:59,890 :INFO : Create a connection to DB  :
+2017-10-23 12:24:59,890 :INFO : Create a connection to DB  :
+2017-10-23 12:24:59,890 :INFO : Create a connection to DB  :
+2017-10-23 12:24:59,910 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:24:59,910 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:24:59,910 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:25:05,492 :ERROR :Failed - Trying to connect (112, 'Host is down') :
+2017-10-23 12:25:05,492 :ERROR :Failed - Trying to connect (112, 'Host is down') :
+2017-10-23 12:25:05,492 :ERROR :Failed - Trying to connect (112, 'Host is down') :
+2017-10-23 12:25:07,498 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-23 12:25:07,498 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-23 12:25:07,498 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-23 12:25:33,342 :INFO : Create a connection to DB  :
+2017-10-23 12:25:33,342 :INFO : Create a connection to DB  :
+2017-10-23 12:25:33,342 :INFO : Create a connection to DB  :
+2017-10-23 12:25:33,368 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:25:33,368 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:25:33,368 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:28:11,451 :INFO : Create a connection to DB  :
+2017-10-23 12:28:11,451 :INFO : Create a connection to DB  :
+2017-10-23 12:28:11,451 :INFO : Create a connection to DB  :
+2017-10-23 12:28:11,480 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:28:11,480 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:28:11,480 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:32:14,760 :INFO : Create a connection to DB  :
+2017-10-23 12:32:14,760 :INFO : Create a connection to DB  :
+2017-10-23 12:32:14,760 :INFO : Create a connection to DB  :
+2017-10-23 12:32:14,788 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:32:14,788 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:32:14,788 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:36:09,343 :INFO : Create a connection to DB  :
+2017-10-23 12:36:09,343 :INFO : Create a connection to DB  :
+2017-10-23 12:36:09,343 :INFO : Create a connection to DB  :
+2017-10-23 12:36:09,371 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:36:09,371 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:36:09,371 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:37:30,118 :INFO : Create a connection to DB  :
+2017-10-23 12:37:30,118 :INFO : Create a connection to DB  :
+2017-10-23 12:37:30,118 :INFO : Create a connection to DB  :
+2017-10-23 12:37:30,147 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:37:30,147 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:37:30,147 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:38:13,864 :INFO : Create a connection to DB  :
+2017-10-23 12:38:13,864 :INFO : Create a connection to DB  :
+2017-10-23 12:38:13,864 :INFO : Create a connection to DB  :
+2017-10-23 12:38:13,894 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:38:13,894 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:38:13,894 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:44:19,443 :INFO : Create a connection to DB  :
+2017-10-23 12:44:19,443 :INFO : Create a connection to DB  :
+2017-10-23 12:44:19,443 :INFO : Create a connection to DB  :
+2017-10-23 12:44:19,470 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:44:19,470 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:44:19,470 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 12:57:33,152 :ERROR :Failed - Trying to connect (112, 'Host is down') :
+2017-10-23 15:48:30,901 :INFO : Create a connection to DB  :
+2017-10-23 15:48:30,901 :INFO : Create a connection to DB  :
+2017-10-23 15:48:30,901 :INFO : Create a connection to DB  :
+2017-10-23 15:48:30,921 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 15:48:30,921 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 15:48:30,921 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 15:49:47,682 :INFO : Create a connection to DB  :
+2017-10-23 15:49:47,682 :INFO : Create a connection to DB  :
+2017-10-23 15:49:47,682 :INFO : Create a connection to DB  :
+2017-10-23 15:49:47,708 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 15:49:47,708 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 15:49:47,708 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 15:54:41,199 :INFO : Create a connection to DB  :
+2017-10-23 15:54:41,199 :INFO : Create a connection to DB  :
+2017-10-23 15:54:41,199 :INFO : Create a connection to DB  :
+2017-10-23 15:54:41,236 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 15:54:41,236 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 15:54:41,236 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 16:54:45,274 :INFO : Create a connection to DB  :
+2017-10-23 16:54:45,274 :INFO : Create a connection to DB  :
+2017-10-23 16:54:45,274 :INFO : Create a connection to DB  :
+2017-10-23 16:54:45,303 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 16:54:45,303 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 16:54:45,303 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 16:54:49,259 :ERROR :Failed - Bluetooth Query Command for Checksum Query is Not Available:<type 'exceptions.ValueError'> ['AA', '41', 'A1', '0E', '63', '56a7c5', '06', '', '', '00', '00', '00', '00']  :
+2017-10-23 16:54:49,259 :ERROR :Failed - Bluetooth Query Command for Checksum Query is Not Available:<type 'exceptions.ValueError'> ['AA', '41', 'A1', '0E', '63', '56a7c5', '06', '', '', '00', '00', '00', '00']  :
+2017-10-23 16:54:49,259 :ERROR :Failed - Bluetooth Query Command for Checksum Query is Not Available:<type 'exceptions.ValueError'> ['AA', '41', 'A1', '0E', '63', '56a7c5', '06', '', '', '00', '00', '00', '00']  :
+2017-10-23 16:58:24,593 :INFO : Create a connection to DB  :
+2017-10-23 16:58:24,593 :INFO : Create a connection to DB  :
+2017-10-23 16:58:24,593 :INFO : Create a connection to DB  :
+2017-10-23 16:58:24,614 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 16:58:24,614 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 16:58:24,614 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 16:58:54,102 :INFO : Create a connection to DB  :
+2017-10-23 16:58:54,102 :INFO : Create a connection to DB  :
+2017-10-23 16:58:54,102 :INFO : Create a connection to DB  :
+2017-10-23 16:58:54,131 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 16:58:54,131 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 16:58:54,131 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 17:09:43,256 :INFO : Create a connection to DB  :
+2017-10-23 17:09:43,256 :INFO : Create a connection to DB  :
+2017-10-23 17:09:43,256 :INFO : Create a connection to DB  :
+2017-10-23 17:09:43,300 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 17:09:43,300 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 17:09:43,300 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 17:12:35,934 :INFO : Create a connection to DB  :
+2017-10-23 17:12:35,934 :INFO : Create a connection to DB  :
+2017-10-23 17:12:35,934 :INFO : Create a connection to DB  :
+2017-10-23 17:12:35,962 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 17:12:35,962 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 17:12:35,962 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 17:13:19,439 :INFO : Create a connection to DB  :
+2017-10-23 17:13:19,439 :INFO : Create a connection to DB  :
+2017-10-23 17:13:19,439 :INFO : Create a connection to DB  :
+2017-10-23 17:13:19,468 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 17:13:19,468 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 17:13:19,468 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 17:20:47,930 :INFO : Create a connection to DB  :
+2017-10-23 17:20:47,930 :INFO : Create a connection to DB  :
+2017-10-23 17:20:47,930 :INFO : Create a connection to DB  :
+2017-10-23 17:20:47,959 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 17:20:47,959 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 17:20:47,959 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 17:55:14,223 :ERROR :<type 'exceptions.AttributeError'> :
+2017-10-23 17:55:35,627 :ERROR :<type 'exceptions.AttributeError'> :
+2017-10-23 17:59:13,698 :ERROR :<type 'exceptions.AttributeError'> :
+2017-10-23 18:05:30,995 :ERROR :<type 'exceptions.UnboundLocalError'> :
+2017-10-23 18:07:51,762 :ERROR :<type 'exceptions.UnboundLocalError'> :
+2017-10-23 18:08:08,146 :ERROR :<type 'exceptions.UnboundLocalError'> :
+2017-10-23 18:08:26,709 :ERROR :<type 'exceptions.UnboundLocalError'> :
+2017-10-23 18:08:54,418 :ERROR :<type 'exceptions.UnboundLocalError'> :
+2017-10-23 18:09:23,434 :ERROR :<type 'exceptions.UnboundLocalError'> :
+2017-10-23 18:10:25,599 :ERROR :<type 'exceptions.UnboundLocalError'> :
+2017-10-23 18:11:08,201 :ERROR :<type 'exceptions.UnboundLocalError'> :
+2017-10-23 18:13:21,356 :INFO : Create a connection to DB  :
+2017-10-23 18:13:21,356 :INFO : Create a connection to DB  :
+2017-10-23 18:13:21,356 :INFO : Create a connection to DB  :
+2017-10-23 18:13:21,388 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 18:13:21,388 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-23 18:13:21,388 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :

@@ -19,6 +19,22 @@ import rfid
 import blecontroller
 from blecontroller import *
 
+import glob
+import logging
+import logging.handlers
+
+
+LOG_FILENAME = '/home/pi/Documents/TMS-Git/TMS-Python/log/loggingRotatingFileExample.log'
+
+my_logger = logging.getLogger('myapp')
+hdlr = logging.FileHandler(LOG_FILENAME)
+formatter = logging.Formatter('%(asctime)s :%(levelname)s :%(message)s :')
+hdlr.setFormatter(formatter)
+my_logger.addHandler(hdlr) 
+my_logger.setLevel(logging.DEBUG)
+
+
+
 #Variable Decleration
 s = 'hello'
 data = []
@@ -35,37 +51,82 @@ tup1=()
 _DBSensorID = []
 _DBLocation = []
 
+BluetoothSocketVariable= []
+DBSensorVariable=[]
+
 
 database = "/opt/Aquire/sqlite/Sample.db"
 TID1 = "e2000016351702081640767f"
-tag_id = "e2000016351702081640767f"
-vehID = 32
-BUID = '00:13:EF:C0:02:1E'
+tag_id = "e2000016351702081640767f" #24
+#vehID = 32
+BUID = '00:13:EF:C0:02:1E' #17
 
 
 
 # Start Query the DB with RFID TID
-def db_DeviceDetails_by_rfiduid():
+def db_DeviceDetails_by_rfiduid(conn, tag_id):
 
-    print("Create a database connection to the DB file .db")
-    conn = db.create_db_connection(database)
+    try:
+        #print("Create a database connection to the DB file .db")
+        #conn = db.create_db_connection(database)
+        #print tag_id
+        #print("Query the database to read Vehicle Details by RFUID")
+        #vehDetail = db.select_DeviceDetails_by_rfiduid(conn, "RFID 1")
+
+        if(conn != None): 
+            with conn:
+                vehDetail = db.select_DeviceDetails_by_rfiduid(conn, tag_id)
+                if (vehDetail != None):
+                    #Check vehID 
+                    if(vehDetail[0] != 0):
+                        vehID = vehDetail[0]
+                    else:
+                        my_logger.warning ("vehID is Not Available", vehDetail[0])
+                        
+                    #Check vehName
+                    if(vehDetail[1] != None):
+                        vehName = vehDetail[1].strip()
+                    else:
+                        my_logger.warning ("vehName is Not Available", vehDetail[1].strip())
+                        
+                    #Check BUID and Mac Address Length
+                    if((vehDetail[2] != None) &(len(vehDetail[2].strip()) == 17)):
+                        BUID = vehDetail[2].strip()
+                    else:
+                        my_logger.warning ("BUID is Not Available", vehDetail[2])
+                        
+                    #Check RFUID and tagid Length
+                    if((vehDetail[3] != None) & (len(vehDetail[3].strip()) == 24)):
+                        RFUID = vehDetail[3].strip()
+                    else:
+                        my_logger.warning ("BUID is Not Available", vehDetail[2])
+                        
+                    
+                    if(vehID, vehName, BUID, RFUID != None):                   
+                        my_logger.info ("If vehID : %s, vehName : %s, BUID : %s, RFUID : %s are Available", vehID, vehName, BUID, RFUID)
+                        print ("If vehID : %s, vehName : %s, BUID : %s, RFUID : %s are Available", vehID, vehName, BUID, RFUID)
+                        #Add Response Class
+                        return vehID, vehName, BUID, RFUID
+                        #return  vehDetail
+                    else:
+                        my_logger.warning ("If vehID : %s, vehName : %s, BUID : %s, RFUID : %s  are NONE", vehID, vehName, BUID, RFUID) 
+                        #Add Response Class
+                        return None                
+                else:
+                    my_logger.warning ("db.select_DeviceDetails_by_rfiduid vehDetail None : %s." , vehDetail) 
+                    #Add Response Class
+                    return None
+                #print vehID, vehName, BUID, RFUID       
+        else:
+            my_logger.warning ("Connection to DB is None " )
+            return None
+    except:
+        e = sys.exc_info()[0]
+        my_logger.error(e)
+        print ("Bluetooth Parse data Attribute Value not Avalable:",e)
+
+        return None
     
-    #print tag_id
-    print("Query the database to read Vehicle Details by RFUID")
-    #vehDetail = db.select_DeviceDetails_by_rfiduid(conn, "RFID 1")
-
-    with conn:
-        vehDetail = db.select_DeviceDetails_by_rfiduid(conn, tag_id)
-
-    if (vehDetail != None):
-        vehID = vehDetail[0]
-        vehName = vehDetail[1]
-        BUID = vehDetail[2]
-        RFUID = vehDetail[3]
-
-        #print vehID, vehName, BUID, RFUID
-
-    return vehID, vehName, BUID, RFUID
 '''
 
 # Start Query the DB with vehID to get Tyre Details
@@ -132,10 +193,10 @@ def db_DeviceDetails_by_vehID(vehID1):
 # Start Query the DB with vehID to get Tyre Details
 # Assign Location  by value
 # FL = 01, FR = 02, RLO = 03, RLI = 04, RRI = 05, RRO = 06
-def db_DeviceDetails_by_vehID(vehID1):
+def db_DeviceDetails_by_vehID(conn, vehID1):
 
-    print("Create a database connection to the DB file .db")
-    conn = db.create_db_connection(database)
+    #print("Create a database connection to the DB file .db")
+    #conn = db.create_db_connection(database)
     
     #print vehID
     print("Query the database to read Tyre Details by vehID")
@@ -160,9 +221,9 @@ def db_DeviceDetails_by_vehID(vehID1):
                 L1 = "03"
             elif Tyre_row1[1] == "RLI":
                 L1 = "04"
-            elif Tyre_row1[1] == "RRO":
-                L1 = "05"
             elif Tyre_row1[1] == "RRI":
+                L1 = "05"
+            elif Tyre_row1[1] == "RRO":
                 L1 = "06"
                 
             #print SID1, L1
@@ -180,9 +241,9 @@ def db_DeviceDetails_by_vehID(vehID1):
                 L2 = "03"
             elif Tyre_row2[1] == "RLI":
                 L2 = "04"
-            elif Tyre_row2[1] == "RRO":
-                L2 = "05"
             elif Tyre_row2[1] == "RRI":
+                L2 = "05"
+            elif Tyre_row2[1] == "RRO":
                 L2 = "06"
                 
             #print SID2, L2
@@ -200,9 +261,9 @@ def db_DeviceDetails_by_vehID(vehID1):
                 L3 = "03"
             elif Tyre_row3[1] == "RLI":
                 L3 = "04"
-            elif Tyre_row3[1] == "RRO":
-                L3 = "05"
             elif Tyre_row3[1] == "RRI":
+                L3 = "05"
+            elif Tyre_row3[1] == "RRO":
                 L3 = "06"
                 
             #print SID3, L3
@@ -220,9 +281,9 @@ def db_DeviceDetails_by_vehID(vehID1):
                 L4 = "03"
             elif Tyre_row4[1] == "RLI":
                 L4 = "04"
-            elif Tyre_row4[1] == "RRO":
-                L4 = "05"
             elif Tyre_row4[1] == "RRI":
+                L4 = "05"
+            elif Tyre_row4[1] == "RRO":
                 L4 = "06"
                 
             #print SID4, L4
@@ -240,9 +301,9 @@ def db_DeviceDetails_by_vehID(vehID1):
                 L5 = "03"
             elif Tyre_row5[1] == "RLI":
                 L5 = "04"
-            elif Tyre_row5[1] == "RRO":
-                L5 = "05"
             elif Tyre_row5[1] == "RRI":
+                L5 = "05"
+            elif Tyre_row5[1] == "RRO":
                 L5 = "06"
                 
             #print SID5, L5
@@ -260,9 +321,9 @@ def db_DeviceDetails_by_vehID(vehID1):
                 L6 = "03"
             elif Tyre_row6[1] == "RLI":
                 L6 = "04"
-            elif Tyre_row6[1] == "RRO":
-                L6 = "05"
             elif Tyre_row6[1] == "RRI":
+                L6 = "05"
+            elif Tyre_row6[1] == "RRO":
                 L6 = "06"
                 
             #print SID6, L6
@@ -282,21 +343,51 @@ def Connect_Socket_Bluetooth_by_BUID( conn):
     #blecontroller.Tpms_Tire_SET_Position1(SID1, L1)
     #print("Query the Bluetooth Controller to set TyreNo, Sensor ID")
     #data = blecontroller.Query_Tpms_SET_TireID(conn)
+    if(conn != None):
+        try:
+            print("Query the Bluetooth Controller with 63 to read All TyreNo, Sensor ID, Pressure and Temp")
+            TPMSID1 = blecontroller.TpmsTireDataPosition()
 
-    print("Query the Bluetooth Controller with 63 to read All TyreNo, Sensor ID, Pressure and Temp")
-    TPMSID1 = blecontroller.TpmsTireDataPosition()
+            if(TPMSID1 != None):
+            
+                print("Query the Bluetooth Controller to read TyreNo, Sensor ID, Pressure and Temp")
+                data = blecontroller.Query_TpmsTireDataPosition(conn, TPMSID1)
 
-    print("Query the Bluetooth Controller to read TyreNo, Sensor ID, Pressure and Temp")
-    data = blecontroller.Query_TpmsTireDataPosition(conn, TPMSID1)
+                if(data != None):
 
-    print("Parse the hex data string TyreNo, Sensor ID, Pressure and Temp")    
-    Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp,\
-    Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp,\
-    Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp,\
-    Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp,\
-    Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp,\
-    Tyre6No, Tyre6ID, Tyre6Presure, Tyre6Temp = blecontroller.ParseBluetoothTyre(data)
+                    print("Parse the hex data string TyreNo, Sensor ID, Pressure and Temp")    
+                    Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp,\
+                    Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp,\
+                    Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp,\
+                    Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp,\
+                    Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp,\
+                    Tyre6No, Tyre6ID, Tyre6Presure, Tyre6Temp = blecontroller.ParseBluetoothTyre(data)
 
+                    print Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp,\
+                           Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp,\
+                           Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp,\
+                           Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp,\
+                           Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp,\
+                           Tyre6No, Tyre6ID, Tyre6Presure, Tyre6Temp
+
+                    return Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp,\
+                           Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp,\
+                           Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp,\
+                           Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp,\
+                           Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp,\
+                           Tyre6No, Tyre6ID, Tyre6Presure, Tyre6Temp
+                
+
+                else:
+                    my_logger.warning ("Data not Available from the Bluetooth Controller: ")
+                    return None
+            else:
+                my_logger.warning ("Data not Available from the Bluetooth Controller: ")
+                return None
+            
+        except Error as e:
+            my_logger.error(e) 
+            return None
     ''' 
     print Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp,\
           Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp,\
@@ -311,12 +402,7 @@ def Connect_Socket_Bluetooth_by_BUID( conn):
     #compare_DBSensorUID_DBLocation_BTyreNo_BTyreID()
     
 
-    return Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp,\
-           Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp,\
-           Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp,\
-           Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp,\
-           Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp,\
-           Tyre6No, Tyre6ID, Tyre6Presure, Tyre6Temp
+    
 
 
 
@@ -482,7 +568,7 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
                 _DBLocation6 =  DBSensorVariable[i]
 
                 if(BluetoothSocketVariable[v] == "06"):
-                    #print "in BluetoothSocketVariable[v] ",_DBLocation6, _DBSensorID6
+                    print "in BluetoothSocketVariable[v] ",_DBLocation6, _DBSensorID6
 
                     _BTLocation6 = BluetoothSocketVariable[v]
                     _BTSensorID6 = BluetoothSocketVariable[v+1]
@@ -501,7 +587,7 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
                         assignNewSensorToBTC(conn, _DBLocation6, _DBSensorID6)
                     
                 elif (BluetoothSocketVariable[v] == None):
-                    #print "in None",_BTLocation6, _BTSensorID6
+                    print "in None",_BTLocation6, _BTSensorID6
                     assignNewSensorToBTC(conn, _DBLocation6, _DBSensorID6)
     
                     
@@ -512,76 +598,131 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
 def assignNewSensorToBTC(conn, location, sensorUID):
 
     print ("assignNewSensorToBTC", location, sensorUID)
-    
 
-    TPMSET = blecontroller.Tpms_Tire_SET_Position1(location, sensorUID)
-    print("Query the Bluetooth Controller to set TyreNo, Sensor ID")
-    data = blecontroller.Tpms_SET_TireID(conn, TPMSET)
-    print data
+    try:
+        if(conn != None):
+            if(location, sensorUID != None):
+            
+                TPMSET = blecontroller.Tpms_Tire_SET_Position1(location, sensorUID)
+
+                if(TPMSET != None):
+                    
+                    print("Query the Bluetooth Controller to set TyreNo, Sensor ID")
+                    data = blecontroller.Tpms_SET_TireID(conn, TPMSET)
+                    conn.close()
+                    print data
+                    return data
+
+                else:
+                    my_logger.warning("Failed - Bluetooth Query to Send and Receive Command Not Available: %s",TMSSET)
+                    print("Failed - Bluetooth Query to Send and Receive Command Not Available: %s",TMSSET)
+                    return None
+            else:
+                my_logger.warning("Failed - Bluetooth Query to assignNewSensorToBTC(Location, Sensor ID) not Avalable: %s, %s",L1, SID1)
+                print ("Failed - Bluetooth Query to assignNewSensorToBTC(Location, Sensor ID) not Avalable: ",L1, SID1)
+                return None
+        else:
+            
+            my_logger.warning("Failed - Bluetooth Connection Socket is Not Avalable: %s", BUID)
+            print ("Failed - Bluetooth Connection Socket is Not Avalable: %s", BUID)
+            return None
+
+
+    except:
+        e = sys.exc_info()[0]
+        my_logger.error("Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None: ",e, L1, SID1 )
+        print ("Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None: ",e, L1, SID1 )
+
+        return None
+                
     
     
 def fun():
     print("Main Function")
+   
+   
+    try:
+        #print("RFID Module Read TAG ID Function")
+        #tag_id = rfid.RFIDUHFQueryTag()
 
-    #print("RFID Module Read TAG ID Function")
-    #tag_id = rfid.RFIDUHFQueryTag()
+        if(tag_id != None):
+            print("Create a database connection to the DB file .db")
+            if(database!=None):
+                dbConn = db.create_db_connection(database)
+                if(dbConn != None):
+                    #vehID, vehName, BUID, RFUID = db_DeviceDetails_by_rfiduid(dbConn, tag_id)
+                    vehDetails = db_DeviceDetails_by_rfiduid(dbConn, tag_id)
+                    #print("Create a database connection to the DB file--- ", vehDetails)
+                    
+                    if(vehDetails != None):
+                        print("Query the Database to read Tyre Details, Sensor ID, Position by vehID")
+
+                        vehID = vehDetails[0]
+                        vehName = vehDetails[1]
+                        BUID = vehDetails[2]
+                        RFUID = vehDetails[3]
+
+                        #Query DB DeviceDetail in VehDetails Table to read vehID, vehName, BUID, RFUID
+                        if(vehID != None):
+                            DBSensorVariable = db_DeviceDetails_by_vehID(dbConn, vehID)                        
+
+                            #print DBSensorVariable
+                            dbConn.close()
+                        else:
+                            my_logger.warning ("Vehicle ID not Available or None Function : ", vehID)
+                    else:
+                       my_logger.warning ("RFID Tag ID is not available in DB : ", tag_id)
+                else:
+                    my_logger.warning ("No DB Connection ")
+            else: 
+                my_logger.warning ("Database path Not Available ")
+        else:
+            my_logger.warning ("RFID Tag ID is not available in DB : ", tag_id)
+            
+                        
+        #Query DB Device Detail to read vehID, vehName, BUID, RFUID
+        if (BUID != None):
+            print("Connect socket RFCOMM to Bluetooth Controller by BUID")                 
+            print("Create a Bluetooth connection")
+            bleConn = blecontroller.connect_ble(BUID)
+            
+            if(bleConn != None):                           
+                BluetoothSocketVariable = Connect_Socket_Bluetooth_by_BUID(bleConn)
+
+                print BluetoothSocketVariable
+
+                if(( DBSensorVariable != None) and (BluetoothSocketVariable != None)):
+                    print("Compare DB Sensor UID, tirePosition with Bluetooth TyreNo, TyreID")
+
+                    compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(bleConn, DBSensorVariable, BluetoothSocketVariable)
+                else:
+                    my_logger.warning ("DBSensorVariable and BluetoothSocketVariable not Available or None Function : ", DBSensorVariable, BluetoothSocketVariable)
+            else:
+                my_logger.warning ("Bluetooth ID not connected or Host Not Available or None Function : ")
+        else:
+            my_logger.warning ("Bluetooth ID not Available or None Function : ", BUID)
+          
+                            
     
-#    vehID, vehName, BUID, RFUID = db_DeviceDetails_by_rfiduid()
-
-    #print "Main: ", vehID, vehName, BUID, RFUID
-    #vehID=24
-    if (vehID != None):
-        print("Query the Database to read Tyre Details, Sensor ID, Position by vehID")
-        '''
-        SID1,L1, SID2,L2, SID3,L3,\
-        SID4,L4, SID5,L5, SID6,L6 = db_DeviceDetails_by_vehID(vehID)
-
-        print SID1,L1, SID2,L2, SID3,L3,\
-              SID4,L4, SID5,L5, SID6,L6
-        '''
-
-        DBSensorVariable = db_DeviceDetails_by_vehID(vehID)
-
-        #print DBSensorVariable
+            
+           
+    except Error as e:
+        #print (e)
+        my_logger.error(e)
+        #raise   
+        return None 
 
     
-    if (BUID != None):
-        print("Connect socket RFCOMM to Bluetooth Controller by BUID")
-        '''
-        Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp,\
-        Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp,\
-        Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp,\
-        Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp,\
-        Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp,\
-        Tyre6No, Tyre6ID, Tyre6Presure, Tyre6Temp = Connect_Socket_Bluetooth_by_BUID(BUID)
-
-        print Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp,\
-        Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp,\
-        Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp,\
-        Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp,\
-        Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp,\
-        Tyre6No, Tyre6ID, Tyre6Presure, Tyre6Temp
-        '''
-        print("Create a Bluetooth connection")
-        conn = blecontroller.connect_ble(BUID)
-        
-        BluetoothSocketVariable = Connect_Socket_Bluetooth_by_BUID(conn)
-
-        #print BluetoothSocketVariable
-        
+    
        
     #DBSensorVariable = (u'SensorUID 15', '01', u'SensorUID 14', '02', u'SensorUID 22', '03', u'SensorUID 21', '04', u'SensorUID 20', '06', u'SensorUID 19', '05')
     #BluetoothSocketVariable = ('01', 'ba6b09', '000000', '00', '02', 'ba6d6d', '000000', '00', '03', '56a8cb', '000000', '00', '04', '56a6be', '000000', '00', '05', '56a781', '000000', '00', '06', '56a7c5', '000000', '00')
     #DBSensorVariable = (u'ba6b09', '01', u'56a8cb', '03', u'ba6d6d', '02', u'56a6be', '04', u'56a781', '06', u'56a7c5', '05')
     #BluetoothSocketVariable = ('01', 'ba6b01', '000000', '00', '02', 'ba6d6d', '000000', '00', '03', '56a8cb', '000000', '00', '04', '56a6be', '000000', '00', '05', '56a781', '000000', '00', '06', '56a7c5', '000000', '00')
 
-    print("Compare DB Sensor UID, tirePosition with Bluetooth TyreNo, TyreID")
-
-    compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, BluetoothSocketVariable)
-
     
     print("After While Loop Connect socket RFCOMM to Bluetooth Controller by BUID")
-    conn.close()
+    #bleConn.close()
 
 if __name__ == "__main__":  
     
