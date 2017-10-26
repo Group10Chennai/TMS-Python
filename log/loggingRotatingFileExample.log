@@ -833,3 +833,119 @@
 2017-10-23 18:13:21,388 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
 2017-10-23 18:13:21,388 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
 2017-10-23 18:13:21,388 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-24 10:28:34,638 :ERROR :<type 'exceptions.AttributeError'> :
+2017-10-24 15:15:04,022 :ERROR :<type 'exceptions.TypeError'> :
+2017-10-24 15:15:23,663 :INFO : Create a connection to DB  :
+2017-10-24 15:15:23,663 :INFO : Create a connection to DB  :
+2017-10-24 15:15:23,663 :INFO : Create a connection to DB  :
+2017-10-24 15:15:23,697 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-24 15:15:23,697 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-24 15:15:23,697 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-24 15:15:29,134 :ERROR :<type 'exceptions.TypeError'> :
+2017-10-24 15:15:29,134 :ERROR :<type 'exceptions.TypeError'> :
+2017-10-24 15:15:29,134 :ERROR :<type 'exceptions.TypeError'> :
+2017-10-24 15:16:17,492 :ERROR :<type 'exceptions.UnboundLocalError'> :
+2017-10-24 15:17:00,819 :ERROR :<type 'exceptions.NameError'> :
+2017-10-24 15:24:59,908 :INFO : Create a connection to DB  :
+2017-10-24 15:24:59,908 :INFO : Create a connection to DB  :
+2017-10-24 15:24:59,908 :INFO : Create a connection to DB  :
+2017-10-24 15:24:59,938 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-24 15:24:59,938 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-24 15:24:59,938 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-24 15:25:42,716 :INFO : Create a connection to DB  :
+2017-10-24 15:25:42,716 :INFO : Create a connection to DB  :
+2017-10-24 15:25:42,716 :INFO : Create a connection to DB  :
+2017-10-24 15:25:42,743 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-24 15:25:42,743 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-24 15:25:42,743 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-24 15:25:48,908 :ERROR :<type 'exceptions.UnboundLocalError'> :
+2017-10-24 15:25:48,908 :ERROR :<type 'exceptions.UnboundLocalError'> :
+2017-10-24 15:25:48,908 :ERROR :<type 'exceptions.UnboundLocalError'> :
+2017-10-24 15:27:30,112 :ERROR :<type 'exceptions.UnboundLocalError'> :
+2017-10-24 15:28:27,521 :ERROR :<type 'exceptions.UnboundLocalError'> :
+2017-10-24 18:20:45,426 :ERROR :<type 'exceptions.UnboundLocalError'> :
+2017-10-25 11:29:25,963 :ERROR :<type 'exceptions.UnboundLocalError'> :
+2017-10-26 12:03:46,107 :INFO : Create a connection to DB  :
+2017-10-26 12:03:46,107 :INFO : Create a connection to DB  :
+2017-10-26 12:03:46,107 :INFO : Create a connection to DB  :
+2017-10-26 12:03:46,142 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 12:03:46,142 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 12:03:46,142 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 12:05:08,698 :INFO : Create a connection to DB  :
+2017-10-26 12:05:08,698 :INFO : Create a connection to DB  :
+2017-10-26 12:05:08,698 :INFO : Create a connection to DB  :
+2017-10-26 12:05:08,726 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 12:05:08,726 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 12:05:08,726 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 12:09:30,418 :INFO : Create a connection to DB  :
+2017-10-26 12:09:30,418 :INFO : Create a connection to DB  :
+2017-10-26 12:09:30,418 :INFO : Create a connection to DB  :
+2017-10-26 12:09:30,445 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 12:09:30,445 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 12:09:30,445 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 12:17:27,718 :INFO : Create a connection to DB  :
+2017-10-26 12:17:27,718 :INFO : Create a connection to DB  :
+2017-10-26 12:17:27,718 :INFO : Create a connection to DB  :
+2017-10-26 12:17:27,746 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 12:17:27,746 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 12:17:27,746 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 12:18:28,020 :INFO : Create a connection to DB  :
+2017-10-26 12:18:28,020 :INFO : Create a connection to DB  :
+2017-10-26 12:18:28,020 :INFO : Create a connection to DB  :
+2017-10-26 12:18:28,049 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 12:18:28,049 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 12:18:28,049 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 13:59:46,105 :INFO : Create a connection to DB  :
+2017-10-26 13:59:46,105 :INFO : Create a connection to DB  :
+2017-10-26 13:59:46,105 :INFO : Create a connection to DB  :
+2017-10-26 13:59:46,135 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 13:59:46,135 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 13:59:46,135 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 14:00:41,419 :INFO : Create a connection to DB  :
+2017-10-26 14:00:41,419 :INFO : Create a connection to DB  :
+2017-10-26 14:00:41,419 :INFO : Create a connection to DB  :
+2017-10-26 14:00:41,448 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 14:00:41,448 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 14:00:41,448 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 15:11:55,112 :INFO : Create a connection to DB  :
+2017-10-26 15:11:55,112 :INFO : Create a connection to DB  :
+2017-10-26 15:11:55,112 :INFO : Create a connection to DB  :
+2017-10-26 15:11:55,140 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 15:11:55,140 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 15:11:55,140 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 15:12:57,832 :INFO : Create a connection to DB  :
+2017-10-26 15:12:57,832 :INFO : Create a connection to DB  :
+2017-10-26 15:12:57,832 :INFO : Create a connection to DB  :
+2017-10-26 15:12:57,860 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 15:12:57,860 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 15:12:57,860 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 15:13:30,764 :INFO : Create a connection to DB  :
+2017-10-26 15:13:30,764 :INFO : Create a connection to DB  :
+2017-10-26 15:13:30,764 :INFO : Create a connection to DB  :
+2017-10-26 15:13:30,793 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 15:13:30,793 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 15:13:30,793 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 15:32:18,666 :INFO : Create a connection to DB  :
+2017-10-26 15:32:18,666 :INFO : Create a connection to DB  :
+2017-10-26 15:32:18,666 :INFO : Create a connection to DB  :
+2017-10-26 15:32:18,686 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 15:32:18,686 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 15:32:18,686 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 15:32:51,767 :INFO : Create a connection to DB  :
+2017-10-26 15:32:51,767 :INFO : Create a connection to DB  :
+2017-10-26 15:32:51,767 :INFO : Create a connection to DB  :
+2017-10-26 15:32:51,794 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 15:32:51,794 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 15:32:51,794 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 17:37:25,188 :INFO : Create a connection to DB  :
+2017-10-26 17:37:25,188 :INFO : Create a connection to DB  :
+2017-10-26 17:37:25,188 :INFO : Create a connection to DB  :
+2017-10-26 17:37:25,216 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 17:37:25,216 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 17:37:25,216 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 17:38:32,117 :INFO : Create a connection to DB  :
+2017-10-26 17:38:32,117 :INFO : Create a connection to DB  :
+2017-10-26 17:38:32,117 :INFO : Create a connection to DB  :
+2017-10-26 17:38:32,146 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 17:38:32,146 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-26 17:38:32,146 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :

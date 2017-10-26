@@ -388,75 +388,342 @@ def Query_TpmsTireDataPosition(s, TPMSID1):
         s.close()
         return None
 
-
+#from parse import *
 
 
 def ParseBluetoothTyre(data):
 
+    #hexstr = "aaa14108630005fcaaa1410f630001ba6b09000000002daaa1410f630002ba6d6d0000000094aaa1410f63000356a8cb00000000caaaa1410f63000456a6be00000000bcaaa1410f63000556a7810000000081"
+    #hexstr = "aaa14108630006fdaaa1410f630001ba6b09000000002daaa1410f630002ba6d6d0000000094aaa1410f63000356a8cb00000000caaaa1410f63000456a6be00000000bcaaa1410f63000556a7810000000081aaa1410f63000656a7c500000000c6"
+    # ok, figure the fixed fields we've pulled out and type convert them
+    #fixed_fields = list(m.groups())
+    #for n in m:
+        #if n in type_conversions:
+            #fixed_fields[n] = type_conversions[n](fixed_fields[n], m)
+        #print n
+    #fixed_fields = tuple(fixed_fields[n] for n in self._fixed_fields)
+
+    #data = 'From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008'
+    #atpos = data.find('aa')
+    #print atpos
+    #word = 'banana'
+    #count = 0
+    #for letter in data:
+        #if letter == 'aa':
+            #count = count + 1
+    #print count
+
+    hexstr = binascii.b2a_hex(data)
+    
+    totalTyres = int(hexstr[12:14])
+    
+    for tyre in range (1, totalTyres+1):
+        #print tyre
+        if tyre is 1:
+            if(hexstr[16:18] =="aa"):
+                
+                Tyre1No = hexstr[28:30]
+                    
+                if(int(Tyre1No) == tyre):
+
+                    Tyre1ID = hexstr[30:36]
+                    Tyre1Presure = hexstr[36:42]
+                    Tyre1Temp = hexstr[42:44]
+                    
+                    print tyre, Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp
+
+                else:
+                    Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp = None
+            else:
+                Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp = None
+        
+
+        elif tyre is 2:
+            if(hexstr[46:48] =="aa"):
+
+                Tyre2No = hexstr[58:60]
+                
+                if (int(Tyre2No) == tyre):
+                    Tyre2ID = hexstr[60:66]
+                    Tyre2Presure = hexstr[66:72]
+                    Tyre2Temp = hexstr[72:74]
+                    print tyre, Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp
+
+                else:
+                    Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp = None
+            else:
+                Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp = None
+        
+
+        elif tyre is 3:
+            if(hexstr[76:78] =="aa"):
+                    
+                Tyre3No = hexstr[88:90]
+                    
+                if(int(Tyre3No) == tyre):
+                        
+                    Tyre3ID = hexstr[90:96]
+                    Tyre3Presure = hexstr[96:102]
+                    Tyre3Temp = hexstr[102:104]
+                    print tyre, Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp
+
+                else:
+                    Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp = None
+            else:
+                Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp = None
+        
+
+        elif tyre is 4:
+            if(hexstr[106:108] =="aa"):
+                    
+                Tyre4No = hexstr[118:120]
+                if(int(Tyre4No) == tyre):
+                        
+                    Tyre4ID = hexstr[120:126]
+                    Tyre4Presure = hexstr[126:132]
+                    Tyre4Temp = hexstr[132:134]
+                    print tyre, Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp
+
+                else:
+                    Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp = None
+            else:
+                Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp = None
+        
+
+        elif tyre is 5:
+            if(hexstr[136:138] =="aa"):
+                    
+                Tyre5No = hexstr[148:150]
+                if(int(Tyre5No) == tyre):
+                        
+                    Tyre5ID = hexstr[150:156]
+                    Tyre5Presure = hexstr[156:162]
+                    Tyre5Temp = hexstr[162:164]
+                    print tyre, Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp
+                    
+                else:
+                    Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp = None
+            else:
+                Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp = None
+        
+
+        elif tyre is 6:
+            if(hexstr[166:168] =="aa"):
+                    
+                Tyre6No = hexstr[178:180]
+                    
+                if(int(Tyre6No) == tyre):
+                        
+                    Tyre6ID = hexstr[180:186]
+                    Tyre6Presure = hexstr[186:192]
+                    Tyre6Temp = hexstr[192:194]
+                    print tyre, Tyre6No, Tyre6ID, Tyre6Presure, Tyre6Temp
+
+                else:
+                    Tyre6No, Tyre6ID, Tyre6Presure, Tyre6Temp = None
+            else:
+                Tyre6No, Tyre6ID, Tyre6Presure, Tyre6Temp = None
+
+        else:
+            Tyre6No, Tyre6ID, Tyre6Presure, Tyre6Temp = None
+
+
+
+    if (totalTyres == 1):
+        
+        print tyre, Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp
+        return tyreTyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp
+    
+    elif (totalTyres == 2):
+
+        print tyre, Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp,\
+                Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp
+        return tyre, Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp, \
+                Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp
+
+    elif (totalTyres == 3):
+
+        print tyre, Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp, \
+                Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp, \
+                Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp
+        return tyre, Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp, \
+                Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp,\
+                Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp
+
+    elif (totalTyres == 4):
+
+        print tyre, Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp, \
+                Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp,\
+                Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp,\
+                Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp
+        return tyre, Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp, \
+                Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp,\
+                Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp,\
+                Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp
+
+    elif (totalTyres == 5):
+
+        print tyre, Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp, \
+                Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp,\
+                Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp,\
+                Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp,\
+                Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp
+        return tyre, Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp, \
+                Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp,\
+                Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp,\
+                Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp,\
+                Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp
+
+    elif (totalTyres == 6):
+
+        print tyre, Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp, \
+                Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp,\
+                Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp,\
+                Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp,\
+                Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp,\
+                Tyre6No, Tyre6ID, Tyre6Presure, Tyre6Temp
+        return tyre, Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp, \
+                Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp,\
+                Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp,\
+                Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp,\
+                Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp,\
+                Tyre6No, Tyre6ID, Tyre6Presure, Tyre6Temp
+        
+    #return (Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp,Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp,Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp,Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp,Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp, Tyre6No, Tyre6ID, Tyre6Presure, Tyre6Temp)    
+        
+'''
     try:
         if(data != None):
 
             hexstr = binascii.b2a_hex(data)
-            hexstr = "aaa14108630006fdaaa1410f630001ba6b09000000002daaa1410f630002ba6d6d0000000094aaa1410f63000356a8cb00000000caaaa1410f63000456a6be00000000bcaaa1410f63000556a7810000000081aaa1410f63000656a7c500000000c6"
-            
-            totalTyres = int(hexstr[12:14])
-            print totalTyres
-            for tyre in range (0, totalTyres):
+            #hexstr = "aaa14108630006fdaaa1410f630001ba6b09000000002daaa1410f630002ba6d6d0000000094aaa1410f63000356a8cb00000000caaaa1410f63000456a6be00000000bcaaa1410f63000556a7810000000081aaa1410f63000656a7c500000000c6"
+            #aaa1410f630002ba6d6d0000000094aaa1410f63000356a8cb00000000caaaa1410f63000456a6be00000000bcaaa1410f63000556a7810000000081"
+
+            hexstr = "aaa14108630005fcaaa1410f630001ba6b09000000002d"
+            string1 = "Hello"
+            #totalTyres = int(hexstr[12:14])
+            #print totalTyres
+            #for tyre in range (1, totalTyres+1):
+            #for(i in string1):
+                #print i
+
+ 
+            #if(totalTyres = 0):
                 #print totalTyres
-                if(hexstr[16:18] =="aa"):
+                #print tyre
                 
-                    Tyre1No = hexstr[28:30]
-                    Tyre1ID = hexstr[30:36]
-                    Tyre1Presure = hexstr[36:42]
-                    Tyre1Temp = hexstr[42:44]
-                    print Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp, tyre
+                if(hexstr[16:18] =="aa"):
                     
-                                        
-            
-            
-            '''
-            Tyre2No = hexstr[58:60]
-            Tyre2ID = hexstr[60:66]
-            Tyre2Presure = hexstr[66:72]
-            Tyre2Temp = hexstr[72:74]
-            print Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp
+                    Tyre1No = hexstr[28:30]
+                    
+                    if(int(Tyre1No) == tyre):
+                        Tyre1ID = hexstr[30:36]
+                        Tyre1Presure = hexstr[36:42]
+                        Tyre1Temp = hexstr[42:44]
+                        print Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp
+                    else:
+                        #print "else : ",Tyre1No,tyre
+                        Tyre1No = None
+                else:
 
-            Tyre3No = hexstr[88:90]
-            Tyre3ID = hexstr[90:96]
-            Tyre3Presure = hexstr[96:102]
-            Tyre3Temp = hexstr[102:104]
-            print Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp
+                    Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp = None
+                
+                if(hexstr[46:48] =="aa"):
+                    
+                    Tyre2No = hexstr[58:60]
+                    
+                    if (int(Tyre2No) == tyre):
+                        Tyre2ID = hexstr[60:66]
+                        Tyre2Presure = hexstr[66:72]
+                        Tyre2Temp = hexstr[72:74]
+                        print Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp
+                    else:
+                        
+                        #print "else : ",int(Tyre2No),tyre
+                        Tyre2No = None
+                else:
+                    
+                    Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp = None
+                
+                if(hexstr[76:78] =="aa"):
+                    
+                    Tyre3No = hexstr[88:90]
+                    if(int(Tyre3No) == tyre):
+                        
+                        Tyre3ID = hexstr[90:96]
+                        Tyre3Presure = hexstr[96:102]
+                        Tyre3Temp = hexstr[102:104]
+                        print Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp
+                    else:
+                        #print "else : ",int(Tyre3No),tyre
+                        Tyre3No = None
+                else:
+                    Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp = None
 
-            Tyre4No = hexstr[118:120]
-            Tyre4ID = hexstr[120:126]
-            Tyre4Presure = hexstr[126:132]
-            Tyre4Temp = hexstr[132:134]
-            print Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp
 
-            Tyre5No = hexstr[148:150]
-            Tyre5ID = hexstr[150:156]
-            Tyre5Presure = hexstr[156:162]
-            Tyre5Temp = hexstr[162:164]
-            print Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp
+                if(hexstr[106:108] =="aa"):
+                    
+                    Tyre4No = hexstr[118:120]
+                    if(int(Tyre4No) == tyre):
+                        
+                        Tyre4ID = hexstr[120:126]
+                        Tyre4Presure = hexstr[126:132]
+                        Tyre4Temp = hexstr[132:134]
+                        print Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp
+                    else:
+                        #print "else : ",int(Tyre4No),tyre
+                        Tyre4No = None
+                else:
+                    Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp = None
 
-            Tyre6No = hexstr[178:180]
-            Tyre6ID = hexstr[180:186]
-            Tyre6Presure = hexstr[186:192]
-            Tyre6Temp = hexstr[192:194]
-            print Tyre6No, Tyre6ID, Tyre6Presure, Tyre6Temp
+                if(hexstr[136:138] =="aa"):
+                    
+                    Tyre5No = hexstr[148:150]
+                    if(int(Tyre5No) == tyre):
+                        
+                        Tyre5ID = hexstr[150:156]
+                        Tyre5Presure = hexstr[156:162]
+                        Tyre5Temp = hexstr[162:164]
+                        print Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp
+                    else:
+                        #print "else : ",int(Tyre5No),tyre
+                        Tyre5No = None
+                else:
+                    Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp = None
+
+                
+                if(hexstr[166:168] =="aa"):
+                    
+                    Tyre6No = hexstr[178:180]
+                    
+                    if(int(Tyre6No) == tyre):
+                        
+                        Tyre6ID = hexstr[180:186]
+                        Tyre6Presure = hexstr[186:192]
+                        Tyre6Temp = hexstr[192:194]
+                        print Tyre6No, Tyre6ID, Tyre6Presure, Tyre6Temp
+                    else:
+                        #print "else : ",int(Tyre6No),tyre
+                        Tyre6No = None
+                else:
+                    print Tyre6No, Tyre6ID, Tyre6Presure, Tyre6Temp
+                    Tyre6No, Tyre6ID, Tyre6Presure, Tyre6Temp = None
+                    
+                
         
-            return (Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp,Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp,Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp,Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp,Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp,Tyre6No, Tyre6ID, Tyre6Presure, Tyre6Temp)
-            '''
+            return (Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp,Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp,Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp,Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp,Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp, Tyre6No, Tyre6ID, Tyre6Presure, Tyre6Temp)
+            
         else:
-            my_logger.warning("Failed - Bluetooth ParseBluetoothTyre data Not Avalable: %s", data)
+            #my_logger.warning("Failed - Bluetooth ParseBluetoothTyre data Not Avalable: %s", data)
             print("Failed - Bluetooth ParseBluetoothTyre data Not Avalable:", data)
             return None
 
     except:
         e = sys.exc_info()[0]
-        my_logger.error(e)
+        #my_logger.error(e)
         print ("Bluetooth Parse data Attribute Value not Avalable:",e)
         return None
+'''
   
 '''
 
