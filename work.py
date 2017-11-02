@@ -450,7 +450,7 @@ def Connect_Socket_Bluetooth_by_BUID( conn):
     
 
  
-
+'''
            
 def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, BluetoothSocketVariable):
 
@@ -642,16 +642,331 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
     #print DBSensorVariable[0]
     #print BluetoothSocketVariable[0]
 
+'''
 
 
+           
+def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, BluetoothSocketVariable):
+
+    print DBSensorVariable
+    print BluetoothSocketVariable
+    
+    BTtotalTyres = int(BluetoothSocketVariable[0])
+    print "Total Tyres:", BTtotalTyres
+
+    if (DBSensorVariable is not None) and (BluetoothSocketVariable is not None):
+
+        #Check the DBSensorVariable and find the DBSensorID, DBLocation 
+        for i in range(len(DBSensorVariable)):
+            
+            if(DBSensorVariable[i] == "01"):
+                _DBSensorID1 =  DBSensorVariable[i-1]
+                _DBLocation1 =  DBSensorVariable[i]
+                print "in DBSensorVariable[i] ",_DBLocation1, _DBSensorID1
+                
+            #Check 02 Location and Related Sensor ID
+            if(DBSensorVariable[i] == "02"):
+                _DBSensorID2 =  DBSensorVariable[i-1]
+                _DBLocation2 =  DBSensorVariable[i]
+                print "in DBSensorVariable[i] ",_DBLocation2, _DBSensorID2
+
+            #Check 03 Location and Related Sensor ID
+            if(DBSensorVariable[i] == "03"):
+                _DBSensorID3 =  DBSensorVariable[i-1]
+                _DBLocation3 =  DBSensorVariable[i]
+                print "in DBSensorVariable[i] ",_DBLocation3, _DBSensorID3
+
+            #Check 04 Location and Related Sensor ID
+            if(DBSensorVariable[i] == "04"):
+                _DBSensorID4 =  DBSensorVariable[i-1]
+                _DBLocation4 =  DBSensorVariable[i]
+                print "in DBSensorVariable[i] ",_DBLocation4, _DBSensorID4
+
+            #Check 05 Location and Related Sensor ID
+            if(DBSensorVariable[i] == "05"):
+                _DBSensorID5 =  DBSensorVariable[i-1]
+                _DBLocation5 =  DBSensorVariable[i]
+                print "in DBSensorVariable[i] ",_DBLocation5, _DBSensorID5
+
+            #Check 06 Location and Related Sensor ID
+            if(DBSensorVariable[i] == "06"):
+                _DBSensorID6 =  DBSensorVariable[i-1]
+                _DBLocation6 =  DBSensorVariable[i]
+                print "in DBSensorVariable[i] ",_DBLocation6, _DBSensorID6
+
+    
+    
+        #Check the BluetoothSocketVariable and find the BTSensorID, BTLocation    
+        for v in range(len(BluetoothSocketVariable)):
+
+            if(BluetoothSocketVariable[v] == "01"):
+
+                _BTLocation1 = BluetoothSocketVariable[v]
+                _BTSensorID1 = BluetoothSocketVariable[v+1]
+                print "in BluetoothSocketVariable[v] ",_BTLocation1, _BTSensorID1
+
+            if(BluetoothSocketVariable[v] == "02"):
+                        
+                _BTLocation2 = BluetoothSocketVariable[v]
+                _BTSensorID2 = BluetoothSocketVariable[v+1]
+                print "in BluetoothSocketVariable[v] ",_BTLocation2, _BTSensorID2
+
+            if(BluetoothSocketVariable[v] == "03"):
+                        
+                _BTLocation3 = BluetoothSocketVariable[v]
+                _BTSensorID3 = BluetoothSocketVariable[v+1]
+                print "in BluetoothSocketVariable[v] ",_BTLocation3, _BTSensorID3
+
+            if(BluetoothSocketVariable[v] == "04"):
+                        
+                _BTLocation4 = BluetoothSocketVariable[v]
+                _BTSensorID4 = BluetoothSocketVariable[v+1]
+                print "in BluetoothSocketVariable[v] ",_BTLocation4, _BTSensorID4
+
+            if(BluetoothSocketVariable[v] == "05"):
+                        
+                _BTLocation5 = BluetoothSocketVariable[v]
+                _BTSensorID5 = BluetoothSocketVariable[v+1]
+                print "in BluetoothSocketVariable[v] ",_BTLocation5, _BTSensorID5
+
+            if(BluetoothSocketVariable[v] == "06"):
+                        
+                _BTLocation6 = BluetoothSocketVariable[v]
+                _BTSensorID6 = BluetoothSocketVariable[v+1]
+                print "in BluetoothSocketVariable[v] ",_BTLocation6, _BTSensorID6
+
+        
+                
+        #Compare Sensor ID and location 
+        for i in range(len(DBSensorVariable)):
+            
+            for v in range(len(BluetoothSocketVariable)):                  
+            
+                #Check 01 Location and Related Sensor ID
+                if(DBSensorVariable[i] == "01"):
+                    _DBSensorID1 =  DBSensorVariable[i-1]
+                    _DBLocation1 =  DBSensorVariable[i]
+
+                    if(BluetoothSocketVariable[v] == "01"):
+                        #print "in BluetoothSocketVariable[v] ",_DBLocation1, _DBSensorID1
+
+                        _BTLocation1 = BluetoothSocketVariable[v]
+                        _BTSensorID1 = BluetoothSocketVariable[v+1]
+                        #print "in BluetoothSocketVariable[v] ",_BTLocation1, _BTSensorID1
+                        
+                        if(BluetoothSocketVariable[v+1] != None):
+                            
+                            if(_DBSensorID1 == BluetoothSocketVariable[v+1]):
+                                #print "in if ", _BTLocation1, _BTSensorID1
+                                print "BluetoothSocketVariable BTSensorID and DBSensorVariable DBSensorID are Same"
+                            elif (_DBSensorID1 != BluetoothSocketVariable[v+1]):
+                                #print "in else ", _BTLocation1, _BTSensorID1
+                                assignNewSensorToBTC(conn, _DBLocation1, _DBSensorID1)
+                        else:
+                            print "BluetoothSocketVariable SensorID Not Assigned"
+                            assignNewSensorToBTC(conn, _DBLocation1, _DBSensorID1)
+                        
+                    elif (BluetoothSocketVariable[v] == None):
+                        #print "in None",_BTLocation1, _BTSensorID1
+                        assignNewSensorToBTC(conn, _DBLocation1, _DBSensorID1)
+
+
+                #Check 02 Location and Related Sensor ID
+                if(DBSensorVariable[i] == "02"):
+                    _DBSensorID2 =  DBSensorVariable[i-1]
+                    _DBLocation2 =  DBSensorVariable[i]
+
+                    if(BluetoothSocketVariable[v] == "02"):
+                        #print "in BluetoothSocketVariable[v] ",_DBLocation2, _DBSensorID2
+
+                        _BTLocation2 = BluetoothSocketVariable[v]
+                        _BTSensorID2 = BluetoothSocketVariable[v+1]
+                        #print "in BluetoothSocketVariable[v] ",_BTLocation2, _BTSensorID2
+                        
+                        if(BluetoothSocketVariable[v+1] != None):
+                            
+                            if(_DBSensorID2 == BluetoothSocketVariable[v+1]):
+                                #print "in if ", _BTLocation2, _BTSensorID2
+                                print "BluetoothSocketVariable BTSensorID and DBSensorVariable DBSensorID are Same"
+                            elif (_DBSensorID2 != BluetoothSocketVariable[v+1]):
+                                #print "in else ", _BTLocation2, _BTSensorID2
+                                assignNewSensorToBTC(conn, _DBLocation2, _DBSensorID2)
+                        else:
+                            print "BluetoothSocketVariable SensorID Not Assigned"
+                            assignNewSensorToBTC(conn, _DBLocation2, _DBSensorID2)
+                        
+                    elif (BluetoothSocketVariable[v] == None):
+                        #print "in None",_BTLocation2, _BTSensorID2
+                        assignNewSensorToBTC(conn, _DBLocation2, _DBSensorID2)
+                        
+
+                #Check 03 Location and Related Sensor ID
+                if(DBSensorVariable[i] == "03"):
+                    _DBSensorID3 =  DBSensorVariable[i-1]
+                    _DBLocation3 =  DBSensorVariable[i]
+
+                    if(BluetoothSocketVariable[v] == "03"):
+                        #print "in BluetoothSocketVariable[v] ",_DBLocation3, _DBSensorID3
+
+                        _BTLocation3 = BluetoothSocketVariable[v]
+                        _BTSensorID3 = BluetoothSocketVariable[v+1]
+                        #print "in BluetoothSocketVariable[v] ",_BTLocation3, _BTSensorID3
+                        
+                        if(BluetoothSocketVariable[v+1] != None):
+                            
+                            if(_DBSensorID3 == BluetoothSocketVariable[v+1]):
+                                #print "in if ", _BTLocation3, _BTSensorID3
+                                print "BluetoothSocketVariable BTSensorID and DBSensorVariable DBSensorID are Same"
+                            elif (_DBSensorID3 != BluetoothSocketVariable[v+1]):
+                                #print "in else ", _BTLocation3, _BTSensorID3
+                                assignNewSensorToBTC(conn, _DBLocation3, _DBSensorID3)
+                        else:
+                            print "BluetoothSocketVariable SensorID Not Assigned"
+                            assignNewSensorToBTC(conn, _DBLocation3, _DBSensorID3)
+                        
+                    elif (BluetoothSocketVariable[v] == None):
+                        #print "in None",_BTLocation3, _BTSensorID3
+                        assignNewSensorToBTC(conn, _DBLocation3, _DBSensorID3)
+
+
+                #Check 04 Location and Related Sensor ID
+                if(DBSensorVariable[i] == "04"):
+                    _DBSensorID4 =  DBSensorVariable[i-1]
+                    _DBLocation4 =  DBSensorVariable[i]
+
+                    if(BluetoothSocketVariable[v] == "04"):
+                        #print "in BluetoothSocketVariable[v] ",_DBLocation4, _DBSensorID4
+
+                        _BTLocation4 = BluetoothSocketVariable[v]
+                        _BTSensorID4 = BluetoothSocketVariable[v+1]
+                        #print "in BluetoothSocketVariable[v] ",_BTLocation4, _BTSensorID4
+                        
+                        if(BluetoothSocketVariable[v+1] != None):
+                            
+                            if(_DBSensorID4 == BluetoothSocketVariable[v+1]):
+                                #print "in if ", _BTLocation4, _BTSensorID4
+                                print "BluetoothSocketVariable BTSensorID and DBSensorVariable DBSensorID are Same"
+                            elif (_DBSensorID4 != BluetoothSocketVariable[v+1]):
+                                #print "in else ", _BTLocation4, _BTSensorID4
+                                assignNewSensorToBTC(_conn, DBLocation4, _DBSensorID4)
+                        else:
+                            print "BluetoothSocketVariable SensorID Not Assigned"
+                            assignNewSensorToBTC(conn, _DBLocation4, _DBSensorID4)
+                        
+                    elif (BluetoothSocketVariable[v] == None):
+                        #print "in None",_BTLocation4, _BTSensorID4
+                        assignNewSensorToBTC(conn, _DBLocation4, _DBSensorID4)
+                        
+
+                #Check 05 Location and Related Sensor ID
+                if(DBSensorVariable[i] == "05"):
+                    _DBSensorID5 =  DBSensorVariable[i-1]
+                    _DBLocation5 =  DBSensorVariable[i]
+
+                    if(BluetoothSocketVariable[v] == "05"):
+                        #print "in BluetoothSocketVariable[v] ",_DBLocation5, _DBSensorID5
+
+                        _BTLocation5 = BluetoothSocketVariable[v]
+                        _BTSensorID5 = BluetoothSocketVariable[v+1]
+                        #print "in BluetoothSocketVariable[v] ",_BTLocation5, _BTSensorID5
+                        
+                        if(BluetoothSocketVariable[v+1] != None):
+                            
+                            if(_DBSensorID5 == BluetoothSocketVariable[v+1]):
+                                #print "in if ", _BTLocation5, _BTSensorID5
+                                print "BluetoothSocketVariable BTSensorID and DBSensorVariable DBSensorID are Same"
+                            elif (_DBSensorID5 != BluetoothSocketVariable[v+1]):
+                                #print "in else ", _BTLocation5, _BTSensorID5
+                                assignNewSensorToBTC(conn, _DBLocation5, _DBSensorID5)
+                        else:
+                            print "BluetoothSocketVariable SensorID Not Assigned"
+                            assignNewSensorToBTC(conn, _DBLocation5, _DBSensorID5)
+                        
+                    elif (BluetoothSocketVariable[v] == None):
+                        #print "in None",_BTLocation5, _BTSensorID5
+                        assignNewSensorToBTC(conn, _DBLocation5, _DBSensorID5)
+
+
+                #Check 06 Location and Related Sensor ID
+                if(DBSensorVariable[i] == "06"):
+                    _DBSensorID6 =  DBSensorVariable[i-1]
+                    _DBLocation6 =  DBSensorVariable[i]
+
+                    if(BluetoothSocketVariable[v] == "06"):
+                        print "in BluetoothSocketVariable[v] ",_DBLocation6, _DBSensorID6
+
+                        _BTLocation6 = BluetoothSocketVariable[v]
+                        _BTSensorID6 = BluetoothSocketVariable[v+1]
+                        #print "in BluetoothSocketVariable[v] ",_BTLocation6, _BTSensorID6
+                        
+                        if(BluetoothSocketVariable[v+1] != None):
+                            
+                            if(_DBSensorID6 == BluetoothSocketVariable[v+1]):
+                                #print "in if ", _BTLocation6, _BTSensorID6
+                                print "BluetoothSocketVariable BTSensorID and DBSensorVariable DBSensorID are Same"
+                            elif (_DBSensorID6 != BluetoothSocketVariable[v+1]):
+                                #print "in else ", _BTLocation6, _BTSensorID6
+                                assignNewSensorToBTC(conn, _DBLocation6, _DBSensorID6)
+                        else:
+                            print "BluetoothSocketVariable SensorID Not Assigned"
+                            assignNewSensorToBTC(conn, _DBLocation6, _DBSensorID6)
+                        
+                    elif (BluetoothSocketVariable[v] == None):
+                        #print "in None",_BTLocation6, _BTSensorID6
+                        assignNewSensorToBTC(conn, _DBLocation6, _DBSensorID6)
+
+
+        #Check the Missed tyre form BluetoothSocketVariable
+        MissedTyre = [i for i in DBSensorVariable if i not in BluetoothSocketVariable]
+
+        print MissedTyre
+
+        if MissedTyre is not None:
+            
+            for BTtyre in MissedTyre:
+                
+                if BTtyre == "01":
+                    assignNewSensorToBTC(conn, _DBLocation1, _DBSensorID1)
+                    print "assignNewSensorToBTC(conn, _DBLocation1, _DBSensorID1)"
+                    
+                elif BTtyre == "02":
+                    assignNewSensorToBTC(conn, _DBLocation2, _DBSensorID2)
+                    print "assignNewSensorToBTC(conn, _DBLocation2, _DBSensorID2)"
+                    
+                elif BTtyre == "03":
+                    assignNewSensorToBTC(conn, _DBLocation3, _DBSensorID3)
+                    print "assignNewSensorToBTC(conn, _DBLocation3, _DBSensorID3)"
+                    
+                elif BTtyre == "04":
+                    assignNewSensorToBTC(conn, _DBLocation4, _DBSensorID4)
+                    print "assignNewSensorToBTC(conn, _DBLocation4, _DBSensorID4)"
+                    
+                elif BTtyre == "05":
+                    assignNewSensorToBTC(conn, _DBLocation5, _DBSensorID5)
+                    print "assignNewSensorToBTC(conn, _DBLocation5, _DBSensorID5)"
+
+                elif BTtyre == "06":
+                    assignNewSensorToBTC(conn, _DBLocation6, _DBSensorID6)
+                    print "assignNewSensorToBTC(conn, _DBLocation6, _DBSensorID6)"
+
+        
+                  
+    
+    #print DBSensorVariable[0]
+    #print BluetoothSocketVariable[0]
+    
+    else:
+        print ("Failed - Bluetooth and DB Sensor Variable are None:",DBSensorVariable, BluetoothSocketVariable)
+        my_logger.warning("Failed - Bluetooth DB Sensor Variable are None: %s %s",DBSensorVariable, BluetoothSocketVariable)
+        #return None
 
 def assignNewSensorToBTC(conn, location, sensorUID):
 
     print ("assignNewSensorToBTC", location, sensorUID)
-
+    
     try:
         if(conn != None):
-            if(location, sensorUID != None):
+            if(location is not None) and (sensorUID is not None):
             
                 TPMSET = blecontroller.Tpms_Tire_SET_Position1(location, sensorUID)
 
@@ -659,7 +974,7 @@ def assignNewSensorToBTC(conn, location, sensorUID):
                     
                     print("Query the Bluetooth Controller to set TyreNo, Sensor ID")
                     data = blecontroller.Tpms_SET_TireID(conn, TPMSET)
-                    conn.close()
+                    #conn.close()
                     print data
                     return data
 
@@ -668,8 +983,8 @@ def assignNewSensorToBTC(conn, location, sensorUID):
                     print("Failed - Bluetooth Query to Send and Receive Command Not Available: %s",TMSSET)
                     return None
             else:
-                my_logger.warning("Failed - Bluetooth Query to assignNewSensorToBTC(Location, Sensor ID) not Avalable: %s, %s",L1, SID1)
-                print ("Failed - Bluetooth Query to assignNewSensorToBTC(Location, Sensor ID) not Avalable: ",L1, SID1)
+                my_logger.warning("Failed - Bluetooth Query to assignNewSensorToBTC(Location, Sensor ID) not Avalable: %s, %s",location, sensorUID)
+                print ("Failed - Bluetooth Query to assignNewSensorToBTC(Location, Sensor ID) not Avalable: ",location, sensorUID)
                 return None
         else:
             
@@ -680,8 +995,8 @@ def assignNewSensorToBTC(conn, location, sensorUID):
 
     except:
         e = sys.exc_info()[0]
-        my_logger.error("Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None: ",e, L1, SID1 )
-        print ("Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None: ",e, L1, SID1 )
+        my_logger.error("Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:%s, %s, %s ",e, location, sensorUID )
+        print ("Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None: ",e, location, sensorUID )
 
         return None
                 
@@ -689,7 +1004,7 @@ def assignNewSensorToBTC(conn, location, sensorUID):
     
 def fun():
     print("Main Function")
-   
+    
     try:
         #print("RFID Module Read TAG ID Function")
         #tag_id = rfid.RFIDUHFQueryTag()
@@ -761,16 +1076,18 @@ def fun():
         #raise   
         return None 
 
-    
+   
     
        
     #DBSensorVariable = (u'SensorUID 15', '01', u'SensorUID 14', '02', u'SensorUID 22', '03', u'SensorUID 21', '04', u'SensorUID 20', '06', u'SensorUID 19', '05')
+    #DBSensorVariable = (u'ba6b09', '01', u'ba6d6d', '02', u'56a8cb', '03', u'56a6be', '04', u'56a781', '05', u'56a7c5', '06')
     #BluetoothSocketVariable = ('01', 'ba6b09', '000000', '00', '02', 'ba6d6d', '000000', '00', '03', '56a8cb', '000000', '00', '04', '56a6be', '000000', '00', '05', '56a781', '000000', '00', '06', '56a7c5', '000000', '00')
     #DBSensorVariable = (u'ba6b09', '01', u'56a8cb', '03', u'ba6d6d', '02', u'56a6be', '04', u'56a781', '06', u'56a7c5', '05')
     #BluetoothSocketVariable = (5, '01', 'ba6b09', '000000', '00', '02', 'ba6d6d', '000000', '00', '03', '56a8cb', '000000', '00', '04', '56a6be', '000000', '00', '05', '56a781', '000000', '00')
+    #BluetoothSocketVariable = ( )
     #compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(DBSensorVariable, BluetoothSocketVariable)
     
-    print("After While Loop Connect socket RFCOMM to Bluetooth Controller by BUID")
+    #print("After While Loop Connect socket RFCOMM to Bluetooth Controller by BUID")
     #bleConn.close()
 
 if __name__ == "__main__":  

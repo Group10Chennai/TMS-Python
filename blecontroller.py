@@ -86,7 +86,7 @@ def Tpms_Tire_SET_Position1(L1, SID1):
 
     try:  
     
-        if(L1.strip(), SID1.strip() != None):
+        if(L1, SID1 != None):
             TpmsSET1.append(L1)
             TpmsSET1.append(SID1[0:2])
             TpmsSET1.append(SID1[2:4])
@@ -141,7 +141,7 @@ def Tpms_Tire_SET_Position1(L1, SID1):
 def Tpms_SET_TireID(conn, TPMSET):
 
     #TPMSID1 = TpmsTireDataPosition()
-    print binascii.b2a_hex(TPMSET)
+    #print binascii.b2a_hex(TPMSET)
     
     print "performing Bluetooth Communication..."
     #s.send(TPMSID1)
@@ -150,7 +150,9 @@ def Tpms_SET_TireID(conn, TPMSET):
     #s.send(my_hex)
 
     if(conn != None):
+        
         if(TPMSET != None):
+            #print "TPMSET :",binascii.b2a_hex(TPMSET)
         
             while(True):
                 try:
@@ -160,36 +162,37 @@ def Tpms_SET_TireID(conn, TPMSET):
 
                     data = conn.recv(1024)
 
-                    print binascii.b2a_hex(data)
-                    RcvResponse =  hexstr[10:12]
-                    #print RcvResponse
+                    hex_data = binascii.b2a_hex(data)
+                    RcvResponse =  hex_data[10:12]
+                    print RcvResponse
                     
                     if (RcvResponse == "aa"):
-                        return data
+                        print binascii.b2a_hex(data)
+                        return RcvResponse
                         break;
                     else:
                         print ("Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa:",data)
                         my_logger.warning("Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: %s",data)
-                        conn.close()
+                        #conn.close()
                         return None
                    
                     
                 except bluetooth.btcommon.BluetoothError as e:
                     print ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError",e)
                     my_logger.error ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError",e)  
-                    conn.close()
+                    #conn.close()
                     time.sleep(2)
                     return None
                     pass
         else:
             print ("Failed - Bluetooth Send and Receive Communication Query Command is None:",TPMSET)
             my_logger.warning("Failed - Bluetooth Send and Receive Communication Query Command is None: %s",TPMSET)
-            conn.close()
+            #conn.close()
             return None
     else:
         print ("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None:",TPMSET)
         my_logger.warning("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None: %s",TPMSET)
-        conn.close()
+        #conn.close()
         return None
     
     
@@ -562,17 +565,20 @@ def ParseBluetoothTyre(data):
                 Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp
 
     elif (totalTyres == 5):
-
+       
         print tyre, Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp, \
                 Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp,\
                 Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp,\
                 Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp,\
-                Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp
+                Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp,\
+                Tyre6No, Tyre6ID, Tyre6Presure, Tyre6Temp
         return tyre, Tyre1No, Tyre1ID, Tyre1Presure, Tyre1Temp, \
                 Tyre2No, Tyre2ID, Tyre2Presure, Tyre2Temp,\
                 Tyre3No, Tyre3ID, Tyre3Presure, Tyre3Temp,\
                 Tyre4No, Tyre4ID, Tyre4Presure, Tyre4Temp,\
-                Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp
+                Tyre5No, Tyre5ID, Tyre5Presure, Tyre5Temp,\
+                Tyre6No, Tyre6ID, Tyre6Presure, Tyre6Temp
+                
 
     elif (totalTyres == 6):
 

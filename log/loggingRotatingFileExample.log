@@ -949,3 +949,345 @@
 2017-10-26 17:38:32,146 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
 2017-10-26 17:38:32,146 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
 2017-10-26 17:38:32,146 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-27 11:28:52,644 :INFO : Create a connection to DB  :
+2017-10-27 11:28:52,644 :INFO : Create a connection to DB  :
+2017-10-27 11:28:52,644 :INFO : Create a connection to DB  :
+2017-10-27 11:28:52,688 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-27 11:28:52,688 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-27 11:28:52,688 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-27 11:29:33,852 :INFO : Create a connection to DB  :
+2017-10-27 11:29:33,852 :INFO : Create a connection to DB  :
+2017-10-27 11:29:33,852 :INFO : Create a connection to DB  :
+2017-10-27 11:29:33,879 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-27 11:29:33,879 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-27 11:29:33,879 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 14:33:46,367 :INFO : Create a connection to DB  :
+2017-10-30 14:33:46,367 :INFO : Create a connection to DB  :
+2017-10-30 14:33:46,367 :INFO : Create a connection to DB  :
+2017-10-30 14:33:46,398 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 14:33:46,398 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 14:33:46,398 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 14:33:52,005 :ERROR :Failed - Trying to connect (112, 'Host is down') :
+2017-10-30 14:33:52,005 :ERROR :Failed - Trying to connect (112, 'Host is down') :
+2017-10-30 14:33:52,005 :ERROR :Failed - Trying to connect (112, 'Host is down') :
+2017-10-30 14:33:54,019 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-30 14:33:54,019 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-30 14:33:54,019 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-30 14:37:07,484 :INFO : Create a connection to DB  :
+2017-10-30 14:37:07,484 :INFO : Create a connection to DB  :
+2017-10-30 14:37:07,484 :INFO : Create a connection to DB  :
+2017-10-30 14:37:07,512 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 14:37:07,512 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 14:37:07,512 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 14:37:13,120 :ERROR :Failed - Trying to connect (112, 'Host is down') :
+2017-10-30 14:37:13,120 :ERROR :Failed - Trying to connect (112, 'Host is down') :
+2017-10-30 14:37:13,120 :ERROR :Failed - Trying to connect (112, 'Host is down') :
+2017-10-30 14:37:15,126 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-30 14:37:15,126 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-30 14:37:15,126 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-30 18:04:40,629 :INFO : Create a connection to DB  :
+2017-10-30 18:04:40,629 :INFO : Create a connection to DB  :
+2017-10-30 18:04:40,629 :INFO : Create a connection to DB  :
+2017-10-30 18:04:40,658 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:04:40,658 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:04:40,658 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:04:46,252 :ERROR :Failed - Trying to connect (112, 'Host is down') :
+2017-10-30 18:04:46,252 :ERROR :Failed - Trying to connect (112, 'Host is down') :
+2017-10-30 18:04:46,252 :ERROR :Failed - Trying to connect (112, 'Host is down') :
+2017-10-30 18:04:48,258 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-30 18:04:48,258 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-30 18:04:48,258 :WARNING :Bluetooth ID not connected or Host Not Available or None Function :  :
+2017-10-30 18:06:00,887 :INFO : Create a connection to DB  :
+2017-10-30 18:06:00,887 :INFO : Create a connection to DB  :
+2017-10-30 18:06:00,887 :INFO : Create a connection to DB  :
+2017-10-30 18:06:00,917 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:06:00,917 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:06:00,917 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:08:36,533 :INFO : Create a connection to DB  :
+2017-10-30 18:08:36,533 :INFO : Create a connection to DB  :
+2017-10-30 18:08:36,533 :INFO : Create a connection to DB  :
+2017-10-30 18:08:36,561 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:08:36,561 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:08:36,561 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:09:15,666 :INFO : Create a connection to DB  :
+2017-10-30 18:09:15,666 :INFO : Create a connection to DB  :
+2017-10-30 18:09:15,666 :INFO : Create a connection to DB  :
+2017-10-30 18:09:15,693 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:09:15,693 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:09:15,693 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:23:03,001 :INFO : Create a connection to DB  :
+2017-10-30 18:23:03,001 :INFO : Create a connection to DB  :
+2017-10-30 18:23:03,001 :INFO : Create a connection to DB  :
+2017-10-30 18:23:03,029 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:23:03,029 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:23:03,029 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:25:00,443 :INFO : Create a connection to DB  :
+2017-10-30 18:25:00,443 :INFO : Create a connection to DB  :
+2017-10-30 18:25:00,443 :INFO : Create a connection to DB  :
+2017-10-30 18:25:00,474 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:25:00,474 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:25:00,474 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:26:14,749 :INFO : Create a connection to DB  :
+2017-10-30 18:26:14,749 :INFO : Create a connection to DB  :
+2017-10-30 18:26:14,749 :INFO : Create a connection to DB  :
+2017-10-30 18:26:14,779 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:26:14,779 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:26:14,779 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:26:23,137 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 01, ba6b09  :
+2017-10-30 18:26:23,137 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 01, ba6b09  :
+2017-10-30 18:26:23,137 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 01, ba6b09  :
+2017-10-30 18:26:24,321 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 01, ba6b09  :
+2017-10-30 18:26:24,321 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 01, ba6b09  :
+2017-10-30 18:26:24,321 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 01, ba6b09  :
+2017-10-30 18:26:25,502 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 01, ba6b09  :
+2017-10-30 18:26:25,502 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 01, ba6b09  :
+2017-10-30 18:26:25,502 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 01, ba6b09  :
+2017-10-30 18:26:26,714 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 01, ba6b09  :
+2017-10-30 18:26:26,714 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 01, ba6b09  :
+2017-10-30 18:26:26,714 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 01, ba6b09  :
+2017-10-30 18:26:27,937 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 02, ba6d6d  :
+2017-10-30 18:26:27,937 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 02, ba6d6d  :
+2017-10-30 18:26:27,937 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 02, ba6d6d  :
+2017-10-30 18:26:29,124 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 02, ba6d6d  :
+2017-10-30 18:26:29,124 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 02, ba6d6d  :
+2017-10-30 18:26:29,124 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 02, ba6d6d  :
+2017-10-30 18:26:30,316 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 02, ba6d6d  :
+2017-10-30 18:26:30,316 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 02, ba6d6d  :
+2017-10-30 18:26:30,316 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 02, ba6d6d  :
+2017-10-30 18:26:31,521 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 02, ba6d6d  :
+2017-10-30 18:26:31,521 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 02, ba6d6d  :
+2017-10-30 18:26:31,521 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 02, ba6d6d  :
+2017-10-30 18:26:32,740 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 03, 56a8cb  :
+2017-10-30 18:26:32,740 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 03, 56a8cb  :
+2017-10-30 18:26:32,740 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 03, 56a8cb  :
+2017-10-30 18:26:33,927 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 03, 56a8cb  :
+2017-10-30 18:26:33,927 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 03, 56a8cb  :
+2017-10-30 18:26:33,927 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 03, 56a8cb  :
+2017-10-30 18:26:35,120 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 03, 56a8cb  :
+2017-10-30 18:26:35,120 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 03, 56a8cb  :
+2017-10-30 18:26:35,120 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 03, 56a8cb  :
+2017-10-30 18:26:36,308 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 03, 56a8cb  :
+2017-10-30 18:26:36,308 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 03, 56a8cb  :
+2017-10-30 18:26:36,308 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 03, 56a8cb  :
+2017-10-30 18:26:37,520 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 04, 56a6be  :
+2017-10-30 18:26:37,520 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 04, 56a6be  :
+2017-10-30 18:26:37,520 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 04, 56a6be  :
+2017-10-30 18:26:38,820 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 04, 56a6be  :
+2017-10-30 18:26:38,820 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 04, 56a6be  :
+2017-10-30 18:26:38,820 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 04, 56a6be  :
+2017-10-30 18:26:40,015 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 04, 56a6be  :
+2017-10-30 18:26:40,015 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 04, 56a6be  :
+2017-10-30 18:26:40,015 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 04, 56a6be  :
+2017-10-30 18:26:41,209 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 04, 56a6be  :
+2017-10-30 18:26:41,209 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 04, 56a6be  :
+2017-10-30 18:26:41,209 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 04, 56a6be  :
+2017-10-30 18:26:42,420 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a781  :
+2017-10-30 18:26:42,420 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a781  :
+2017-10-30 18:26:42,420 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a781  :
+2017-10-30 18:26:43,611 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a781  :
+2017-10-30 18:26:43,611 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a781  :
+2017-10-30 18:26:43,611 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a781  :
+2017-10-30 18:26:44,797 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a781  :
+2017-10-30 18:26:44,797 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a781  :
+2017-10-30 18:26:44,797 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a781  :
+2017-10-30 18:26:45,979 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a781  :
+2017-10-30 18:26:45,979 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a781  :
+2017-10-30 18:26:45,979 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a781  :
+2017-10-30 18:26:47,162 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a7c5  :
+2017-10-30 18:26:47,162 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a7c5  :
+2017-10-30 18:26:47,162 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a7c5  :
+2017-10-30 18:26:48,347 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a7c5  :
+2017-10-30 18:26:48,347 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a7c5  :
+2017-10-30 18:26:48,347 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a7c5  :
+2017-10-30 18:26:49,535 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a7c5  :
+2017-10-30 18:26:49,535 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a7c5  :
+2017-10-30 18:26:49,535 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a7c5  :
+2017-10-30 18:26:50,703 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.KeyboardInterrupt'>, 06, 56a7c5  :
+2017-10-30 18:26:50,703 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.KeyboardInterrupt'>, 06, 56a7c5  :
+2017-10-30 18:26:50,703 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.KeyboardInterrupt'>, 06, 56a7c5  :
+2017-10-30 18:29:55,100 :INFO : Create a connection to DB  :
+2017-10-30 18:29:55,100 :INFO : Create a connection to DB  :
+2017-10-30 18:29:55,100 :INFO : Create a connection to DB  :
+2017-10-30 18:29:55,134 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:29:55,134 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-30 18:29:55,134 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-31 13:54:08,057 :INFO : Create a connection to DB  :
+2017-10-31 13:54:08,057 :INFO : Create a connection to DB  :
+2017-10-31 13:54:08,057 :INFO : Create a connection to DB  :
+2017-10-31 13:54:08,086 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-31 13:54:08,086 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-10-31 13:54:08,086 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 13:02:31,338 :INFO : Create a connection to DB  :
+2017-11-01 13:02:31,338 :INFO : Create a connection to DB  :
+2017-11-01 13:02:31,338 :INFO : Create a connection to DB  :
+2017-11-01 13:02:31,382 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 13:02:31,382 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 13:02:31,382 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 13:03:46,579 :INFO : Create a connection to DB  :
+2017-11-01 13:03:46,579 :INFO : Create a connection to DB  :
+2017-11-01 13:03:46,579 :INFO : Create a connection to DB  :
+2017-11-01 13:03:46,608 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 13:03:46,608 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 13:03:46,608 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 13:03:55,598 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a781  :
+2017-11-01 13:03:55,598 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a781  :
+2017-11-01 13:03:55,598 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a781  :
+2017-11-01 13:03:56,784 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a7c5  :
+2017-11-01 13:03:56,784 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a7c5  :
+2017-11-01 13:03:56,784 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a7c5  :
+2017-11-01 13:46:32,719 :INFO : Create a connection to DB  :
+2017-11-01 13:46:32,719 :INFO : Create a connection to DB  :
+2017-11-01 13:46:32,719 :INFO : Create a connection to DB  :
+2017-11-01 13:46:32,748 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 13:46:32,748 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 13:46:32,748 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 13:58:09,705 :INFO : Create a connection to DB  :
+2017-11-01 13:58:09,705 :INFO : Create a connection to DB  :
+2017-11-01 13:58:09,705 :INFO : Create a connection to DB  :
+2017-11-01 13:58:09,737 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 13:58:09,737 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 13:58:09,737 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 13:58:19,628 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a781  :
+2017-11-01 13:58:19,628 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a781  :
+2017-11-01 13:58:19,628 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a781  :
+2017-11-01 13:58:20,871 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a7c5  :
+2017-11-01 13:58:20,871 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a7c5  :
+2017-11-01 13:58:20,871 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a7c5  :
+2017-11-01 14:22:21,867 :INFO : Create a connection to DB  :
+2017-11-01 14:22:21,867 :INFO : Create a connection to DB  :
+2017-11-01 14:22:21,867 :INFO : Create a connection to DB  :
+2017-11-01 14:22:21,889 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 14:22:21,889 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 14:22:21,889 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 14:24:09,805 :INFO : Create a connection to DB  :
+2017-11-01 14:24:09,805 :INFO : Create a connection to DB  :
+2017-11-01 14:24:09,805 :INFO : Create a connection to DB  :
+2017-11-01 14:24:09,834 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 14:24:09,834 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 14:24:09,834 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 14:24:18,971 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a781  :
+2017-11-01 14:24:18,971 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a781  :
+2017-11-01 14:24:18,971 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a781  :
+2017-11-01 14:24:20,219 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a7c5  :
+2017-11-01 14:24:20,219 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a7c5  :
+2017-11-01 14:24:20,219 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a7c5  :
+2017-11-01 14:39:08,082 :INFO : Create a connection to DB  :
+2017-11-01 14:39:08,082 :INFO : Create a connection to DB  :
+2017-11-01 14:39:08,082 :INFO : Create a connection to DB  :
+2017-11-01 14:39:08,117 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 14:39:08,117 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 14:39:08,117 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 14:40:18,214 :INFO : Create a connection to DB  :
+2017-11-01 14:40:18,214 :INFO : Create a connection to DB  :
+2017-11-01 14:40:18,214 :INFO : Create a connection to DB  :
+2017-11-01 14:40:18,251 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 14:40:18,251 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 14:40:18,251 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 14:40:26,992 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a781  :
+2017-11-01 14:40:26,992 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a781  :
+2017-11-01 14:40:26,992 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a781  :
+2017-11-01 14:40:28,308 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a7c5  :
+2017-11-01 14:40:28,308 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a7c5  :
+2017-11-01 14:40:28,308 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a7c5  :
+2017-11-01 15:14:59,607 :INFO : Create a connection to DB  :
+2017-11-01 15:14:59,607 :INFO : Create a connection to DB  :
+2017-11-01 15:14:59,607 :INFO : Create a connection to DB  :
+2017-11-01 15:14:59,635 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 15:14:59,635 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 15:14:59,635 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 15:16:10,919 :INFO : Create a connection to DB  :
+2017-11-01 15:16:10,919 :INFO : Create a connection to DB  :
+2017-11-01 15:16:10,919 :INFO : Create a connection to DB  :
+2017-11-01 15:16:10,951 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 15:16:10,951 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 15:16:10,951 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 15:16:19,003 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a781  :
+2017-11-01 15:16:19,003 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a781  :
+2017-11-01 15:16:19,003 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a781  :
+2017-11-01 15:16:20,219 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a7c5  :
+2017-11-01 15:16:20,219 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a7c5  :
+2017-11-01 15:16:20,219 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a7c5  :
+2017-11-01 15:18:15,593 :INFO : Create a connection to DB  :
+2017-11-01 15:18:15,593 :INFO : Create a connection to DB  :
+2017-11-01 15:18:15,593 :INFO : Create a connection to DB  :
+2017-11-01 15:18:15,623 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 15:18:15,623 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 15:18:15,623 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 15:19:30,153 :INFO : Create a connection to DB  :
+2017-11-01 15:19:30,153 :INFO : Create a connection to DB  :
+2017-11-01 15:19:30,153 :INFO : Create a connection to DB  :
+2017-11-01 15:19:30,196 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 15:19:30,196 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 15:19:30,196 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 15:19:38,732 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a781  :
+2017-11-01 15:19:38,732 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a781  :
+2017-11-01 15:19:38,732 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a781  :
+2017-11-01 15:19:39,965 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a7c5  :
+2017-11-01 15:19:39,965 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a7c5  :
+2017-11-01 15:19:39,965 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a7c5  :
+2017-11-01 16:52:57,129 :INFO : Create a connection to DB  :
+2017-11-01 16:52:57,129 :INFO : Create a connection to DB  :
+2017-11-01 16:52:57,129 :INFO : Create a connection to DB  :
+2017-11-01 16:52:57,158 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 16:52:57,158 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 16:52:57,158 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 16:54:58,277 :INFO : Create a connection to DB  :
+2017-11-01 16:54:58,277 :INFO : Create a connection to DB  :
+2017-11-01 16:54:58,277 :INFO : Create a connection to DB  :
+2017-11-01 16:54:58,319 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 16:54:58,319 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 16:54:58,319 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 16:55:07,350 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a781  :
+2017-11-01 16:55:07,350 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a781  :
+2017-11-01 16:55:07,350 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 06, 56a781  :
+2017-11-01 16:55:08,608 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a7c5  :
+2017-11-01 16:55:08,608 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a7c5  :
+2017-11-01 16:55:08,608 :ERROR :Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:<type 'exceptions.NameError'>, 05, 56a7c5  :
+2017-11-01 17:04:58,619 :INFO : Create a connection to DB  :
+2017-11-01 17:04:58,619 :INFO : Create a connection to DB  :
+2017-11-01 17:04:58,619 :INFO : Create a connection to DB  :
+2017-11-01 17:04:58,664 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 17:04:58,664 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 17:04:58,664 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 17:06:04,633 :INFO : Create a connection to DB  :
+2017-11-01 17:06:04,633 :INFO : Create a connection to DB  :
+2017-11-01 17:06:04,633 :INFO : Create a connection to DB  :
+2017-11-01 17:06:04,661 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 17:06:04,661 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 17:06:04,661 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 17:06:13,390 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª¡Acª  :
+2017-11-01 17:06:13,390 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª¡Acª  :
+2017-11-01 17:06:13,390 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª¡Acª  :
+2017-11-01 17:06:14,622 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª¡Acª  :
+2017-11-01 17:06:14,622 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª¡Acª  :
+2017-11-01 17:06:14,622 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª¡Acª  :
+2017-11-01 17:47:25,441 :INFO : Create a connection to DB  :
+2017-11-01 17:47:25,441 :INFO : Create a connection to DB  :
+2017-11-01 17:47:25,441 :INFO : Create a connection to DB  :
+2017-11-01 17:47:25,469 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 17:47:25,469 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-01 17:47:25,469 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-02 17:08:15,465 :INFO : Create a connection to DB  :
+2017-11-02 17:08:15,465 :INFO : Create a connection to DB  :
+2017-11-02 17:08:15,465 :INFO : Create a connection to DB  :
+2017-11-02 17:08:15,535 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-02 17:08:15,535 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-02 17:08:15,535 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-02 17:17:00,237 :INFO : Create a connection to DB  :
+2017-11-02 17:17:00,237 :INFO : Create a connection to DB  :
+2017-11-02 17:17:00,237 :INFO : Create a connection to DB  :
+2017-11-02 17:17:00,266 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-02 17:17:00,266 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-02 17:17:00,266 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-02 17:17:45,163 :INFO : Create a connection to DB  :
+2017-11-02 17:17:45,163 :INFO : Create a connection to DB  :
+2017-11-02 17:17:45,163 :INFO : Create a connection to DB  :
+2017-11-02 17:17:45,192 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-02 17:17:45,192 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-02 17:17:45,192 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-02 17:18:14,720 :INFO : Create a connection to DB  :
+2017-11-02 17:18:14,720 :INFO : Create a connection to DB  :
+2017-11-02 17:18:14,720 :INFO : Create a connection to DB  :
+2017-11-02 17:18:14,750 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-02 17:18:14,750 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-02 17:18:14,750 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
