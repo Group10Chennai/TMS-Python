@@ -31,7 +31,6 @@ TID1 = "e2000016351702081640767f"
 #RFID Query Tag
 def RFIDUHFQueryTag(): 
 
-    print("Hello World")
     QueryTag = "040001DB4B"
 
     my_hex = QueryTag.decode('hex')
@@ -49,7 +48,7 @@ def RFIDUHFQueryTag():
     #print data
     
     if(data[3] == '\x01'):
-        print "H1111111111"
+       
         
         #rfid = binascii.b2a_hex(data)
         rfidTID_hex = binascii.b2a_hex(data)
