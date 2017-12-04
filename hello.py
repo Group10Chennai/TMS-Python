@@ -1,8 +1,10 @@
+
+
+
 ################################################################
 # TPMS Integration -09-2017
 ################################################################
 
-import serial
 import binascii
 import sys
 import bluetooth
@@ -19,7 +21,7 @@ import rfid
 import blecontroller
 from blecontroller import *
 import display
-#import push
+import serialJava
 
 import datetime
 
@@ -29,7 +31,8 @@ import logging.handlers
 
 
 
-LOG_FILENAME = '/home/pi/Documents/TMS-Git/TMS-Python/log/loggingRotatingFileExample.log'
+#LOG_FILENAME = '/home/pi/Documents/TMS-Git/TMS-Python/log/loggingRotatingFileExample.log'
+LOG_FILENAME = '/home/group10/loggingRotatingFileExample.log'
 
 my_logger = logging.getLogger('myapp')
 hdlr = logging.FileHandler(LOG_FILENAME)
@@ -62,12 +65,19 @@ BluetoothSocketVariable= []
 DBSensorVariable=[]
 
 
-database = "/opt/Aquire/sqlite/TPMS.db"
+#database = "/opt/Aquire/sqlite/TPMS.db"
+database = "/opt/JavaServices/sqlite/TPMS.db"
 TID1 = "e2000016351702081640767f"
 tag_id = "e2000016351702081640767f" #24
 #vehID = 32
 BUID = '00:13:EF:C0:02:1E' #17
 
+def run(rfid):
+	print "inside Search 1", rfid
+	if rfid != None:
+		print "inside Search 2", rfid
+
+	return "Im python reply "+ rfid
 
 
 # Start Query the DB with RFID TID
@@ -81,8 +91,6 @@ def db_DeviceDetails_by_rfiduid(conn, tag_id):
         #vehDetail = db.select_DeviceDetails_by_rfiduid(conn, "RFID 1")
 
         if(conn != None): 
-            #with conn:
-            if conn:
                 vehDetail = db.select_DeviceDetails_by_rfiduid(conn, tag_id)
                 if (vehDetail != None):
                     #Check vehID 
@@ -212,13 +220,10 @@ def db_DeviceDetails_by_vehID(DBconn, vehID1):
     DBTyreDetail = []
 
     try:
-        
-        #with DBconn:
-        if DBconn:
-            TyreDetail = db.select_TyreDetails_by_VehId(DBconn, vehID1)
+        TyreDetail = db.select_TyreDetails_by_VehId(DBconn, vehID1)
 
-            DBtotalTyres = len(TyreDetail)
-            print DBtotalTyres
+        DBtotalTyres = len(TyreDetail)
+        print DBtotalTyres
 
         if TyreDetail is not None:
             for DBi in range(1, DBtotalTyres+1):
@@ -942,14 +947,13 @@ dispCommand = "Sarojini Nagar Depot"
 #function for java
 def javaFun_start(tag_id):
     tag_id1 = tag_id
-    print "Work.py is executing"
     print tag_id1
 
 def javaFun_end():
     tag_id1 = None
     print tag_id1
 
-def fun_main():
+def fun():
     print("Main Function")
     
     try:
@@ -1039,10 +1043,9 @@ def fun_main():
                         display.displayLEDBoard(vehName, dispCommand, date_time, dispVar)
 
                         #dbConn = db.create_db_connection(database)
-                        #with dbConn: 
-                        if dbConn: 
+
                                
-                            db.update_Latest_data_by_VehId(dbConn, int(vehID), date_time, mylist)
+                        db.update_Latest_data_by_VehId(dbConn, int(vehID), date_time, mylist)
 
                         dbConn.close()
                                 
@@ -1119,6 +1122,8 @@ if __name__ == "__main__":
         #fun()
     #printit()
 
-    fun_main()
+    fun()
     
         
+
+

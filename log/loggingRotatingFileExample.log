@@ -2305,3 +2305,51 @@
 2017-11-21 17:42:54,804 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
 2017-11-21 17:42:54,804 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
 2017-11-21 17:42:54,804 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-27 12:34:33,956 :INFO : Create a connection to DB  :
+2017-11-27 12:34:33,956 :INFO : Create a connection to DB  :
+2017-11-27 12:34:33,956 :INFO : Create a connection to DB  :
+2017-11-27 12:34:33,956 :INFO : Create a connection to DB  :
+2017-11-27 12:34:33,977 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-27 12:34:33,977 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-27 12:34:33,977 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-27 12:34:33,977 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-27 13:14:05,419 :INFO : Create a connection to DB  :
+2017-11-27 13:14:05,419 :INFO : Create a connection to DB  :
+2017-11-27 13:14:05,419 :INFO : Create a connection to DB  :
+2017-11-27 13:14:05,419 :INFO : Create a connection to DB  :
+2017-11-27 13:14:05,448 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-27 13:14:05,448 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-27 13:14:05,448 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-11-27 13:14:05,448 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-01 15:49:09,530 :INFO : Create a connection to DB  :
+2017-12-01 15:49:09,530 :INFO : Create a connection to DB  :
+2017-12-01 15:49:09,530 :INFO : Create a connection to DB  :
+2017-12-01 15:49:09,530 :INFO : Create a connection to DB  :
+2017-12-01 15:49:09,553 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-01 15:49:09,553 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-01 15:49:09,553 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-01 15:49:09,553 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 10:21:33,442 :INFO : Create a connection to DB  :
+2017-12-04 10:21:33,442 :INFO : Create a connection to DB  :
+2017-12-04 10:21:33,442 :INFO : Create a connection to DB  :
+2017-12-04 10:21:33,442 :INFO : Create a connection to DB  :
+2017-12-04 10:21:33,461 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 10:21:33,461 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 10:21:33,461 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 10:21:33,461 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 10:21:42,391 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª :
+2017-12-04 10:21:42,391 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª :
+2017-12-04 10:21:42,391 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª :
+2017-12-04 10:21:42,391 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª :
+2017-12-04 10:21:42,704 :WARNING :Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: 04, 56a6be, None :
+2017-12-04 10:21:42,704 :WARNING :Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: 04, 56a6be, None :
+2017-12-04 10:21:42,704 :WARNING :Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: 04, 56a6be, None :
+2017-12-04 10:21:42,704 :WARNING :Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: 04, 56a6be, None :
+2017-12-04 10:21:43,709 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ¡Acª ª¡Acª  :
+2017-12-04 10:21:43,709 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ¡Acª ª¡Acª  :
+2017-12-04 10:21:43,709 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ¡Acª ª¡Acª  :
+2017-12-04 10:21:43,709 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ¡Acª ª¡Acª  :
+2017-12-04 10:21:44,011 :WARNING :Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: 05, 56a781, None :
+2017-12-04 10:21:44,011 :WARNING :Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: 05, 56a781, None :
+2017-12-04 10:21:44,011 :WARNING :Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: 05, 56a781, None :
+2017-12-04 10:21:44,011 :WARNING :Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: 05, 56a781, None :
