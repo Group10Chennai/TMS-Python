@@ -2353,3 +2353,411 @@
 2017-12-04 10:21:44,011 :WARNING :Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: 05, 56a781, None :
 2017-12-04 10:21:44,011 :WARNING :Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: 05, 56a781, None :
 2017-12-04 10:21:44,011 :WARNING :Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: 05, 56a781, None :
+2017-12-04 15:54:35,104 :INFO : Create a connection to DB  :
+2017-12-04 15:54:35,104 :INFO : Create a connection to DB  :
+2017-12-04 15:54:35,104 :INFO : Create a connection to DB  :
+2017-12-04 15:54:35,104 :INFO : Create a connection to DB  :
+2017-12-04 15:54:35,143 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 15:54:35,143 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 15:54:35,143 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 15:54:35,143 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 16:53:47,287 :INFO : Create a connection to DB  :
+2017-12-04 16:53:47,287 :INFO : Create a connection to DB  :
+2017-12-04 16:53:47,287 :INFO : Create a connection to DB  :
+2017-12-04 16:53:47,287 :INFO : Create a connection to DB  :
+2017-12-04 16:53:47,350 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 16:53:47,350 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 16:53:47,350 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 16:53:47,350 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 16:53:52,790 :ERROR :Failed - Trying to connect (13, 'Permission denied') :
+2017-12-04 16:53:52,790 :ERROR :Failed - Trying to connect (13, 'Permission denied') :
+2017-12-04 16:53:52,790 :ERROR :Failed - Trying to connect (13, 'Permission denied') :
+2017-12-04 16:53:52,790 :ERROR :Failed - Trying to connect (13, 'Permission denied') :
+2017-12-04 17:21:52,461 :INFO : Create a connection to DB  :
+2017-12-04 17:21:52,461 :INFO : Create a connection to DB  :
+2017-12-04 17:21:52,461 :INFO : Create a connection to DB  :
+2017-12-04 17:21:52,461 :INFO : Create a connection to DB  :
+2017-12-04 17:21:52,497 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 17:21:52,497 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 17:21:52,497 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 17:21:52,497 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 18:09:43,298 :INFO : Create a connection to DB  :
+2017-12-04 18:09:43,298 :INFO : Create a connection to DB  :
+2017-12-04 18:09:43,298 :INFO : Create a connection to DB  :
+2017-12-04 18:09:43,298 :INFO : Create a connection to DB  :
+2017-12-04 18:09:43,332 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 18:09:43,332 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 18:09:43,332 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 18:09:43,332 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 18:15:04,930 :INFO : Create a connection to DB  :
+2017-12-04 18:15:04,930 :INFO : Create a connection to DB  :
+2017-12-04 18:15:04,930 :INFO : Create a connection to DB  :
+2017-12-04 18:15:04,930 :INFO : Create a connection to DB  :
+2017-12-04 18:15:04,967 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 18:15:04,967 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 18:15:04,967 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-04 18:15:04,967 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 10:56:13,002 :INFO : Create a connection to DB  :
+2017-12-05 10:56:13,002 :INFO : Create a connection to DB  :
+2017-12-05 10:56:13,002 :INFO : Create a connection to DB  :
+2017-12-05 10:56:13,002 :INFO : Create a connection to DB  :
+2017-12-05 10:56:13,039 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 10:56:13,039 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 10:56:13,039 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 10:56:13,039 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 10:56:27,458 :INFO : Create a connection to DB  :
+2017-12-05 10:56:27,458 :INFO : Create a connection to DB  :
+2017-12-05 10:56:27,458 :INFO : Create a connection to DB  :
+2017-12-05 10:56:27,458 :INFO : Create a connection to DB  :
+2017-12-05 10:56:27,487 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 10:56:27,487 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 10:56:27,487 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 10:56:27,487 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 10:56:31,321 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª :
+2017-12-05 10:56:31,321 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª :
+2017-12-05 10:56:31,321 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª :
+2017-12-05 10:56:31,321 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª :
+2017-12-05 10:56:31,626 :WARNING :Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: 02, ba6d6d, None :
+2017-12-05 10:56:31,626 :WARNING :Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: 02, ba6d6d, None :
+2017-12-05 10:56:31,626 :WARNING :Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: 02, ba6d6d, None :
+2017-12-05 10:56:31,626 :WARNING :Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: 02, ba6d6d, None :
+2017-12-05 10:56:32,815 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ¡Acª ª¡Acª  :
+2017-12-05 10:56:32,815 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ¡Acª ª¡Acª  :
+2017-12-05 10:56:32,815 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ¡Acª ª¡Acª  :
+2017-12-05 10:56:32,815 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ¡Acª ª¡Acª  :
+2017-12-05 10:56:33,118 :WARNING :Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: 03, 56a8cb, None :
+2017-12-05 10:56:33,118 :WARNING :Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: 03, 56a8cb, None :
+2017-12-05 10:56:33,118 :WARNING :Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: 03, 56a8cb, None :
+2017-12-05 10:56:33,118 :WARNING :Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: 03, 56a8cb, None :
+2017-12-05 10:56:39,963 :INFO : Create a connection to DB  :
+2017-12-05 10:56:39,963 :INFO : Create a connection to DB  :
+2017-12-05 10:56:39,963 :INFO : Create a connection to DB  :
+2017-12-05 10:56:39,963 :INFO : Create a connection to DB  :
+2017-12-05 10:56:39,993 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 10:56:39,993 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 10:56:39,993 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 10:56:39,993 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 13:27:48,560 :INFO : Create a connection to DB  :
+2017-12-05 13:27:48,560 :INFO : Create a connection to DB  :
+2017-12-05 13:27:48,560 :INFO : Create a connection to DB  :
+2017-12-05 13:27:48,560 :INFO : Create a connection to DB  :
+2017-12-05 13:27:48,590 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 13:27:48,590 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 13:27:48,590 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 13:27:48,590 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 14:45:31,805 :INFO : Create a connection to DB  :
+2017-12-05 14:45:31,805 :INFO : Create a connection to DB  :
+2017-12-05 14:45:31,805 :INFO : Create a connection to DB  :
+2017-12-05 14:45:31,805 :INFO : Create a connection to DB  :
+2017-12-05 14:45:31,857 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 14:45:31,857 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 14:45:31,857 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 14:45:31,857 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:15:00,751 :INFO : Create a connection to DB  :
+2017-12-05 15:15:00,751 :INFO : Create a connection to DB  :
+2017-12-05 15:15:00,751 :INFO : Create a connection to DB  :
+2017-12-05 15:15:00,751 :INFO : Create a connection to DB  :
+2017-12-05 15:15:00,786 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:15:00,786 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:15:00,786 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:15:00,786 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:18:30,032 :INFO : Create a connection to DB  :
+2017-12-05 15:18:30,032 :INFO : Create a connection to DB  :
+2017-12-05 15:18:30,032 :INFO : Create a connection to DB  :
+2017-12-05 15:18:30,032 :INFO : Create a connection to DB  :
+2017-12-05 15:18:30,069 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:18:30,069 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:18:30,069 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:18:30,069 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:20:09,348 :INFO : Create a connection to DB  :
+2017-12-05 15:20:09,348 :INFO : Create a connection to DB  :
+2017-12-05 15:20:09,348 :INFO : Create a connection to DB  :
+2017-12-05 15:20:09,348 :INFO : Create a connection to DB  :
+2017-12-05 15:20:09,386 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:20:09,386 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:20:09,386 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:20:09,386 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:24:08,326 :INFO : Create a connection to DB  :
+2017-12-05 15:24:08,326 :INFO : Create a connection to DB  :
+2017-12-05 15:24:08,326 :INFO : Create a connection to DB  :
+2017-12-05 15:24:08,326 :INFO : Create a connection to DB  :
+2017-12-05 15:24:08,363 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:24:08,363 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:24:08,363 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:24:08,363 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:29:20,613 :INFO : Create a connection to DB  :
+2017-12-05 15:29:20,613 :INFO : Create a connection to DB  :
+2017-12-05 15:29:20,613 :INFO : Create a connection to DB  :
+2017-12-05 15:29:20,613 :INFO : Create a connection to DB  :
+2017-12-05 15:29:20,647 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:29:20,647 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:29:20,647 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:29:20,647 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:31:45,260 :INFO : Create a connection to DB  :
+2017-12-05 15:31:45,260 :INFO : Create a connection to DB  :
+2017-12-05 15:31:45,260 :INFO : Create a connection to DB  :
+2017-12-05 15:31:45,260 :INFO : Create a connection to DB  :
+2017-12-05 15:31:45,294 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:31:45,294 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:31:45,294 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:31:45,294 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:38:26,345 :INFO : Create a connection to DB  :
+2017-12-05 15:38:26,345 :INFO : Create a connection to DB  :
+2017-12-05 15:38:26,345 :INFO : Create a connection to DB  :
+2017-12-05 15:38:26,345 :INFO : Create a connection to DB  :
+2017-12-05 15:38:26,376 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:38:26,376 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:38:26,376 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:38:26,376 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:55:06,333 :INFO : Create a connection to DB  :
+2017-12-05 15:55:06,333 :INFO : Create a connection to DB  :
+2017-12-05 15:55:06,333 :INFO : Create a connection to DB  :
+2017-12-05 15:55:06,333 :INFO : Create a connection to DB  :
+2017-12-05 15:55:06,340 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 15:55:06,340 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 15:55:06,340 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 15:55:06,340 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 15:55:06,400 :INFO : Create a connection to DB  :
+2017-12-05 15:55:06,400 :INFO : Create a connection to DB  :
+2017-12-05 15:55:06,400 :INFO : Create a connection to DB  :
+2017-12-05 15:55:06,400 :INFO : Create a connection to DB  :
+2017-12-05 15:55:06,402 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 15:55:06,402 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 15:55:06,402 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 15:55:06,402 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 15:55:06,434 :WARNING :RFID Tag ID is not available in DB :e2000016351702081640767f  :
+2017-12-05 15:55:06,434 :WARNING :RFID Tag ID is not available in DB :e2000016351702081640767f  :
+2017-12-05 15:55:06,434 :WARNING :RFID Tag ID is not available in DB :e2000016351702081640767f  :
+2017-12-05 15:55:06,434 :WARNING :RFID Tag ID is not available in DB :e2000016351702081640767f  :
+2017-12-05 15:55:06,439 :ERROR :Failed - Main Function Crashed:<type 'exceptions.UnboundLocalError'>  :
+2017-12-05 15:55:06,439 :ERROR :Failed - Main Function Crashed:<type 'exceptions.UnboundLocalError'>  :
+2017-12-05 15:55:06,439 :ERROR :Failed - Main Function Crashed:<type 'exceptions.UnboundLocalError'>  :
+2017-12-05 15:55:06,439 :ERROR :Failed - Main Function Crashed:<type 'exceptions.UnboundLocalError'>  :
+2017-12-05 15:56:58,530 :INFO : Create a connection to DB  :
+2017-12-05 15:56:58,530 :INFO : Create a connection to DB  :
+2017-12-05 15:56:58,530 :INFO : Create a connection to DB  :
+2017-12-05 15:56:58,530 :INFO : Create a connection to DB  :
+2017-12-05 15:56:58,552 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:56:58,552 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:56:58,552 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:56:58,552 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 15:56:58,624 :INFO : Create a connection to DB  :
+2017-12-05 15:56:58,624 :INFO : Create a connection to DB  :
+2017-12-05 15:56:58,624 :INFO : Create a connection to DB  :
+2017-12-05 15:56:58,624 :INFO : Create a connection to DB  :
+2017-12-05 15:56:58,629 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 15:56:58,629 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 15:56:58,629 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 15:56:58,629 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 15:56:58,650 :WARNING :RFID Tag ID is not available in DB :e2000016351702081640767f  :
+2017-12-05 15:56:58,650 :WARNING :RFID Tag ID is not available in DB :e2000016351702081640767f  :
+2017-12-05 15:56:58,650 :WARNING :RFID Tag ID is not available in DB :e2000016351702081640767f  :
+2017-12-05 15:56:58,650 :WARNING :RFID Tag ID is not available in DB :e2000016351702081640767f  :
+2017-12-05 15:56:58,655 :ERROR :Failed - Main Function Crashed:<type 'exceptions.UnboundLocalError'>  :
+2017-12-05 15:56:58,655 :ERROR :Failed - Main Function Crashed:<type 'exceptions.UnboundLocalError'>  :
+2017-12-05 15:56:58,655 :ERROR :Failed - Main Function Crashed:<type 'exceptions.UnboundLocalError'>  :
+2017-12-05 15:56:58,655 :ERROR :Failed - Main Function Crashed:<type 'exceptions.UnboundLocalError'>  :
+2017-12-05 16:00:07,966 :INFO : Create a connection to DB  :
+2017-12-05 16:00:07,966 :INFO : Create a connection to DB  :
+2017-12-05 16:00:07,966 :INFO : Create a connection to DB  :
+2017-12-05 16:00:07,966 :INFO : Create a connection to DB  :
+2017-12-05 16:00:07,988 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:00:07,988 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:00:07,988 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:00:07,988 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:00:08,083 :INFO : Create a connection to DB  :
+2017-12-05 16:00:08,083 :INFO : Create a connection to DB  :
+2017-12-05 16:00:08,083 :INFO : Create a connection to DB  :
+2017-12-05 16:00:08,083 :INFO : Create a connection to DB  :
+2017-12-05 16:00:08,089 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 16:00:08,089 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 16:00:08,089 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 16:00:08,089 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 16:00:08,109 :WARNING :RFID Tag ID is not available in DB :e2000016351702081640767f  :
+2017-12-05 16:00:08,109 :WARNING :RFID Tag ID is not available in DB :e2000016351702081640767f  :
+2017-12-05 16:00:08,109 :WARNING :RFID Tag ID is not available in DB :e2000016351702081640767f  :
+2017-12-05 16:00:08,109 :WARNING :RFID Tag ID is not available in DB :e2000016351702081640767f  :
+2017-12-05 16:01:56,551 :INFO : Create a connection to DB  :
+2017-12-05 16:01:56,551 :INFO : Create a connection to DB  :
+2017-12-05 16:01:56,551 :INFO : Create a connection to DB  :
+2017-12-05 16:01:56,551 :INFO : Create a connection to DB  :
+2017-12-05 16:01:56,573 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:01:56,573 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:01:56,573 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:01:56,573 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:01:56,672 :INFO : Create a connection to DB  :
+2017-12-05 16:01:56,672 :INFO : Create a connection to DB  :
+2017-12-05 16:01:56,672 :INFO : Create a connection to DB  :
+2017-12-05 16:01:56,672 :INFO : Create a connection to DB  :
+2017-12-05 16:01:56,677 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 16:01:56,677 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 16:01:56,677 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 16:01:56,677 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 16:01:56,697 :WARNING :RFID Tag ID is not available in DB :e2000016351702081640767f  :
+2017-12-05 16:01:56,697 :WARNING :RFID Tag ID is not available in DB :e2000016351702081640767f  :
+2017-12-05 16:01:56,697 :WARNING :RFID Tag ID is not available in DB :e2000016351702081640767f  :
+2017-12-05 16:01:56,697 :WARNING :RFID Tag ID is not available in DB :e2000016351702081640767f  :
+2017-12-05 16:04:19,841 :INFO : Create a connection to DB  :
+2017-12-05 16:04:19,841 :INFO : Create a connection to DB  :
+2017-12-05 16:04:19,841 :INFO : Create a connection to DB  :
+2017-12-05 16:04:19,841 :INFO : Create a connection to DB  :
+2017-12-05 16:04:19,865 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:04:19,865 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:04:19,865 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:04:19,865 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:04:19,985 :INFO : Create a connection to DB  :
+2017-12-05 16:04:19,985 :INFO : Create a connection to DB  :
+2017-12-05 16:04:19,985 :INFO : Create a connection to DB  :
+2017-12-05 16:04:19,985 :INFO : Create a connection to DB  :
+2017-12-05 16:04:19,989 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 16:04:19,989 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 16:04:19,989 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 16:04:19,989 :ERROR :<type 'exceptions.NameError'> :
+2017-12-05 16:04:20,010 :WARNING :RFID Tag ID is not available in DB :e2000016351702081640767f  :
+2017-12-05 16:04:20,010 :WARNING :RFID Tag ID is not available in DB :e2000016351702081640767f  :
+2017-12-05 16:04:20,010 :WARNING :RFID Tag ID is not available in DB :e2000016351702081640767f  :
+2017-12-05 16:04:20,010 :WARNING :RFID Tag ID is not available in DB :e2000016351702081640767f  :
+2017-12-05 16:06:40,961 :ERROR :Failed - Main Function Crashed:<type 'exceptions.TypeError'>  :
+2017-12-05 16:06:40,961 :ERROR :Failed - Main Function Crashed:<type 'exceptions.TypeError'>  :
+2017-12-05 16:06:40,961 :ERROR :Failed - Main Function Crashed:<type 'exceptions.TypeError'>  :
+2017-12-05 16:06:40,961 :ERROR :Failed - Main Function Crashed:<type 'exceptions.TypeError'>  :
+2017-12-05 16:07:19,443 :ERROR :Failed - Main Function Crashed:<type 'exceptions.TypeError'>  :
+2017-12-05 16:07:19,443 :ERROR :Failed - Main Function Crashed:<type 'exceptions.TypeError'>  :
+2017-12-05 16:07:19,443 :ERROR :Failed - Main Function Crashed:<type 'exceptions.TypeError'>  :
+2017-12-05 16:07:19,443 :ERROR :Failed - Main Function Crashed:<type 'exceptions.TypeError'>  :
+2017-12-05 16:09:00,803 :ERROR :Failed - Main Function Crashed:<type 'exceptions.TypeError'>  :
+2017-12-05 16:09:00,803 :ERROR :Failed - Main Function Crashed:<type 'exceptions.TypeError'>  :
+2017-12-05 16:09:00,803 :ERROR :Failed - Main Function Crashed:<type 'exceptions.TypeError'>  :
+2017-12-05 16:09:00,803 :ERROR :Failed - Main Function Crashed:<type 'exceptions.TypeError'>  :
+2017-12-05 16:09:46,557 :INFO : Create a connection to DB  :
+2017-12-05 16:09:46,557 :INFO : Create a connection to DB  :
+2017-12-05 16:09:46,557 :INFO : Create a connection to DB  :
+2017-12-05 16:09:46,557 :INFO : Create a connection to DB  :
+2017-12-05 16:09:46,559 :ERROR :Failed - Main Function Crashed:<type 'exceptions.AttributeError'>  :
+2017-12-05 16:09:46,559 :ERROR :Failed - Main Function Crashed:<type 'exceptions.AttributeError'>  :
+2017-12-05 16:09:46,559 :ERROR :Failed - Main Function Crashed:<type 'exceptions.AttributeError'>  :
+2017-12-05 16:09:46,559 :ERROR :Failed - Main Function Crashed:<type 'exceptions.AttributeError'>  :
+2017-12-05 16:12:01,734 :INFO : Create a connection to DB  :
+2017-12-05 16:12:01,734 :INFO : Create a connection to DB  :
+2017-12-05 16:12:01,734 :INFO : Create a connection to DB  :
+2017-12-05 16:12:01,734 :INFO : Create a connection to DB  :
+2017-12-05 16:12:01,736 :ERROR :Failed - Main Function Crashed:<type 'exceptions.AttributeError'>  :
+2017-12-05 16:12:01,736 :ERROR :Failed - Main Function Crashed:<type 'exceptions.AttributeError'>  :
+2017-12-05 16:12:01,736 :ERROR :Failed - Main Function Crashed:<type 'exceptions.AttributeError'>  :
+2017-12-05 16:12:01,736 :ERROR :Failed - Main Function Crashed:<type 'exceptions.AttributeError'>  :
+2017-12-05 16:13:10,960 :INFO : Create a connection to DB  :
+2017-12-05 16:13:10,960 :INFO : Create a connection to DB  :
+2017-12-05 16:13:10,960 :INFO : Create a connection to DB  :
+2017-12-05 16:13:10,960 :INFO : Create a connection to DB  :
+2017-12-05 16:13:10,979 :ERROR :Failed - Main Function Crashed:<type 'exceptions.AttributeError'>  :
+2017-12-05 16:13:10,979 :ERROR :Failed - Main Function Crashed:<type 'exceptions.AttributeError'>  :
+2017-12-05 16:13:10,979 :ERROR :Failed - Main Function Crashed:<type 'exceptions.AttributeError'>  :
+2017-12-05 16:13:10,979 :ERROR :Failed - Main Function Crashed:<type 'exceptions.AttributeError'>  :
+2017-12-05 16:14:23,590 :INFO : Create a connection to DB  :
+2017-12-05 16:14:23,590 :INFO : Create a connection to DB  :
+2017-12-05 16:14:23,590 :INFO : Create a connection to DB  :
+2017-12-05 16:14:23,590 :INFO : Create a connection to DB  :
+2017-12-05 16:14:23,819 :INFO : Create a connection to DB  :
+2017-12-05 16:14:23,819 :INFO : Create a connection to DB  :
+2017-12-05 16:14:23,819 :INFO : Create a connection to DB  :
+2017-12-05 16:14:23,819 :INFO : Create a connection to DB  :
+2017-12-05 16:14:23,848 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:14:23,848 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:14:23,848 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:14:23,848 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:15:22,057 :INFO : Create a connection to DB  :
+2017-12-05 16:15:22,057 :INFO : Create a connection to DB  :
+2017-12-05 16:15:22,057 :INFO : Create a connection to DB  :
+2017-12-05 16:15:22,057 :INFO : Create a connection to DB  :
+2017-12-05 16:15:22,197 :INFO : Create a connection to DB  :
+2017-12-05 16:15:22,197 :INFO : Create a connection to DB  :
+2017-12-05 16:15:22,197 :INFO : Create a connection to DB  :
+2017-12-05 16:15:22,197 :INFO : Create a connection to DB  :
+2017-12-05 16:15:22,221 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:15:22,221 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:15:22,221 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:15:22,221 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:16:03,116 :INFO : Create a connection to DB  :
+2017-12-05 16:16:03,116 :INFO : Create a connection to DB  :
+2017-12-05 16:16:03,116 :INFO : Create a connection to DB  :
+2017-12-05 16:16:03,116 :INFO : Create a connection to DB  :
+2017-12-05 16:16:03,149 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-05 16:16:03,149 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-05 16:16:03,149 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-05 16:16:03,149 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-05 16:18:32,467 :INFO : Create a connection to DB  :
+2017-12-05 16:18:32,467 :INFO : Create a connection to DB  :
+2017-12-05 16:18:32,467 :INFO : Create a connection to DB  :
+2017-12-05 16:18:32,467 :INFO : Create a connection to DB  :
+2017-12-05 16:18:32,628 :INFO : Create a connection to DB  :
+2017-12-05 16:18:32,628 :INFO : Create a connection to DB  :
+2017-12-05 16:18:32,628 :INFO : Create a connection to DB  :
+2017-12-05 16:18:32,628 :INFO : Create a connection to DB  :
+2017-12-05 16:18:32,652 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:18:32,652 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:18:32,652 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:18:32,652 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:18:58,196 :INFO : Create a connection to DB  :
+2017-12-05 16:18:58,196 :INFO : Create a connection to DB  :
+2017-12-05 16:18:58,196 :INFO : Create a connection to DB  :
+2017-12-05 16:18:58,196 :INFO : Create a connection to DB  :
+2017-12-05 16:18:58,392 :INFO : Create a connection to DB  :
+2017-12-05 16:18:58,392 :INFO : Create a connection to DB  :
+2017-12-05 16:18:58,392 :INFO : Create a connection to DB  :
+2017-12-05 16:18:58,392 :INFO : Create a connection to DB  :
+2017-12-05 16:18:58,421 :INFO :If vehID : 7, vehName : SND 9460, BUID : 00:13:EF:C0:02:1l, RFUID : e2000016351702081640767l are Available :
+2017-12-05 16:18:58,421 :INFO :If vehID : 7, vehName : SND 9460, BUID : 00:13:EF:C0:02:1l, RFUID : e2000016351702081640767l are Available :
+2017-12-05 16:18:58,421 :INFO :If vehID : 7, vehName : SND 9460, BUID : 00:13:EF:C0:02:1l, RFUID : e2000016351702081640767l are Available :
+2017-12-05 16:18:58,421 :INFO :If vehID : 7, vehName : SND 9460, BUID : 00:13:EF:C0:02:1l, RFUID : e2000016351702081640767l are Available :
+2017-12-05 16:18:58,569 :WARNING :Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: 7 :
+2017-12-05 16:18:58,569 :WARNING :Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: 7 :
+2017-12-05 16:18:58,569 :WARNING :Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: 7 :
+2017-12-05 16:18:58,569 :WARNING :Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: 7 :
+2017-12-05 16:18:58,574 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-05 16:18:58,574 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-05 16:18:58,574 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-05 16:18:58,574 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-05 16:20:38,079 :INFO : Create a connection to DB  :
+2017-12-05 16:20:38,079 :INFO : Create a connection to DB  :
+2017-12-05 16:20:38,079 :INFO : Create a connection to DB  :
+2017-12-05 16:20:38,079 :INFO : Create a connection to DB  :
+2017-12-05 16:20:38,265 :INFO : Create a connection to DB  :
+2017-12-05 16:20:38,265 :INFO : Create a connection to DB  :
+2017-12-05 16:20:38,265 :INFO : Create a connection to DB  :
+2017-12-05 16:20:38,265 :INFO : Create a connection to DB  :
+2017-12-05 16:20:38,293 :INFO :If vehID : 4, vehName : SND 8297, BUID : 00:13:EF:C0:02:1I, RFUID : e2000016351702081640767i are Available :
+2017-12-05 16:20:38,293 :INFO :If vehID : 4, vehName : SND 8297, BUID : 00:13:EF:C0:02:1I, RFUID : e2000016351702081640767i are Available :
+2017-12-05 16:20:38,293 :INFO :If vehID : 4, vehName : SND 8297, BUID : 00:13:EF:C0:02:1I, RFUID : e2000016351702081640767i are Available :
+2017-12-05 16:20:38,293 :INFO :If vehID : 4, vehName : SND 8297, BUID : 00:13:EF:C0:02:1I, RFUID : e2000016351702081640767i are Available :
+2017-12-05 16:21:09,275 :ERROR :Failed - Trying to connect (115, 'Operation now in progress') :
+2017-12-05 16:21:09,275 :ERROR :Failed - Trying to connect (115, 'Operation now in progress') :
+2017-12-05 16:21:09,275 :ERROR :Failed - Trying to connect (115, 'Operation now in progress') :
+2017-12-05 16:21:09,275 :ERROR :Failed - Trying to connect (115, 'Operation now in progress') :
+2017-12-05 16:23:34,130 :ERROR :Failed - Main Function Crashed:<type 'exceptions.TypeError'>  :
+2017-12-05 16:23:34,130 :ERROR :Failed - Main Function Crashed:<type 'exceptions.TypeError'>  :
+2017-12-05 16:23:34,130 :ERROR :Failed - Main Function Crashed:<type 'exceptions.TypeError'>  :
+2017-12-05 16:23:34,130 :ERROR :Failed - Main Function Crashed:<type 'exceptions.TypeError'>  :
+2017-12-05 16:26:00,684 :INFO : Create a connection to DB  :
+2017-12-05 16:26:00,684 :INFO : Create a connection to DB  :
+2017-12-05 16:26:00,684 :INFO : Create a connection to DB  :
+2017-12-05 16:26:00,684 :INFO : Create a connection to DB  :
+2017-12-05 16:26:00,842 :INFO : Create a connection to DB  :
+2017-12-05 16:26:00,842 :INFO : Create a connection to DB  :
+2017-12-05 16:26:00,842 :INFO : Create a connection to DB  :
+2017-12-05 16:26:00,842 :INFO : Create a connection to DB  :
+2017-12-05 16:26:00,865 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:26:00,865 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:26:00,865 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:26:00,865 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:26:19,706 :ERROR :Failed - Main Function Crashed:<type 'exceptions.IndexError'>  :
+2017-12-05 16:26:19,706 :ERROR :Failed - Main Function Crashed:<type 'exceptions.IndexError'>  :
+2017-12-05 16:26:19,706 :ERROR :Failed - Main Function Crashed:<type 'exceptions.IndexError'>  :
+2017-12-05 16:26:19,706 :ERROR :Failed - Main Function Crashed:<type 'exceptions.IndexError'>  :
+2017-12-05 16:27:14,867 :ERROR :Failed - Main Function Crashed:<type 'exceptions.IndexError'>  :
+2017-12-05 16:27:14,867 :ERROR :Failed - Main Function Crashed:<type 'exceptions.IndexError'>  :
+2017-12-05 16:27:14,867 :ERROR :Failed - Main Function Crashed:<type 'exceptions.IndexError'>  :
+2017-12-05 16:27:14,867 :ERROR :Failed - Main Function Crashed:<type 'exceptions.IndexError'>  :
+2017-12-05 16:31:04,327 :ERROR :Failed - Main Function Crashed:<type 'exceptions.IndexError'>  :
+2017-12-05 16:31:04,327 :ERROR :Failed - Main Function Crashed:<type 'exceptions.IndexError'>  :
+2017-12-05 16:31:04,327 :ERROR :Failed - Main Function Crashed:<type 'exceptions.IndexError'>  :
+2017-12-05 16:31:04,327 :ERROR :Failed - Main Function Crashed:<type 'exceptions.IndexError'>  :

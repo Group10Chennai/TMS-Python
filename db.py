@@ -104,6 +104,47 @@ def select_DeviceDetails_by_rfiduid(conn, rfiduid1):
         my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - None: %s",(rfiduid1))
                 
         return None
+
+
+#Query DB Select Deveice detail by rfiduid
+def select_DeviceDetails_by_vehNumber(conn, vehNo1):
+    """
+    Query tasks by vehNo1
+    param conn: the Connection object
+    
+    """
+    if(vehNo1 != None):
+    #print (" DB select_DeviceDetails_by_id")
+    #my_logger.info(" DB select_DeviceDetails_by_id")
+        try:
+            cur = conn.cursor()
+            cur.execute("SELECT vehId, vehName, BUID, RFUID FROM DeviceDetails WHERE vehName like ?",("%"+vehNo1+"%",))
+ 
+            rows = cur.fetchall()
+            vehDetails = None;
+            for row in rows:
+                if(row != None):
+                    vehDetails = row
+                    print vehDetails
+            if (vehDetails != None):
+                
+                return vehDetails
+            else:
+                print ("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: ",rfiduid1)
+                my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: %d",(rfiduid1))
+                
+                return None
+    
+        except sqlite3.Error as e:
+            print ("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: ",rfiduid1)
+            my_logger.error("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  %d, %d ",e, rfiduid1)
+            #raise
+            return None
+    else:
+        print ("FFailed - Accessing to DB table DeviceDetails by RFID UID - None: ",rfiduid1)
+        my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - None: %s",(rfiduid1))
+                
+        return None
     
 
 def select_TyreDetails_by_VehId(conn, VehId1):

@@ -64,7 +64,7 @@ DBSensorVariable=[]
 
 database = "/opt/Aquire/sqlite/TPMS.db"
 TID1 = "e2000016351702081640767f"
-tag_id = "e2000016351702081640767f" #24
+#tag_id = "e2000016351702081640767f" #24
 #vehID = 32
 BUID = '00:13:EF:C0:02:1E' #17
 
@@ -949,20 +949,51 @@ def javaFun_end():
     tag_id1 = None
     print tag_id1
 
-def fun_main():
-    print("Main Function")
+def fun_main(vehNo):
+    print(" Main Function " + vehNo, len( vehNo ) )
     
     try:
         #print("RFID Module Read TAG ID Function")
         #tag_id = rfid.RFIDUHFQueryTag()
+        
+        if (vehNo != None) and (len( vehNo ) == 4):
+            print(" Main Function " + vehNo)
 
+            if(database!=None):
+                dbConn = db.create_db_connection(database)
+                print(" Database Function " + vehNo)
+
+                if(dbConn != None):
+                    #Get the Device Detail by vehNo from GUI
+                    #vehID, vehName, BUID, RFUID = db_DeviceDetails_by_rfiduid(dbConn, tag_id)
+                    vehDetails1 = db.select_DeviceDetails_by_vehNumber(dbConn, vehNo)
+
+                    if(vehDetails1 != None):
+                        print("Query the Database to read Tyre Details, Sensor ID, Position by vehID")
+                        
+                        #vehID = vehDetails1[0]
+                        #vehName = vehDetails1[1]
+                        #BUID = vehDetails1[2]
+                        #RFUID = vehDetails1[3]
+                        tag_id = vehDetails1[3]
+
+                        print vehDetails1, vehDetails1[3]
+                dbConn.close()
+        
+        else:
+            print("RFID Module Read TAG ID Function")
+            tag_id = rfid.RFIDUHFQueryTag()
+
+        
         #if tag_id1 != None:
+            # Fetch rfuid from DB
             #tag_id = tag_id1
+            
         #else:
             #print("RFID Module Read TAG ID Function")
             #tag_id = rfid.RFIDUHFQueryTag()
         
-    
+        print "tag_id", tag_id
         if(tag_id != None):
             print("Create a database connection to the DB file .db")
             if(database!=None):
@@ -999,6 +1030,8 @@ def fun_main():
                 my_logger.warning ("Database path Not Available ")
         #else:
             #my_logger.warning ("RFID Tag ID is not available in DB %s: ", tag_id)
+            #print ("RFID Tag ID is not available in DB %s: ", tag_id)
+            #return tag_id
 
 
             #Query DB Device Detail to read vehID, vehName, BUID, RFUID
@@ -1118,7 +1151,7 @@ if __name__ == "__main__":
         #print "Hello, World!"
         #fun()
     #printit()
-
-    fun_main()
+    vehName = "9406"
+    fun_main(vehName)
     
         
