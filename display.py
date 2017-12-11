@@ -30,13 +30,42 @@ my_logger.setLevel(logging.DEBUG)
 
 
 
+def udpSocket(message):
+
+    import socket
+
+    UDP_IP = "192.168.1.15"
+    UDP_PORT = 19000
+    MESSAGE = message
+   
+    print "UDP target IP:", UDP_IP
+    print "UDP target port:", UDP_PORT
+    print "message:", MESSAGE
+   
+    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
+    sock.sendto(MESSAGE, (UDP_IP, UDP_PORT))
+
+
 
 '''
-def tcpSocketCreate(host, port, message)
+def udpSocketCreate(host, port, message):
+
+    #UDP_IP = "127.0.0.1"
+    #UDP_PORT = 5005
+    #MESSAGE = "Hello, World!"
+
+    print "UDP target IP:", host
+    print "UDP target port:", port
+    print "message:", message
+
+    #sock = socket.socket(socket.AF_INET, # Internet
+                         #socket.SOCK_DGRAM) # UDP
+    #sock.sendto(MESSAGE, (UDP_IP, UDP_PORT))
 
     #create an INET, STREAMing socket
     try:
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        #s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s = socket.socket(socket.AF_INET6, socket.SOCK_DGRAM)
     except socket.error:
         print 'Failed to create socket'
         #sys.exit()
@@ -49,9 +78,9 @@ def tcpSocketCreate(host, port, message)
 
     except socket.gaierror:
         print 'Hostname could not be resolved. Exiting'
-        #sys.exit()
+        sys.exit()
 
-    print 'Socket Connected to ' + host + ' on ip ' + remote_ip
+    print 'Socket Connected to ' + host + ' on ip ' + remote_ip 
 
     #Send some data to remote server
     #message = "Test"
@@ -59,18 +88,61 @@ def tcpSocketCreate(host, port, message)
     try :
         #Set the whole string
         while True:
-            s.send(message)
+            #s.send(message)
+            s.sendto(message, (host, port))
             print 'Message sent successfully'
             time.sleep(1)
             print 'Sending...'
     except socket.error:
         #Send failed
         print 'Send failed'
+        sys.exit()
+
+
+
+
+
+def tcpSocketCreate(host, port, message):
+
+    #create an INET, STREAMing socket
+    try:
+        #s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    except socket.error:
+        print 'Failed to create socket'
         #sys.exit()
+
+    print 'Socket Created'
+
+    try:
+        remote_ip = socket.gethostbyname( host )
+        s.connect((host, port))
+
+    except socket.gaierror:
+        print 'Hostname could not be resolved. Exiting'
+        sys.exit()
+
+    print 'Socket Connected to ' + host + ' on ip ' + remote_ip 
+
+    #Send some data to remote server
+    #message = "Test"
+
+    try :
+        #Set the whole string
+        while True:
+            #s.send(message)
+            s.sendto(message, (host, port))
+            print 'Message sent successfully'
+            time.sleep(1)
+            print 'Sending...'
+    except socket.error:
+        #Send failed
+        print 'Send failed'
+        sys.exit()
 
 
     
-'
+
 def recv_timeout(the_socket,timeout=2):
     #make socket non blocking
     the_socket.setblocking(0)
@@ -110,8 +182,8 @@ def recv_timeout(the_socket,timeout=2):
 print recv_timeout(s)
 
 s.close()
-
 '''
+
 presint_Bar = 0
 presint_Psi = 0
 dispPsi = ""
@@ -151,7 +223,7 @@ def displayPresValidation(pres):
                         
             presint_Bar = ((int(pres, 16)*0.025))
             presint_Psi = int (round(presint_Bar * 14.5038))
-            dispPsi = str((presint_Psi))
+            dispPsi = str(presint_Psi).zfill(3)
                         
                         
             #Staturated PSI value between 121 to 125 Should be Green Color
@@ -198,7 +270,7 @@ def displayTempValidation(temp):
         if  temp.strip() != "00":
 
             tempint_Celcious  = round(int(temp, 16) - 50)
-            disptemp = str(int(tempint_Celcious))
+            disptemp = str(int(tempint_Celcious)).zfill(3)
                         
             #Staturated Temperature Celcious value between 50 to 45 Should be Yellow Color
             if tempint_Celcious < 50 and tempint_Celcious >= 45:
@@ -239,14 +311,14 @@ def displayLEDBoard(vehName, dispCmd, date_time, dispVar):
     startChar = "["
     endChar   = "]"
 
-    display =   "<\c"+nC+ "----" + ">" + "<\c"+ nC +"----------" + ">" + \
-                "<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">" +   \
-                "<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">" +   \
-                "<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">" 
+    display =   "<\\C"+nC+ "----" + ">" + "<\\C"+ nC +"----------" + ">" + \
+                "<\\C"+nC+" "+" ---"  +"\\C"+nC+" "+" ---" +"\\C"+nC+" "+" ---" +"\\C"+nC+" "+" ---" +">" +   \
+                "<\\C"+nC+" "+" ---"  +"\\C"+nC+" "+" ---" +"\\C"+nC+" "+" ---" +"\\C"+nC+" "+" ---" +">" +   \
+                "<\\C"+nC+" "+" ---"  +"\\C"+nC+" "+" ---" +"\\C"+nC+" "+" ---" +"\\C"+nC+" "+" ---" +">" 
 
-    vehName1  = "<\c"+nC+ "----" + ">"
-    
-    dispCmd1  = "<\c"+ nC +"----------" + ">"
+    vehName1  = "<\\C"+nC+ "----" + ">"
+
+    dispCmd1  = "<\\C"+ nC +"----------" + ">"
     
     #dispVar1  = "<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">" +   \
     #            "<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">" +   \
@@ -259,15 +331,19 @@ def displayLEDBoard(vehName, dispCmd, date_time, dispVar):
             vehN = vehName [4:8] #SND 9457
             print vehN
 
-            vehNc = "<\c"+nC+ vehN + ">"
+            vehNc = "<\\C"+nC+ vehN + ">"
+            print vehNc
 
             dispc = dispCmd + " " + str(date_time)
 
-            dispCmd1  = "<\c"+ nC + dispc + ">"
+            dispCmd1  = "<\\C"+ nC + dispc + " " + ">"
+            print dispCmd1
 
         display = startChar + vehNc + dispCmd1 + dispVar + endChar
 
         print display
+
+        udpSocket(display)
 
 
     except:
@@ -282,17 +358,17 @@ def displayLEDBoardParameters(mylist):
 
     nC = White
 
-    dispVar =   "<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">" +   \
-                "<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">" +   \
-                "<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">" 
+    dispVar =   "<\\C"+nC+" "+"---"  +"\\C"+nC+" "+"---" +"\\C"+nC+" "+"---" +"\\C"+nC+" "+"---" +">" +   \
+                "<\\C"+nC+" "+"---"  +"\\C"+nC+" "+"---" +"\\C"+nC+" "+"---" +"\\C"+nC+" "+"---" +">" +   \
+                "<\\C"+nC+" "+"---"  +"\\C"+nC+" "+"---" +"\\C"+nC+" "+"---" +"\\C"+nC+" "+"---" +">" 
 
 
-    dispVar1 = nC + " " + "---" + "\c" + nC + " " + "---"
-    dispVar2 = nC + " " + "---" + "\c" + nC + " " + "---"
-    dispVar3 = nC + " " + "---" + "\c" + nC + " " + "---"
-    dispVar4 = nC + " " + "---" + "\c" + nC + " " + "---"
-    dispVar5 = nC + " " + "---" + "\c" + nC + " " + "---"
-    dispVar6 = nC + " " + "---" + "\c" + nC + " " + "---"
+    dispVar1 = nC + " " + "---" + "\\C" + nC + " " + "---"
+    dispVar2 = nC + " " + "---" + "\\C" + nC + " " + "---"
+    dispVar3 = nC + " " + "---" + "\\C" + nC + " " + "---"
+    dispVar4 = nC + " " + "---" + "\\C" + nC + " " + "---"
+    dispVar5 = nC + " " + "---" + "\\C" + nC + " " + "---"
+    dispVar6 = nC + " " + "---" + "\\C" + nC + " " + "---"
 
     try:
 
@@ -317,7 +393,7 @@ def displayLEDBoardParameters(mylist):
                     temp_color, disptemp = displayTempValidation(temp)
                     #print temp_color, disptemp
                         
-                    dispVar1 = pres_color +" "+ dispPsi + "\c" + temp_color + " " + disptemp
+                    dispVar1 = pres_color +" "+ dispPsi + " " + "\\C" + temp_color + disptemp + " "
 
                     '''
                     dispVar = "<\c"+pres_color+" "+dispPsi+" \c"+temp_color+" "+disptemp
@@ -347,7 +423,7 @@ def displayLEDBoardParameters(mylist):
                     #dispVar = "</c1 "+mylist[i][10]+mylist[i][11]+" /c2 "+mylist[i][12]
                     #dispVar = "</c1 "+k+" /c2 "+mylist[i][12]
 
-                    dispVar2 = pres_color +" "+ dispPsi + "\c" + temp_color + " " + disptemp
+                    dispVar2 = pres_color + dispPsi + " " + "\\C" + temp_color + disptemp 
 
                     '''
                     if dispVar == "":
@@ -375,7 +451,7 @@ def displayLEDBoardParameters(mylist):
                     #dispVar = "</c1 "+k+" /c2 "+mylist[i][12]
 
 
-                    dispVar3 =  pres_color +" "+ dispPsi + "\c" + temp_color + " " + disptemp
+                    dispVar3 =  pres_color + " " + dispPsi + " " + "\\C" + temp_color + disptemp + " "
                     
                     '''
                     if dispVar == "":
@@ -403,7 +479,7 @@ def displayLEDBoardParameters(mylist):
                     #dispVar = "</c1 "+mylist[i][10]+mylist[i][11]+" /c2 "+mylist[i][12]
                     #dispVar = "</c1 "+k+" /c2 "+mylist[i][12]
 
-                    dispVar4 = pres_color +" "+ dispPsi + "\c" + temp_color + " " + disptemp
+                    dispVar4 = pres_color + dispPsi + " " + "\\C" + temp_color + disptemp 
 
                     '''
                     if dispVar == "":
@@ -432,7 +508,7 @@ def displayLEDBoardParameters(mylist):
                     #dispVar = "</c1 "+mylist[i][10]+mylist[i][11]+" /c2 "+mylist[i][12]
                     #dispVar = "</c1 "+k+" /c2 "+mylist[i][12]
 
-                    dispVar5 = pres_color +" "+ dispPsi + "\c" + temp_color + " " + disptemp
+                    dispVar5 = pres_color + " " + dispPsi + " " + "\\C" + temp_color + disptemp 
 
                     '''
                     if dispVar == "":
@@ -463,7 +539,7 @@ def displayLEDBoardParameters(mylist):
                     #dispVar = "</c1 "+mylist[i][10]+mylist[i][11]+" /c2 "+mylist[i][12]
                     #dispVar = "</c1 "+k+" /c2 "+mylist[i][12]
 
-                    dispVar6 = pres_color +" "+ dispPsi + "\c" + temp_color + " " + disptemp
+                    dispVar6 = pres_color + dispPsi + " " + "\\C" + temp_color + disptemp 
 
                     '''
                     if dispVar == "":
@@ -486,10 +562,17 @@ def displayLEDBoardParameters(mylist):
 
             #dispVar1 = pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp
             #dispVar2 = pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp
+
+            print dispVar1
+            print dispVar2
+            print dispVar3
+            print dispVar4
+            print dispVar5
+            print dispVar6
                 
-            dispVar =   "<\c" + dispVar1 + "\c" + dispVar2 + ">"           \
-                        "<\c" + dispVar3 + "\c" + dispVar4 + ">"           \
-                        "<\c" + dispVar5 + "\c" + dispVar6 + ">"           
+            dispVar =   "<\\C" + dispVar1 + "\\C" + dispVar2 + ">"           \
+                        "<\\C" + dispVar3 + "\\C" + dispVar4 + ">"           \
+                        "<\\C" + dispVar5 + "\\C" + dispVar6 + ">"           
                         
             
             print dispVar
@@ -558,8 +641,8 @@ def displayLEDBoard(mylist):
     
         print dispVar
         
-
 '''
+
 #main function
 if __name__ == "__main__":
 
@@ -567,17 +650,27 @@ if __name__ == "__main__":
         #print 'Usage : python client.py hostname'
         #sys.exit()
 
-    #host = sys.argv[1]
-    #port = 8888
+    host = "192.168.1.15"
+    port = 19000
 
-    #message = "Test"
+    message = "Test"
+    message1 = "[<\\C70000><\\C21234567fghfhfghfghfghgfhgfh890A ><\\C1 123 \\C2456 \\C3789 \\C4456><\\C1 123 \\C2456 \\C3789 \\C4456><\\C1 123 \\C2456 \\C3789 \\C4456>]"
+    #message1 = "[<\\C70000><\\C21234567fghfhfghfghfghgfhgfh890A ><\\C1 123 \\C2 456 \\C3 789 \\C4 456><\\C1 123 \\C2456 \\C3 789 \\C4 456><\\C1 123 \\C2 456 \\C3 789 \\C4 456>]"
+    #hex_data = binascii.b2a_hex(message1)
 
-    dispCmd = "Sarojini Nagar Depot"
+    #print hex_data
+    #tcpSocketCreate(host, port, message1)
+    #udpSocketCreate(host, port, hex_data)
+
+    #udpSocket(message1)
+    #udpSocketReceive()
+
+    dispCmd = "Sarojini Nagar"
 
     vehName = "SND 9406"
 
-    date_time = time.strftime('%H:%M:%S %d/%m/%Y')
-    print date_time
+    date_time = time.strftime('%H:%M %d/%m/%Y')
+    #print date_time
     
     mylist = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], \
               [0, 'a1', '41', '08', '63', '00', '05'], \
@@ -589,10 +682,11 @@ if __name__ == "__main__":
               [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
 
-    displayLEDBoardParameters(mylist)
+    dispVar = displayLEDBoardParameters(mylist)
+    print dispVar
 
-    dispVar = "<\c2 122\c1 70\c1 106\c2 38><\c1 110\c1 62\c3 118\c1 51><\c4 ---\c4 ---\c7 ---\c7 --->"
-
+    #dispVar = "<\\c2 122\\c1 70\\c1 106\\c2 38><\\c1 110\\c1 62\\c3 118\\c1 51><\\c4 ---\\c4 ---\\c7 ---\\c7 --->"
+    
    
 
     displayLEDBoard(vehName, dispCmd, date_time, dispVar)

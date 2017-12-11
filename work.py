@@ -1071,6 +1071,7 @@ def fun_main(vehNo):
                         #display.displayLEDBoard(vehName, dispCommand, date_time, dispVar)
                         display.displayLEDBoard(vehName, dispCommand, date_time, dispVar)
 
+                        
                         #dbConn = db.create_db_connection(database)
                         #with dbConn: 
                         if dbConn: 

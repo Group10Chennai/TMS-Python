@@ -2761,3 +2761,47 @@
 2017-12-05 16:31:04,327 :ERROR :Failed - Main Function Crashed:<type 'exceptions.IndexError'>  :
 2017-12-05 16:31:04,327 :ERROR :Failed - Main Function Crashed:<type 'exceptions.IndexError'>  :
 2017-12-05 16:31:04,327 :ERROR :Failed - Main Function Crashed:<type 'exceptions.IndexError'>  :
+2017-12-05 16:59:23,512 :INFO : Create a connection to DB  :
+2017-12-05 16:59:23,512 :INFO : Create a connection to DB  :
+2017-12-05 16:59:23,512 :INFO : Create a connection to DB  :
+2017-12-05 16:59:23,512 :INFO : Create a connection to DB  :
+2017-12-05 16:59:23,552 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-05 16:59:23,552 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-05 16:59:23,552 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-05 16:59:23,552 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-05 16:59:37,683 :INFO : Create a connection to DB  :
+2017-12-05 16:59:37,683 :INFO : Create a connection to DB  :
+2017-12-05 16:59:37,683 :INFO : Create a connection to DB  :
+2017-12-05 16:59:37,683 :INFO : Create a connection to DB  :
+2017-12-05 16:59:37,831 :INFO : Create a connection to DB  :
+2017-12-05 16:59:37,831 :INFO : Create a connection to DB  :
+2017-12-05 16:59:37,831 :INFO : Create a connection to DB  :
+2017-12-05 16:59:37,831 :INFO : Create a connection to DB  :
+2017-12-05 16:59:37,860 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:59:37,860 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:59:37,860 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-05 16:59:37,860 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-11 18:13:12,290 :INFO : Create a connection to DB  :
+2017-12-11 18:13:12,290 :INFO : Create a connection to DB  :
+2017-12-11 18:13:12,290 :INFO : Create a connection to DB  :
+2017-12-11 18:13:12,290 :INFO : Create a connection to DB  :
+2017-12-11 18:13:12,440 :INFO : Create a connection to DB  :
+2017-12-11 18:13:12,440 :INFO : Create a connection to DB  :
+2017-12-11 18:13:12,440 :INFO : Create a connection to DB  :
+2017-12-11 18:13:12,440 :INFO : Create a connection to DB  :
+2017-12-11 18:13:12,460 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-11 18:13:12,460 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-11 18:13:12,460 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-11 18:13:12,460 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-11 18:24:19,766 :INFO : Create a connection to DB  :
+2017-12-11 18:24:19,766 :INFO : Create a connection to DB  :
+2017-12-11 18:24:19,766 :INFO : Create a connection to DB  :
+2017-12-11 18:24:19,766 :INFO : Create a connection to DB  :
+2017-12-11 18:24:19,978 :INFO : Create a connection to DB  :
+2017-12-11 18:24:19,978 :INFO : Create a connection to DB  :
+2017-12-11 18:24:19,978 :INFO : Create a connection to DB  :
+2017-12-11 18:24:19,978 :INFO : Create a connection to DB  :
+2017-12-11 18:24:20,007 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-11 18:24:20,007 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-11 18:24:20,007 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-11 18:24:20,007 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
