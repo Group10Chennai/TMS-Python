@@ -19,6 +19,7 @@ import rfid
 import blecontroller
 from blecontroller import *
 import display
+import apiupdate
 #import push
 
 import datetime
@@ -949,6 +950,45 @@ def javaFun_end():
     tag_id1 = None
     print tag_id1
 
+
+def fun_VehName(vehName):
+
+    if (vehName != None):
+
+        print(" fun_VehName Function " + vehName)
+
+        if(database!=None):
+            dbConn = db.create_db_connection(database)
+            print(" Database Function " + vehName)
+
+            if(dbConn != None):
+                #Get the Device Detail by vehNo from GUI
+                #vehID, vehName, BUID, RFUID = db_DeviceDetails_by_rfiduid(dbConn, tag_id)
+                vehDetails1 = db.select_DeviceDetails_by_vehName(dbConn, vehName)
+
+                if(vehDetails1 != None):
+                    print("Query the Database to read Tyre Details, Sensor ID, Position by vehID")
+                        
+                    #vehID = vehDetails1[0]
+                    #vehName = vehDetails1[1]
+                    #BUID = vehDetails1[2]
+                    RFUID = vehDetails1[3]
+                    
+
+                    print vehDetails1
+
+                    return RFUID
+            else:
+                return None
+            
+            dbConn.close()
+
+        else:
+            return None
+
+        
+      
+
 def fun_main(vehNo):
     print(" Main Function " + vehNo, len( vehNo ) )
     
@@ -1057,8 +1097,8 @@ def fun_main(vehNo):
 
                     #Current date and time
                     #t = datetime.utcnow()
-                    #date_time = time.strftime('%H:%M:%S %d/%m/%Y')
-                    date_time = int(datetime.datetime.now().strftime("%s")) * 1000
+                    date_time = time.strftime('%H:%M:%S %d/%m/%Y')
+                    date_timeDB = int(datetime.datetime.now().strftime("%s")) * 1000
                     print date_time
                     
                     if mylist != None:
@@ -1076,9 +1116,12 @@ def fun_main(vehNo):
                         #with dbConn: 
                         if dbConn: 
                                
-                            db.update_Latest_data_by_VehId(dbConn, int(vehID), date_time, mylist)
+                            db.update_Latest_data_by_VehId(dbConn, int(vehID), date_timeDB, mylist)
 
                         dbConn.close()
+
+                        #update to the live server
+                        apiupdate.prepareJsonString(int(vehID), mylist)
                                 
     except:
         e = sys.exc_info()[0]
@@ -1153,6 +1196,7 @@ if __name__ == "__main__":
         #fun()
     #printit()
     vehName = "9406"
-    fun_main(vehName)
+    fun_VehName(vehName)
+    #fun_main(vehName)
     
         

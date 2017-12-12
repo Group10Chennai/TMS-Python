@@ -14,6 +14,7 @@ import subprocess
 import time
 
 import struct
+import utlities
 
 import glob
 import logging
@@ -221,8 +222,8 @@ def displayPresValidation(pres):
         #Check for the Valid Pres is not 0000
         if pres.strip() != "0000" :
                         
-            presint_Bar = ((int(pres, 16)*0.025))
-            presint_Psi = int (round(presint_Bar * 14.5038))
+            
+            presint_Psi = utlities.pressureToBarPsiConvertion(pres)
             dispPsi = str(presint_Psi).zfill(3)
                         
                         
@@ -269,7 +270,7 @@ def displayTempValidation(temp):
         #Check for the Valid Temp is not 00
         if  temp.strip() != "00":
 
-            tempint_Celcious  = round(int(temp, 16) - 50)
+            tempint_Celcious  = utlities.temperatureToCelciousConvertion(temp)
             disptemp = str(int(tempint_Celcious)).zfill(3)
                         
             #Staturated Temperature Celcious value between 50 to 45 Should be Yellow Color
@@ -299,7 +300,7 @@ def displayTempValidation(temp):
         e = sys.exc_info()[0]
         my_logger.error("Failed - Temperature Calculation:%s ",e)
         print ("Failed - Temperature Calculation: ",e)
-
+        return None
 
 
 
@@ -351,7 +352,9 @@ def displayLEDBoard(vehName, dispCmd, date_time, dispVar):
         my_logger.error("Failed - displayLEDBoard:%s ",e)
         print ("Failed - displayLEDBoard: ",e)
 
+        
 
+'''
 def displayLEDBoardParameters(mylist):
 
     
@@ -395,7 +398,7 @@ def displayLEDBoardParameters(mylist):
                         
                     dispVar1 = pres_color +" "+ dispPsi + " " + "\\C" + temp_color + disptemp + " "
 
-                    '''
+                    ''
                     dispVar = "<\c"+pres_color+" "+dispPsi+" \c"+temp_color+" "+disptemp
                     #dispVar = "</c1 "+mylist[i][10]+mylist[i][11]+" /c2 "+mylist[i][12]
                     #dispVar = "</c1 "+k+" /c2 "+mylist[i][12]
@@ -404,7 +407,7 @@ def displayLEDBoardParameters(mylist):
                         #dispVar = "</c"+pres_color+" "+dispPsi+" /c"+temp_color+" "+disptemp
                     #else:
                         #dispVar = dispVar + "/c3 "+mylist[i][10]+mylist[i][11]+ "/c4 "+mylist[i][12]+">"
-                    '''
+                    ''
 
                 elif mylist[i][6] == '02' :
 
@@ -425,13 +428,13 @@ def displayLEDBoardParameters(mylist):
 
                     dispVar2 = pres_color + dispPsi + " " + "\\C" + temp_color + disptemp 
 
-                    '''
+                    ''
                     if dispVar == "":
                         nC = White
                         dispVar = "<\c"+nC+" "+"---" +"\c"+nC+" "+"---"+"\c"+pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp+">"
                     else:
                         dispVar = dispVar +" "+ "\c"+pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp+">"
-                    '''
+                    ''
                     
                 elif mylist[i][6] == '03' :
 
@@ -453,13 +456,13 @@ def displayLEDBoardParameters(mylist):
 
                     dispVar3 =  pres_color + " " + dispPsi + " " + "\\C" + temp_color + disptemp + " "
                     
-                    '''
+                    ''
                     if dispVar == "":
                         nC = White
                         dispVar = "<\c"+nC+" "+"---" +"\c"+nC+" "+"---"+"\c"+nC+" "+nC+"\c"+nC+" "+nC+">"+"<\c"+pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp
                     else:
                         dispVar = dispVar +"<\c"+pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp
-                    '''
+                    ''
 
 
                 elif mylist[i][6] == '04' :
@@ -481,14 +484,14 @@ def displayLEDBoardParameters(mylist):
 
                     dispVar4 = pres_color + dispPsi + " " + "\\C" + temp_color + disptemp 
 
-                    '''
+                    ''
                     if dispVar == "":
                         nC = White
                         dispVar = "<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">" +       \
                                   "<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp+">"
                     else:
                         dispVar = dispVar +" "+ "\c"+pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp+">"
-                    '''
+                    ''
 
 
                 elif mylist[i][6] == '05' :
@@ -510,7 +513,7 @@ def displayLEDBoardParameters(mylist):
 
                     dispVar5 = pres_color + " " + dispPsi + " " + "\\C" + temp_color + disptemp 
 
-                    '''
+                    ''
                     if dispVar == "":
                         nC = White
                         dispVar = "<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">" +   \
@@ -519,7 +522,7 @@ def displayLEDBoardParameters(mylist):
                     else:
                         dispVar = dispVar +" "+ "\c"+pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp
 
-                    '''
+                    ''
 
                     
                 elif mylist[i][6] == '06' :
@@ -541,7 +544,7 @@ def displayLEDBoardParameters(mylist):
 
                     dispVar6 = pres_color + dispPsi + " " + "\\C" + temp_color + disptemp 
 
-                    '''
+                    ''
                     if dispVar == "":
                         nC = White
                         dispVar = "<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">" +   \
@@ -550,7 +553,7 @@ def displayLEDBoardParameters(mylist):
                     else:
                         dispVar = dispVar +" "+ "\c"+pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp+">"+"]"
 
-                    '''
+                    ''
       
                         #"<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">" +   \
                         #"<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">" +   \
@@ -583,65 +586,287 @@ def displayLEDBoardParameters(mylist):
         e = sys.exc_info()[0]
         my_logger.error("Failed - Temperature Calculation:%s ",e)
         print ("Failed - Temperature Calculation: ",e)
-        
-
 
 '''
-def displayLEDBoard(mylist):
 
-    if mylist is not None:
+def displayLEDBoardParameters(mylist):
 
-        print mylist
-        #print len(mylist), TPMSIdx
-                
-        dispVar = ""
-        for i in range (len(mylist)):
-            
-            if mylist[i][6] == '01' :
-
-                print "SensorID1 ",mylist[i][7]+mylist[i][8]+mylist[i][9]
-                pres = mylist[i][10]+mylist[i][11]
-                temp = mylist[i][12]
-
-                l = int(pres, 16)*0.025
-                k = str(int(l))
-                
-                #dispVar = "</c1 "+mylist[i][10]+mylist[i][11]+" /c2 "+mylist[i][12]
-                dispVar = "</c1 "+k+" /c2 "+mylist[i][12]
-            
-            if mylist[i][6] == '02' :
-
-                print "SensorID 2",mylist[i][7]+mylist[i][8]+mylist[i][9]
-                print "Pres",mylist[i][10]+mylist[i][11]
-                print "Temp",mylist[i][12]
-                if dispVar == "":
-                    dispVar = "</c1 -- /c2 -- /c3 "+mylist[i][10]+mylist[i][11]+ "/c4 "+mylist[i][12]+">"
-                else:
-                    dispVar = dispVar + "/c3 "+mylist[i][10]+mylist[i][11]+ "/c4 "+mylist[i][12]+">"
-
-            if mylist[i][6] == '03' :
-
-                print "SensorID 3",mylist[i][7]+mylist[i][8]+mylist[i][9]
-                print "Pres",mylist[i][10]+mylist[i][11]
-                print "Temp",mylist[i][12]
-                if dispVar == "":
-                    dispVar = "</c1 -- /c2 -- /c3 -- /c4 -- ></c1 "+mylist[i][10]+mylist[i][11]+ "/c2 "+mylist[i][12]
-                else:
-                    dispVar = dispVar + "</c1 "+mylist[i][10]+mylist[i][11]+ "/c2 "+mylist[i][12]
-
-            if mylist[i][6] == '04' :
-
-                print "SensorID 4",mylist[i][7]+mylist[i][8]+mylist[i][9]
-                print "Pres",mylist[i][10]+mylist[i][11]
-                print "Temp",mylist[i][12]
-                if dispVar == "":
-                    dispVar = "</c1 -- /c2 -- /c3 -- /c4 -- ></c1 "+mylist[i][10]+mylist[i][11]+ "/c2 "+mylist[i][12]+">"
-                else:
-                    dispVar = dispVar + "</c1 "+mylist[i][10]+mylist[i][11]+ "/c2 "+mylist[i][12]+">"
     
-        print dispVar
+
+    nC = White
+
+    dispVar =   "<\\C"+nC+" "+"---"  +"\\C"+nC+" "+"---" +"\\C"+nC+" "+"---" +"\\C"+nC+" "+"---" +">" +   \
+                "<\\C"+nC+" "+"---"  +"\\C"+nC+" "+"---" +"\\C"+nC+" "+"---" +"\\C"+nC+" "+"---" +">" +   \
+                "<\\C"+nC+" "+"---"  +"\\C"+nC+" "+"---" +"\\C"+nC+" "+"---" +"\\C"+nC+" "+"---" +">" 
+
+
+    dispVar1 = nC + " " + "---" + "\\C" + nC + " " + "---"
+    dispVar2 = nC + " " + "---" + "\\C" + nC + " " + "---"
+    dispVar3 = nC + " " + "---" + "\\C" + nC + " " + "---"
+    dispVar4 = nC + " " + "---" + "\\C" + nC + " " + "---"
+    dispVar5 = nC + " " + "---" + "\\C" + nC + " " + "---"
+    dispVar6 = nC + " " + "---" + "\\C" + nC + " " + "---"
+
+
+    pres_color1 = White
+    dispPsi1    = "---"
+    temp_color1 = White
+    disptemp1   = "---"
+
+    pres_color2 = White
+    dispPsi2    = "---"
+    temp_color2 = White
+    disptemp2   = "---"
+
+    pres_color3 = White
+    dispPsi3    = "---"
+    temp_color3 = White
+    disptemp3   = "---"
+
+    pres_color4 = White
+    dispPsi4    = "---"
+    temp_color4 = White
+    disptemp4   = "---"
+
+    pres_color5 = White
+    dispPsi5    = "---"
+    temp_color5 = White
+    disptemp5   = "---"
+
+    pres_color6 = White
+    dispPsi6    = "---"
+    temp_color6 = White
+    disptemp6   = "---"
+
+    try:
+
+        if mylist !=  None:
+
+            #print mylist
+            #print len(mylist)
+                    
+            
+            for i in range (2, len(mylist)):
+                print i, mylist[i][6]
+                
+                if mylist[i][6] == '01' :
+
+                    print "SensorID1 ",mylist[i][7]+mylist[i][8]+mylist[i][9]
+                    pres = mylist[i][10]+mylist[i][11]
+                    temp = mylist[i][12]
+
+                    pres_color1, dispPsi1 = displayPresValidation(pres)
+                    #print pres_color1, dispPsi1 
+                    
+                    temp_color1, disptemp1 = displayTempValidation(temp)
+                    #print temp_color1, disptemp1
+                        
+                    #dispVar1 = pres_color +" "+ dispPsi + " " + "\\C" + temp_color + disptemp + " "
+
+                    '''
+                    dispVar = "<\c"+pres_color+" "+dispPsi+" \c"+temp_color+" "+disptemp
+                    #dispVar = "</c1 "+mylist[i][10]+mylist[i][11]+" /c2 "+mylist[i][12]
+                    #dispVar = "</c1 "+k+" /c2 "+mylist[i][12]
+
+                    #if dispVar == "":
+                        #dispVar = "</c"+pres_color+" "+dispPsi+" /c"+temp_color+" "+disptemp
+                    #else:
+                        #dispVar = dispVar + "/c3 "+mylist[i][10]+mylist[i][11]+ "/c4 "+mylist[i][12]+">"
+                    '''
+
+                elif mylist[i][6] == '02' :
+
+                    print "SensorID2 ",mylist[i][7]+mylist[i][8]+mylist[i][9]
+                    pres = mylist[i][10]+mylist[i][11]
+                    temp = mylist[i][12]
+                    
+                    pres_color2, dispPsi2 = displayPresValidation(pres)
+                    #print pres_color2, dispPsi2
+                    
+                    temp_color2, disptemp2 = displayTempValidation(temp)
+                    #print temp_color2, disptemp2
+                        
+                    
+                    #dispVar = "</c"+pres_color+" "+dispPsi+" /c"+temp_Color+" "+disptemp
+                    #dispVar = "</c1 "+mylist[i][10]+mylist[i][11]+" /c2 "+mylist[i][12]
+                    #dispVar = "</c1 "+k+" /c2 "+mylist[i][12]
+
+                    #dispVar2 = pres_color + dispPsi + " " + "\\C" + temp_color + disptemp 
+
+                    '''
+                    if dispVar == "":
+                        nC = White
+                        dispVar = "<\c"+nC+" "+"---" +"\c"+nC+" "+"---"+"\c"+pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp+">"
+                    else:
+                        dispVar = dispVar +" "+ "\c"+pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp+">"
+                    '''
+                    
+                elif mylist[i][6] == '03' :
+
+                    print "SensorID3 ",mylist[i][7]+mylist[i][8]+mylist[i][9]
+                    pres = mylist[i][10]+mylist[i][11]
+                    temp = mylist[i][12]
+                    
+                    pres_color3, dispPsi3 = displayPresValidation(pres)
+                    #print pres_color1, dispPsi1 
+                    
+                    temp_color3, disptemp3 = displayTempValidation(temp)
+                    #print temp_color1, disptemp1
+                        
+                    
+                    #dispVar = "</c"+pres_color+" "+dispPsi+" /c"+temp_Color+" "+disptemp
+                    #dispVar = "</c1 "+mylist[i][10]+mylist[i][11]+" /c2 "+mylist[i][12]
+                    #dispVar = "</c1 "+k+" /c2 "+mylist[i][12]
+
+
+                    #dispVar3 =  pres_color + " " + dispPsi + " " + "\\C" + temp_color + disptemp + " "
+                    
+                    '''
+                    if dispVar == "":
+                        nC = White
+                        dispVar = "<\c"+nC+" "+"---" +"\c"+nC+" "+"---"+"\c"+nC+" "+nC+"\c"+nC+" "+nC+">"+"<\c"+pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp
+                    else:
+                        dispVar = dispVar +"<\c"+pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp
+                    '''
+
+
+                elif mylist[i][6] == '04' :
+
+                    print "SensorID4 ",mylist[i][7]+mylist[i][8]+mylist[i][9]
+                    pres = mylist[i][10]+mylist[i][11]
+                    temp = mylist[i][12]
+                    
+                    pres_color4, dispPsi4 = displayPresValidation(pres)
+                    #print pres_color1, dispPsi1 
+                    
+                    temp_color4, disptemp4 = displayTempValidation(temp)
+                    #print temp_color1, disptemp1
+                        
+                    
+                    #dispVar = "</c"+pres_color+" "+dispPsi+" /c"+temp_Color+" "+disptemp
+                    #dispVar = "</c1 "+mylist[i][10]+mylist[i][11]+" /c2 "+mylist[i][12]
+                    #dispVar = "</c1 "+k+" /c2 "+mylist[i][12]
+
+                    #dispVar4 = pres_color + dispPsi + " " + "\\C" + temp_color + disptemp 
+
+                    '''
+                    if dispVar == "":
+                        nC = White
+                        dispVar = "<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">" +       \
+                                  "<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp+">"
+                    else:
+                        dispVar = dispVar +" "+ "\c"+pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp+">"
+                    '''
+
+
+                elif mylist[i][6] == '05' :
+
+                    print "SensorID5 ",mylist[i][7]+mylist[i][8]+mylist[i][9]
+                    pres = mylist[i][10]+mylist[i][11]
+                    temp = mylist[i][12]
+                    
+                    pres_color5, dispPsi5 = displayPresValidation(pres)
+                    print pres_color5, dispPsi5
+                    
+                    temp_color5, disptemp5 = displayTempValidation(temp)
+                    print temp_color5, disptemp5
+                        
+                    
+                    #dispVar = "</c"+pres_color+" "+dispPsi+" /c"+temp_Color+" "+disptemp
+                    #dispVar = "</c1 "+mylist[i][10]+mylist[i][11]+" /c2 "+mylist[i][12]
+                    #dispVar = "</c1 "+k+" /c2 "+mylist[i][12]
+
+                    #dispVar5 = pres_color + " " + dispPsi + " " + "\\C" + temp_color + disptemp 
+
+                    '''
+                    if dispVar == "":
+                        nC = White
+                        dispVar = "<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">" +   \
+                                  "<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">"  +  \
+                                  "<\c"+pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp
+                    else:
+                        dispVar = dispVar +" "+ "\c"+pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp
+
+                    '''
+
+                    
+                elif mylist[i][6] == '06' :
+
+                    print "SensorID6 ",mylist[i][7]+mylist[i][8]+mylist[i][9]
+                    pres = mylist[i][10]+mylist[i][11]
+                    temp = mylist[i][12]
+                    
+                    pres_color6, dispPsi6 = displayPresValidation(pres)
+                    print pres_color6, dispPsi6 
+                    
+                    temp_color6, disptemp6 = displayTempValidation(temp)
+                    print temp_color6, disptemp6
+                        
+                    
+                    #dispVar = "</c"+pres_color+" "+dispPsi+" /c"+temp_Color+" "+disptemp
+                    #dispVar = "</c1 "+mylist[i][10]+mylist[i][11]+" /c2 "+mylist[i][12]
+                    #dispVar = "</c1 "+k+" /c2 "+mylist[i][12]
+
+                    #dispVar6 = pres_color + dispPsi + " " + "\\C" + temp_color + disptemp 
+
+                    '''
+                    if dispVar == "":
+                        nC = White
+                        dispVar = "<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">" +   \
+                              "<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">"  +  \
+                              "\c"+pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp +"\c"+pres_color+" "+dispPsi +"\c"+temp_color+" "+disptemp +">"
+                    else:
+                        dispVar = dispVar +" "+ "\c"+pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp+">"+"]"
+
+                    '''
+      
+                        #"<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">" +   \
+                        #"<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">" +   \
+                        #"<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">" + "]"
+
+                        #pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp
+
+                        #" "+ "\c"+pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp
+
+            #dispVar1 = pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp
+            #dispVar2 = pres_color+" "+dispPsi+"\c"+temp_color+" "+disptemp
+
+
+            #pres_color1, dispPsi1 = displayPresValidation(pres)
+            #print pres_color1, dispPsi1 
+                    
+            #temp_color1, disptemp1 = displayTempValidation(temp)
+            #print temp_color1, disptemp1
+
+            dispVar1 = pres_color1 + " " + dispPsi1 + " " + "\\C" + pres_color2 + dispPsi2 + " "
+            dispVar2 = temp_color1 + disptemp1 + " " + "\\C" + temp_color2 + disptemp2
+            dispVar3 = pres_color3 + " " + dispPsi3 + " " + "\\C" + pres_color4 + dispPsi4 + " "
+            dispVar4 = temp_color3 + disptemp3 + " " + "\\C" + temp_color4 + disptemp4
+            dispVar5 = pres_color5 + " " + dispPsi5 + " " + "\\C" + pres_color6 + dispPsi6 + " "
+            dispVar6 = temp_color5 + disptemp5 + " " + "\\C" + temp_color6 + disptemp6 
+
+            print dispVar1
+            print dispVar2
+            print dispVar3
+            print dispVar4
+            print dispVar5
+            print dispVar6
+                
+            dispVar =   "<\\C" + dispVar1 + "\\C" + dispVar2 + ">"           \
+                        "<\\C" + dispVar3 + "\\C" + dispVar4 + ">"           \
+                        "<\\C" + dispVar5 + "\\C" + dispVar6 + ">"           
+                        
+            
+            print dispVar
+
+            return dispVar
         
-'''
+    except:
+        e = sys.exc_info()[0]
+        my_logger.error("Failed - Temperature Calculation:%s ",e)
+        print ("Failed - Temperature Calculation: ",e)
+
+
 
 #main function
 if __name__ == "__main__":
@@ -674,10 +899,10 @@ if __name__ == "__main__":
     
     mylist = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], \
               [0, 'a1', '41', '08', '63', '00', '05'], \
-              [0, 'a1', '41', '0f', '63', '00', '01', 'ba', '6b', '09', '01', '50', '78', '00'], \
-              [0, 'a1', '41', '0f', '63', '00', '02', 'ba', '6d', '6d', '01', '25', '58', '00'], \
-              [0, 'a1', '41', '0f', '63', '00', '03', '56', 'a8', 'cb', '01', '30', '70', '00'], \
-              [0, 'a1', '41', '0f', '63', '00', '04', '56', 'a6', 'be', '01', '45', '65', '00'], \
+              [0, 'a1', '41', '0f', '63', '00', '01', 'ba', '6b', '09', '01', '56', '50', '00'], \
+              [0, 'a1', '41', '0f', '63', '00', '02', 'ba', '6d', '6d', '01', '51', '58', '00'], \
+              [0, 'a1', '41', '0f', '63', '00', '03', '56', 'a8', 'cb', '01', '40', '50', '00'], \
+              [0, 'a1', '41', '0f', '63', '00', '04', '56', 'a6', 'be', '01', '45', '51', '00'], \
               [0, 'a1', '41', '0f', '63', '00', '05', '56', 'a7', '81', '00', '00', '00', '00'], \
               [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
