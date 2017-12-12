@@ -978,150 +978,126 @@ def fun_VehName(vehName):
                     print vehDetails1
 
                     return RFUID
-            else:
-                return None
+            
             
             dbConn.close()
 
         else:
             return None
 
-        
-      
 
-def fun_main(vehNo):
-    print(" Main Function " + vehNo, len( vehNo ) )
+
+    
+
+            
+
+def fun_main(RFIDTID):
+    
     
     try:
-        #print("RFID Module Read TAG ID Function")
-        #tag_id = rfid.RFIDUHFQueryTag()
-        
-        if (vehNo != None) and (len( vehNo ) == 4):
-            print(" Main Function " + vehNo)
+        print(" Main Function " + RFIDTID, len( RFIDTID ) )
+        if (RFIDTID == None):
 
-            if(database!=None):
-                dbConn = db.create_db_connection(database)
-                print(" Database Function " + vehNo)
-
-                if(dbConn != None):
-                    #Get the Device Detail by vehNo from GUI
-                    #vehID, vehName, BUID, RFUID = db_DeviceDetails_by_rfiduid(dbConn, tag_id)
-                    vehDetails1 = db.select_DeviceDetails_by_vehNumber(dbConn, vehNo)
-
-                    if(vehDetails1 != None):
-                        print("Query the Database to read Tyre Details, Sensor ID, Position by vehID")
-                        
-                        #vehID = vehDetails1[0]
-                        #vehName = vehDetails1[1]
-                        #BUID = vehDetails1[2]
-                        #RFUID = vehDetails1[3]
-                        tag_id = vehDetails1[3]
-
-                        print vehDetails1, vehDetails1[3]
-                dbConn.close()
-        
-        else:
             print("RFID Module Read TAG ID Function")
+
             tag_id = rfid.RFIDUHFQueryTag()
 
-        
-        #if tag_id1 != None:
-            # Fetch rfuid from DB
-            #tag_id = tag_id1
+        elif(RFIDTID != None):
             
-        #else:
-            #print("RFID Module Read TAG ID Function")
-            #tag_id = rfid.RFIDUHFQueryTag()
+            tag_id = RFIDTID
+            
         
-        print "tag_id", tag_id
-        if(tag_id != None):
-            print("Create a database connection to the DB file .db")
-            if(database!=None):
-                dbConn = db.create_db_connection(database)
-                
-                if(dbConn != None):
-                    #vehID, vehName, BUID, RFUID = db_DeviceDetails_by_rfiduid(dbConn, tag_id)
-                    vehDetails = db_DeviceDetails_by_rfiduid(dbConn, tag_id)
-                    #print("Create a database connection to the DB file--- ", vehDetails)
+            print "tag_id", tag_id
+            if(tag_id != None):
+                print("Create a database connection to the DB file .db")
+                if(database!=None):
+                    dbConn = db.create_db_connection(database)
                     
-                    if(vehDetails != None):
-                        print("Query the Database to read Tyre Details, Sensor ID, Position by vehID")
+                    if(dbConn != None):
+                        #vehID, vehName, BUID, RFUID = db_DeviceDetails_by_rfiduid(dbConn, tag_id)
+                        vehDetails = db_DeviceDetails_by_rfiduid(dbConn, tag_id)
+                        #print("Create a database connection to the DB file--- ", vehDetails)
+                        
+                        if(vehDetails != None):
+                            print("Query the Database to read Tyre Details, Sensor ID, Position by vehID")
 
-                        vehID = vehDetails[0]
-                        vehName = vehDetails[1]
-                        BUID = vehDetails[2]
-                        RFUID = vehDetails[3]
+                            vehID = vehDetails[0]
+                            vehName = vehDetails[1]
+                            BUID = vehDetails[2]
+                            RFUID = vehDetails[3]
 
 
-                        #Query DB DeviceDetail in VehDetails Table to read vehID, vehName, BUID, RFUID
-                        if(vehID != None):
-                            print dbConn
-                            DBSensorVariable = db_DeviceDetails_by_vehID(dbConn, vehID)                        
+                            #Query DB DeviceDetail in VehDetails Table to read vehID, vehName, BUID, RFUID
+                            if(vehID != None):
+                                print dbConn
+                                DBSensorVariable = db_DeviceDetails_by_vehID(dbConn, vehID)                        
 
-                            #print DBSensorVariable
-                            #dbConn.close()
+                                #print DBSensorVariable
+                                #dbConn.close()
+                            else:
+                                my_logger.warning ("Vehicle ID not Available or None Function :%s ", vehID)
                         else:
-                            my_logger.warning ("Vehicle ID not Available or None Function :%s ", vehID)
+                           my_logger.warning ("RFID Tag ID is not available in DB :%s ", tag_id)
                     else:
-                       my_logger.warning ("RFID Tag ID is not available in DB :%s ", tag_id)
-                else:
-                    my_logger.warning ("No DB Connection ")
-            else: 
-                my_logger.warning ("Database path Not Available ")
-        #else:
-            #my_logger.warning ("RFID Tag ID is not available in DB %s: ", tag_id)
-            #print ("RFID Tag ID is not available in DB %s: ", tag_id)
-            #return tag_id
+                        my_logger.warning ("No DB Connection ")
+                else: 
+                    my_logger.warning ("Database path Not Available ")
+            #else:
+                #my_logger.warning ("RFID Tag ID is not available in DB %s: ", tag_id)
+                #print ("RFID Tag ID is not available in DB %s: ", tag_id)
+                #return tag_id
 
 
-            #Query DB Device Detail to read vehID, vehName, BUID, RFUID
-            if (BUID != None):
-                print("Connect socket RFCOMM to Bluetooth Controller by BUID")                 
-                print("Create a Bluetooth connection")
-                bleConn = blecontroller.connect_ble(BUID)
-                            
-                if(bleConn != None):                           
+                #Query DB Device Detail to read vehID, vehName, BUID, RFUID
+                if (BUID != None):
+                    print("Connect socket RFCOMM to Bluetooth Controller by BUID")                 
+                    print("Create a Bluetooth connection")
+                    bleConn = blecontroller.connect_ble(BUID)
                                 
-
-                    if(( DBSensorVariable != None)):
-                        print("Configure BT SensorUID, tirePosition based on DB ")
-
-                        RetValCompare = configure_BTController(bleConn, DBSensorVariable)
+                    if(bleConn != None):                           
                                     
-                    else:
-                        my_logger.warning ("DBSensorVariable  not Available or None Function : %s", DBSensorVariable)
+
+                        if(( DBSensorVariable != None)):
+                            print("Configure BT SensorUID, tirePosition based on DB ")
+
+                            RetValCompare = configure_BTController(bleConn, DBSensorVariable)
+                                        
+                        else:
+                            my_logger.warning ("DBSensorVariable  not Available or None Function : %s", DBSensorVariable)
 
 
-                    mylist = Connect_Socket_Bluetooth_by_BUID(bleConn)
-                    
-
-                    #Current date and time
-                    #t = datetime.utcnow()
-                    date_time = time.strftime('%H:%M:%S %d/%m/%Y')
-                    date_timeDB = int(datetime.datetime.now().strftime("%s")) * 1000
-                    print date_time
-                    
-                    if mylist != None:
-
-                        print("displayLEDBoard ")
-                        #Display this data in LED Display with Commands 
-                        dispVar = display.displayLEDBoardParameters(mylist)
-                        print dispVar
+                        mylist = Connect_Socket_Bluetooth_by_BUID(bleConn)
                         
-                        #display.displayLEDBoard(vehName, dispCommand, date_time, dispVar)
-                        display.displayLEDBoard(vehName, dispCommand, date_time, dispVar)
 
+                        #Current date and time
+                        #t = datetime.utcnow()
+                        date_time = time.strftime('%H:%M:%S %d/%m/%Y')
+                        date_timeDB = int(datetime.datetime.now().strftime("%s")) * 1000
+                        print date_time
                         
-                        #dbConn = db.create_db_connection(database)
-                        #with dbConn: 
-                        if dbConn: 
-                               
-                            db.update_Latest_data_by_VehId(dbConn, int(vehID), date_timeDB, mylist)
+                        if mylist != None:
 
-                        dbConn.close()
+                            print("displayLEDBoard ")
+                            #Display this data in LED Display with Commands 
+                            dispVar = display.displayLEDBoardParameters(mylist)
+                            print dispVar
+                            
+                            #display.displayLEDBoard(vehName, dispCommand, date_time, dispVar)
+                            display.displayLEDBoard(vehName, dispCommand, date_time, dispVar)
 
-                        #update to the live server
-                        apiupdate.prepareJsonString(int(vehID), mylist)
+                            
+                            #dbConn = db.create_db_connection(database)
+                            #with dbConn: 
+                            if dbConn: 
+                                   
+                                db.update_Latest_data_by_VehId(dbConn, int(vehID), date_timeDB, mylist)
+
+                            dbConn.close()
+
+                            #update to the live server
+                            #apiupdate.prepareJsonString(int(vehID), mylist)
+
+                            return mylist, vehName, "Success"
                                 
     except:
         e = sys.exc_info()[0]
@@ -1196,7 +1172,12 @@ if __name__ == "__main__":
         #fun()
     #printit()
     vehName = "9406"
-    fun_VehName(vehName)
-    #fun_main(vehName)
+    tagId = fun_VehName(vehName)
+    print tagId
+    v1, v2,v3 = fun_main(tagId)
+
+    print v1
+    print v2
+    print v3
     
         

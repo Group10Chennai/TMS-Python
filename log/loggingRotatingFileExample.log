@@ -2979,3 +2979,107 @@
 2017-12-12 17:56:42,990 :INFO : Create a connection to DB  :
 2017-12-12 17:56:42,990 :INFO : Create a connection to DB  :
 2017-12-12 17:56:42,990 :INFO : Create a connection to DB  :
+2017-12-12 19:58:27,957 :INFO : Create a connection to DB  :
+2017-12-12 19:58:27,957 :INFO : Create a connection to DB  :
+2017-12-12 19:58:27,957 :INFO : Create a connection to DB  :
+2017-12-12 19:58:27,957 :INFO : Create a connection to DB  :
+2017-12-12 19:58:52,621 :INFO : Create a connection to DB  :
+2017-12-12 19:58:52,621 :INFO : Create a connection to DB  :
+2017-12-12 19:58:52,621 :INFO : Create a connection to DB  :
+2017-12-12 19:58:52,621 :INFO : Create a connection to DB  :
+2017-12-12 19:58:52,717 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 19:58:52,717 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 19:58:52,717 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 19:58:52,717 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 19:59:58,874 :INFO : Create a connection to DB  :
+2017-12-12 19:59:58,874 :INFO : Create a connection to DB  :
+2017-12-12 19:59:58,874 :INFO : Create a connection to DB  :
+2017-12-12 19:59:58,874 :INFO : Create a connection to DB  :
+2017-12-12 19:59:58,963 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 19:59:58,963 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 19:59:58,963 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 19:59:58,963 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 20:00:34,314 :INFO : Create a connection to DB  :
+2017-12-12 20:00:34,314 :INFO : Create a connection to DB  :
+2017-12-12 20:00:34,314 :INFO : Create a connection to DB  :
+2017-12-12 20:00:34,314 :INFO : Create a connection to DB  :
+2017-12-12 20:00:34,430 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 20:00:34,430 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 20:00:34,430 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 20:00:34,430 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 20:04:55,189 :INFO : Create a connection to DB  :
+2017-12-12 20:04:55,189 :INFO : Create a connection to DB  :
+2017-12-12 20:04:55,189 :INFO : Create a connection to DB  :
+2017-12-12 20:04:55,189 :INFO : Create a connection to DB  :
+2017-12-12 20:04:55,319 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 20:04:55,319 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 20:04:55,319 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 20:04:55,319 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 20:05:46,134 :INFO : Create a connection to DB  :
+2017-12-12 20:05:46,134 :INFO : Create a connection to DB  :
+2017-12-12 20:05:46,134 :INFO : Create a connection to DB  :
+2017-12-12 20:05:46,134 :INFO : Create a connection to DB  :
+2017-12-12 20:05:46,292 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 20:05:46,292 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 20:05:46,292 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 20:05:46,292 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 20:06:12,858 :INFO : Create a connection to DB  :
+2017-12-12 20:06:12,858 :INFO : Create a connection to DB  :
+2017-12-12 20:06:12,858 :INFO : Create a connection to DB  :
+2017-12-12 20:06:12,858 :INFO : Create a connection to DB  :
+2017-12-12 20:06:13,031 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 20:06:13,031 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 20:06:13,031 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 20:06:13,031 :ERROR :Failed - Main Function Crashed:<type 'exceptions.NameError'>  :
+2017-12-12 20:07:26,521 :INFO : Create a connection to DB  :
+2017-12-12 20:07:26,521 :INFO : Create a connection to DB  :
+2017-12-12 20:07:26,521 :INFO : Create a connection to DB  :
+2017-12-12 20:07:26,521 :INFO : Create a connection to DB  :
+2017-12-12 20:07:26,757 :INFO : Create a connection to DB  :
+2017-12-12 20:07:26,757 :INFO : Create a connection to DB  :
+2017-12-12 20:07:26,757 :INFO : Create a connection to DB  :
+2017-12-12 20:07:26,757 :INFO : Create a connection to DB  :
+2017-12-12 20:07:26,787 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-12 20:07:26,787 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-12 20:07:26,787 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-12 20:07:26,787 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-12 20:08:21,332 :ERROR :Failed - Main Function Crashed:<class 'requests.exceptions.ConnectionError'>  :
+2017-12-12 20:08:21,332 :ERROR :Failed - Main Function Crashed:<class 'requests.exceptions.ConnectionError'>  :
+2017-12-12 20:08:21,332 :ERROR :Failed - Main Function Crashed:<class 'requests.exceptions.ConnectionError'>  :
+2017-12-12 20:08:21,332 :ERROR :Failed - Main Function Crashed:<class 'requests.exceptions.ConnectionError'>  :
+2017-12-12 20:09:16,829 :INFO : Create a connection to DB  :
+2017-12-12 20:09:16,829 :INFO : Create a connection to DB  :
+2017-12-12 20:09:16,829 :INFO : Create a connection to DB  :
+2017-12-12 20:09:16,829 :INFO : Create a connection to DB  :
+2017-12-12 20:09:16,998 :INFO : Create a connection to DB  :
+2017-12-12 20:09:16,998 :INFO : Create a connection to DB  :
+2017-12-12 20:09:16,998 :INFO : Create a connection to DB  :
+2017-12-12 20:09:16,998 :INFO : Create a connection to DB  :
+2017-12-12 20:09:17,019 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-12 20:09:17,019 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-12 20:09:17,019 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-12 20:09:17,019 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-12 20:13:03,084 :INFO : Create a connection to DB  :
+2017-12-12 20:13:03,084 :INFO : Create a connection to DB  :
+2017-12-12 20:13:03,084 :INFO : Create a connection to DB  :
+2017-12-12 20:13:03,084 :INFO : Create a connection to DB  :
+2017-12-12 20:13:03,258 :INFO : Create a connection to DB  :
+2017-12-12 20:13:03,258 :INFO : Create a connection to DB  :
+2017-12-12 20:13:03,258 :INFO : Create a connection to DB  :
+2017-12-12 20:13:03,258 :INFO : Create a connection to DB  :
+2017-12-12 20:13:03,290 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-12 20:13:03,290 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-12 20:13:03,290 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-12 20:13:03,290 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-12 20:18:19,508 :INFO : Create a connection to DB  :
+2017-12-12 20:18:19,508 :INFO : Create a connection to DB  :
+2017-12-12 20:18:19,508 :INFO : Create a connection to DB  :
+2017-12-12 20:18:19,508 :INFO : Create a connection to DB  :
+2017-12-12 20:18:19,780 :INFO : Create a connection to DB  :
+2017-12-12 20:18:19,780 :INFO : Create a connection to DB  :
+2017-12-12 20:18:19,780 :INFO : Create a connection to DB  :
+2017-12-12 20:18:19,780 :INFO : Create a connection to DB  :
+2017-12-12 20:18:19,812 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-12 20:18:19,812 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-12 20:18:19,812 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-12 20:18:19,812 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
