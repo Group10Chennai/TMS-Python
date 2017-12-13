@@ -137,56 +137,43 @@ def db_DeviceDetails_by_rfiduid(conn, tag_id):
         return None
     
 '''
-
 # Start Query the DB with vehID to get Tyre Details
 def db_DeviceDetails_by_vehID(vehID1):
-
     print("Create a database connection to the DB file .db")
     conn = db.create_db_connection(database)
     
     #print vehID
     print("Query the database to read Tyre Details by vehID")
     #vehDetail = db.select_DeviceDetails_by_rfiduid(conn, vehID)
-
     with conn:
         TyreDetail = db.select_TyreDetails_by_VehId(conn, 24)
         #print TyreDetail
     if (TyreDetail != None):
-
      
         if(TyreDetail[0] != None):
             Tyre_row1 = TyreDetail[0]
-
             SID1, L1 = Tyre_row1[0], Tyre_row1[1]
             print SID1, L1
             
         if(TyreDetail[1] != None):
             Tyre_row2 = TyreDetail[1]
-
             SID2, L2 = Tyre_row2[0], Tyre_row2[1]
             print SID2, L2
             
         if(TyreDetail[2] != None):
             Tyre_row3 = TyreDetail[2]
-
             SID3, L3 = Tyre_row3[0], Tyre_row3[1]
             print SID3, L3
-
         if(TyreDetail[3] != None):
             Tyre_row4 = TyreDetail[3]
-
             SID4, L4 = Tyre_row4[0], Tyre_row4[1]
             print SID4, L4
-
         if(TyreDetail[4] != None):
             Tyre_row5 = TyreDetail[4]
-
             SID5, L5 = Tyre_row5[0], Tyre_row5[1]
             print SID5, L5
-
         if(TyreDetail[5] != None):
             Tyre_row6 = TyreDetail[5]
-
             SID6, L6 = Tyre_row6[0], Tyre_row6[1]
             print SID6, L6
        
@@ -196,7 +183,6 @@ def db_DeviceDetails_by_vehID(vehID1):
     conn.close()
     
     #return vehID, vehName, BUID, RFUID
-
 '''
 
 # Start Query the DB with vehID to get Tyre Details
@@ -953,48 +939,37 @@ def javaFun_end():
 
 def fun_VehName(vehName):
 
-    try:
+    if (vehName != None):
 
         print(" fun_VehName Function " + vehName)
 
-        if (vehName != None):
+        if(database!=None):
+            dbConn = db.create_db_connection(database)
+            print(" Database Function " + vehName)
 
-            print(" fun_VehName Function " + vehName)
+            if(dbConn != None):
+                #Get the Device Detail by vehNo from GUI
+                #vehID, vehName, BUID, RFUID = db_DeviceDetails_by_rfiduid(dbConn, tag_id)
+                vehDetails1 = db.select_DeviceDetails_by_vehName(dbConn, vehName)
 
-            if(database!=None):
-                dbConn = db.create_db_connection(database)
-                print(" Database Function " + vehName)
-
-                if(dbConn != None):
-                    #Get the Device Detail by vehNo from GUI
-                    #vehID, vehName, BUID, RFUID = db_DeviceDetails_by_rfiduid(dbConn, tag_id)
-                    vehDetails1 = db.select_DeviceDetails_by_vehName(dbConn, vehName)
-
-                    if(vehDetails1 != None):
-                        print("Query the Database to read Tyre Details, Sensor ID, Position by vehID")
-                            
-                        #vehID = vehDetails1[0]
-                        #vehName = vehDetails1[1]
-                        #BUID = vehDetails1[2]
-                        RFUID = vehDetails1[3]
+                if(vehDetails1 != None):
+                    print("Query the Database to read Tyre Details, Sensor ID, Position by vehID")
                         
+                    #vehID = vehDetails1[0]
+                    #vehName = vehDetails1[1]
+                    #BUID = vehDetails1[2]
+                    RFUID = vehDetails1[3]
+                    
 
-                        print RFUID
+                    print vehDetails1
 
-                        return RFUID
-                
-                
-                dbConn.close()
+                    return RFUID
+            
+            
+            dbConn.close()
 
-            else:
-                return None
-
-    except:
-        e = sys.exc_info()[0]
-        my_logger.error("Failed - GUI Attribute to Set (vehName) None:%s, %s ",e, vehName )
-        print ("Failed - GUI Attribute to Set (vehName) None: ",e, vehName )
-
-        return None
+        else:
+            return None
 
 
 
@@ -1045,23 +1020,14 @@ def fun_main(RFIDTID):
 
                                 #print DBSensorVariable
                                 #dbConn.close()
-
-                                if DBSensorVariable == None:
-                                    my_logger.warning ("Vehicle ID Related Sensors is None :%s ", DBSensorVariable)
-                                    return None, "Vehicle ID Related Sensors is None "+DBSensorVariable, "Failed"
-                                    
                             else:
                                 my_logger.warning ("Vehicle ID not Available or None Function :%s ", vehID)
-                                return None, "Vehicle ID not Available or None "+ vehID , "Failed"
                         else:
                            my_logger.warning ("RFID Tag ID is not available in DB :%s ", tag_id)
-                           return None, "RFID Tag ID is not available in DB "+ tag_id , "Failed"
                     else:
                         my_logger.warning ("No DB Connection ")
-                        return None, "No DB Connection " , "Failed"
                 else: 
                     my_logger.warning ("Database path Not Available ")
-                    return None, "Database path Not Available ", "Failed"
             #else:
                 #my_logger.warning ("RFID Tag ID is not available in DB %s: ", tag_id)
                 #print ("RFID Tag ID is not available in DB %s: ", tag_id)
@@ -1081,11 +1047,9 @@ def fun_main(RFIDTID):
                             print("Configure BT SensorUID, tirePosition based on DB ")
 
                             RetValCompare = configure_BTController(bleConn, DBSensorVariable)
-                            #RetValCompare = compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(bleConn, DBSensorVariable, BluetoothSocketVariable)
                                         
                         else:
                             my_logger.warning ("DBSensorVariable  not Available or None Function : %s", DBSensorVariable)
-                            return None, "DBSensorVariable  not Available or None Function ", "Failed"
 
 
                         mylist = Connect_Socket_Bluetooth_by_BUID(bleConn)
@@ -1095,86 +1059,38 @@ def fun_main(RFIDTID):
                         #t = datetime.utcnow()
                         date_time = time.strftime('%H:%M:%S %d/%m/%Y')
                         date_timeDB = int(datetime.datetime.now().strftime("%s")) * 1000
-                        print date_time
+                        #print date_time
                         
                         if mylist != None:
 
-                            try:
-
-                                print("displayLEDBoard ")
-                                #Display this data in LED Display with Commands 
-                                dispVar = display.displayLEDBoardParameters(mylist)
-                                print dispVar
-
-                                if dispVar != None:
-                                    
-                                    #display.displayLEDBoard(vehName, dispCommand, date_time, dispVar)
-                                    display.displayLEDBoard(vehName, dispCommand, date_time, dispVar)
-
-                                else:
-                                    my_logger.warning ("Failed - dispVar  not Available or None: %s", dispVar)
-                                    print ("Failed - dispVar  not Available or None:", dispVar)
-                                    #return None, " dispVar  not Available or None", "Failed"
+                            print("displayLEDBoard ")
+                            #Display this data in LED Display with Commands 
+                            dispVar = display.displayLEDBoardParameters(mylist)
+                            print dispVar
                             
-                            except:
-                                e = sys.exc_info()[0]
-                                my_logger.error("Failed - dispVar  not Available or None :%s ",e)
-                                print ("Failed - dispVar  not Available or None:%s ",e)
-
-                                #return None, "dispVar  not Available or None", "Failed"
-
-
-                            try:
-                                
-                                #dbConn = db.create_db_connection(database)
-                                #with dbConn: 
-                                if dbConn: 
-                                       
-                                    db.update_Latest_data_by_VehId(dbConn, int(vehID), date_timeDB, mylist)
-
-                                dbConn.close()
-
-                            except:
-                                e = sys.exc_info()[0]
-                                my_logger.error("Failed - update_Latest_data_by_VehId :%s ",e)
-                                print ("Failed - update_Latest_data_by_VehId ",e)
-
-                                #return None, "dispVar  not Available or None", "Failed"
-
-                            '''
-                            try:
-
-                                #update to the live server
-                                #apiupdate.prepareJsonString(int(vehID), mylist)
-
-                            except:
-                                e = sys.exc_info()[0]
-                                my_logger.error("Failed - prepareJsonString :%s ",e)
-                                print ("Failed - prepareJsonString ",e)
-
-                                #return None, "dispVar  not Available or None", "Failed"
-                            '''
+                            #display.displayLEDBoard(vehName, dispCommand, date_time, dispVar)
+                            display.displayLEDBoard(vehName, dispCommand, date_time, dispVar)
 
                             
-                            return mylist, vehName, "Success"
+                            #dbConn = db.create_db_connection(database)
+                            #with dbConn: 
+                            if dbConn: 
+                                print("Update Latest data to Database ")
+                                db.update_Latest_data_by_VehId(dbConn, int(vehID), date_timeDB, mylist)
 
-                    else:
-                        print ("Failed - Trying to connect Bluetooth")
-                        return None, "Failed - Trying to connect Bluetooth", "Failed"
+                            dbConn.close()
 
-                else:
-                    print ("Failed - Trying to connect Bluetooth BUID")
-                    return None, "Failed - Trying to connect Bluetooth BUID " +BUID , "Failed"
+                            #update to the live server
+                            #apiupdate.prepareJsonString(int(vehID), mylist)
 
-                     
+                            #return mylist, vehName, "Success"
                                 
     except:
         e = sys.exc_info()[0]
         my_logger.error("Failed - Main Function Crashed:%s ",e)
         print ("Failed - Main Function Crashed: ",e)
 
-        return None, "Failed - Main Function Crashed: " , "Failed"
-        #return ("Failed - Main Function Crashed: " +e)
+        #return ("Failed - Main Function Crashed:%s ",e)
     
         '''               
         #Query DB Device Detail to read vehID, vehName, BUID, RFUID
@@ -1185,12 +1101,9 @@ def fun_main(RFIDTID):
             
             if(bleConn != None):                           
                 BluetoothSocketVariable = Connect_Socket_Bluetooth_by_BUID(bleConn)
-
                 #print BluetoothSocketVariable
-
                 if(( DBSensorVariable != None) and (BluetoothSocketVariable != None)):
                     print("Compare DB Sensor UID, tirePosition with Bluetooth TyreNo, TyreID")
-
                     RetValCompare = compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(bleConn, DBSensorVariable, BluetoothSocketVariable)
                 else:
                     my_logger.warning ("DBSensorVariable and BluetoothSocketVariable not Available or None Function : %s %s", DBSensorVariable, BluetoothSocketVariable)
@@ -1204,9 +1117,6 @@ def fun_main(RFIDTID):
             BluetoothSocketVariableFinal = Connect_Socket_Bluetooth_by_BUID(bleConn)    
             print BluetoothSocketVariableFinal
         ''
-
-
-
     
     update_Latest_data_by_VehId(conn, 2, '2015-01-04', '2015-01-06',2)
     
@@ -1215,7 +1125,6 @@ def fun_main(RFIDTID):
         e = sys.exc_info()[0]
         my_logger.error("Failed - Main Function Crashed:%s ",e)
         print ("Failed - Main Function Crashed: ",e)
-
         return None
     '''
    
@@ -1244,10 +1153,9 @@ if __name__ == "__main__":
     vehName = "9406"
     tagId = fun_VehName(vehName)
     print tagId
-    v1, v2, v3= fun_main(tagId)
+    fun_main(tagId)
 
-    print v1
-    print v2
-    print v3
+    #print v1
+    #print v2
+    #print v3
     
-        

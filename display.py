@@ -860,11 +860,16 @@ def displayLEDBoardParameters(mylist):
             print dispVar
 
             return dispVar
+
+        else:
+            print ("Failed - LED Display parameters is None:",mylist)
+            my_logger.warning("Failed - LED Display parameters is None: %s",mylist)
+            return None
         
     except:
         e = sys.exc_info()[0]
-        my_logger.error("Failed - Temperature Calculation:%s ",e)
-        print ("Failed - Temperature Calculation: ",e)
+        my_logger.error("Failed - LED Display parameters is None:%s %s ",e, mylist)
+        print ("Failed - LED Display parameters is None: ",e, mylist)
 
 
 
@@ -895,7 +900,7 @@ if __name__ == "__main__":
     vehName = "SND 9406"
 
     date_time = time.strftime('%H:%M %d/%m/%Y')
-    #print date_time
+    print date_time
     
     mylist = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], \
               [0, 'a1', '41', '08', '63', '00', '05'], \

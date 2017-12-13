@@ -149,53 +149,60 @@ def Tpms_SET_TireID(conn, TPMSET):
     #while True:
     #s.send(my_hex)
 
-    if(conn != None):
-        
-        if(TPMSET != None):
-            #print "TPMSET :",binascii.b2a_hex(TPMSET)
-        
-            while(True):
-                try:
-                    conn.send(TPMSET)
+    try:
+
+        if(conn != None):
             
-                    time.sleep(1)
+            if(TPMSET != None):
+                #print "TPMSET :",binascii.b2a_hex(TPMSET)
+            
+                while(True):
+                    try:
+                        conn.send(TPMSET)
+                
+                        time.sleep(1)
 
-                    data = conn.recv(1024)
+                        data = conn.recv(1024)
 
-                    hex_data = binascii.b2a_hex(data)
-                    RcvResponse =  hex_data[10:12]
-                    print RcvResponse
-                    
-                    if (RcvResponse == "aa"):
-                        #print binascii.b2a_hex(data)
-                        return RcvResponse
-                        break;
-                    else:
-                        print ("Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa:",data)
-                        my_logger.warning("Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: %s",data)
+                        hex_data = binascii.b2a_hex(data)
+                        RcvResponse =  hex_data[10:12]
+                        print RcvResponse
+                        
+                        if (RcvResponse == "aa"):
+                            #print binascii.b2a_hex(data)
+                            return RcvResponse
+                            break;
+                        else:
+                            print ("Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa:",data)
+                            my_logger.warning("Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: %s",data)
+                            #conn.close()
+                            #return None
+                       
+                        
+                    except bluetooth.btcommon.BluetoothError as e:
+                        print ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError",e)
+                        my_logger.error ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError",e)  
                         #conn.close()
+                        time.sleep(2)
                         return None
-                   
-                    
-                except bluetooth.btcommon.BluetoothError as e:
-                    print ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError",e)
-                    my_logger.error ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError",e)  
-                    #conn.close()
-                    time.sleep(2)
-                    return None
-                    pass
+                        pass
+            else:
+                print ("Failed - Bluetooth Send and Receive Communication Query Command is None:",TPMSET)
+                my_logger.warning("Failed - Bluetooth Send and Receive Communication Query Command is None: %s",TPMSET)
+                #conn.close()
+                return None
         else:
-            print ("Failed - Bluetooth Send and Receive Communication Query Command is None:",TPMSET)
-            my_logger.warning("Failed - Bluetooth Send and Receive Communication Query Command is None: %s",TPMSET)
+            print ("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None:",TPMSET)
+            my_logger.warning("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None: %s",TPMSET)
             #conn.close()
             return None
-    else:
-        print ("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None:",TPMSET)
-        my_logger.warning("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None: %s",TPMSET)
-        #conn.close()
-        return None
     
-    
+    except:
+        e = sys.exc_info()[0]
+        my_logger.error("Failed - Bluetooth performing Bluetooth Communication...: %s", e)
+        print ("Failed - performing Bluetooth Communication...:", e)
+
+        return None    
     
     
 #    s.close()
@@ -277,71 +284,73 @@ def connect_ble(BUID1):
     for addr, name in nearby_devices:
         print "  %s - %s" % (addr, name)
     '''
-    if(BUID1 != None):
-        while(True):        
-            print BUID1
-            try:
-                print "performing Bluetooth Socket Creation..."
-                bleCon = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
-                #return bleCon
-                break;
 
-            except bluetooth.btcommon.BluetoothError as e:
-                my_logger.error("Failed - Bluetooth Socket Creation: %s", e)
-                print ("Failed - Bluetooth Socket Creation: ", e)
-                #bleCon.close()
-                time.sleep(2)
-                #return None
-                pass 
-
-        print "trying to connect to %s on 0x%X" % (BUID1, port)
-
-        if(bleCon is not None):
-            while(True):
+    try:
+        if(BUID1 != None):
+            while(True):        
+                print BUID1
                 try:
-                    bleCon.connect((BUID1, port))
-                        
-                    print "connected to %s on 0x%X" % (BUID1, port)
-                    print "performing Bluetooth Communication..."
-                    return bleCon
+                    print "performing Bluetooth Socket Creation..."
+                    bleCon = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
+                    #return bleCon
                     break;
 
                 except bluetooth.btcommon.BluetoothError as e:
-                    print ("Failed Trying to connect on %s on 0x%X" % (BUID1, port),e)
-                    my_logger.error("Failed - Trying to connect %s",e)  
-                    time.sleep(2)
-                    bleCon.close()
-                    return None
-                    pass
-                    
-                #except _bt.error as e:
-                    #raise BluetoothError(str(e))
-                    #my_logger.error(e)  
+                    my_logger.error("Failed - Bluetooth Socket Creation: %s", e)
+                    print ("Failed - Bluetooth Socket Creation: ", e)
                     #bleCon.close()
-                    #pass
-                    #return None
-            
-        #except Error as e:
-            #my_logger.error(e)  
-            #return None
-        else:
-            my_logger.warning("Failed - Bluetooth Connection Socket is Not Avalable: %s", BUID1)
-            print ("Failed - Bluetooth Connection Socket is Not Avalable: %s", BUID1)
-            return None
-            
-    else:
-        my_logger.warning("Failed - Bluetooth MAC Address is Not Avalable: %s", BUID1)
-        print("Failed - Bluetooth MAC Address is Not Avalable: %s", BUID1)
-        return None
+                    time.sleep(2)
+                    return None
+                    pass 
 
-    '''
+            print "trying to connect to %s on 0x%X" % (BUID1, port)
+
+            if(bleCon is not None):
+                while(True):
+                    try:
+                        bleCon.connect((BUID1, port))
+                            
+                        print "connected to %s on 0x%X" % (BUID1, port)
+                        print "performing Bluetooth Communication..."
+                        return bleCon
+                        break;
+
+                    except bluetooth.btcommon.BluetoothError as e:
+                        print ("Failed Trying to connect on %s on 0x%X" % (BUID1, port),e)
+                        my_logger.error("Failed - Trying to connect %s",e)  
+                        time.sleep(2)
+                        bleCon.close()
+                        return None
+                        #pass
+                        
+                    #except _bt.error as e:
+                        #raise BluetoothError(str(e))
+                        #my_logger.error(e)  
+                        #bleCon.close()
+                        #pass
+                        #return None
+                
+            #except Error as e:
+                #my_logger.error(e)  
+                #return None
+            else:
+                my_logger.warning("Failed - Bluetooth Connection Socket is Not Avalable: %s", BUID1)
+                print ("Failed - Bluetooth Connection Socket is Not Avalable: %s", BUID1)
+                return None
+                
+        else:
+            my_logger.warning("Failed - Bluetooth MAC Address is Not Avalable: %s", BUID1)
+            print("Failed - Bluetooth MAC Address is Not Avalable: %s", BUID1)
+            return None
+
+    
     except:
         e = sys.exc_info()[0]
-        my_logger.error(e)
-        print ("Bluetooth Query Attribute Value not Avalable:",e)
+        my_logger.error("Failed - Bluetooth MAC Address is Not Avalable: %s %s ", e, BUID1)
+        print ("Failed - Bluetooth MAC Address is Not Avalable: ", e, BUID1)
 
         return None
-    '''
+    
 
 #def Query_Tpms_SET_TireID(s):
 
@@ -379,7 +388,7 @@ def Query_TpmsTireDataPosition(s, TPMSID1):
                     s.close()
                     time.sleep(2)
                     return None
-                    pass
+                    #pass
         else:
             print ("Failed - Bluetooth Send and Receive Communication Query Command is None:",TPMSID1)
             my_logger.warning("Failed - Bluetooth Send and Receive Communication Query Command is None: %s",TPMSID1)
@@ -402,7 +411,7 @@ def ParseBluetoothTyre(data):
 
 
     tyredetail = []
-    hexstr = binascii.b2a_hex(data)
+    #hexstr = binascii.b2a_hex(data)
     
     TPMSIdx = 0
     TPMSIdxx = 0
@@ -422,64 +431,78 @@ def ParseBluetoothTyre(data):
     #Matrix = [][]
     #mylist = []
     
-    hexstr1 = [hexstr[i:i+2] for i in range(0,len(hexstr), 2)]
+    #hexstr1 = [hexstr[i:i+2] for i in range(0,len(hexstr), 2)]
     #print hexstr1
      
-    for i in range(len(hexstr1)):
+    try:
+        if (data != None):
+
+            hexstr = binascii.b2a_hex(data)
+            hexstr1 = [hexstr[i:i+2] for i in range(0,len(hexstr), 2)]
+            print hexstr1
+            
+            for i in range(len(hexstr1)):
+                
+                if(hexstr1[i]  == 'aa'):
+                    TPMS_Data = [0]
+                    TPMSIdx = TPMSIdx + 1
+                    #print "TPMSIdx", TPMSIdx
+                    TPMSIdxx = 0
+                    TPMSIdxxx = 0
+                    TPMS_MAXBUFLEN = 0
+                    ReadTPMS = 1
+                    ReadTPMS1 = 0
+                    
+                elif(ReadTPMS == 1):
+                    
+                    TPMS_Data.append(hexstr1[i])
+                    #TPMS_Data [TPMSIdxx] = hexstr1[i]
+                    #TPMS_Data=[list(x) for x in hexstr1[i]]
+                    TPMSIdxx = TPMSIdxx + 1
+                    #print str(TPMSIdxx)
+                    
+
+                    if TPMSIdxx == 3:
+                        TPMS_MAXBUFLEN = (hexstr1[i])
+                        TPMS_Total_Tyres = (hexstr1[i])
+                        
+                        if TPMS_MAXBUFLEN =='0f':
+                            TPMS_MAXBUFLEN = 15
+                            
+                            
+                    elif(TPMSIdxx >4):
+                        
+                        if (TPMSIdxx >= int(TPMS_MAXBUFLEN)-2 ):
+                            
+                            ReadTPMS = 0
+
+                            import copy
+                            TPMS_Data1 = copy.copy(TPMS_Data)
+                            #TPMS_Data1 = TPMS_Data
+                            #print TPMS_Data
+                            #print TPMS_Data1
+
+                    if  ReadTPMS == 0:
+                        #print "ReadTPMS, TPMSIdx",ReadTPMS, TPMSIdx
+
+                        for j in range(16):
+                            mylist[TPMSIdx] =  TPMS_Data1
+
+            print mylist
+            return mylist
+
+        else:
+            print ("Failed - Bluetooth ParseBluetoothTyre data None:",data)
+            my_logger.warning("Failed - Bluetooth ParseBluetoothTyre data None: %s",data)
+            return None
+
+    except:
+        e = sys.exc_info()[0]
+        my_logger.error("Failed - Bluetooth ParseBluetoothTyre data None: %s",data)
+        print ("Failed - Bluetooth ParseBluetoothTyre data None:",data)
+
+        return None
         
-        if(hexstr1[i]  == 'aa'):
-            TPMS_Data = [0]
-            TPMSIdx = TPMSIdx + 1
-            #print "TPMSIdx", TPMSIdx
-            TPMSIdxx = 0
-            TPMSIdxxx = 0
-            TPMS_MAXBUFLEN = 0
-            ReadTPMS = 1
-            ReadTPMS1 = 0
-            
-        elif(ReadTPMS == 1):
-            
-            TPMS_Data.append(hexstr1[i])
-            #TPMS_Data [TPMSIdxx] = hexstr1[i]
-            #TPMS_Data=[list(x) for x in hexstr1[i]]
-            TPMSIdxx = TPMSIdxx + 1
-            #print str(TPMSIdxx)
-            
-
-            if TPMSIdxx == 3:
-                TPMS_MAXBUFLEN = (hexstr1[i])
-                TPMS_Total_Tyres = (hexstr1[i])
-                
-                if TPMS_MAXBUFLEN =='0f':
-                    TPMS_MAXBUFLEN = 15
-                    
-                    
-            elif(TPMSIdxx >4):
-                
-                if (TPMSIdxx >= int(TPMS_MAXBUFLEN)-2 ):
-                    
-                    ReadTPMS = 0
-
-                    import copy
-                    TPMS_Data1 = copy.copy(TPMS_Data)
-                    #TPMS_Data1 = TPMS_Data
-                    #print TPMS_Data
-                    #print TPMS_Data1
-
-            if  ReadTPMS == 0:
-                #print "ReadTPMS, TPMSIdx",ReadTPMS, TPMSIdx
-
-                for j in range(16):
-                    mylist[TPMSIdx] =  TPMS_Data1
-
-
-    #update_Latest_data_by_VehId(conn, vehId1, BTVar)
-
-    #for i in range (2,len(mylist)):
-        #update_Latest_data_by_VehId(conn, vehId1, mylist[i])
-
-    print mylist
-    return mylist
 
     '''
     print mylist

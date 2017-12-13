@@ -5,21 +5,16 @@
 import sqlite3
 from sqlite3 import Error
 import __main__
-
-import binascii
-import string
-import time
-import datetime
-import sys
-
 from pip._vendor.pkg_resources import null_ns_handler
-
  
 import glob
 import logging
 import logging.handlers
 
-
+import time
+import datetime
+import sys
+import string
 
 
 
@@ -30,19 +25,12 @@ LOG_FILENAME = '/home/pi/Documents/TMS-Git/TMS-Python/log/loggingRotatingFileExa
 my_logger= logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
 #my_logger = logging.getLogger('MyLogger')
 #my_logger.setLevel(logging.DEBUG)
-
 # Add the log message handler to the logger
 handler = logging.handlers.RotatingFileHandler(
               LOG_FILENAME, maxBytes=20, backupCount=1)
-
 formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
-
 my_logger.setFormatter(formatter)
-
 my_logger.addHandler(handler)
-
-
-
 my_logger = logging.basicConfig(format='%(asctime)s :%(levelname)s: %(message)s',filename=LOG_FILENAME,level=logging.DEBUG)
 my_logger = logging.getLogger('MyLogger')
 '''
@@ -99,13 +87,13 @@ def select_DeviceDetails_by_rfiduid(conn, rfiduid1):
                 return vehDetails
             else:
                 print ("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: ",rfiduid1)
-                my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: %s",(rfiduid1))
+                my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: %d",(rfiduid1))
                 
                 return None
     
         except sqlite3.Error as e:
             print ("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: ",rfiduid1)
-            my_logger.error("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  %s, %s ",e, rfiduid1)
+            my_logger.error("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  %d, %d ",e, rfiduid1)
             #raise
             return None
     else:
@@ -140,13 +128,13 @@ def select_DeviceDetails_by_vehNumber(conn, vehNo1):
                 return vehDetails
             else:
                 print ("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: ",rfiduid1)
-                my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: %s",(rfiduid1))
+                my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: %d",(rfiduid1))
                 
                 return None
     
         except sqlite3.Error as e:
             print ("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: ",rfiduid1)
-            my_logger.error("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  %s, %s ",e, rfiduid1)
+            my_logger.error("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  %d, %d ",e, rfiduid1)
             #raise
             return None
     else:
@@ -181,13 +169,13 @@ def select_DeviceDetails_by_vehName(conn, vehName1):
                 return vehDetails
             else:
                 print ("Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: ",vehName1)
-                my_logger.warning("Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: %s",(vehName1))
+                my_logger.warning("Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: %d",(vehName1))
                 
                 return None
     
         except sqlite3.Error as e:
             print ("Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: ",vehName1)
-            my_logger.error("Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available:  %s, %s ",e, vehName1)
+            my_logger.error("Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available:  %d, %d ",e, vehName1)
             #raise
             return None
     else:
@@ -227,13 +215,13 @@ def select_TyreDetails_by_VehId(conn, VehId1):
                 return rows
             else:
                 print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: ",VehId1)
-                my_logger.warning("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: %s",(VehId1))
+                my_logger.warning("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: %d",(VehId1))
                 
                 return None
     
         except sqlite3.Error as e:
             print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: ",VehId1)
-            my_logger.error("Failed - sqlite3.Error and Accessing to DB table TyreDetails by Vehicle ID - Not Available: %s, %s ",e, VehId1)
+            my_logger.error("Failed - sqlite3.Error and Accessing to DB table TyreDetails by Vehicle ID - Not Available: %d, %d ",e, VehId1)
             #raise
             #conn.close()
             return None
@@ -248,10 +236,8 @@ def update_Latest_data_by_VehId(conn, vehId1, BTVar):
     #pass vehId and get the data from Latest_data table 
     # If latest data is none - means data not exists -> Need to insert
     # If latest data is not none - means data exists -> Need to update
-
     #for i in range(len(BTVar)):
         #print BTVar[i]
-
     #BluetoothSocketVariable = ('01', 'ba6b09', '000000', '00', '02', 'ba6d6d', '000000', '00', '03', '56a8cb', '000000', '00', '04', '56a6be', '000000', '00', '05', '56a781', '000000', '00', '06', '56a7c5', '000000', '00')
     cur = conn.cursor()
     cur.execute("SELECT * FROM Latest_data WHERE vehId=?",(vehId1,))
@@ -259,7 +245,6 @@ def update_Latest_data_by_VehId(conn, vehId1, BTVar):
     rows = cur.fetchall()
     print rows
     if len(rows) == 0:
-
         sql = '' INSERT INTO Latest_data (vehId, device_date_time,
                     FLS, FLP, FLT,
                     FRS, FRP, FRT,
@@ -268,15 +253,12 @@ def update_Latest_data_by_VehId(conn, vehId1, BTVar):
                     RRIS, RRIP, RRIT,
                     RROS, RROP, RROT, count, status)
                     VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ''
-
         #queryParam = (vehId1, 125368547, FLS, FLP, FLT, FRS, FRP, FRT, RLOS, RLOP, RLOT, RLIS, RLIP, RLIT, RRIS, RRIP, RRIT, RROS, RROP, RROT, 1, 0)
         queryParam = (vehId1, 125368547, BTVar[1], BTVar[2], BTVar[3], BTVar[5], BTVar[6], BTVar[7], BTVar[9], BTVar[10], BTVar[11], BTVar[13], BTVar[14], BTVar[15], BTVar[17], BTVar[18], BTVar[19], BTVar[21], BTVar[22], BTVar[23], 1, 0)
         cur = conn.cursor()
         cur.execute(sql, queryParam)
         print "Need to insert"
-
     else:
-
         sql = '' UPDATE Latest_data SET
                 device_date_time = ? ,
                 FLS = ? , FLP = ? , FLT = ? ,
@@ -298,9 +280,7 @@ def update_Latest_data_by_VehId(conn, vehId1, date_time,mylist):
     #pass vehId and get the data from Latest_data table 
     # If latest data is none - means data not exists -> Need to insert
     # If latest data is not none - means data exists -> Need to update
-
-    print mylist
-    print vehId1
+    #print mylist
 
     try:
     
@@ -323,8 +303,6 @@ def update_Latest_data_by_VehId(conn, vehId1, date_time,mylist):
                 pres = mylist[i][10]+mylist[i][11]
                 temp = mylist[i][12]
 
-                print sensorid, pres, temp
-
                 statstr = mylist[i][13]
                 statint =  (int(statstr, 16))
                 
@@ -336,6 +314,9 @@ def update_Latest_data_by_VehId(conn, vehId1, date_time,mylist):
                 tempint_Celcious  = (int(temp, 16) - 50)
                 disptemp = (int(tempint_Celcious))
 
+                
+                print (vehId1, date_time, position, sensorid, presint_Psi, tempint_Celcious, statint, 1, 0)
+                
                 sql = ''' INSERT INTO Latest_data (vehId,device_date_time,
                                 location,
                                 sensorId,
@@ -356,7 +337,7 @@ def update_Latest_data_by_VehId(conn, vehId1, date_time,mylist):
 
     except sqlite3.Error as e:
         print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: ",VehId1)
-        my_logger.error("Failed - sqlite3.Error and Accessing to DB table TyreDetails by Vehicle ID - Not Available: %s, %s ",e, VehId1)
+        my_logger.error("Failed - sqlite3.Error and Accessing to DB table TyreDetails by Vehicle ID - Not Available: %d, %d ",e, VehId1)
         #raise
         #conn.close()
         return None
@@ -373,12 +354,6 @@ def main():
     
     #create a connection to database
     conn = create_db_connection(database)
-
-    date_time = time.strftime('%H:%M %d/%m/%Y')
-    print date_time
-    date_timeDB = int(datetime.datetime.now().strftime("%s")) * 1000
-    #print date_time
-    
     #time.sleep(0.5)
     #conn.close()
 
@@ -401,16 +376,19 @@ def main():
               [0, 'a1', '41', '0f', '63', '00', '06', '56', 'a7', 'c5', '01', '10', '00', '00']]
 
 
-    
+
+    date_time = time.strftime('%H:%M %d/%m/%Y')
+    print date_time
+    date_timeDB = int(datetime.datetime.now().strftime("%s")) * 1000
     
     #print conn
-    with conn:
+    if conn:
         #select_DeviceDetails_by_rfiduid(conn, tag)
         #select_TyreDetails_by_VehId(conn, vehID)
         #conn.close()
 
         
-        status = update_Latest_data_by_VehId(conn, vehID, date_timeDB, mylist)
+        status = update_Latest_data_by_VehId(conn, vehID,date_timeDB, mylist)
         print "Connecton Close", status, conn
 
         

@@ -7,175 +7,242 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import threading
+from PyQt5 import QtGui
+
+import gui1
+import utlities
+import work
+import time
 
 sec = 2
 loopStatus = False
-
+RFID_UID = ""
 
 class Ui_Form(object):
 
     numberString = ""
-    temp = "123"
     t = ""
-    
 
-    GREEN_CLR_TAG = "color: rgb(0, 85, 0);\n"
-#    TEXT_FONT	 = "font: 75 10pt \"MS Shell Dlg 2\";\n"
+    GREEN_CLR_TAG = "color: rgb(0, 100, 0);\n"
+    BLUE_CLR_TAG = "color: rgb(0, 0, 255);\n"
+    RED_CLR_TAG = "color: rgb(255, 0, 0);\n"
 
-    RED_CLR_TAG = ""
+    def displayTPData(self, vehName, mylist):
 
-    def displayTPData(self, mylist):
-
-        #_translate = QtCore.QCoreApplication.translate
         print "display method ", mylist
+        #_translate = QtCore.QCoreApplication.translate
 
         for i in range (2, len(mylist)):
             print i, mylist[i][6]
-
             if (mylist[i][6] != 0) | (mylist[i][6] != 00):
 
+                pressure = str(utlities.pressureToBarPsiConvertion(str(mylist[i][10] + mylist[i][11])))
+                temp = str(utlities.temperatureToCelciousConvertion(mylist[i][12]))
                 if mylist[i][6] == '01':
                     #position = "FL"
-                    self.lineEdit_Value_Press_FL.setText(mylist[i][10] + mylist[i][11])
+                    self.lineEdit_Value_Press_FL.setText(str(pressure))
                     self.lineEdit_Value_Press_FL.setStyleSheet(self.GREEN_CLR_TAG)
 
-                    self.lineEdit_Value_Temp_FL.setText(mylist[i][12])
+                    self.lineEdit_Value_Temp_FL.setText(str(temp))
                     self.lineEdit_Value_Temp_FL.setStyleSheet(self.GREEN_CLR_TAG)
 
                 if mylist[i][6] == '02':
                     #position = "FR"
-                    self.lineEdit_Value_Press_FR.setText(mylist[i][10] + mylist[i][11])
+                    self.lineEdit_Value_Press_FR.setText(str(pressure))
                     self.lineEdit_Value_Press_FR.setStyleSheet(self.GREEN_CLR_TAG)
 
-                    self.lineEdit_value_Temp_FR.setText(mylist[i][12])
+                    self.lineEdit_value_Temp_FR.setText(str(temp))
                     self.lineEdit_value_Temp_FR.setStyleSheet(self.GREEN_CLR_TAG)
 
                 if mylist[i][6] == '03':
                     #position = "RLO"
-                    self.lineEdit_Value_Press_RLO.setText(mylist[i][10] + mylist[i][11])
+                    self.lineEdit_Value_Press_RLO.setText(str(pressure))
                     self.lineEdit_Value_Press_RLO.setStyleSheet(self.GREEN_CLR_TAG)
 
-                    self.lineEdit_Value_Temp_RLO.setText(mylist[i][12])
+                    self.lineEdit_Value_Temp_RLO.setText(str(temp))
                     self.lineEdit_Value_Temp_RLO.setStyleSheet(self.GREEN_CLR_TAG)
 
                 if mylist[i][6] == '04':
                     #position = "RLI"
-                    self.lineEdit_Value_Press_RLI.setText(mylist[i][10] + mylist[i][11])
+                    self.lineEdit_Value_Press_RLI.setText(str(pressure))
                     self.lineEdit_Value_Press_RLI.setStyleSheet(self.GREEN_CLR_TAG)
 
-                    self.lineEdit_Value_Temp_RLI.setText(mylist[i][12])
+                    self.lineEdit_Value_Temp_RLI.setText(str(temp))
                     self.lineEdit_Value_Temp_RLI.setStyleSheet(self.GREEN_CLR_TAG)
 
                 if mylist[i][6] == '05':
                     #position = "RRI"
-                    self.lineEdit_Value_Press_RRI.setText(mylist[i][10] + mylist[i][11])
+                    self.lineEdit_Value_Press_RRI.setText(str(pressure))
                     self.lineEdit_Value_Press_RRI.setStyleSheet(self.GREEN_CLR_TAG)
 
-                    self.lineEdit_Value_Temp_RRI.setText(mylist[i][12])
+                    self.lineEdit_Value_Temp_RRI.setText(str(temp))
                     self.lineEdit_Value_Temp_RRI.setStyleSheet(self.GREEN_CLR_TAG)
 
                 if mylist[i][6] == '06':
                     #position = "RRO"
-                    self.lineEdit_Value_Press_RRO.setText(mylist[i][10] + mylist[i][11])
+                    self.lineEdit_Value_Press_RRO.setText(str(pressure))
                     self.lineEdit_Value_Press_RRO.setStyleSheet(self.GREEN_CLR_TAG)
 
-                    self.lineEdit_Value_Temp_RRO.setText(mylist[i][12])
+                    self.lineEdit_Value_Temp_RRO.setText(str(temp))
                     self.lineEdit_Value_Temp_RRO.setStyleSheet(self.GREEN_CLR_TAG)
 
         print "end of display method"
-        print self.temp
-        #self.lineEdit_bus_No.setText(self.temp)
-        self.lineEdit_Value_BusNumber.setText(self.temp)
+        self.lineEdit_Value_BusNumber.setText(vehName)
 
-        #lineEdit_Value_BusNumber
+    def showdialog(message):
+        print ("dialog ", message)
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+
+        msg.setText(message)
+        msg.setInformativeText("This is additional information")
+        msg.setWindowTitle("")
+        msg.setDetailedText("The details are as follows:")
+        msg.setStandardButtons(QMessageBox.Ok)
+        msg.exec_()
 
     def callMethod1(self):
-
-        # Call method 1 in work.py to verify the vehicle exists or not
+        
+        #Call method 1 in work.py to verify the vehicle exists or not
 	# If exists return rfuid
-	# If not exists display a message
+        # If not exists display a message
+        print "Call method 1" + self.lineEdit_bus_No.displayText()
+        
+        if(len(self.lineEdit_bus_No.displayText()) > 0):
 
+            print "Call method 1" + self.lineEdit_bus_No.displayText()
+            
+            
+            #RFID = work.fun_vehName(self.lineEdit_bus_No.displayText())
+            RFID = work.fun_VehName(self.lineEdit_bus_No.displayText())
 
-        print "Call method 1"
-        return "rfuid"
+            print RFID
+            return RFID
+        
+            # For testing
+            # return "RFUID"
+        else:
+            return None
 
     def callMethod2(self):
 
-        # Call method 2 in work.py
-        # Returns mylist
-        print "Call method 2", self.count
-        self.count = self.count + 1
+        global RFID_UID
+        #Call method 2 in work.py
+        #Returns mylist
+        print "method 2 ", RFID_UID
 
-        #MyList from work.py
+        if (RFID_UID != None) or (RFID_UID != ""):
+            
+            mylistVar, vehName, status = work.fun_main(RFID_UID)
 
-        mylistVar = [ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], \
-		[0, 'a1', '41', '08', '63', '00', '05'], \
-		[0, 'a1', '41', '0f', '63', '00', '01', 'ba', '6b', '09', '01', '50', '78', '00'], \
-		[0, 'a1', '41', '0f', '63', '00', '02', 'ba', '6d', '6d', '01', '25', '58', '00'], \
-		[0, 'a1', '41', '0f', '63', '00', '03', '56', 'a8', 'cb', '01', '30', '70', '00'], \
-		[0, 'a1', '41', '0f', '63', '00', '04', '56', 'a6', 'be', '01', '45', '65', '00'], \
-		[0, 'a1', '41', '0f', '63', '00', '05', '56', 'a7', '81', '00', '00', '00', '00'], \
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+        else:
 
-        self.displayTPData(mylistVar)
+            mylistVar, vehName, status = work.fun_main(None)
 
-        if(self.count == 20):
-            self.closeThread()
+        #status = "Success"
 
+        if(status == "Success"):
+            print "Call method 2 "
+            #mylistVar from work.py
+            '''
+            mylistVar = [ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], \
+                          [0, 'a1', '41', '08', '63', '00', '05'], \
+                          [0, 'a1', '41', '0f', '63', '00', '01', 'ba', '6b', '09', '01', '50', '78', '00'], \
+                          [0, 'a1', '41', '0f', '63', '00', '02', 'ba', '6d', '6d', '01', '25', '58', '00'], \
+                          [0, 'a1', '41', '0f', '63', '00', '03', '56', 'a8', 'cb', '01', '30', '70', '00'], \
+                          [0, 'a1', '41', '0f', '63', '00', '04', '56', 'a6', 'be', '01', '45', '65', '00'], \
+                          [0, 'a1', '41', '0f', '63', '00', '05', '56', 'a7', '81', '00', '00', '00', '00'], \
+                          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
-    def closeThread(self):
+            vehName = "SND 9460"
+	    '''
+            self.displayTPData(vehName, mylistVar)
+		
 
-        if(self.t != ""):
-            self.t.cancel()
-            print "stoped the last thread"
+    def endProcess(self):
+        # Stop the loop
+        global loopStatus
+        loopStatus = False
+        # Clear all the text fields
 
+        self.lineEdit_Value_BusNumber.setText("")
+        self.lineEdit_Value_Press_FL.setText("")
+        self.lineEdit_Value_Temp_FL.setText("")
+        self.lineEdit_Value_Press_FR.setText("")
+        self.lineEdit_value_Temp_FR.setText("")
+        self.lineEdit_Value_Press_RLO.setText("")
+        self.lineEdit_Value_Temp_RLO.setText("")
+        self.lineEdit_Value_Press_RLI.setText("")
+        self.lineEdit_Value_Temp_RLI.setText("")
+        self.lineEdit_Value_Press_RRI.setText("")
+        self.lineEdit_Value_Temp_RRI.setText("")
+        self.lineEdit_Value_Press_RRO.setText("")
+        self.lineEdit_Value_Temp_RRO.setText("")
+
+        print ("Cleared all the text boxes")
+
+    def loopFun(self):
+        global loopStatus
+
+        while (loopStatus != False):
+            print ("looping ")
+            
+            self.callMethod2()
+            QtCore.QCoreApplication.processEvents()
+            time.sleep(1)
+
+        print "Done clicked"
 
     def btnClick(self, btnEvent):
         global sec
         global loopStatus
+        global RFID_UID
+
+        RFID_UID = ""
+
+        # Stoping the loop
+        loopStatus = False
 
         if btnEvent == "Scan" :
 
             # By default closing the last thread
-            self.closeThread()
-            self.count = 0
+            self.endProcess()
+
             #Clicked Scan Button
             if len(self.lineEdit_bus_No.displayText()) > 0 and len(self.lineEdit_bus_No.displayText()) < 4:
-
                 print ("Please enter 4 digits bus no", self.lineEdit_bus_No.displayText())
 
             else:
                 print ("Call work.py -> function(): ", self.lineEdit_bus_No.displayText())
-                method1Resp = self.callMethod1()
 
-                if method1Resp != None:
+                if(len(self.lineEdit_bus_No.displayText()) > 0):
+                    # Checking for RFID_UID
+                    method1Resp = self.callMethod1()
+
+                    if method1Resp != None:
+                        loopStatus = True
+                        RFID_UID = method1Resp
+
+                        #self.callMethod2()
+                        self.loopFun()
+
+                    else:
+                        print("Method 1 error ", "Vehicle not found")
+
+                else:
                     loopStatus = True
+                    RFID_UID = ""
+                    #self.callMethod2()
                     self.loopFun()
 
         else:
             #Clicked Done Button
-            loopStatus = False
             print("inside else done")
-
-        print(loopStatus)
-	
-
-    def loopFun(self):
-
-        global loopStatus
-        count = 0
-
-        while (loopStatus != False):
-            count = count+1
-            print ("looping ", count)
-            self.callMethod2()
-            QtCore.QCoreApplication.processEvents()
-
-        print "Done clicked"
+            self.numberString = ""
+            self.lineEdit_bus_No.setText("")
+            self.endProcess()
 
     def keypadEvent(self, bid):
-
         print (bid, self.numberString)
 
         if bid != "clear" and bid != "back" and len(self.lineEdit_bus_No.displayText()) > 3:
@@ -204,7 +271,6 @@ class Ui_Form(object):
                 self.numberString = self.numberString + "9"
             if bid == "b0":
                 self.numberString = self.numberString + "0"
-
             if bid == "back":
                 self.numberString = self.numberString[:-1]
             if bid == "clear":
@@ -702,7 +768,7 @@ class Ui_Form(object):
 
 
 
-import gui1
+
 
 if __name__ == "__main__":
     import sys
@@ -711,8 +777,9 @@ if __name__ == "__main__":
     ui = Ui_Form()
     ui.setupUi(Form)
     Form.show()
+
     def myExitHandler():
-        ui.closeThread()
+        ui.endProcess()
         print "On close of main window stopping the thread"
 
     app.aboutToQuit.connect(myExitHandler)
