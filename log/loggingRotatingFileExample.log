@@ -4491,3 +4491,1103 @@
 2017-12-13 18:49:06,352 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
 2017-12-13 18:49:06,352 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
 2017-12-13 18:49:06,352 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 18:59:01,233 :INFO : Create a connection to DB  :
+2017-12-13 18:59:01,233 :INFO : Create a connection to DB  :
+2017-12-13 18:59:01,233 :INFO : Create a connection to DB  :
+2017-12-13 18:59:01,233 :INFO : Create a connection to DB  :
+2017-12-13 18:59:01,433 :INFO : Create a connection to DB  :
+2017-12-13 18:59:01,433 :INFO : Create a connection to DB  :
+2017-12-13 18:59:01,433 :INFO : Create a connection to DB  :
+2017-12-13 18:59:01,433 :INFO : Create a connection to DB  :
+2017-12-13 18:59:01,455 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 18:59:01,455 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 18:59:01,455 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 18:59:01,455 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 18:59:16,252 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 18:59:16,252 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 18:59:16,252 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 18:59:16,252 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 18:59:18,542 :INFO : Create a connection to DB  :
+2017-12-13 18:59:18,542 :INFO : Create a connection to DB  :
+2017-12-13 18:59:18,542 :INFO : Create a connection to DB  :
+2017-12-13 18:59:18,542 :INFO : Create a connection to DB  :
+2017-12-13 18:59:18,568 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 18:59:18,568 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 18:59:18,568 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 18:59:18,568 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 18:59:30,340 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 18:59:30,340 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 18:59:30,340 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 18:59:30,340 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 18:59:32,605 :INFO : Create a connection to DB  :
+2017-12-13 18:59:32,605 :INFO : Create a connection to DB  :
+2017-12-13 18:59:32,605 :INFO : Create a connection to DB  :
+2017-12-13 18:59:32,605 :INFO : Create a connection to DB  :
+2017-12-13 18:59:32,631 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 18:59:32,631 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 18:59:32,631 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 18:59:32,631 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 18:59:46,427 :INFO : Create a connection to DB  :
+2017-12-13 18:59:46,427 :INFO : Create a connection to DB  :
+2017-12-13 18:59:46,427 :INFO : Create a connection to DB  :
+2017-12-13 18:59:46,427 :INFO : Create a connection to DB  :
+2017-12-13 18:59:46,453 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 18:59:46,453 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 18:59:46,453 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 18:59:46,453 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:00:00,185 :INFO : Create a connection to DB  :
+2017-12-13 19:00:00,185 :INFO : Create a connection to DB  :
+2017-12-13 19:00:00,185 :INFO : Create a connection to DB  :
+2017-12-13 19:00:00,185 :INFO : Create a connection to DB  :
+2017-12-13 19:00:00,210 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:00:00,210 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:00:00,210 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:00:00,210 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:00:06,542 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª :
+2017-12-13 19:00:06,542 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª :
+2017-12-13 19:00:06,542 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª :
+2017-12-13 19:00:06,542 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª :
+2017-12-13 19:00:07,596 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ¡Acª ª¡Acª  :
+2017-12-13 19:00:07,596 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ¡Acª ª¡Acª  :
+2017-12-13 19:00:07,596 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ¡Acª ª¡Acª  :
+2017-12-13 19:00:07,596 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ¡Acª ª¡Acª  :
+2017-12-13 19:00:16,295 :INFO : Create a connection to DB  :
+2017-12-13 19:00:16,295 :INFO : Create a connection to DB  :
+2017-12-13 19:00:16,295 :INFO : Create a connection to DB  :
+2017-12-13 19:00:16,295 :INFO : Create a connection to DB  :
+2017-12-13 19:00:16,321 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:00:16,321 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:00:16,321 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:00:16,321 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:00:30,553 :INFO : Create a connection to DB  :
+2017-12-13 19:00:30,553 :INFO : Create a connection to DB  :
+2017-12-13 19:00:30,553 :INFO : Create a connection to DB  :
+2017-12-13 19:00:30,553 :INFO : Create a connection to DB  :
+2017-12-13 19:00:30,599 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:00:30,599 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:00:30,599 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:00:30,599 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:00:44,801 :INFO : Create a connection to DB  :
+2017-12-13 19:00:44,801 :INFO : Create a connection to DB  :
+2017-12-13 19:00:44,801 :INFO : Create a connection to DB  :
+2017-12-13 19:00:44,801 :INFO : Create a connection to DB  :
+2017-12-13 19:00:44,828 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:00:44,828 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:00:44,828 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:00:44,828 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:00:58,653 :INFO : Create a connection to DB  :
+2017-12-13 19:00:58,653 :INFO : Create a connection to DB  :
+2017-12-13 19:00:58,653 :INFO : Create a connection to DB  :
+2017-12-13 19:00:58,653 :INFO : Create a connection to DB  :
+2017-12-13 19:00:58,679 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:00:58,679 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:00:58,679 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:00:58,679 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:01:38,014 :INFO : Create a connection to DB  :
+2017-12-13 19:01:38,014 :INFO : Create a connection to DB  :
+2017-12-13 19:01:38,014 :INFO : Create a connection to DB  :
+2017-12-13 19:01:38,014 :INFO : Create a connection to DB  :
+2017-12-13 19:01:38,068 :WARNING :Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: 1234 :
+2017-12-13 19:01:38,068 :WARNING :Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: 1234 :
+2017-12-13 19:01:38,068 :WARNING :Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: 1234 :
+2017-12-13 19:01:38,068 :WARNING :Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: 1234 :
+2017-12-13 19:01:42,081 :INFO : Create a connection to DB  :
+2017-12-13 19:01:42,081 :INFO : Create a connection to DB  :
+2017-12-13 19:01:42,081 :INFO : Create a connection to DB  :
+2017-12-13 19:01:42,081 :INFO : Create a connection to DB  :
+2017-12-13 19:01:42,133 :WARNING :Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: 1234 :
+2017-12-13 19:01:42,133 :WARNING :Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: 1234 :
+2017-12-13 19:01:42,133 :WARNING :Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: 1234 :
+2017-12-13 19:01:42,133 :WARNING :Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: 1234 :
+2017-12-13 19:01:52,630 :INFO : Create a connection to DB  :
+2017-12-13 19:01:52,630 :INFO : Create a connection to DB  :
+2017-12-13 19:01:52,630 :INFO : Create a connection to DB  :
+2017-12-13 19:01:52,630 :INFO : Create a connection to DB  :
+2017-12-13 19:01:52,683 :WARNING :Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: 12349 :
+2017-12-13 19:01:52,683 :WARNING :Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: 12349 :
+2017-12-13 19:01:52,683 :WARNING :Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: 12349 :
+2017-12-13 19:01:52,683 :WARNING :Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: 12349 :
+2017-12-13 19:01:53,463 :INFO : Create a connection to DB  :
+2017-12-13 19:01:53,463 :INFO : Create a connection to DB  :
+2017-12-13 19:01:53,463 :INFO : Create a connection to DB  :
+2017-12-13 19:01:53,463 :INFO : Create a connection to DB  :
+2017-12-13 19:01:53,517 :WARNING :Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: 12349 :
+2017-12-13 19:01:53,517 :WARNING :Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: 12349 :
+2017-12-13 19:01:53,517 :WARNING :Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: 12349 :
+2017-12-13 19:01:53,517 :WARNING :Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: 12349 :
+2017-12-13 19:02:50,731 :INFO : Create a connection to DB  :
+2017-12-13 19:02:50,731 :INFO : Create a connection to DB  :
+2017-12-13 19:02:50,731 :INFO : Create a connection to DB  :
+2017-12-13 19:02:50,731 :INFO : Create a connection to DB  :
+2017-12-13 19:02:50,761 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:50,761 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:50,761 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:50,761 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:50,763 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:50,763 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:50,763 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:50,763 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:50,767 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:50,767 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:50,767 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:50,767 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:51,914 :INFO : Create a connection to DB  :
+2017-12-13 19:02:51,914 :INFO : Create a connection to DB  :
+2017-12-13 19:02:51,914 :INFO : Create a connection to DB  :
+2017-12-13 19:02:51,914 :INFO : Create a connection to DB  :
+2017-12-13 19:02:51,947 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:51,947 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:51,947 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:51,947 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:51,948 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:51,948 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:51,948 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:51,948 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:51,951 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:51,951 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:51,951 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:51,951 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:53,099 :INFO : Create a connection to DB  :
+2017-12-13 19:02:53,099 :INFO : Create a connection to DB  :
+2017-12-13 19:02:53,099 :INFO : Create a connection to DB  :
+2017-12-13 19:02:53,099 :INFO : Create a connection to DB  :
+2017-12-13 19:02:53,133 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:53,133 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:53,133 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:53,133 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:53,135 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:53,135 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:53,135 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:53,135 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:53,136 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:53,136 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:53,136 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:53,136 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:54,290 :INFO : Create a connection to DB  :
+2017-12-13 19:02:54,290 :INFO : Create a connection to DB  :
+2017-12-13 19:02:54,290 :INFO : Create a connection to DB  :
+2017-12-13 19:02:54,290 :INFO : Create a connection to DB  :
+2017-12-13 19:02:54,323 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:54,323 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:54,323 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:54,323 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:54,325 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:54,325 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:54,325 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:54,325 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:54,327 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:54,327 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:54,327 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:54,327 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:55,478 :INFO : Create a connection to DB  :
+2017-12-13 19:02:55,478 :INFO : Create a connection to DB  :
+2017-12-13 19:02:55,478 :INFO : Create a connection to DB  :
+2017-12-13 19:02:55,478 :INFO : Create a connection to DB  :
+2017-12-13 19:02:55,512 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:55,512 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:55,512 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:55,512 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:55,514 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:55,514 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:55,514 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:55,514 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:55,516 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:55,516 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:55,516 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:55,516 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:56,661 :INFO : Create a connection to DB  :
+2017-12-13 19:02:56,661 :INFO : Create a connection to DB  :
+2017-12-13 19:02:56,661 :INFO : Create a connection to DB  :
+2017-12-13 19:02:56,661 :INFO : Create a connection to DB  :
+2017-12-13 19:02:56,695 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:56,695 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:56,695 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:56,695 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:56,697 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:56,697 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:56,697 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:56,697 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:56,698 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:56,698 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:56,698 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:56,698 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:57,848 :INFO : Create a connection to DB  :
+2017-12-13 19:02:57,848 :INFO : Create a connection to DB  :
+2017-12-13 19:02:57,848 :INFO : Create a connection to DB  :
+2017-12-13 19:02:57,848 :INFO : Create a connection to DB  :
+2017-12-13 19:02:57,882 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:57,882 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:57,882 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:57,882 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:57,883 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:57,883 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:57,883 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:57,883 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:57,885 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:57,885 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:57,885 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:57,885 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:59,033 :INFO : Create a connection to DB  :
+2017-12-13 19:02:59,033 :INFO : Create a connection to DB  :
+2017-12-13 19:02:59,033 :INFO : Create a connection to DB  :
+2017-12-13 19:02:59,033 :INFO : Create a connection to DB  :
+2017-12-13 19:02:59,067 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:59,067 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:59,067 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:59,067 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:02:59,069 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:59,069 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:59,069 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:59,069 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:02:59,070 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:59,070 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:59,070 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:02:59,070 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:00,219 :INFO : Create a connection to DB  :
+2017-12-13 19:03:00,219 :INFO : Create a connection to DB  :
+2017-12-13 19:03:00,219 :INFO : Create a connection to DB  :
+2017-12-13 19:03:00,219 :INFO : Create a connection to DB  :
+2017-12-13 19:03:00,254 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:00,254 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:00,254 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:00,254 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:00,256 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:00,256 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:00,256 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:00,256 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:00,257 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:00,257 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:00,257 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:00,257 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:01,412 :INFO : Create a connection to DB  :
+2017-12-13 19:03:01,412 :INFO : Create a connection to DB  :
+2017-12-13 19:03:01,412 :INFO : Create a connection to DB  :
+2017-12-13 19:03:01,412 :INFO : Create a connection to DB  :
+2017-12-13 19:03:01,447 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:01,447 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:01,447 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:01,447 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:01,449 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:01,449 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:01,449 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:01,449 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:01,450 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:01,450 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:01,450 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:01,450 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:02,603 :INFO : Create a connection to DB  :
+2017-12-13 19:03:02,603 :INFO : Create a connection to DB  :
+2017-12-13 19:03:02,603 :INFO : Create a connection to DB  :
+2017-12-13 19:03:02,603 :INFO : Create a connection to DB  :
+2017-12-13 19:03:02,643 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:02,643 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:02,643 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:02,643 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:02,645 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:02,645 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:02,645 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:02,645 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:02,647 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:02,647 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:02,647 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:02,647 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:03,810 :INFO : Create a connection to DB  :
+2017-12-13 19:03:03,810 :INFO : Create a connection to DB  :
+2017-12-13 19:03:03,810 :INFO : Create a connection to DB  :
+2017-12-13 19:03:03,810 :INFO : Create a connection to DB  :
+2017-12-13 19:03:03,841 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:03,841 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:03,841 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:03,841 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:03,843 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:03,843 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:03,843 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:03,843 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:03,845 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:03,845 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:03,845 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:03,845 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:04,991 :INFO : Create a connection to DB  :
+2017-12-13 19:03:04,991 :INFO : Create a connection to DB  :
+2017-12-13 19:03:04,991 :INFO : Create a connection to DB  :
+2017-12-13 19:03:04,991 :INFO : Create a connection to DB  :
+2017-12-13 19:03:05,023 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:05,023 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:05,023 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:05,023 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:05,025 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:05,025 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:05,025 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:05,025 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:05,026 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:05,026 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:05,026 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:05,026 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:06,171 :INFO : Create a connection to DB  :
+2017-12-13 19:03:06,171 :INFO : Create a connection to DB  :
+2017-12-13 19:03:06,171 :INFO : Create a connection to DB  :
+2017-12-13 19:03:06,171 :INFO : Create a connection to DB  :
+2017-12-13 19:03:06,201 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:06,201 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:06,201 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:06,201 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:06,203 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:06,203 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:06,203 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:06,203 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:06,204 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:06,204 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:06,204 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:06,204 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:07,348 :INFO : Create a connection to DB  :
+2017-12-13 19:03:07,348 :INFO : Create a connection to DB  :
+2017-12-13 19:03:07,348 :INFO : Create a connection to DB  :
+2017-12-13 19:03:07,348 :INFO : Create a connection to DB  :
+2017-12-13 19:03:07,416 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:07,416 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:07,416 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:07,416 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 19:03:07,418 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:07,418 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:07,418 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:07,418 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 19:03:07,420 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:07,420 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:07,420 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:03:07,420 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 19:20:36,389 :INFO : Create a connection to DB  :
+2017-12-13 19:20:36,389 :INFO : Create a connection to DB  :
+2017-12-13 19:20:36,389 :INFO : Create a connection to DB  :
+2017-12-13 19:20:36,389 :INFO : Create a connection to DB  :
+2017-12-13 19:20:36,584 :INFO : Create a connection to DB  :
+2017-12-13 19:20:36,584 :INFO : Create a connection to DB  :
+2017-12-13 19:20:36,584 :INFO : Create a connection to DB  :
+2017-12-13 19:20:36,584 :INFO : Create a connection to DB  :
+2017-12-13 19:20:36,605 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:20:36,605 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:20:36,605 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:20:36,605 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:20:50,905 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 19:20:50,905 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 19:20:50,905 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 19:20:50,905 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 19:20:52,475 :INFO : Create a connection to DB  :
+2017-12-13 19:20:52,475 :INFO : Create a connection to DB  :
+2017-12-13 19:20:52,475 :INFO : Create a connection to DB  :
+2017-12-13 19:20:52,475 :INFO : Create a connection to DB  :
+2017-12-13 19:20:52,495 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:20:52,495 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:20:52,495 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:20:52,495 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:21:03,487 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 19:21:03,487 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 19:21:03,487 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 19:21:03,487 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 19:21:04,526 :INFO : Create a connection to DB  :
+2017-12-13 19:21:04,526 :INFO : Create a connection to DB  :
+2017-12-13 19:21:04,526 :INFO : Create a connection to DB  :
+2017-12-13 19:21:04,526 :INFO : Create a connection to DB  :
+2017-12-13 19:21:04,732 :INFO : Create a connection to DB  :
+2017-12-13 19:21:04,732 :INFO : Create a connection to DB  :
+2017-12-13 19:21:04,732 :INFO : Create a connection to DB  :
+2017-12-13 19:21:04,732 :INFO : Create a connection to DB  :
+2017-12-13 19:21:04,753 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:21:04,753 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:21:04,753 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:21:04,753 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:21:16,263 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 19:21:16,263 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 19:21:16,263 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 19:21:16,263 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 19:21:18,618 :INFO : Create a connection to DB  :
+2017-12-13 19:21:18,618 :INFO : Create a connection to DB  :
+2017-12-13 19:21:18,618 :INFO : Create a connection to DB  :
+2017-12-13 19:21:18,618 :INFO : Create a connection to DB  :
+2017-12-13 19:21:18,645 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:21:18,645 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:21:18,645 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:21:18,645 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:21:30,517 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 19:21:30,517 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 19:21:30,517 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 19:21:30,517 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 19:21:32,921 :INFO : Create a connection to DB  :
+2017-12-13 19:21:32,921 :INFO : Create a connection to DB  :
+2017-12-13 19:21:32,921 :INFO : Create a connection to DB  :
+2017-12-13 19:21:32,921 :INFO : Create a connection to DB  :
+2017-12-13 19:21:32,949 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:21:32,949 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:21:32,949 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:21:32,949 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:21:44,605 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 19:21:44,605 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 19:21:44,605 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 19:21:44,605 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 19:21:47,005 :INFO : Create a connection to DB  :
+2017-12-13 19:21:47,005 :INFO : Create a connection to DB  :
+2017-12-13 19:21:47,005 :INFO : Create a connection to DB  :
+2017-12-13 19:21:47,005 :INFO : Create a connection to DB  :
+2017-12-13 19:21:47,032 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:21:47,032 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:21:47,032 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:21:47,032 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:22:00,956 :INFO : Create a connection to DB  :
+2017-12-13 19:22:00,956 :INFO : Create a connection to DB  :
+2017-12-13 19:22:00,956 :INFO : Create a connection to DB  :
+2017-12-13 19:22:00,956 :INFO : Create a connection to DB  :
+2017-12-13 19:22:00,984 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:22:00,984 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:22:00,984 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:22:00,984 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:22:14,782 :INFO : Create a connection to DB  :
+2017-12-13 19:22:14,782 :INFO : Create a connection to DB  :
+2017-12-13 19:22:14,782 :INFO : Create a connection to DB  :
+2017-12-13 19:22:14,782 :INFO : Create a connection to DB  :
+2017-12-13 19:22:14,809 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:22:14,809 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:22:14,809 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 19:22:14,809 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 20:46:30,603 :INFO : Create a connection to DB  :
+2017-12-13 20:46:30,603 :INFO : Create a connection to DB  :
+2017-12-13 20:46:30,603 :INFO : Create a connection to DB  :
+2017-12-13 20:46:30,603 :INFO : Create a connection to DB  :
+2017-12-13 20:46:30,811 :INFO : Create a connection to DB  :
+2017-12-13 20:46:30,811 :INFO : Create a connection to DB  :
+2017-12-13 20:46:30,811 :INFO : Create a connection to DB  :
+2017-12-13 20:46:30,811 :INFO : Create a connection to DB  :
+2017-12-13 20:46:30,833 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 20:46:30,833 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 20:46:30,833 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 20:46:30,833 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 20:46:42,970 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 20:46:42,970 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 20:46:42,970 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 20:46:42,970 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 20:46:45,257 :INFO : Create a connection to DB  :
+2017-12-13 20:46:45,257 :INFO : Create a connection to DB  :
+2017-12-13 20:46:45,257 :INFO : Create a connection to DB  :
+2017-12-13 20:46:45,257 :INFO : Create a connection to DB  :
+2017-12-13 20:46:45,283 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 20:46:45,283 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 20:46:45,283 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 20:46:45,283 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 20:46:56,706 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 20:46:56,706 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 20:46:56,706 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 20:46:56,706 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 20:46:58,954 :INFO : Create a connection to DB  :
+2017-12-13 20:46:58,954 :INFO : Create a connection to DB  :
+2017-12-13 20:46:58,954 :INFO : Create a connection to DB  :
+2017-12-13 20:46:58,954 :INFO : Create a connection to DB  :
+2017-12-13 20:46:58,979 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 20:46:58,979 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 20:46:58,979 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 20:46:58,979 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 20:47:10,283 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 20:47:10,283 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 20:47:10,283 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 20:47:10,283 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 20:47:12,534 :INFO : Create a connection to DB  :
+2017-12-13 20:47:12,534 :INFO : Create a connection to DB  :
+2017-12-13 20:47:12,534 :INFO : Create a connection to DB  :
+2017-12-13 20:47:12,534 :INFO : Create a connection to DB  :
+2017-12-13 20:47:12,560 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 20:47:12,560 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 20:47:12,560 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 20:47:12,560 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 20:47:23,867 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 20:47:23,867 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 20:47:23,867 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 20:47:23,867 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:01:09,099 :INFO : Create a connection to DB  :
+2017-12-13 21:01:09,099 :INFO : Create a connection to DB  :
+2017-12-13 21:01:09,099 :INFO : Create a connection to DB  :
+2017-12-13 21:01:09,099 :INFO : Create a connection to DB  :
+2017-12-13 21:01:09,343 :INFO : Create a connection to DB  :
+2017-12-13 21:01:09,343 :INFO : Create a connection to DB  :
+2017-12-13 21:01:09,343 :INFO : Create a connection to DB  :
+2017-12-13 21:01:09,343 :INFO : Create a connection to DB  :
+2017-12-13 21:01:09,368 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:01:09,368 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:01:09,368 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:01:09,368 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:01:21,673 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:01:21,673 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:01:21,673 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:01:21,673 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:01:23,927 :INFO : Create a connection to DB  :
+2017-12-13 21:01:23,927 :INFO : Create a connection to DB  :
+2017-12-13 21:01:23,927 :INFO : Create a connection to DB  :
+2017-12-13 21:01:23,927 :INFO : Create a connection to DB  :
+2017-12-13 21:01:23,952 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:01:23,952 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:01:23,952 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:01:23,952 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:01:35,774 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:01:35,774 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:01:35,774 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:01:35,774 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:01:37,042 :INFO : Create a connection to DB  :
+2017-12-13 21:01:37,042 :INFO : Create a connection to DB  :
+2017-12-13 21:01:37,042 :INFO : Create a connection to DB  :
+2017-12-13 21:01:37,042 :INFO : Create a connection to DB  :
+2017-12-13 21:01:37,285 :INFO : Create a connection to DB  :
+2017-12-13 21:01:37,285 :INFO : Create a connection to DB  :
+2017-12-13 21:01:37,285 :INFO : Create a connection to DB  :
+2017-12-13 21:01:37,285 :INFO : Create a connection to DB  :
+2017-12-13 21:01:37,312 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:01:37,312 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:01:37,312 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:01:37,312 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:01:48,628 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:01:48,628 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:01:48,628 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:01:48,628 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:01:50,902 :INFO : Create a connection to DB  :
+2017-12-13 21:01:50,902 :INFO : Create a connection to DB  :
+2017-12-13 21:01:50,902 :INFO : Create a connection to DB  :
+2017-12-13 21:01:50,902 :INFO : Create a connection to DB  :
+2017-12-13 21:01:50,928 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:01:50,928 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:01:50,928 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:01:50,928 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:02:02,212 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:02:02,212 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:02:02,212 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:02:02,212 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:02:04,444 :INFO : Create a connection to DB  :
+2017-12-13 21:02:04,444 :INFO : Create a connection to DB  :
+2017-12-13 21:02:04,444 :INFO : Create a connection to DB  :
+2017-12-13 21:02:04,444 :INFO : Create a connection to DB  :
+2017-12-13 21:02:04,470 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:02:04,470 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:02:04,470 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:02:04,470 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:02:15,767 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:02:15,767 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:02:15,767 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:02:15,767 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:02:18,049 :INFO : Create a connection to DB  :
+2017-12-13 21:02:18,049 :INFO : Create a connection to DB  :
+2017-12-13 21:02:18,049 :INFO : Create a connection to DB  :
+2017-12-13 21:02:18,049 :INFO : Create a connection to DB  :
+2017-12-13 21:02:18,074 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:02:18,074 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:02:18,074 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:02:18,074 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:02:29,386 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:02:29,386 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:02:29,386 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:02:29,386 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:02:31,646 :INFO : Create a connection to DB  :
+2017-12-13 21:02:31,646 :INFO : Create a connection to DB  :
+2017-12-13 21:02:31,646 :INFO : Create a connection to DB  :
+2017-12-13 21:02:31,646 :INFO : Create a connection to DB  :
+2017-12-13 21:02:31,672 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:02:31,672 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:02:31,672 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:02:31,672 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:02:43,017 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:02:43,017 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:02:43,017 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:02:43,017 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:02:45,253 :INFO : Create a connection to DB  :
+2017-12-13 21:02:45,253 :INFO : Create a connection to DB  :
+2017-12-13 21:02:45,253 :INFO : Create a connection to DB  :
+2017-12-13 21:02:45,253 :INFO : Create a connection to DB  :
+2017-12-13 21:02:45,278 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:02:45,278 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:02:45,278 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:02:45,278 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:02:56,558 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:02:56,558 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:02:56,558 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:02:56,558 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:09:09,606 :INFO : Create a connection to DB  :
+2017-12-13 21:09:09,606 :INFO : Create a connection to DB  :
+2017-12-13 21:09:09,606 :INFO : Create a connection to DB  :
+2017-12-13 21:09:09,606 :INFO : Create a connection to DB  :
+2017-12-13 21:09:09,639 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:09,639 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:09,639 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:09,639 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:09,642 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:09,642 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:09,642 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:09,642 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:09,646 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:09,646 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:09,646 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:09,646 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:10,779 :INFO : Create a connection to DB  :
+2017-12-13 21:09:10,779 :INFO : Create a connection to DB  :
+2017-12-13 21:09:10,779 :INFO : Create a connection to DB  :
+2017-12-13 21:09:10,779 :INFO : Create a connection to DB  :
+2017-12-13 21:09:10,809 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:10,809 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:10,809 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:10,809 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:10,810 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:10,810 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:10,810 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:10,810 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:10,812 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:10,812 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:10,812 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:10,812 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:11,951 :INFO : Create a connection to DB  :
+2017-12-13 21:09:11,951 :INFO : Create a connection to DB  :
+2017-12-13 21:09:11,951 :INFO : Create a connection to DB  :
+2017-12-13 21:09:11,951 :INFO : Create a connection to DB  :
+2017-12-13 21:09:11,981 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:11,981 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:11,981 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:11,981 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:11,982 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:11,982 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:11,982 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:11,982 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:11,984 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:11,984 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:11,984 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:11,984 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:13,122 :INFO : Create a connection to DB  :
+2017-12-13 21:09:13,122 :INFO : Create a connection to DB  :
+2017-12-13 21:09:13,122 :INFO : Create a connection to DB  :
+2017-12-13 21:09:13,122 :INFO : Create a connection to DB  :
+2017-12-13 21:09:13,154 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:13,154 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:13,154 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:13,154 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:13,156 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:13,156 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:13,156 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:13,156 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:13,157 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:13,157 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:13,157 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:13,157 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:13,345 :INFO : Create a connection to DB  :
+2017-12-13 21:09:13,345 :INFO : Create a connection to DB  :
+2017-12-13 21:09:13,345 :INFO : Create a connection to DB  :
+2017-12-13 21:09:13,345 :INFO : Create a connection to DB  :
+2017-12-13 21:09:13,377 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:13,377 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:13,377 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:13,377 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:13,379 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:13,379 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:13,379 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:13,379 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:13,380 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:13,380 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:13,380 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:13,380 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:14,520 :INFO : Create a connection to DB  :
+2017-12-13 21:09:14,520 :INFO : Create a connection to DB  :
+2017-12-13 21:09:14,520 :INFO : Create a connection to DB  :
+2017-12-13 21:09:14,520 :INFO : Create a connection to DB  :
+2017-12-13 21:09:14,550 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:14,550 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:14,550 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:14,550 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:14,552 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:14,552 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:14,552 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:14,552 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:14,553 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:14,553 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:14,553 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:14,553 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:15,697 :INFO : Create a connection to DB  :
+2017-12-13 21:09:15,697 :INFO : Create a connection to DB  :
+2017-12-13 21:09:15,697 :INFO : Create a connection to DB  :
+2017-12-13 21:09:15,697 :INFO : Create a connection to DB  :
+2017-12-13 21:09:15,740 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:15,740 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:15,740 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:15,740 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:15,742 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:15,742 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:15,742 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:15,742 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:15,744 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:15,744 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:15,744 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:15,744 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:16,879 :INFO : Create a connection to DB  :
+2017-12-13 21:09:16,879 :INFO : Create a connection to DB  :
+2017-12-13 21:09:16,879 :INFO : Create a connection to DB  :
+2017-12-13 21:09:16,879 :INFO : Create a connection to DB  :
+2017-12-13 21:09:16,908 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:16,908 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:16,908 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:16,908 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:16,910 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:16,910 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:16,910 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:16,910 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:16,911 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:16,911 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:16,911 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:16,911 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:18,051 :INFO : Create a connection to DB  :
+2017-12-13 21:09:18,051 :INFO : Create a connection to DB  :
+2017-12-13 21:09:18,051 :INFO : Create a connection to DB  :
+2017-12-13 21:09:18,051 :INFO : Create a connection to DB  :
+2017-12-13 21:09:18,081 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:18,081 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:18,081 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:18,081 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:18,083 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:18,083 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:18,083 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:18,083 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:18,085 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:18,085 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:18,085 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:18,085 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:19,222 :INFO : Create a connection to DB  :
+2017-12-13 21:09:19,222 :INFO : Create a connection to DB  :
+2017-12-13 21:09:19,222 :INFO : Create a connection to DB  :
+2017-12-13 21:09:19,222 :INFO : Create a connection to DB  :
+2017-12-13 21:09:19,251 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:19,251 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:19,251 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:19,251 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:19,253 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:19,253 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:19,253 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:19,253 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:19,254 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:19,254 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:19,254 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:19,254 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:20,394 :INFO : Create a connection to DB  :
+2017-12-13 21:09:20,394 :INFO : Create a connection to DB  :
+2017-12-13 21:09:20,394 :INFO : Create a connection to DB  :
+2017-12-13 21:09:20,394 :INFO : Create a connection to DB  :
+2017-12-13 21:09:20,425 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:20,425 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:20,425 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:20,425 :WARNING :Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  :
+2017-12-13 21:09:20,426 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:20,426 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:20,426 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:20,426 :WARNING :db.select_DeviceDetails_by_rfiduid vehDetail None : None. :
+2017-12-13 21:09:20,428 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:20,428 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:20,428 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:20,428 :WARNING :RFID Tag ID is not available in DB :  :
+2017-12-13 21:09:29,642 :INFO : Create a connection to DB  :
+2017-12-13 21:09:29,642 :INFO : Create a connection to DB  :
+2017-12-13 21:09:29,642 :INFO : Create a connection to DB  :
+2017-12-13 21:09:29,642 :INFO : Create a connection to DB  :
+2017-12-13 21:09:29,884 :INFO : Create a connection to DB  :
+2017-12-13 21:09:29,884 :INFO : Create a connection to DB  :
+2017-12-13 21:09:29,884 :INFO : Create a connection to DB  :
+2017-12-13 21:09:29,884 :INFO : Create a connection to DB  :
+2017-12-13 21:09:29,909 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:09:29,909 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:09:29,909 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:09:29,909 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:09:42,033 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:09:42,033 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:09:42,033 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:09:42,033 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:09:44,283 :INFO : Create a connection to DB  :
+2017-12-13 21:09:44,283 :INFO : Create a connection to DB  :
+2017-12-13 21:09:44,283 :INFO : Create a connection to DB  :
+2017-12-13 21:09:44,283 :INFO : Create a connection to DB  :
+2017-12-13 21:09:44,308 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:09:44,308 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:09:44,308 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:09:44,308 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:09:55,719 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:09:55,719 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:09:55,719 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:09:55,719 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:09:56,969 :INFO : Create a connection to DB  :
+2017-12-13 21:09:56,969 :INFO : Create a connection to DB  :
+2017-12-13 21:09:56,969 :INFO : Create a connection to DB  :
+2017-12-13 21:09:56,969 :INFO : Create a connection to DB  :
+2017-12-13 21:09:57,209 :INFO : Create a connection to DB  :
+2017-12-13 21:09:57,209 :INFO : Create a connection to DB  :
+2017-12-13 21:09:57,209 :INFO : Create a connection to DB  :
+2017-12-13 21:09:57,209 :INFO : Create a connection to DB  :
+2017-12-13 21:09:57,233 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:09:57,233 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:09:57,233 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:09:57,233 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:10:08,522 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:10:08,522 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:10:08,522 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:10:08,522 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:10:10,850 :INFO : Create a connection to DB  :
+2017-12-13 21:10:10,850 :INFO : Create a connection to DB  :
+2017-12-13 21:10:10,850 :INFO : Create a connection to DB  :
+2017-12-13 21:10:10,850 :INFO : Create a connection to DB  :
+2017-12-13 21:10:10,876 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:10:10,876 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:10:10,876 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:10:10,876 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:10:22,212 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:10:22,212 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:10:22,212 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:10:22,212 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:10:24,553 :INFO : Create a connection to DB  :
+2017-12-13 21:10:24,553 :INFO : Create a connection to DB  :
+2017-12-13 21:10:24,553 :INFO : Create a connection to DB  :
+2017-12-13 21:10:24,553 :INFO : Create a connection to DB  :
+2017-12-13 21:10:24,580 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:10:24,580 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:10:24,580 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:10:24,580 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:10:35,901 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:10:35,901 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:10:35,901 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:10:35,901 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:10:38,191 :INFO : Create a connection to DB  :
+2017-12-13 21:10:38,191 :INFO : Create a connection to DB  :
+2017-12-13 21:10:38,191 :INFO : Create a connection to DB  :
+2017-12-13 21:10:38,191 :INFO : Create a connection to DB  :
+2017-12-13 21:10:38,217 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:10:38,217 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:10:38,217 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:10:38,217 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:10:49,509 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:10:49,509 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:10:49,509 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:10:49,509 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:10:51,746 :INFO : Create a connection to DB  :
+2017-12-13 21:10:51,746 :INFO : Create a connection to DB  :
+2017-12-13 21:10:51,746 :INFO : Create a connection to DB  :
+2017-12-13 21:10:51,746 :INFO : Create a connection to DB  :
+2017-12-13 21:10:51,773 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:10:51,773 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:10:51,773 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:10:51,773 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:11:03,055 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:11:03,055 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:11:03,055 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:11:03,055 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:11:05,314 :INFO : Create a connection to DB  :
+2017-12-13 21:11:05,314 :INFO : Create a connection to DB  :
+2017-12-13 21:11:05,314 :INFO : Create a connection to DB  :
+2017-12-13 21:11:05,314 :INFO : Create a connection to DB  :
+2017-12-13 21:11:05,341 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:11:05,341 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:11:05,341 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:11:05,341 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:11:16,628 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:11:16,628 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:11:16,628 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:11:16,628 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:11:18,880 :INFO : Create a connection to DB  :
+2017-12-13 21:11:18,880 :INFO : Create a connection to DB  :
+2017-12-13 21:11:18,880 :INFO : Create a connection to DB  :
+2017-12-13 21:11:18,880 :INFO : Create a connection to DB  :
+2017-12-13 21:11:18,910 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:11:18,910 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:11:18,910 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:11:18,910 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:11:30,260 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:11:30,260 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:11:30,260 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:11:30,260 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:11:32,564 :INFO : Create a connection to DB  :
+2017-12-13 21:11:32,564 :INFO : Create a connection to DB  :
+2017-12-13 21:11:32,564 :INFO : Create a connection to DB  :
+2017-12-13 21:11:32,564 :INFO : Create a connection to DB  :
+2017-12-13 21:11:32,591 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:11:32,591 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:11:32,591 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:11:32,591 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:11:43,966 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:11:43,966 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:11:43,966 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:11:43,966 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:24:37,085 :INFO : Create a connection to DB  :
+2017-12-13 21:24:37,085 :INFO : Create a connection to DB  :
+2017-12-13 21:24:37,085 :INFO : Create a connection to DB  :
+2017-12-13 21:24:37,085 :INFO : Create a connection to DB  :
+2017-12-13 21:24:37,336 :INFO : Create a connection to DB  :
+2017-12-13 21:24:37,336 :INFO : Create a connection to DB  :
+2017-12-13 21:24:37,336 :INFO : Create a connection to DB  :
+2017-12-13 21:24:37,336 :INFO : Create a connection to DB  :
+2017-12-13 21:24:37,361 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:24:37,361 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:24:37,361 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:24:37,361 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:24:49,011 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:24:49,011 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:24:49,011 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:24:49,011 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:24:51,288 :INFO : Create a connection to DB  :
+2017-12-13 21:24:51,288 :INFO : Create a connection to DB  :
+2017-12-13 21:24:51,288 :INFO : Create a connection to DB  :
+2017-12-13 21:24:51,288 :INFO : Create a connection to DB  :
+2017-12-13 21:24:51,316 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:24:51,316 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:24:51,316 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:24:51,316 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:25:02,830 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:25:02,830 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:25:02,830 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:25:02,830 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:25:05,081 :INFO : Create a connection to DB  :
+2017-12-13 21:25:05,081 :INFO : Create a connection to DB  :
+2017-12-13 21:25:05,081 :INFO : Create a connection to DB  :
+2017-12-13 21:25:05,081 :INFO : Create a connection to DB  :
+2017-12-13 21:25:05,107 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:25:05,107 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:25:05,107 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:25:05,107 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:25:16,433 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:25:16,433 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:25:16,433 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:25:16,433 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:25:18,675 :INFO : Create a connection to DB  :
+2017-12-13 21:25:18,675 :INFO : Create a connection to DB  :
+2017-12-13 21:25:18,675 :INFO : Create a connection to DB  :
+2017-12-13 21:25:18,675 :INFO : Create a connection to DB  :
+2017-12-13 21:25:18,701 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:25:18,701 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:25:18,701 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:25:18,701 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:25:30,060 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:25:30,060 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:25:30,060 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:25:30,060 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:25:32,360 :INFO : Create a connection to DB  :
+2017-12-13 21:25:32,360 :INFO : Create a connection to DB  :
+2017-12-13 21:25:32,360 :INFO : Create a connection to DB  :
+2017-12-13 21:25:32,360 :INFO : Create a connection to DB  :
+2017-12-13 21:25:32,386 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:25:32,386 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:25:32,386 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:25:32,386 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:25:43,734 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:25:43,734 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:25:43,734 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:25:43,734 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:25:45,998 :INFO : Create a connection to DB  :
+2017-12-13 21:25:45,998 :INFO : Create a connection to DB  :
+2017-12-13 21:25:45,998 :INFO : Create a connection to DB  :
+2017-12-13 21:25:45,998 :INFO : Create a connection to DB  :
+2017-12-13 21:25:46,024 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:25:46,024 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:25:46,024 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:25:46,024 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:25:57,351 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:25:57,351 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:25:57,351 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:25:57,351 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:25:59,636 :INFO : Create a connection to DB  :
+2017-12-13 21:25:59,636 :INFO : Create a connection to DB  :
+2017-12-13 21:25:59,636 :INFO : Create a connection to DB  :
+2017-12-13 21:25:59,636 :INFO : Create a connection to DB  :
+2017-12-13 21:25:59,662 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:25:59,662 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:25:59,662 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:25:59,662 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:26:11,341 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:26:11,341 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:26:11,341 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:26:11,341 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:26:13,591 :INFO : Create a connection to DB  :
+2017-12-13 21:26:13,591 :INFO : Create a connection to DB  :
+2017-12-13 21:26:13,591 :INFO : Create a connection to DB  :
+2017-12-13 21:26:13,591 :INFO : Create a connection to DB  :
+2017-12-13 21:26:13,616 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:26:13,616 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:26:13,616 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:26:13,616 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:26:25,050 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:26:25,050 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:26:25,050 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:26:25,050 :ERROR :Failed - displayLEDBoard:<class 'socket.error'>  :
+2017-12-13 21:39:06,494 :INFO : Create a connection to DB  :
+2017-12-13 21:39:06,494 :INFO : Create a connection to DB  :
+2017-12-13 21:39:06,494 :INFO : Create a connection to DB  :
+2017-12-13 21:39:06,494 :INFO : Create a connection to DB  :
+2017-12-13 21:39:06,685 :INFO : Create a connection to DB  :
+2017-12-13 21:39:06,685 :INFO : Create a connection to DB  :
+2017-12-13 21:39:06,685 :INFO : Create a connection to DB  :
+2017-12-13 21:39:06,685 :INFO : Create a connection to DB  :
+2017-12-13 21:39:06,706 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:39:06,706 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:39:06,706 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:39:06,706 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:39:16,674 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª :
+2017-12-13 21:39:16,674 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª :
+2017-12-13 21:39:16,674 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª :
+2017-12-13 21:39:16,674 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª :
+2017-12-13 21:39:17,728 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ¡Acª ª¡Acª  :
+2017-12-13 21:39:17,728 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ¡Acª ª¡Acª  :
+2017-12-13 21:39:17,728 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ¡Acª ª¡Acª  :
+2017-12-13 21:39:17,728 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ¡Acª ª¡Acª  :
+2017-12-13 21:39:23,472 :INFO : Create a connection to DB  :
+2017-12-13 21:39:23,472 :INFO : Create a connection to DB  :
+2017-12-13 21:39:23,472 :INFO : Create a connection to DB  :
+2017-12-13 21:39:23,472 :INFO : Create a connection to DB  :
+2017-12-13 21:39:23,497 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:39:23,497 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:39:23,497 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-13 21:39:23,497 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:38:40,575 :INFO : Create a connection to DB  :
+2017-12-15 10:38:40,575 :INFO : Create a connection to DB  :
+2017-12-15 10:38:40,575 :INFO : Create a connection to DB  :
+2017-12-15 10:38:40,575 :INFO : Create a connection to DB  :
+2017-12-15 10:38:40,605 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:38:40,605 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:38:40,605 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:38:40,605 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:38:54,617 :INFO : Create a connection to DB  :
+2017-12-15 10:38:54,617 :INFO : Create a connection to DB  :
+2017-12-15 10:38:54,617 :INFO : Create a connection to DB  :
+2017-12-15 10:38:54,617 :INFO : Create a connection to DB  :
+2017-12-15 10:38:54,643 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:38:54,643 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:38:54,643 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:38:54,643 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:39:08,279 :INFO : Create a connection to DB  :
+2017-12-15 10:39:08,279 :INFO : Create a connection to DB  :
+2017-12-15 10:39:08,279 :INFO : Create a connection to DB  :
+2017-12-15 10:39:08,279 :INFO : Create a connection to DB  :
+2017-12-15 10:39:08,305 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:39:08,305 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:39:08,305 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:39:08,305 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:39:21,936 :INFO : Create a connection to DB  :
+2017-12-15 10:39:21,936 :INFO : Create a connection to DB  :
+2017-12-15 10:39:21,936 :INFO : Create a connection to DB  :
+2017-12-15 10:39:21,936 :INFO : Create a connection to DB  :
+2017-12-15 10:39:21,962 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:39:21,962 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:39:21,962 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:39:21,962 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:39:26,689 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª :
+2017-12-15 10:39:26,689 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª :
+2017-12-15 10:39:26,689 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª :
+2017-12-15 10:39:26,689 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ª :
+2017-12-15 10:39:27,751 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ¡Acª ª¡Acª  :
+2017-12-15 10:39:27,751 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ¡Acª ª¡Acª  :
+2017-12-15 10:39:27,751 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ¡Acª ª¡Acª  :
+2017-12-15 10:39:27,751 :WARNING :Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: ¡Acª ª¡Acª  :
+2017-12-15 10:39:37,862 :INFO : Create a connection to DB  :
+2017-12-15 10:39:37,862 :INFO : Create a connection to DB  :
+2017-12-15 10:39:37,862 :INFO : Create a connection to DB  :
+2017-12-15 10:39:37,862 :INFO : Create a connection to DB  :
+2017-12-15 10:39:37,888 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:39:37,888 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:39:37,888 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:39:37,888 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:39:51,020 :INFO : Create a connection to DB  :
+2017-12-15 10:39:51,020 :INFO : Create a connection to DB  :
+2017-12-15 10:39:51,020 :INFO : Create a connection to DB  :
+2017-12-15 10:39:51,020 :INFO : Create a connection to DB  :
+2017-12-15 10:39:51,046 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:39:51,046 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:39:51,046 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
+2017-12-15 10:39:51,046 :INFO :If vehID : 1, vehName : SND 9406, BUID : 00:13:EF:C0:02:1E, RFUID : e2000016351702081640767f are Available :
