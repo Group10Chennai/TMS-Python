@@ -25,6 +25,7 @@ import time
 import pexpect
 import subprocess
 import sys
+import BtAutoPair
 
 class BluetoothctlError(Exception):
     """This exception is raised, when bluetoothctl fails to start."""
@@ -64,7 +65,7 @@ class Bluetoothctl:
         except BluetoothctlError, e:
             print(e)
             return None
-
+    
     def parse_device_info(self, info_string):
         """Parse a string corresponding to a device."""
         device = {}
@@ -77,6 +78,7 @@ class Bluetoothctl:
             except ValueError:
                 pass
             else:
+                
                 if device_position > -1:
                     attribute_list = info_string[device_position:].split(" ", 2)
                     device = {
@@ -85,7 +87,32 @@ class Bluetoothctl:
                     }
 
         return device
+    
 
+    def parse_device_info1(self, info_string):
+        """Parse a string corresponding to a device."""
+        device = {}
+        block_list = ["[\x1b[0;", "removed"]
+        string_valid = not any(keyword in info_string for keyword in block_list)
+
+        if string_valid:
+            try:
+                device_position = info_string.index("Device")
+            except ValueError:
+                pass
+            else:
+                
+                if device_position > -1:
+                    attribute_list = info_string[device_position:].split(" ", 2)
+                    #device = {
+                        #"mac_address": attribute_list[1],
+                        #"name": attribute_list[2]
+                    #}
+                    device = attribute_list[1]
+                    
+
+        return device
+    
     def get_available_devices(self):
         """Return a list of tuples of paired and discoverable devices."""
         try:
@@ -96,7 +123,7 @@ class Bluetoothctl:
         else:
             available_devices = []
             for line in out:
-                device = self.parse_device_info(line)
+                device = self.parse_device_info1(line)
                 if device:
                     available_devices.append(device)
 
@@ -112,7 +139,7 @@ class Bluetoothctl:
         else:
             paired_devices = []
             for line in out:
-                device = self.parse_device_info(line)
+                device = self.parse_device_info1(line)
                 if device:
                     paired_devices.append(device)
 
@@ -188,6 +215,12 @@ if __name__ == "__main__":
 
     print("Init bluetooth...")
     bl = Bluetoothctl()
+    
+    autopair = BtAutoPair.BtAutoPair()
+
+    autopair.enable_pairing()
+
+    
     print("Ready!")
     bl.start_scan()
     print("Scanning for 10 seconds...")
@@ -195,7 +228,35 @@ if __name__ == "__main__":
         print(i)
         time.sleep(1)
 
-    print(bl.get_discoverable_devices())
-    print (bl.pair('00:13:EF:C0:02:1E'))
-    #print (bl.get_paired_devices())
+    a = bl.get_paired_devices()
+    
+    
+    discover = bl.get_discoverable_devices()
+    for i in range(len(discover)):
+        print "Discover Device", i, ":",  discover[i]
+
+    print "----------------------------------------"
+    
+    available = bl.get_available_devices()
+    for i in range(len(available)):
+        print "Available Device", i, ":",  available[i]
+    
+    
+    
+    #print (bl.pair('00:13:EF:C0:02:1E'))
+
+
+    BUID = "00:13:EF:C0:01:00"
+
+    print "----------------------------------------"
+    
+    for i in range(len(a)):
+        print "Paired Device", i, ":",  a[i]
+
+
+    string_valid = any(keyword in BUID for keyword in a)
+    print string_valid
+
+    
+    
 

@@ -220,7 +220,7 @@ def displayPresValidation(pres):
     try:
 
         #Check for the Valid Pres is not 0000
-        if pres.strip() != "0000" :
+        if pres.strip() != "0000"  :
                         
             
             presint_Psi = utlities.pressureToBarPsiConvertion(pres)
@@ -228,33 +228,22 @@ def displayPresValidation(pres):
                         
                         
             #Staturated PSI value between 121 to 125 Should be Green Color
-            if (presint_Psi) < 125 and presint_Psi >= 120:
+            if (presint_Psi) <= 135 and presint_Psi >= 120:
 
                 pres_color = Green
                 #print pres_color
                         
-            #Staturated PSI value between 121 to 125 Should be Yellow Color
-            elif presint_Psi < 120 and presint_Psi >= 115:
-
-                pres_color = Yellow
-
+            
             #Staturated PSI value between 114 to below Should be Red Color
-            elif presint_Psi < 114 :
+            elif presint_Psi < 120 or presint_Psi > 135:
                 pres_color = Red
 
-            #Staturated PSI value is above 125 Should be White Color
-            elif presint_Psi > 125 :
-                pres_color = White
-
-            else:
-                pres_color = Red
- 
-                        
+                                    
         #Check for the Valid Pres is 0000
         else:
             pres_color = Blue
             dispPsi = "---"
-
+        #print "else",pres_color, dispPsi 
         return  pres_color, dispPsi
 
     except:
@@ -262,33 +251,25 @@ def displayPresValidation(pres):
         my_logger.error("Failed - Pressure Calculation:%s ",e)
         print ("Failed - Pressure Calculation: ",e)
 
-        return None
+        return None, None
 
 def displayTempValidation(temp):
 
     try:
         #Check for the Valid Temp is not 00
-        if  temp.strip() != "00":
+        if  temp.strip() != "00" :
 
             tempint_Celcious  = utlities.temperatureToCelciousConvertion(temp)
             disptemp = str(int(tempint_Celcious)).zfill(3)
                         
             #Staturated Temperature Celcious value between 50 to 45 Should be Yellow Color
-            if tempint_Celcious < 50 and tempint_Celcious >= 45:
+            if tempint_Celcious <= 50 and tempint_Celcious >= 30:
                 temp_color = Green
 
             #Staturated Temperature Celcious value is above 50 Should be Red Color   
-            elif tempint_Celcious >= 50:
+            elif tempint_Celcious > 50 or tempint_Celcious < 30:
                 temp_color = Red
-
-            #Staturated Temperature Celcious value is below 45 Should be Green Color
-            elif tempint_Celcious < 45:
-                temp_color = Green
-
-            else:
-                temp_color = Green
-                            
-
+           
         #Check for the Valid temp is 00
         else:
             temp_color = Blue
@@ -300,7 +281,7 @@ def displayTempValidation(temp):
         e = sys.exc_info()[0]
         my_logger.error("Failed - Temperature Calculation:%s ",e)
         print ("Failed - Temperature Calculation: ",e)
-        return None
+        return None, None
 
 
 

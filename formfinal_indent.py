@@ -8,25 +8,136 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import QtGui
+import sys
+from PyQt5.QtCore import QSize
+from PyQt5.QtGui import QMovie, QPainter, QPixmap
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QWidget
 
 import gui1
 import utlities
-import work
-import time
 
+import bluetooth
+from bluetooth import*
+import display
+import work
+import load
+import time
+import string
+import bluetoothctl
+import BtAutoPair
+
+
+
+
+import glob
+import logging
+import logging.handlers
+
+
+
+LOG_FILENAME = '/home/pi/Documents/TMS-Git/TMS-Python/log/loggingRotatingFileExample.log'
+
+my_logger = logging.getLogger('myapp')
+hdlr = logging.FileHandler(LOG_FILENAME)
+formatter = logging.Formatter('%(asctime)s :%(levelname)s :%(message)s :')
+hdlr.setFormatter(formatter)
+my_logger.addHandler(hdlr) 
+my_logger.setLevel(logging.DEBUG)
+
+
+loopStatus = ""
 sec = 2
 loopStatus = False
 RFID_UID = ""
 
+Red = "1"
+Green = "2"
+Yellow ="3"
+Blue = "4"
+White = "7"
+
+
+class UIWindow(QWidget):
+    def __init__(self, parent=None):
+        super(UIWindow, self).__init__(parent)
+
+class MainWindow(QMainWindow):
+    def __init__(self, parent=None):
+        super(MainWindow, self).__init__(parent)
+        self.setGeometry(50, 50, 600, 750)
+        self.setFixedSize(600, 750)
+        self.startUIWindow()
+
+        self.movie = QMovie("/home/pi/Documents/TZcL7Cc.gif")
+        self.movie.frameChanged.connect(self.repaint)
+        self.movie.start()
+
+    def startUIWindow(self):
+        self.Window = UIWindow(self)
+        self.setWindowTitle("My Program")
+        self.show()
+
+    def paintEvent(self, event):
+        currentFrame = self.movie.currentPixmap()
+        frameRect = currentFrame.rect()
+        frameRect.moveCenter(self.rect().center())
+        if frameRect.intersects(event.rect()):
+            painter = QPainter(self)
+            painter.drawPixmap(frameRect.left(), frameRect.top(), currentFrame)
+
+
+
 class Ui_Form(object):
 
+    
+    pres_color = ""
+    dispPsi = ""
+    temp_color = ""
+    disptemp = ""
+
+    pres_color1 = ""
+    temp_color1 = ""
+    
     numberString = ""
     t = ""
 
     GREEN_CLR_TAG = "color: rgb(0, 100, 0);\n"
-    BLUE_CLR_TAG = "color: rgb(0, 0, 255);\n"
-    RED_CLR_TAG = "color: rgb(255, 0, 0);\n"
+    BLUE_CLR_TAG = "color: rgb(85, 0, 127);\n"
+    RED_CLR_TAG = "color: rgb(255, 59, 20);\n"
+    YELLOW_CLR_TAG = "color: rgb(255, 255, 0);\n"
+    BROWN_CLR_TAG = "color: rgb(255, 170, 0);\n" # White in LED Display
 
+    #pres_color1 = BROWN_CLR_TAG
+    dispPsi    = "---"
+    #temp_color1 = BROWN_CLR_TAG
+    disptemp   = "---"
+    
+    def displayColorSet(self, pres_color):
+
+        try:
+    
+            if str(pres_color) == '1':
+                pres_color1 = self.RED_CLR_TAG
+            if str(pres_color) == '2': 
+                pres_color1 = self.GREEN_CLR_TAG
+            if str(pres_color) == '3':
+                pres_color1 = self.YELLOW_CLR_TAG
+            if str(pres_color) == '4':
+                pres_color1 = self.BLUE_CLR_TAG
+            if str(pres_color) == '7':
+                pres_color1 = self.BROWN_CLR_TAG
+            
+
+            return pres_color1
+
+        except:
+            e = sys.exc_info()[0]
+            my_logger.error("Error - displayColorSet: %s %s", e, pres_color)
+            print ("Error - displayColorSet:",e, pres_color)
+
+            return None
+    
+        
     def displayTPData(self, vehName, mylist):
 
         print "display method ", mylist
@@ -34,60 +145,464 @@ class Ui_Form(object):
 
         for i in range (2, len(mylist)):
             print i, mylist[i][6]
-            if (mylist[i][6] != 0) | (mylist[i][6] != 00):
+            #if (mylist[i][6] != 0) | (mylist[i][6] != 00):
 
-                pressure = str(utlities.pressureToBarPsiConvertion(str(mylist[i][10] + mylist[i][11])))
-                temp = str(utlities.temperatureToCelciousConvertion(mylist[i][12]))
-                if mylist[i][6] == '01':
-                    #position = "FL"
-                    self.lineEdit_Value_Press_FL.setText(str(pressure))
-                    self.lineEdit_Value_Press_FL.setStyleSheet(self.GREEN_CLR_TAG)
+            #pressure = str(utlities.pressureToBarPsiConvertion(str(mylist[i][10] + mylist[i][11])))
+            #temp = str(utlities.temperatureToCelciousConvertion(mylist[i][12]))
 
-                    self.lineEdit_Value_Temp_FL.setText(str(temp))
-                    self.lineEdit_Value_Temp_FL.setStyleSheet(self.GREEN_CLR_TAG)
+            #print "Before",pres_color, dispPsi, "color: rgb(255, 170, 0);\n" 
+  
+            #print "Mid",pres_color, dispPsi, self.pres_color1
+            #print "After",pres_color, dispPsi, pres_color1
 
-                if mylist[i][6] == '02':
-                    #position = "FR"
-                    self.lineEdit_Value_Press_FR.setText(str(pressure))
-                    self.lineEdit_Value_Press_FR.setStyleSheet(self.GREEN_CLR_TAG)
+            
+                
+            if mylist[i][6] == '01':
 
-                    self.lineEdit_value_Temp_FR.setText(str(temp))
-                    self.lineEdit_value_Temp_FR.setStyleSheet(self.GREEN_CLR_TAG)
+                pres = (mylist[i][10] + mylist[i][11])
+                temp = (mylist[i][12])
 
-                if mylist[i][6] == '03':
-                    #position = "RLO"
-                    self.lineEdit_Value_Press_RLO.setText(str(pressure))
-                    self.lineEdit_Value_Press_RLO.setStyleSheet(self.GREEN_CLR_TAG)
+                pres_color, dispPsi = display.displayPresValidation(pres)
+                pres_color1 = self.displayColorSet(pres_color)
+                print "01 - Pressure", pres_color, dispPsi, pres_color1
+                
+                temp_color, disptemp = display.displayTempValidation(temp)    
+                temp_color1 = self.displayColorSet(temp_color)
+                print "01 - Temp", temp_color, disptemp, temp_color1
+                
+                #position = "FL"
+                self.lineEdit_Value_Press_FL.setText((dispPsi))
+                self.lineEdit_Value_Press_FL.setStyleSheet(pres_color1)
 
-                    self.lineEdit_Value_Temp_RLO.setText(str(temp))
-                    self.lineEdit_Value_Temp_RLO.setStyleSheet(self.GREEN_CLR_TAG)
+                self.lineEdit_Value_Temp_FL.setText((disptemp))
+                self.lineEdit_Value_Temp_FL.setStyleSheet(temp_color1)
 
-                if mylist[i][6] == '04':
-                    #position = "RLI"
-                    self.lineEdit_Value_Press_RLI.setText(str(pressure))
-                    self.lineEdit_Value_Press_RLI.setStyleSheet(self.GREEN_CLR_TAG)
+            if mylist[i][6] == '02':
 
-                    self.lineEdit_Value_Temp_RLI.setText(str(temp))
-                    self.lineEdit_Value_Temp_RLI.setStyleSheet(self.GREEN_CLR_TAG)
+                pres = (mylist[i][10] + mylist[i][11])
+                temp = (mylist[i][12])
 
-                if mylist[i][6] == '05':
-                    #position = "RRI"
-                    self.lineEdit_Value_Press_RRI.setText(str(pressure))
-                    self.lineEdit_Value_Press_RRI.setStyleSheet(self.GREEN_CLR_TAG)
+                pres_color, dispPsi = display.displayPresValidation(pres)                
+                pres_color1 = self.displayColorSet(pres_color)
+                print "02 - Pressure", pres_color, dispPsi, pres_color1
+                
+                temp_color, disptemp = display.displayTempValidation(temp)    
+                temp_color1 = self.displayColorSet(temp_color)
+                print "02 - Temp", temp_color, disptemp, temp_color1
+                
+                #position = "FR"
+                self.lineEdit_Value_Press_FR.setText((dispPsi))
+                self.lineEdit_Value_Press_FR.setStyleSheet(pres_color1)
 
-                    self.lineEdit_Value_Temp_RRI.setText(str(temp))
-                    self.lineEdit_Value_Temp_RRI.setStyleSheet(self.GREEN_CLR_TAG)
+                self.lineEdit_value_Temp_FR.setText((disptemp))
+                self.lineEdit_value_Temp_FR.setStyleSheet(temp_color1)
 
-                if mylist[i][6] == '06':
-                    #position = "RRO"
-                    self.lineEdit_Value_Press_RRO.setText(str(pressure))
-                    self.lineEdit_Value_Press_RRO.setStyleSheet(self.GREEN_CLR_TAG)
+            if mylist[i][6] == '03':
 
-                    self.lineEdit_Value_Temp_RRO.setText(str(temp))
-                    self.lineEdit_Value_Temp_RRO.setStyleSheet(self.GREEN_CLR_TAG)
+                pres = (mylist[i][10] + mylist[i][11])
+                temp = (mylist[i][12])
+
+                pres_color, dispPsi = display.displayPresValidation(pres)
+                pres_color1 = self.displayColorSet(pres_color)
+                print "03 - Pressure", pres_color, dispPsi, pres_color1                
+                
+                temp_color, disptemp = display.displayTempValidation(temp)    
+                temp_color1 = self.displayColorSet(temp_color)
+                print "03 - Temp", temp_color, disptemp, temp_color1
+                
+                #position = "RLO"
+                self.lineEdit_Value_Press_RLO.setText((dispPsi))
+                self.lineEdit_Value_Press_RLO.setStyleSheet(pres_color1)
+
+                self.lineEdit_Value_Temp_RLO.setText((disptemp))
+                self.lineEdit_Value_Temp_RLO.setStyleSheet(temp_color1)
+
+            if mylist[i][6] == '04':
+
+                pres = (mylist[i][10] + mylist[i][11])
+                temp = (mylist[i][12])
+
+                pres_color, dispPsi = display.displayPresValidation(pres)
+                pres_color1 = self.displayColorSet(pres_color)
+                print "04 - Pressure", pres_color, dispPsi, pres_color1
+                
+                temp_color, disptemp = display.displayTempValidation(temp)    
+                temp_color1 = self.displayColorSet(temp_color)
+                print "04 - Temp", temp_color, disptemp, temp_color1
+                
+                #position = "RLI"
+                self.lineEdit_Value_Press_RLI.setText((dispPsi))
+                self.lineEdit_Value_Press_RLI.setStyleSheet(pres_color1)
+
+                self.lineEdit_Value_Temp_RLI.setText((disptemp))
+                self.lineEdit_Value_Temp_RLI.setStyleSheet(temp_color1)
+
+            if mylist[i][6] == '05':
+
+                pres = (mylist[i][10] + mylist[i][11])
+                temp = (mylist[i][12])
+
+                pres_color, dispPsi = display.displayPresValidation(pres)
+                pres_color1 = self.displayColorSet(pres_color)
+                print "05 - Pressure", pres_color, dispPsi, pres_color1
+                
+                temp_color, disptemp = display.displayTempValidation(temp)    
+                temp_color1 = self.displayColorSet(temp_color)
+                print "05 - Temp", temp_color, disptemp, temp_color1
+                
+                #position = "RRI"
+                self.lineEdit_Value_Press_RRI.setText((dispPsi))
+                self.lineEdit_Value_Press_RRI.setStyleSheet(pres_color1)
+
+                self.lineEdit_Value_Temp_RRI.setText((disptemp))
+                self.lineEdit_Value_Temp_RRI.setStyleSheet(temp_color1)
+
+            if mylist[i][6] == '06':
+
+                #print "RRO"
+                pres = (mylist[i][10] + mylist[i][11])
+                temp = (mylist[i][12])
+
+                pres_color, dispPsi = display.displayPresValidation(pres)
+                pres_color1 = self.displayColorSet(pres_color)
+                print "06 - Pressure", pres_color, dispPsi, pres_color1
+                
+                temp_color, disptemp = display.displayTempValidation(temp)    
+                temp_color1 = self.displayColorSet(temp_color)
+                print "06 - Temp", temp_color, disptemp, temp_color1
+                
+                #position = "RRO"
+                self.lineEdit_Value_Press_RRO.setText((dispPsi))
+                self.lineEdit_Value_Press_RRO.setStyleSheet(pres_color1)
+
+                self.lineEdit_Value_Temp_RRO.setText((disptemp))
+                self.lineEdit_Value_Temp_RRO.setStyleSheet(temp_color1)
+   
+                
 
         print "end of display method"
         self.lineEdit_Value_BusNumber.setText(vehName)
+
+        
+
+
+    '''
+    def optionClick(self, optionID):
+        print "optionClick", optionID
+        
+        statusAuto = self.radioButton.isChecked()
+        statusMan  = self.radioButton_2.isChecked()
+        print "self.radiobutton.isChecked()", statusAuto, statusMan
+        
+        if optionID == "Automatic":
+            print "Automatic Mode Enabled"
+
+            self.radioButton.setChecked(True)
+            
+            self.pushButton_Scan.setEnabled(False)
+            #self.horizontalLayout.setEnabled(False)
+            self.pushButton_Scan.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0.062, y1:0.062, x2:1, y2:0.0113636, stop:0.506537 rgba(212, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
+            "background-color: qlineargradient(spread:pad, x1:0.147227, y1:0.068, x2:1, y2:0.0113636, stop:0.506537 rgba(0, 10, 9, 255), stop:1 rgba(255, 255, 255, 255));\n"
+            "color: rgb(255, 255, 255);\n"
+            "font: 75 24pt \"MS Shell Dlg 2\";\n"
+            "border-radius: 20px;")
+
+            #Keypad Disable
+            self.pushButton_1.setEnabled(False)
+            self.pushButton_2.setEnabled(False)
+            self.pushButton_3.setEnabled(False)
+            self.pushButton_4.setEnabled(False)
+            self.pushButton_5.setEnabled(False)
+            self.pushButton_6.setEnabled(False)
+            self.pushButton_7.setEnabled(False)
+            self.pushButton_8.setEnabled(False)
+            self.pushButton_9.setEnabled(False)
+            self.pushButton_0.setEnabled(False)
+            
+            
+            loopStatus = True
+            RFID_UID = ""
+            #self.callMethod2()
+            print "Option Click Loopstatus",loopStatus 
+            optionReturn = self.loopFun(loopStatus, RFID_UID)
+
+            if statusMan == True:
+
+                loopStatus = False
+            
+
+        if optionID == "Manual":
+            
+            print "Manual Mode Enabled"
+
+            self.radioButton_2.setChecked(True)
+            
+            self.pushButton_Scan.setEnabled(True)
+            self.pushButton_Scan.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0.062, y1:0.062, x2:1, y2:0.0113636, stop:0.506537 rgba(212, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
+            "background-color: qlineargradient(spread:pad, x1:0.147227, y1:0.068, x2:1, y2:0.0113636, stop:0.506537 rgba(0, 135, 9, 255), stop:1 rgba(255, 255, 255, 255));\n"
+            "color: rgb(255, 255, 255);\n"
+            "font: 75 24pt \"MS Shell Dlg 2\";\n"
+            "border-radius: 20px;")
+
+            loopStatus = False
+            print "Option Click Loopstatus",loopStatus
+
+    '''
+
+
+    
+
+    def optionClick(self, optionID):
+        #print "optionClick", optionID
+        
+        #self.radioButton.setChecked(True)
+        
+        statusAuto = self.radioButton.isChecked()
+        statusMan  = self.radioButton_2.isChecked()
+        print "optionID,  self.radiobutton.isChecked()",optionID,  statusAuto, statusMan
+
+        #self.radioButton.setChecked(True)
+
+        QtCore.QCoreApplication.processEvents()
+            
+        if (optionID == "Automatic") and (statusAuto == True):
+            print "Automatic Mode Enabled"
+
+            self.endProcess()
+
+            #self.radioButton.setChecked(True)
+            
+            self.pushButton_Scan.setEnabled(False)
+            #self.horizontalLayout.setEnabled(False)
+            self.pushButton_Scan.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0.062, y1:0.062, x2:1, y2:0.0113636, stop:0.506537 rgba(212, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
+            "background-color: qlineargradient(spread:pad, x1:0.147227, y1:0.068, x2:1, y2:0.0113636, stop:0.506537 rgba(0, 10, 9, 255), stop:1 rgba(255, 255, 255, 255));\n"
+            "color: rgb(255, 255, 255);\n"
+            "font: 75 24pt \"MS Shell Dlg 2\";\n"
+            "border-radius: 20px;")
+
+            #Keypad Disable
+            self.pushButton_1.setEnabled(False)
+            self.pushButton_2.setEnabled(False)
+            self.pushButton_3.setEnabled(False)
+            self.pushButton_4.setEnabled(False)
+            self.pushButton_5.setEnabled(False)
+            self.pushButton_6.setEnabled(False)
+            self.pushButton_7.setEnabled(False)
+            self.pushButton_8.setEnabled(False)
+            self.pushButton_9.setEnabled(False)
+            self.pushButton_0.setEnabled(False)
+            
+            
+            loopStatus = True
+            RFID_UID = ""
+            #self.callMethod2()
+            print "Option Click Loopstatus",loopStatus 
+            optionReturn = self.loopFun(loopStatus, RFID_UID)
+            QtCore.QCoreApplication.processEvents()
+            
+
+        if (optionID == "Manual") and (statusMan == True):
+            #self.radioButton.setChecked(False)
+            QtCore.QCoreApplication.processEvents()
+            print "Manual Mode Enabled"
+            
+            #Keypad Enable
+            self.pushButton_1.setEnabled(True)
+            self.pushButton_2.setEnabled(True)
+            self.pushButton_3.setEnabled(True)
+            self.pushButton_4.setEnabled(True)
+            self.pushButton_5.setEnabled(True)
+            self.pushButton_6.setEnabled(True)
+            self.pushButton_7.setEnabled(True)
+            self.pushButton_8.setEnabled(True)
+            self.pushButton_9.setEnabled(True)
+            self.pushButton_0.setEnabled(True)
+            
+            #self.radioButton_2.setChecked(True)
+            
+            self.pushButton_Scan.setEnabled(True)
+            self.pushButton_Scan.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0.062, y1:0.062, x2:1, y2:0.0113636, stop:0.506537 rgba(212, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
+            "background-color: qlineargradient(spread:pad, x1:0.147227, y1:0.068, x2:1, y2:0.0113636, stop:0.506537 rgba(0, 135, 9, 255), stop:1 rgba(255, 255, 255, 255));\n"
+            "color: rgb(255, 255, 255);\n"
+            "font: 75 24pt \"MS Shell Dlg 2\";\n"
+            "border-radius: 20px;")
+            
+            loopStatus = False
+            loop = False
+            print "Option Click Loopstatus",loopStatus
+
+            #optionReturn = self.loopFun(loopStatus, RFID_UID)
+
+            self.btnClick("Scan")
+            QtCore.QCoreApplication.processEvents()
+    
+
+
+    def loopFun(self, loopStatus, loopRFIDUID):
+        #global loopStatus
+        
+        print "loopstatus: ", loopStatus 
+        while (loopStatus != False):
+            print ("looping ")
+            
+            myBleConn, vehName, vehID, status = self.callMethod2(loopRFIDUID)
+            QtCore.QCoreApplication.processEvents()
+
+            
+            
+            #time.sleep(1.5)
+
+            if ((myBleConn != None) and (status == "Success")):
+
+                loop = True
+                #print "loopstatus: self.callMethod3_BluetoothFunction(myBleConn, loop, status)", myBleConn, loop, status 
+
+                self.callMethod3_BluetoothFunction(myBleConn, vehName, vehID, loop, status)
+                
+                return myBleConn, vehName, vehID, status
+
+            elif (status == "Failed"):
+
+                loopStatus = False
+                loop = False
+
+                self.callMethod3_BluetoothFunction(myBleConn, vehName, vehID, loop, status)
+                
+                return myBleConn, vehName, vehID, status
+                        
+
+        print "Done clicked"
+
+        
+
+    def callMethod2(self, RFID_UID):
+
+        #global RFID_UID
+        #Call method 2 in work.py
+        #Returns mylist
+        print "method 2 RFID_UID ", RFID_UID
+        QtCore.QCoreApplication.processEvents()
+
+
+        #Manual Condition
+        if (RFID_UID != None) and (RFID_UID != ""):
+            
+            print "CallMethod2 (RFID_UID != None) or (RFID_UID != ):", RFID_UID
+            myBleConn, vehName, vehID, status = work.fun_main(RFID_UID)
+            #print "CallMethod2 (RFID_UID != None) or (RFID_UID != ): myBleConn", myBleConn
+
+            if ((myBleConn != None) and (status == "Success")):
+                
+                #Check the Manual SCAN for one time 
+                status = "Failed"
+                print "CallMethod2 Check the Manual SCAN for one time "
+                return myBleConn, vehName, vehID, status
+            else:
+
+                return None, vehName, vehID, status
+
+            
+        #Automatic Condition
+        elif (RFID_UID == None) or (RFID_UID == ""):
+            
+            print "CallMethod2 Else", RFID_UID
+            
+            myBleConn, vehName, vehID, status = work.fun_main(RFID_UID)
+            #print "CallMethod2 Else: myBleConn", myBleConn
+            
+            if ((myBleConn != None) and (status == "Success")):
+                
+                return myBleConn, vehName, vehID, status
+            else:
+
+                return None, vehName, vehID, status
+
+            
+
+
+    def callMethod3_BluetoothFunction(self, myBleConn, vehName, vehID, loop, status):
+        
+
+        if ((myBleConn != None) and (status == "Success")):
+
+            while loop == True:
+
+                print "callMethod3_BluetoothFunction", myBleConn, vehName, vehID, loop, status
+
+                #mylist, vehName, BLEStatus = fun_main_Bluetooth(bleConn)
+                QtCore.QCoreApplication.processEvents()
+                self.endProcess()
+                
+                mylistvar, vehName, status = work.fun_main_Bluetooth(myBleConn, vehName, vehID, loop, status)
+
+                print "callMethod3_BluetoothFunction while", mylistvar, vehName, status
+                self.display_mylistvar(mylistvar, vehName, vehID, status)
+                #print BLEStatus
+                QtCore.QCoreApplication.processEvents()
+
+                statusAuto = self.radioButton.isChecked()
+                statusMan  = self.radioButton_2.isChecked()
+
+                
+                if (status == "Failed") or (statusMan == True):
+                    loop = False
+                    #myBleConn.close()
+
+        elif ((myBleConn != None) and (status == "Failed")):
+
+            print "callMethod3_BluetoothFunction Failed Status", myBleConn, vehName, vehID, loop, status
+            QtCore.QCoreApplication.processEvents()
+            mylistvar, vehName, status = work.fun_main_Bluetooth(myBleConn, vehName, loop, status)
+
+
+            print "callMethod3_BluetoothFunction", myBleConn, vehName, vehID, loop, status
+            self.display_mylistvar(mylistvar, vehName, vehID, status)
+            #print BLEStatus
+            
+        
+
+
+    def display_mylistvar(self, mylistvar, vehName, vehID, status):    
+
+#        status = "Success"
+#        print "Status", status
+
+        if(status == "Success"):
+            print "Call method 2 ", mylistvar
+            #mylistVar from work.py
+
+            
+            
+            #mylistVar = [ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], \
+            #              [0, 'a1', '41', '08', '63', '00', '05'], \
+            #              [0, 'a1', '41', '0f', '63', '00', '01', 'ba', '6b', '09', '01', '50', '78', '00'], \
+            #              [0, 'a1', '41', '0f', '63', '00', '02', 'ba', '6d', '6d', '01', '25', '58', '00'], \
+            #              [0, 'a1', '41', '0f', '63', '00', '03', '56', 'a8', 'cb', '01', '30', '70', '00'], \
+            #              [0, 'a1', '41', '0f', '63', '00', '04', '56', 'a6', 'be', '01', '45', '65', '00'], \
+            #              [0, 'a1', '41', '0f', '63', '00', '05', '56', 'a7', '81', '00', '00', '00', '00'], \
+            #              [0, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']]
+
+
+            #Current date and time
+            #t = datetime.utcnow()
+            curdate_time = time.strftime('%H:%M:%S %d/%m/%Y')
+            predate_time = curdate_time
+            self.label_Value_Time_Date.setText(predate_time)
+            
+#           vehName = "SND 9406"
+            print "vehName", vehName
+
+	    
+            self.displayTPData(vehName, mylistvar)
+
+
+            QtCore.QCoreApplication.processEvents()
+            work.display_Parameter(mylistvar, vehName, vehID, curdate_time)
+
+            return "Success"
+
+        elif (status == "Failed"):
+            return "Failed"
 
     def showdialog(message):
         print ("dialog ", message)
@@ -106,11 +621,11 @@ class Ui_Form(object):
         #Call method 1 in work.py to verify the vehicle exists or not
 	# If exists return rfuid
         # If not exists display a message
-        print "Call method 1" + self.lineEdit_bus_No.displayText()
+        print "Call method 1:  " + self.lineEdit_bus_No.displayText()
         
         if(len(self.lineEdit_bus_No.displayText()) > 0):
 
-            print "Call method 1" + self.lineEdit_bus_No.displayText()
+            print "Call method 1: " + self.lineEdit_bus_No.displayText()
             
             
             #RFID = work.fun_vehName(self.lineEdit_bus_No.displayText())
@@ -124,44 +639,12 @@ class Ui_Form(object):
         else:
             return None
 
-    def callMethod2(self):
-
-        global RFID_UID
-        #Call method 2 in work.py
-        #Returns mylist
-        print "method 2 ", RFID_UID
-
-        if (RFID_UID != None) or (RFID_UID != ""):
-            
-            mylistVar, vehName, status = work.fun_main(RFID_UID)
-
-        else:
-
-            mylistVar, vehName, status = work.fun_main(None)
-
-        #status = "Success"
-
-        if(status == "Success"):
-            print "Call method 2 "
-            #mylistVar from work.py
-            '''
-            mylistVar = [ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], \
-                          [0, 'a1', '41', '08', '63', '00', '05'], \
-                          [0, 'a1', '41', '0f', '63', '00', '01', 'ba', '6b', '09', '01', '50', '78', '00'], \
-                          [0, 'a1', '41', '0f', '63', '00', '02', 'ba', '6d', '6d', '01', '25', '58', '00'], \
-                          [0, 'a1', '41', '0f', '63', '00', '03', '56', 'a8', 'cb', '01', '30', '70', '00'], \
-                          [0, 'a1', '41', '0f', '63', '00', '04', '56', 'a6', 'be', '01', '45', '65', '00'], \
-                          [0, 'a1', '41', '0f', '63', '00', '05', '56', 'a7', '81', '00', '00', '00', '00'], \
-                          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
-
-            vehName = "SND 9460"
-	    '''
-            self.displayTPData(vehName, mylistVar)
-		
+    		
 
     def endProcess(self):
+
         # Stop the loop
-        global loopStatus
+#        global loopStatus
         loopStatus = False
         # Clear all the text fields
 
@@ -181,31 +664,23 @@ class Ui_Form(object):
 
         print ("Cleared all the text boxes")
 
-    def loopFun(self):
-        global loopStatus
-
-        while (loopStatus != False):
-            print ("looping ")
-            
-            self.callMethod2()
-            QtCore.QCoreApplication.processEvents()
-            time.sleep(1)
-
-        print "Done clicked"
-
+    
+    '''
     def btnClick(self, btnEvent):
         global sec
-        global loopStatus
+        #global loopStatus
         global RFID_UID
-
+        
         RFID_UID = ""
 
         # Stoping the loop
         loopStatus = False
 
+        
+
         if btnEvent == "Scan" :
 
-            # By default closing the last thread
+            #By default closing the last thread
             self.endProcess()
 
             #Clicked Scan Button
@@ -224,7 +699,7 @@ class Ui_Form(object):
                         RFID_UID = method1Resp
 
                         #self.callMethod2()
-                        self.loopFun()
+                        self.loopFun(loopStatus, RFID_UID)
 
                     else:
                         print("Method 1 error ", "Vehicle not found")
@@ -233,15 +708,90 @@ class Ui_Form(object):
                     loopStatus = True
                     RFID_UID = ""
                     #self.callMethod2()
-                    self.loopFun()
+                    self.loopFun(loopStatus, RFID_UID)
 
-        else:
+
+        elif btnEvent == "Done" :
             #Clicked Done Button
             print("inside else done")
+            loopStatus = True
+            self.numberString = ""
+            self.lineEdit_bus_No.setText("")
+            self.endProcess()
+    '''
+
+    
+    
+
+
+
+    
+    def btnClick(self, btnEvent):
+        global sec
+        #global loopStatus
+        global RFID_UID
+        
+        RFID_UID = ""
+
+        # Stoping the loop
+        loopStatus = False
+
+        
+       
+
+        if btnEvent == "Scan" :
+
+            #By default closing the last thread
+            self.endProcess()
+            
+            #Clicked Scan Button
+            
+            #load.MainWindow()
+            
+
+            if len(self.lineEdit_bus_No.displayText()) > 0 and len(self.lineEdit_bus_No.displayText()) < 4:
+
+                print ("Please enter 4 digits bus no", self.lineEdit_bus_No.displayText())
+
+            else:
+                print ("Call work.py -> function(): ", self.lineEdit_bus_No.displayText())
+
+                if(len(self.lineEdit_bus_No.displayText()) > 0):
+                    # Checking for RFID_UID
+                    method1Resp = self.callMethod1()
+
+                    if method1Resp != None:
+                        loopStatus = True
+                        RFID_UID = method1Resp
+
+                        #self.callMethod2()
+                        self.loopFun(loopStatus, RFID_UID)
+
+                        self.numberString = ""
+                        self.lineEdit_bus_No.setText("")
+                        #self.endProcess()
+
+                    else:
+                        print("Method 1 error ", "Vehicle not found")
+
+                #else:
+                    #loopStatus = True
+                    #RFID_UID = ""
+                    #self.callMethod2()
+                    #self.loopFun(loopStatus, RFID_UID)
+
+
+        elif btnEvent == "Done" :
+            #Clicked Done Button
+            print("inside else done")
+            loopStatus = True
             self.numberString = ""
             self.lineEdit_bus_No.setText("")
             self.endProcess()
 
+
+
+    
     def keypadEvent(self, bid):
         print (bid, self.numberString)
 
@@ -279,6 +829,43 @@ class Ui_Form(object):
         print (self.numberString)
         self.lineEdit_bus_No.setText(self.numberString)
 
+    
+    
+    #def MainWindow(QMainWindow):
+        '''def __init__(self, parent=None):
+            super(MainWindow, self).__init__(parent)
+            self.setGeometry(50, 50, 600, 750)
+            self.setFixedSize(600, 750)
+            self.startUIWindow()
+
+            self.movie = QMovie("/home/pi/Documents/TZcL7Cc.gif")
+            self.movie.frameChanged.connect(self.repaint)
+            self.movie.start()
+
+    def startUIWindow(self):
+        self.Window = UIWindow(self)
+        self.setWindowTitle("My Program")
+        self.show()
+    '''
+
+    
+    
+    
+
+    
+        
+    def paintEvent(self, event):
+        
+        currentFrame = self.movie.currentPixmap()
+        frameRect = currentFrame.rect()
+        frameRect.moveCenter(self.rect().center())
+        if frameRect.intersects(event.rect()):
+            painter = QPainter(self)
+            painter.drawPixmap(frameRect.left(), frameRect.top(), currentFrame)
+
+        #sQtCore.QCoreApplication.processEvents()
+
+    
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(1316, 815)
@@ -708,6 +1295,126 @@ class Ui_Form(object):
 "font: 75 14pt \"MS Shell Dlg 2\";")
         self.label_Text_FL.setObjectName("label_Text_FL")
         self.gridLayout_2.addWidget(self.label_Text_FL, 0, 0, 1, 2)
+
+        #Radio Button
+        self.layoutWidget4 = QtWidgets.QWidget(Form)
+        self.layoutWidget4.setGeometry(QtCore.QRect(70, 70, 221, 41))
+        self.layoutWidget4.setStyleSheet("font: 75 14pt \"MS Shell Dlg 2\";")
+        self.layoutWidget4.setObjectName("layoutWidget4")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.layoutWidget4)
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.radioButton = QtWidgets.QRadioButton(self.layoutWidget4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.radioButton.sizePolicy().hasHeightForWidth())
+        self.radioButton.setSizePolicy(sizePolicy)
+        self.radioButton.setStyleSheet("font: 75 14pt \"MS Shell Dlg 2\";")
+        self.radioButton.setObjectName("radioButton")
+        self.horizontalLayout_3.addWidget(self.radioButton)
+        self.radioButton_2 = QtWidgets.QRadioButton(self.layoutWidget4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.radioButton_2.sizePolicy().hasHeightForWidth())
+        self.radioButton_2.setSizePolicy(sizePolicy)
+        self.radioButton_2.setStyleSheet("font: 75 14pt \"MS Shell Dlg 2\";")
+        self.radioButton_2.setObjectName("radioButton_2")
+        self.horizontalLayout_3.addWidget(self.radioButton_2)
+
+        self.widget = QtWidgets.QWidget(Form)
+        self.widget.setGeometry(QtCore.QRect(1020, 50, 261, 41))
+        self.widget.setObjectName("widget")
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.widget)
+        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        self.label_Text_Time_Date = QtWidgets.QLabel(self.widget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_Text_Time_Date.sizePolicy().hasHeightForWidth())
+        self.label_Text_Time_Date.setSizePolicy(sizePolicy)
+        self.label_Text_Time_Date.setStyleSheet("font: 75 12pt \"MS Shell Dlg 2\";")
+        self.label_Text_Time_Date.setObjectName("label_Text_Time_Date")
+        self.horizontalLayout_4.addWidget(self.label_Text_Time_Date)
+        self.label_Value_Time_Date = QtWidgets.QLabel(self.widget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_Value_Time_Date.sizePolicy().hasHeightForWidth())
+        self.label_Value_Time_Date.setSizePolicy(sizePolicy)
+        self.label_Value_Time_Date.setStyleSheet("font: 75 12pt \"MS Shell Dlg 2\";")
+        self.label_Value_Time_Date.setText("")
+        self.label_Value_Time_Date.setObjectName("label_Value_Time_Date")
+        self.horizontalLayout_4.addWidget(self.label_Value_Time_Date)
+
+
+        #Loading GIF
+        '''
+        self.label_GIF = QtWidgets.QLabel(Form)
+        self.label_Image_Bus.setGeometry(QtCore.QRect(770, 120, 191, 561))
+        self.label_Image_Bus.setStyleSheet("border-image: url(:/bus_Image/Images/bustyres - Copy.png);")
+        self.label_Image_Bus.setText("")
+        self.label_Image_Bus.setObjectName("label_Image_Bus")
+        self.label_Text_TPMS = QtWidgets.QLabel(Form)
+        self.label_Text_TPMS.setGeometry(QtCore.QRect(330, 10, 491, 31))
+        
+        self.currentFrame = self.movie.currentPixmap()
+        self.frameRect = self.currentFrame.rect()
+        frameRect.moveCenter(self.rect().center())
+        if frameRect.intersects(event.rect()):
+            painter = QPainter(self)
+            painter.drawPixmap(frameRect.left(), frameRect.top(), currentFrame)
+        '''
+
+
+
+        self.widget = QtWidgets.QWidget(Form)
+        self.widget.setGeometry(QtCore.QRect(460, 440, 51, 41))
+        self.widget.setObjectName("widget")
+        self.verticalLayout = QtWidgets.QHBoxLayout(self.widget)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.label_GIF = QtWidgets.QLabel(self.widget)
+        #sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        #sizePolicy.setHorizontalStretch(0)
+        #sizePolicy.setVerticalStretch(0)
+        #sizePolicy.setHeightForWidth(self.label_Text_Time_Date.sizePolicy().hasHeightForWidth())
+        #self.label_Text_Time_Date.setSizePolicy(sizePolicy)
+        #self.label_Text_Time_Date.setStyleSheet("font: 75 12pt \"MS Shell Dlg 2\";")
+        self.label_GIF.setObjectName("label_GIF")
+        self.verticalLayout.addWidget(self.label_GIF)
+        self.label_Loading = QtWidgets.QLabel(self.widget)
+        #sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
+        #sizePolicy.setHorizontalStretch(0)
+        #sizePolicy.setVerticalStretch(0)
+        #sizePolicy.setHeightForWidth(self.label_Value_Time_Date.sizePolicy().hasHeightForWidth())
+        #self.label_Value_Time_Date.setSizePolicy(sizePolicy)
+        #self.label_Value_Time_Date.setStyleSheet("font: 75 12pt \"MS Shell Dlg 2\";")
+        #self.label_Value_Time_Date.setText("")
+        self.label_Loading.setObjectName("label_Loading")
+        self.verticalLayout.addWidget(self.label_Loading)
+
+            
+        #self.movie = QLabel()
+        #self.movie = QMovie("/home/pi/Documents/TZcL7Cc.gif")
+        #self.movie.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        #self.movie.setAlignment(Qt.AlignCenter)
+        #self.widget = QtWidgets.QWidget(Form)
+        #self.label_GIF.movie= QtWidgets.QLabel(self.widget)
+        #self.label_GIF.movie = QMovie("/home/pi/Documents/TZcL7Cc.gif")
+        #self.widget = QMovie(Form)
+        #self.widget.setGeometry(QtCore.QRect(460, 440, 51, 41))
+        #self.movie.setObjectName("widget")
+        #self.movie = QMovie("/home/pi/Documents/TZcL7Cc.gif")
+        #self.movie = QMovie(self.widget)
+        #self.label_GIF.movie.frameChanged.connect(lambda: self.repaint("event"))
+        #self.label_GIF.movie.frameChanged.connect(self.repaint)
+        #self.label_GIF.movie.start()
+        
+        self.layoutWidget.raise_()
+        self.layoutWidget.raise_()
         self.layoutWidget.raise_()
         self.layoutWidget.raise_()
         self.layoutWidget.raise_()
@@ -720,12 +1427,31 @@ class Ui_Form(object):
         self.layoutWidget_5.raise_()
         self.layoutWidget_6.raise_()
 
+        #self.label_Text_Time_Date.raise_()
+        #self.label_Value_Time_Date.raise_()
+
+        #GIF
+        #self.label_GIF.raise_()
+        #self.label_Loading.raise_()
+        #self.label_GIF.movie.start()
+
+        
+                
         self.retranslateUi(Form)
+
+        #GIF
+        #self.paintEvent(event)
+        #self.movie.start()
+
+
+        
         QtCore.QMetaObject.connectSlotsByName(Form)
+
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        #Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "TPMS"))
         self.label_Text_TPMS.setText(_translate("Form", "Tyre Pressure Management System"))
         self.pushButton_Scan.setText(_translate("Form", "Scan"))
         self.pushButton_Done.setText(_translate("Form", "Done"))
@@ -742,12 +1468,21 @@ class Ui_Form(object):
         self.pushButton_3.setText(_translate("Form", "3"))
         self.pushButton_2.setText(_translate("Form", "2"))
         self.label_Text_BusNumber.setText(_translate("Form", "Bus Number"))
-        self.label_Text_RLO.setText(_translate("Form", "Rear Left Outer"))
-        self.label_Text_RLI.setText(_translate("Form", "Rear Left Inner"))
-        self.label_Text_FR.setText(_translate("Form", "Front Right"))
-        self.label_Text_RRO.setText(_translate("Form", "Rear Right Outer"))
-        self.label_Text_RRI.setText(_translate("Form", "Rear Right Inner"))
-        self.label_Text_FL.setText(_translate("Form", "Front Left"))
+        self.label_Text_RLO.setText(_translate("Form", "Rear Left Outer (RLO)"))
+        self.label_Text_RLI.setText(_translate("Form", "Rear Left Inner (RLI)"))
+        self.label_Text_FR.setText(_translate("Form", "Front Right (FR)"))
+        self.label_Text_RRO.setText(_translate("Form", "Rear Right Outer (RRO)"))
+        self.label_Text_RRI.setText(_translate("Form", "Rear Right Inner (RRI)"))
+        self.label_Text_FL.setText(_translate("Form", "Front Left (FL)"))
+        
+        #Radio Button
+        self.radioButton.setText(_translate("Form", "Automatic"))
+        self.radioButton_2.setText(_translate("Form", "Manual"))
+
+        self.label_Text_Time_Date.setText(_translate("Form", "Time/ Date :"))
+
+        self.radioButton.clicked.connect(lambda: self.optionClick("Automatic"))
+        self.radioButton_2.clicked.connect(lambda: self.optionClick("Manual"))
 
         self.pushButton_Scan.clicked.connect(lambda: self.btnClick("Scan"))
         self.pushButton_Done.clicked.connect(lambda: self.btnClick("Done"))
@@ -766,19 +1501,44 @@ class Ui_Form(object):
         self.pushButton_Clear.clicked.connect(lambda: self.keypadEvent("clear"))
         self.pushButton_Back.clicked.connect(lambda: self.keypadEvent("back"))
 
+        #GIF
+        #self.label_GIF.setText(_translate("Form", "Gif"))
+        #self.label_Loading.setText(_translate("Form", "Loading ...."))
 
-
-
+        #GIF
+        #self.label_GIF.movie.frameChanged.connect(lambda: self.repaint("event"))
+        #self.label_GIF.movie.start()
+        #self.movie.frameChanged.connect(lambda: self.paintEvent("event"))
+        #self.movie = QMovie("/home/pi/Documents/TZcL7Cc.gif")
+        #self.movie.frameChanged.connect(lambda: self.repaint("event"))
+        #self.label_GIF.movie.frameChanged.connect(lambda: self.repaint)
+        #self.label_GIF.movie.start()
+        
 
 if __name__ == "__main__":
-    import sys
+
+
     app = QtWidgets.QApplication(sys.argv)
     Form = QtWidgets.QWidget()
+
+    #app = QApplication(sys.argv)
+    #w = MainWindow()
+    
     ui = Ui_Form()
     ui.setupUi(Form)
+    #w = load.MainWindow()
     Form.show()
 
+    statusOption = "Automatic"
+    ui.radioButton.setChecked(True)
+
+    while True:
+              
+        ui.optionClick(statusOption)
+        #time.sleep(0.2)
+    
     def myExitHandler():
+        loopStatus = False
         ui.endProcess()
         print "On close of main window stopping the thread"
 

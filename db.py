@@ -361,8 +361,9 @@ def update_Latest_data_by_VehId(conn, vehId1, date_time,mylist):
         #conn.close()
         return None
 
-    
-                
+
+
+             
 
 #update_task(conn, (2, '2015-01-04', '2015-01-06',2))
 

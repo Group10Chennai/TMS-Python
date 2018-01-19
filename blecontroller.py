@@ -166,36 +166,36 @@ def Tpms_SET_TireID(conn, TPMSET):
 
                         hex_data = binascii.b2a_hex(data)
                         RcvResponse =  hex_data[10:12]
-                        print RcvResponse
+                        print hex_data, RcvResponse
                         
                         if (RcvResponse == "aa"):
                             #print binascii.b2a_hex(data)
                             return RcvResponse
                             break;
                         else:
-                            print ("Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa:",data)
-                            my_logger.warning("Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: %s",data)
-                            #conn.close()
-                            #return None
+                            print ("Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa:",hex_data, RcvResponse)
+                            my_logger.warning("Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: %s %s",hex_data, RcvResponse)
+                            #conn.close()   
+                            return None, "Falied"
                        
                         
                     except bluetooth.btcommon.BluetoothError as e:
                         print ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError",e)
-                        my_logger.error ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError",e)  
+                        my_logger.error ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError %s",e)  
                         #conn.close()
                         time.sleep(2)
-                        return None
+                        return None, "Falied"
                         pass
             else:
                 print ("Failed - Bluetooth Send and Receive Communication Query Command is None:",TPMSET)
                 my_logger.warning("Failed - Bluetooth Send and Receive Communication Query Command is None: %s",TPMSET)
                 #conn.close()
-                return None
+                return None, "Falied"
         else:
             print ("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None:",TPMSET)
             my_logger.warning("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None: %s",TPMSET)
             #conn.close()
-            return None
+            return None, "Falied"
     
     except:
         e = sys.exc_info()[0]
@@ -298,7 +298,7 @@ def connect_ble(BUID1):
                 except bluetooth.btcommon.BluetoothError as e:
                     my_logger.error("Failed - Bluetooth Socket Creation: %s", e)
                     print ("Failed - Bluetooth Socket Creation: ", e)
-                    #bleCon.close()
+                    bleCon.close()
                     time.sleep(2)
                     return None
                     pass 
@@ -364,7 +364,7 @@ def Query_TpmsTireDataPosition(s, TPMSID1):
     
     #print "performing Bluetooth Communication..."
     #s.send(TPMSID1)
-    
+    data = ""
     #while True:
     #s.send(my_hex)
     if(s != None):
@@ -379,26 +379,26 @@ def Query_TpmsTireDataPosition(s, TPMSID1):
                     data = s.recv(1024)
 
                     #print binascii.b2a_hex(data)
-                    return data
+                    return data, "Success"
                     break;
                     
                 except bluetooth.btcommon.BluetoothError as e:
                     print ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError",e)
-                    my_logger.error ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError",e)  
+                    my_logger.error ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError : %s",e)  
                     s.close()
                     time.sleep(2)
-                    return None
+                    return None, "Failed"
                     #pass
         else:
             print ("Failed - Bluetooth Send and Receive Communication Query Command is None:",TPMSID1)
             my_logger.warning("Failed - Bluetooth Send and Receive Communication Query Command is None: %s",TPMSID1)
             s.close()
-            return None
+            return None, "Failed"
     else:
         print ("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None:",TPMSID1)
         my_logger.warning("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None: %s",TPMSID1)
         s.close()
-        return None
+        return None, "Failed"
 
 #from parse import *
 
@@ -406,6 +406,7 @@ def ParseBluetoothTyre(data):
 
     #hexstr = "aaa14108630005fcaaa1410f630001ba6b09000000002daaa1410f630002ba6d6d0000000094aaa1410f63000356a8cb00000000caaaa1410f63000456a6be00000000bcaaa1410f63000556a7810000000081"
     #hexstr = "aaa14108630005fdaaa1410f630002ba6d6d0000000094aaa1410f63000356a8cb00000000caaaa1410f63000456a6be00000000bcaaa1410f63000656a7c500000000c6"
+    
     #aaa1410f63000556a7810000000081  
 
 
@@ -425,7 +426,7 @@ def ParseBluetoothTyre(data):
 
     arr = []
         
-    rows = 8
+    rows = 10
     columns= 16
     mylist = [['0' for x in range(columns)] for x in range(rows)]
     #Matrix = [][]
@@ -438,12 +439,25 @@ def ParseBluetoothTyre(data):
         if (data != None):
 
             hexstr = binascii.b2a_hex(data)
+
+            #hexstr2 = [hexstr[i:i+2] for i in range(0,len(hexstr), 2)]
+            #print "len", len(hexstr2), "Hexstr2",hexstr2
+            #Dummy
+            #hexstr = "aaa14108630005fcaaa1410f630001ba6b09000000002daaa1410f630002ba6d6d0000000094aaa1410f63000356a8cb00000000caaaa1410f63000456a6be00000000bcaaa1410f63000556a7810000000081aaa1410f6300065a168001715600bc"
+
+            #hexstr = "aaa14108630006fdaaa1410f63000139a9cb0158520057aaa1410f63000239a93d015b5500d0aaa1410f63000339a813015f5200a7aaa1410f63000439aa8f01655e0038aaa1410f63000538247a01594e0081aaa1410f6300065a168001715600bc"
+            #hexstr = "aaa14108630006fdaaa1410f63000139a9cb01524e004daaa1410f63000239a93d01555200c7aaa1410f63000339a813015b4e009faaa1410f63000439aa8f0000000074aaa1410f63000538247a00000000d9aaa1410f6300065a168000000000f4"
+
+
+            #hexstr = "aaa14108630006fdaaa1410f63000139a9cb0158520057aaa1410f63000239a93d015b5500d0aaa1410f63000339a813015f5200a7aaa1410f63000439aa8f01655e0038aaa1410f63000538247a01594e0081aaa1410f6300065a168001715600bc"
+            
             hexstr1 = [hexstr[i:i+2] for i in range(0,len(hexstr), 2)]
-            print hexstr1
+            #print "len", len(hexstr1), "Hexstr1",hexstr1
+
             
             for i in range(len(hexstr1)):
                 
-                if(hexstr1[i]  == 'aa'):
+                if(hexstr1[i]  == 'aa') and (hexstr1[i+1]  == 'a1') and (hexstr1[i+2]  == '41'):
                     TPMS_Data = [0]
                     TPMSIdx = TPMSIdx + 1
                     #print "TPMSIdx", TPMSIdx
@@ -460,15 +474,19 @@ def ParseBluetoothTyre(data):
                     #TPMS_Data=[list(x) for x in hexstr1[i]]
                     TPMSIdxx = TPMSIdxx + 1
                     #print str(TPMSIdxx)
+                    #print "ReadTPMS", ReadTPMS
                     
 
                     if TPMSIdxx == 3:
+                        #print "TPMSIdxx", TPMSIdxx
                         TPMS_MAXBUFLEN = (hexstr1[i])
                         TPMS_Total_Tyres = (hexstr1[i])
+                        #print "TPMS_MAXBUFLEN", TPMS_MAXBUFLEN
                         
                         if TPMS_MAXBUFLEN =='0f':
-                            TPMS_MAXBUFLEN = 15
                             
+                            TPMS_MAXBUFLEN = 15
+                            print "TPMS_MAXBUFLEN", TPMS_MAXBUFLEN
                             
                     elif(TPMSIdxx >4):
                         
@@ -484,22 +502,24 @@ def ParseBluetoothTyre(data):
 
                     if  ReadTPMS == 0:
                         #print "ReadTPMS, TPMSIdx",ReadTPMS, TPMSIdx
+                        TPMSIdxx = 0
 
                         for j in range(16):
                             mylist[TPMSIdx] =  TPMS_Data1
-
-            print mylist
+                
+            print "mylist",  mylist
             return mylist
-
+        
         else:
-            print ("Failed - Bluetooth ParseBluetoothTyre data None:",data)
-            my_logger.warning("Failed - Bluetooth ParseBluetoothTyre data None: %s",data)
+            print ("Failed - Bluetooth ParseBluetoothTyre data None:")
+            my_logger.warning("Failed - Bluetooth ParseBluetoothTyre data None:")
             return None
+        
 
     except:
         e = sys.exc_info()[0]
-        my_logger.error("Failed - Bluetooth ParseBluetoothTyre data None: %s",data)
-        print ("Failed - Bluetooth ParseBluetoothTyre data None:",data)
+        my_logger.error("Failed - Bluetooth ParseBluetoothTyre data None:")
+        print ("Failed - Bluetooth ParseBluetoothTyre data None:")
 
         return None
         
@@ -876,7 +896,9 @@ def ParseBluetoothTyre(data):
 def fun():
 
     data = "aaa14108630006fdaaa1410f630001ba6b09000000002daaa1410f630002ba6d6d0000000094aaa1410f63000356a8cb00000000caaaa1410f63000456a6be00000000bcaaa1410f63000556a7810000000081aaa1410f63000656a7c500000000c6"
-    hexstr = binascii.b2a_hex(data)
+
+    data = "aaa14108630006fdaaa1410f63000139a9cb0158520057aaa1410f63000239a93d015b5500d0aaa1410f63000339a813015f5200a7aaa1410f63000439aa8f01655e0038aaa1410f63000538247a01594e0081aaa1410f6300065a168001715600bc"
+    #hexstr = binascii.b2a_hex(data)
 
     TPMSID1 = "aa41a1076300f6"
     

@@ -5,18 +5,44 @@ import json
 import requests
 import pprint
 import time
+import sys
+import display
 
+import glob
+import logging
+import logging.handlers
+
+
+
+LOG_FILENAME = '/home/pi/Documents/TMS-Git/TMS-Python/log/loggingRotatingFileExample.log'
+
+my_logger = logging.getLogger('myapp')
+hdlr = logging.FileHandler(LOG_FILENAME)
+formatter = logging.Formatter('%(asctime)s :%(levelname)s :%(message)s :')
+hdlr.setFormatter(formatter)
+my_logger.addHandler(hdlr) 
+my_logger.setLevel(logging.DEBUG)
 
 def postLiveData(data):
 
-    #url = 'http://172.16.0.151:8080/TMS/api/tms/saveTPMSLatestData'
-    url = 'https://qas.placer.in/TMS/api/tms/saveTPMSLatestData'
+    try:
+    
+        #url = 'http://172.16.0.151:8080/TMS/api/tms/saveTPMSLatestData'
+        url = 'https://qas.placer.in/TMS/api/tms/saveTPMSLatestData'
 
-    data_json = json.dumps(data)
-    headers = {'Content-type': 'application/json'}
-    response = requests.post(url, data=data_json, headers=headers)
-    pprint.pprint(response.json())
+        data_json = json.dumps(data)
+        headers = {'Content-type': 'application/json'}
+        response = requests.post(url, data=data_json, headers=headers)
+        pprint.pprint(response.json())
 
+    except:
+        e = sys.exc_info()[0]
+        my_logger.error("Failed - postLiveData(data) None or Not Connected to URL: %s ",e)
+        print ("Failed - postLiveData(data) None or Not Connected to URL: ",e)
+
+        return None
+
+'''
 def prepareJsonString(vehId, mylist):
 
     tyres = []
@@ -59,9 +85,219 @@ def prepareJsonString(vehId, mylist):
     print data
     postLiveData(data)
 
+'''
 
-def prepareTyre(position, sensorUID, pressure, temp):
-    return {"sensorUID": sensorUID, "position": position, "temp": temp, "pressure": pressure}
+
+
+
+def prepareJsonString(vehId, mylist):
+
+    tyres = []
+
+    pres_color = ""
+    dispPsi = ""
+    temp_color = ""
+    disptemp = ""
+
+    current_milli_time = lambda: int(round(time.time() * 1000))
+
+    try:
+        
+        for i in range (2, len(mylist)):
+
+            print i, mylist[i][6]
+            
+                            
+            if mylist[i][6] == '01':
+                position = "FL"
+
+                sensorUID = mylist[i][7] + mylist[i][8] + mylist[i][9]
+                pressure = mylist[i][10] + mylist[i][11]
+                temp = mylist[i][12]
+                status = mylist[i][13]
+                
+                pres_color, dispPsi = display.displayPresValidation(pressure)
+
+                temp_color, disptemp = display.displayTempValidation(temp)
+
+                if dispPsi == "---":
+                    dispPsi = pressure
+                if disptemp == "---":
+                    disptemp = temp
+
+                print "URL Update", sensorUID, dispPsi, temp, status
+
+                # We need tyreId also
+                # If possible get the tyreId from DB By querying sensorId
+                #Otherwise I'll do it from Backend
+
+                tyres.append(prepareTyre(position, sensorUID, pressure, temp, status))
+                
+            if mylist[i][6] == '02':
+                
+                position = "FR"
+
+                sensorUID = mylist[i][7] + mylist[i][8] + mylist[i][9]
+                pressure = mylist[i][10] + mylist[i][11]
+                temp = mylist[i][12]
+                status = mylist[i][13]
+                
+                pres_color, dispPsi = display.displayPresValidation(pressure)
+
+                temp_color, disptemp = display.displayTempValidation(temp)
+
+                if dispPsi == "---":
+                    dispPsi = pressure
+                if disptemp == "---":
+                    disptemp = temp
+
+                print "URL Update", sensorUID, dispPsi, temp, status
+
+                # We need tyreId also
+                # If possible get the tyreId from DB By querying sensorId
+                #Otherwise I'll do it from Backend
+
+                tyres.append(prepareTyre(position, sensorUID, pressure, temp, status))
+            if mylist[i][6] == '03':
+                position = "RLO"
+
+                sensorUID = mylist[i][7] + mylist[i][8] + mylist[i][9]
+                pressure = mylist[i][10] + mylist[i][11]
+                temp = mylist[i][12]
+                status = mylist[i][13]
+                
+                pres_color, dispPsi = display.displayPresValidation(pressure)
+
+                temp_color, disptemp = display.displayTempValidation(temp)
+
+                if dispPsi == "---":
+                    dispPsi = pressure
+                if disptemp == "---":
+                    disptemp = temp
+
+                print "URL Update", sensorUID, dispPsi, temp, status
+
+                # We need tyreId also
+                # If possible get the tyreId from DB By querying sensorId
+                #Otherwise I'll do it from Backend
+
+                tyres.append(prepareTyre(position, sensorUID, pressure, temp, status))
+                
+            if mylist[i][6] == '04':
+                position = "RLI"
+
+                sensorUID = mylist[i][7] + mylist[i][8] + mylist[i][9]
+                pressure = mylist[i][10] + mylist[i][11]
+                temp = mylist[i][12]
+                status = mylist[i][13]
+                
+                pres_color, dispPsi = display.displayPresValidation(pressure)
+
+                temp_color, disptemp = display.displayTempValidation(temp)
+
+                if dispPsi == "---":
+                    dispPsi = pressure
+                if disptemp == "---":
+                    disptemp = temp
+
+                print "URL Update", sensorUID, dispPsi, temp, status
+
+                # We need tyreId also
+                # If possible get the tyreId from DB By querying sensorId
+                #Otherwise I'll do it from Backend
+
+                tyres.append(prepareTyre(position, sensorUID, pressure, temp, status))
+
+                
+            if mylist[i][6] == '05':
+                position = "RRI"
+
+                sensorUID = mylist[i][7] + mylist[i][8] + mylist[i][9]
+                pressure = mylist[i][10] + mylist[i][11]
+                temp = mylist[i][12]
+                status = mylist[i][13]
+                
+                pres_color, dispPsi = display.displayPresValidation(pressure)
+
+                temp_color, disptemp = display.displayTempValidation(temp)
+
+                if dispPsi == "---":
+                    dispPsi = pressure
+                if disptemp == "---":
+                    disptemp = temp
+
+                print "URL Update", sensorUID, dispPsi, temp, status
+
+                # We need tyreId also
+                # If possible get the tyreId from DB By querying sensorId
+                #Otherwise I'll do it from Backend
+
+                tyres.append(prepareTyre(position, sensorUID, dispPsi, disptemp, status))
+
+                
+            if mylist[i][6] == '06':
+                position = "RRO"
+
+                sensorUID = mylist[i][7] + mylist[i][8] + mylist[i][9]
+                pressure = mylist[i][10] + mylist[i][11]
+                temp = mylist[i][12]
+                status = mylist[i][13]
+                
+                pres_color, dispPsi = display.displayPresValidation(pressure)
+
+                temp_color, disptemp = display.displayTempValidation(temp)
+
+                if dispPsi == "---":
+                    dispPsi = pressure
+                if disptemp == "---":
+                    disptemp = temp
+
+                print "URL Update", sensorUID, dispPsi, temp, status
+
+                # We need tyreId also
+                # If possible get the tyreId from DB By querying sensorId
+                #Otherwise I'll do it from Backend
+
+                tyres.append(prepareTyre(position, sensorUID, dispPsi, disptemp, status))
+
+            '''   
+            sensorUID = mylist[i][7] + mylist[i][8] + mylist[i][9]
+            pressure = mylist[i][10] + mylist[i][11]
+            temp = mylist[i][12]
+            status = mylist[i][13]
+            
+            pres_color, dispPsi = display.displayPresValidation(pressure)
+
+            temp_color, disptemp = display.displayTempValidation(temp)
+
+            print "URL Update", sensorUID, dispPsi, temp, status
+
+            # We need tyreId also
+            # If possible get the tyreId from DB By querying sensorId
+            #Otherwise I'll do it from Backend
+
+            tyres.append(prepareTyre(position, sensorUID, pressure, temp, status))
+            '''
+
+        data =  {
+                "tyres": tyres,
+                "device_date_time": current_milli_time(),
+                "vehId": vehId
+                }
+
+        print data
+        postLiveData(data)
+
+    except:
+        e = sys.exc_info()[0]
+        my_logger.error("Failed - prepareJsonString(vehId, mylist) None:%s, %s ",e, vehId)
+        print ("Failed - prepareJsonString(vehId, mylist) None: ",e, vehId)
+
+        return None
+        
+def prepareTyre(position, sensorUID, pressure, temp, status):
+    
+    return {"sensorUID": sensorUID, "position": position, "pressure": pressure, "temp": temp, "status": status }
 
 '''
 #main function
@@ -76,5 +312,5 @@ mylistVar = [ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], \
 
 prepareJsonString(2, mylistVar)
 
-
 '''
+
