@@ -26,7 +26,7 @@ serial = serial.Serial("/dev/ttyS0", baudrate = 9600, timeout = 0.2)
 
 
 
-LOG_FILENAME = '/home/pi/Documents/TMS-Git/TMS-Python/log/loggingRotatingFileExample.log'
+LOG_FILENAME = '/home/pi/Documents/TMS-Git/log/loggingRotatingFileExample.log'
 
 my_logger = logging.getLogger('myapp')
 hdlr = logging.FileHandler(LOG_FILENAME)

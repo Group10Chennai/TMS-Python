@@ -32,7 +32,7 @@ import logging.handlers
 
 
 
-LOG_FILENAME = '/home/pi/Documents/TMS-Git/TMS-Python/log/loggingRotatingFileExample.log'
+LOG_FILENAME = '/home/pi/Documents/TMS-Git/log/loggingRotatingFileExample.log'
 
 my_logger = logging.getLogger('myapp')
 hdlr = logging.FileHandler(LOG_FILENAME)
@@ -452,7 +452,7 @@ def Connect_Socket_Bluetooth_by_BUID( conn):
                     
                     BluetoothSocketVariable1 = blecontroller.ParseBluetoothTyre(data.strip())
 
-                    print "Connect_Socket_Bluetooth_by_BUID in loop ", BluetoothSocketVariable1
+                    #print "Connect_Socket_Bluetooth_by_BUID in loop ", BluetoothSocketVariable1
                     #print "Connect_Socket_Bluetooth_by_BUID in loop2 with BLEstatus ", BluetoothSocketVariable1, BLEstatus
 
                     return BluetoothSocketVariable1, BLEstatus
@@ -1459,7 +1459,7 @@ def fun_main(RFIDTID):
                             DBSensorVariable = db_DeviceDetails_by_vehID(dbConn, vehID)                        
 
                             #print DBSensorVariable
-                            #dbConn.close()
+                            dbConn.close()
 
                             if DBSensorVariable == None:
                                 my_logger.warning ("Vehicle ID Related Sensors is None :%s ", DBSensorVariable)
@@ -1544,7 +1544,7 @@ def fun_main(RFIDTID):
         e = sys.exc_info()[0]
         my_logger.error("Failed - Main Function Crashed:fun_main(RFIDTID) %s ",e)
         print ("Failed - Main Function Crashed:fun_main(RFIDTID) ",e)
-        dbConn.close()
+        #dbConn.close()
         
         return None, "Failed - Main Function Crashed:fun_main(RFIDTID) ", None, "Failed"
 
@@ -1608,7 +1608,7 @@ def fun_main_Bluetooth(bleConn, vehName, vehID, loop, status):
         #return ("Failed - Main Function Crashed: " +e)
 
 
-def display_Parameter(mylist, vehName, vehID, date_time):
+def display_Parameter_LED(mylist, vehName, vehID, date_time):
 
     #Current date and time
     #t = datetime.utcnow()
@@ -1641,7 +1641,9 @@ def display_Parameter(mylist, vehName, vehID, date_time):
             print ("Failed - dispVar  not Available or None:%s ",e)
 
             #return None, "dispVar  not Available or None", "Failed"
-        
+
+
+def display_Parameter_API(mylist, vehName, vehID, date_time):        
 
         #update to the live server            
         try:
@@ -1653,24 +1655,38 @@ def display_Parameter(mylist, vehName, vehID, date_time):
             #Data not send to server then it has to Update to the Record data
             if RetVal == None:
 
-                '''     
+                 
                 try:
                                     
-                    #dbConn = db.create_db_connection(database)
+                    dbConn = db.create_db_connection(database)
                     #with dbConn: 
-                    if dbConn: 
+                    if dbConn:
+
+                        #Update the Report_data_master Table by VehId
+                        report_data_master_id = db.update_Report_data_master_by_VehId(conn, vehID, date_time)
+
+                        
+                        #Query the TyreId and SensorUID by unsig VehID
+                        TyreIDList = db.select_TyreDetails_tyreId_by_VehId(conn, vehID)
+
+
+                        #Compare the 
                                         
-                        db.update_Latest_data_by_VehId(dbConn, int(vehID), date_timeDB, mylist)
+                        #db.update_Latest_data_by_VehId(dbConn, int(vehID), date_timeDB, mylist)
 
                         dbConn.close()
 
+                    else:
+                        my_logger.error("Failed - dbConn is None :%s ",e)
+                        print ("Failed - dbConn is None :%s ",e)
+
                 except:
                     e = sys.exc_info()[0]
-                    my_logger.error("Failed - update_Latest_data_by_VehId :%s ",e)
-                    print ("Failed - update_Latest_data_by_VehId ",e)
+                    my_logger.error("Failed - display_Parameter_API :%s ",e)
+                    print ("Failed - display_Parameter_API ",e)
 
                     #return None, "dispVar  not Available or None", "Failed"
-                '''
+            
 
         except:
             e = sys.exc_info()[0]

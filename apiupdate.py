@@ -14,7 +14,7 @@ import logging.handlers
 
 
 
-LOG_FILENAME = '/home/pi/Documents/TMS-Git/TMS-Python/log/loggingRotatingFileExample.log'
+LOG_FILENAME = '/home/pi/Documents/TMS-Git/log/loggingRotatingFileExample.log'
 
 my_logger = logging.getLogger('myapp')
 hdlr = logging.FileHandler(LOG_FILENAME)
@@ -105,7 +105,7 @@ def prepareJsonString(vehId, mylist):
         
         for i in range (2, len(mylist)):
 
-            print i, mylist[i][6]
+            #print i, mylist[i][6]
             
                             
             if mylist[i][6] == '01':
@@ -125,7 +125,7 @@ def prepareJsonString(vehId, mylist):
                 if disptemp == "---":
                     disptemp = temp
 
-                print "URL Update", sensorUID, dispPsi, temp, status
+                #print "URL Update", sensorUID, dispPsi, temp, status
 
                 # We need tyreId also
                 # If possible get the tyreId from DB By querying sensorId
@@ -151,7 +151,7 @@ def prepareJsonString(vehId, mylist):
                 if disptemp == "---":
                     disptemp = temp
 
-                print "URL Update", sensorUID, dispPsi, temp, status
+                #print "URL Update", sensorUID, dispPsi, temp, status
 
                 # We need tyreId also
                 # If possible get the tyreId from DB By querying sensorId
@@ -175,7 +175,7 @@ def prepareJsonString(vehId, mylist):
                 if disptemp == "---":
                     disptemp = temp
 
-                print "URL Update", sensorUID, dispPsi, temp, status
+                #print "URL Update", sensorUID, dispPsi, temp, status
 
                 # We need tyreId also
                 # If possible get the tyreId from DB By querying sensorId
@@ -200,7 +200,7 @@ def prepareJsonString(vehId, mylist):
                 if disptemp == "---":
                     disptemp = temp
 
-                print "URL Update", sensorUID, dispPsi, temp, status
+                #print "URL Update", sensorUID, dispPsi, temp, status
 
                 # We need tyreId also
                 # If possible get the tyreId from DB By querying sensorId
@@ -226,7 +226,7 @@ def prepareJsonString(vehId, mylist):
                 if disptemp == "---":
                     disptemp = temp
 
-                print "URL Update", sensorUID, dispPsi, temp, status
+                #print "URL Update", sensorUID, dispPsi, temp, status
 
                 # We need tyreId also
                 # If possible get the tyreId from DB By querying sensorId
@@ -252,7 +252,7 @@ def prepareJsonString(vehId, mylist):
                 if disptemp == "---":
                     disptemp = temp
 
-                print "URL Update", sensorUID, dispPsi, temp, status
+                #print "URL Update", sensorUID, dispPsi, temp, status
 
                 # We need tyreId also
                 # If possible get the tyreId from DB By querying sensorId
@@ -288,10 +288,12 @@ def prepareJsonString(vehId, mylist):
         print data
         postLiveData(data)
 
+        return "Success"
+
     except:
         e = sys.exc_info()[0]
-        my_logger.error("Failed - prepareJsonString(vehId, mylist) None:%s, %s ",e, vehId)
-        print ("Failed - prepareJsonString(vehId, mylist) None: ",e, vehId)
+        my_logger.error("Failed - prepareJsonString(vehId, mylist) None:%s, %s ",e, "Failed")
+        print ("Failed - prepareJsonString(vehId, mylist) None: ",e, "Failed")
 
         return None
         

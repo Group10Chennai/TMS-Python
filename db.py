@@ -23,7 +23,7 @@ import logging.handlers
 
 
 
-LOG_FILENAME = '/home/pi/Documents/TMS-Git/TMS-Python/log/loggingRotatingFileExample.log'
+LOG_FILENAME = '/home/pi/Documents/TMS-Git/log/loggingRotatingFileExample.log'
 '''
 # Set up a specific logger with our desired output level
 #LOG_FILENAME = 'example.log'
@@ -212,6 +212,7 @@ def select_TyreDetails_by_VehId(conn, VehId1):
             cur = conn.cursor()
             cur.execute("SELECT sensorUID, tirePosition FROM TireDetails WHERE vehId=?",(VehId1,))
             
+            
             rows = cur.fetchall()
             TyreDetails = None;
             for row in rows:
@@ -243,6 +244,54 @@ def select_TyreDetails_by_VehId(conn, VehId1):
                 
         return None
 
+
+def select_TyreDetails_tyreId_by_VehId(conn, VehId1):
+    """
+    Query tasks by priority
+    param conn: the Connection object
+    param rfiduid:
+    """
+    
+    if(VehId1 != None):
+        
+        TyreDetials = []
+        #my_logger.info (" DB select_TireDetails_by_VehId ")
+        try:
+            cur = conn.cursor()
+            cur.execute("SELECT tireId, sensorUID FROM TireDetails WHERE vehId=?",(VehId1,))
+            
+            rows = cur.fetchall()
+            TyreDetails = None;
+            for row in rows:
+                TyreDetails = row
+                #print TyreDetails
+        
+            #return TyreDetials
+            #return rows
+
+            if (len(rows) != 0):
+                #print len(rows)
+                #print rows
+                return rows
+            else:
+                print ("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: ",VehId1)
+                my_logger.warning("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: %s",VehId1)
+                
+                return None
+    
+        except sqlite3.Error as e:
+            print ("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: ",e, VehId1)
+            my_logger.error("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: %s %s",e, VehId1)
+            #raise
+            #conn.close()
+            return None
+    else:
+        print ("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: ",VehId1)
+        my_logger.warning("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: %s",VehId1)
+                
+        return None
+
+    
 '''
 def update_Latest_data_by_VehId(conn, vehId1, BTVar):
     #pass vehId and get the data from Latest_data table 
@@ -363,7 +412,195 @@ def update_Latest_data_by_VehId(conn, vehId1, date_time,mylist):
 
 
 
-             
+#Update Report_data_master by vehId Insert Query 
+
+def update_Report_data_master_by_VehId(conn, vehId1, date_time):
+    #pass vehId and update the data from Report_data_master table 
+    # If latest data is none - means data not exists -> Need to insert
+    # If latest data is not none - means data exists -> Need to update
+
+    #print mylist
+    #print vehId1
+
+    try:
+    
+        cur = conn.cursor()
+
+    
+
+        sql = ''' INSERT INTO Report_data_master (vehId,device_date_time,
+                count)
+                VALUES(?,?,?) '''
+
+
+        print "Need to insert"
+        queryParam = (vehId1, date_time, 0)
+        cur = conn.cursor()
+        cur.execute(sql, queryParam)
+
+        cur.execute("SELECT report_data_master_id FROM Report_data_master WHERE vehId=?",(vehId1,))
+        rows = cur.fetchall()
+        r = len(rows)
+                                  
+        conn.commit()
+
+        print "Report_data_master Id", rows[r-1] 
+        return rows[r-1]
+        
+    except sqlite3.Error as e:
+        print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: ",VehId1)
+        my_logger.error("Failed - sqlite3.Error and Accessing to DB table TyreDetails by Vehicle ID - Not Available: %s, %s ",e, VehId1)
+        #raise
+        #conn.close()
+        return None
+
+#Update Report_data_child by vehId Insert Query 
+
+def update_Report_data_child_by_report_data_master_id(conn, report_data_master_id1, vehId1, mylist, TyreIdList):
+    #pass vehId and update the data from Report_data_master table 
+    # If latest data is none - means data not exists -> Need to insert
+    # If latest data is not none - means data exists -> Need to update
+
+    #print mylist
+    #print vehId1
+
+    try:
+    
+        cur = conn.cursor()
+       
+                
+        rows = cur.fetchall()
+
+        for i in range(2, len(mylist)):
+
+            
+            
+
+
+
+            position = mylist[i][6]
+
+            
+
+            print position, TyreID, vehId1, report_data_master_id1
+            
+            if position != '00' and position != '0' :
+            
+            
+                sensorid =  mylist[i][7]+mylist[i][8]+mylist[i][9]
+                pres = mylist[i][10]+mylist[i][11]
+                temp = mylist[i][12]
+
+                print sensorid, pres, temp
+
+                statstr = mylist[i][13]
+                statint =  (int(statstr, 16))
+                
+
+                presint_Bar = ((int(pres, 16)*0.025))
+                presint_Psi =  ((presint_Bar * 14.5038))
+                dispPsi = str((presint_Psi))
+
+                tempint_Celcious  = (int(temp, 16) - 50)
+                disptemp = (int(tempint_Celcious))
+
+                sql = ''' INSERT INTO Report_data_child (report_data_master_id,
+                                vehId,
+                                tireId,
+                                tirePosition,
+                                sensorUID,
+                                pressure,
+                                temp,
+                                sensor_status)
+                                VALUES(?,?,?,?,?,?,?,?) '''
+
+                              
+
+                print "Need to insert", (report_data_master_id1, vehId1, TyreID, position, sensorid, presint_Psi, tempint_Celcious, statstr)
+
+                queryParam = ((report_data_master_id1), (vehId1), (TyreID), position, sensorid, presint_Psi, tempint_Celcious, statstr)
+                cur = conn.cursor()
+                cur.execute(sql, queryParam)
+                
+                
+        
+    except:
+        e = sys.exc_info()[0]
+        print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: ", e, vehId1)
+        my_logger.error("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: %s %s ", e, vehId1)
+        #raise
+        #conn.close()
+        return None
+    '''
+    except sqlite3.Error as e:
+        print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: ", VehId1)
+        my_logger.error("Failed - sqlite3.Error and Accessing to DB table TyreDetails by Vehicle ID - Not Available: %s, %s ",e, VehId1)
+        #raise
+        #conn.close()
+        return None
+    '''
+
+
+'''
+
+#Update Report_data_master by vehId Update and Insert Query 
+
+def update_Report_data_master_by_VehId(conn, vehId1, date_time):
+    #pass vehId and update the data from Report_data_master table 
+    # If latest data is none - means data not exists -> Need to insert
+    # If latest data is not none - means data exists -> Need to update
+
+    #print mylist
+    #print vehId1
+
+    try:
+    
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM Report_data_master WHERE vehId=?",(vehId1,))
+            
+        rows = cur.fetchall()
+        print rows
+
+    
+        if len(rows) == 0:
+
+            sql = '' INSERT INTO Report_data_master (vehId,device_date_time,
+                    count)
+                    VALUES(?,?,?) ''
+
+
+            print "Need to insert"
+            queryParam = (vehId1, date_time, 0)
+            cur = conn.cursor()
+            cur.execute(sql, queryParam)
+            
+
+        else:
+
+            sql = '' UPDATE Report_data_master SET
+                    device_date_time = ?,
+                    count = ?
+                    WHERE vehId = ?''
+
+
+            print "Need to update"
+            queryParam = (date_time, 0, vehId1)
+            cur = conn.cursor()
+            cur.execute(sql, queryParam)
+            
+                              
+
+        conn.commit()
+
+    except sqlite3.Error as e:
+        print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: ",VehId1)
+        my_logger.error("Failed - sqlite3.Error and Accessing to DB table TyreDetails by Vehicle ID - Not Available: %s, %s ",e, VehId1)
+        #raise
+        #conn.close()
+        return None
+
+'''
+
 
 #update_task(conn, (2, '2015-01-04', '2015-01-06',2))
 
@@ -402,8 +639,8 @@ def main():
               [0, 'a1', '41', '0f', '63', '00', '06', '56', 'a7', 'c5', '01', '10', '00', '00']]
 
 
-    
-    
+    TyreIDL = [(1, u'C0002393617'), (2, u'ROO83651416'), (3, u'C0209592617'), (4, u'R0152813916'), (5, u'R0218360917'), (6, u'R0039252716')]
+    TyreIDL = [(1,), (2,), (3,), (4,), (5,), (6,)]
     #print conn
     with conn:
         #select_DeviceDetails_by_rfiduid(conn, tag)
@@ -411,10 +648,24 @@ def main():
         #conn.close()
 
         
-        status = update_Latest_data_by_VehId(conn, vehID, date_timeDB, mylist)
-        print "Connecton Close", status, conn
+        #status = update_Latest_data_by_VehId(conn, vehID, date_timeDB, mylist)
+        #print "Connecton Close", status, conn
+
+        #report_data_master_id = update_Report_data_master_by_VehId(conn, vehID, date_timeDB)
+
+        TyreIDL = select_TyreDetails_tyreId_by_VehId(conn, vehID)
+        print TyreIDL
+        for i in range (len(TyreIDL)):
+            print TyreIDL[i]
+
+        #print "report_data_master_id", report_data_master_id
+
+        #update_Report_data_child_by_report_data_master_id(conn, 1, vehID, mylist, TyreIDL)
+
+
 
         
+                    
     conn.close()
 
 if __name__ == '__main__':

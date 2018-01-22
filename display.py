@@ -20,7 +20,7 @@ import glob
 import logging
 import logging.handlers
 
-LOG_FILENAME = '/home/pi/Documents/TMS-Git/TMS-Python/log/loggingRotatingFileExample.log'
+LOG_FILENAME = '/home/pi/Documents/TMS-Git/log/loggingRotatingFileExample.log'
 
 my_logger = logging.getLogger('myapp')
 hdlr = logging.FileHandler(LOG_FILENAME)
@@ -311,19 +311,19 @@ def displayLEDBoard(vehName, dispCmd, date_time, dispVar):
         if (vehName != None) & (dispVar != None):
 
             vehN = vehName [4:8] #SND 9457
-            print vehN
+            #print vehN
 
             vehNc = "<\\C"+nC+ vehN + ">"
-            print vehNc
+            #print vehNc
 
             dispc = dispCmd + " " + str(date_time)
 
             dispCmd1  = "<\\C"+ nC + dispc + " " + ">"
-            print dispCmd1
+            #print dispCmd1
 
         display = startChar + vehNc + dispCmd1 + dispVar + endChar
 
-        print display
+        #print display
 
         udpSocket(display)
 
@@ -628,11 +628,11 @@ def displayLEDBoardParameters(mylist):
                     
             
             for i in range (2, len(mylist)):
-                print i, mylist[i][6]
+                #print i, mylist[i][6]
                 
                 if mylist[i][6] == '01' :
 
-                    print "SensorID1 ",mylist[i][7]+mylist[i][8]+mylist[i][9]
+                    #print "SensorID1 ",mylist[i][7]+mylist[i][8]+mylist[i][9]
                     pres = mylist[i][10]+mylist[i][11]
                     temp = mylist[i][12]
 
@@ -657,7 +657,7 @@ def displayLEDBoardParameters(mylist):
 
                 elif mylist[i][6] == '02' :
 
-                    print "SensorID2 ",mylist[i][7]+mylist[i][8]+mylist[i][9]
+                    #print "SensorID2 ",mylist[i][7]+mylist[i][8]+mylist[i][9]
                     pres = mylist[i][10]+mylist[i][11]
                     temp = mylist[i][12]
                     
@@ -684,7 +684,7 @@ def displayLEDBoardParameters(mylist):
                     
                 elif mylist[i][6] == '03' :
 
-                    print "SensorID3 ",mylist[i][7]+mylist[i][8]+mylist[i][9]
+                    #print "SensorID3 ",mylist[i][7]+mylist[i][8]+mylist[i][9]
                     pres = mylist[i][10]+mylist[i][11]
                     temp = mylist[i][12]
                     
@@ -713,7 +713,7 @@ def displayLEDBoardParameters(mylist):
 
                 elif mylist[i][6] == '04' :
 
-                    print "SensorID4 ",mylist[i][7]+mylist[i][8]+mylist[i][9]
+                    #print "SensorID4 ",mylist[i][7]+mylist[i][8]+mylist[i][9]
                     pres = mylist[i][10]+mylist[i][11]
                     temp = mylist[i][12]
                     
@@ -742,15 +742,15 @@ def displayLEDBoardParameters(mylist):
 
                 elif mylist[i][6] == '05' :
 
-                    print "SensorID5 ",mylist[i][7]+mylist[i][8]+mylist[i][9]
+                    #print "SensorID5 ",mylist[i][7]+mylist[i][8]+mylist[i][9]
                     pres = mylist[i][10]+mylist[i][11]
                     temp = mylist[i][12]
                     
                     pres_color5, dispPsi5 = displayPresValidation(pres)
-                    print pres_color5, dispPsi5
+                    #print pres_color5, dispPsi5
                     
                     temp_color5, disptemp5 = displayTempValidation(temp)
-                    print temp_color5, disptemp5
+                    #print temp_color5, disptemp5
                         
                     
                     #dispVar = "</c"+pres_color+" "+dispPsi+" /c"+temp_Color+" "+disptemp
@@ -773,15 +773,15 @@ def displayLEDBoardParameters(mylist):
                     
                 elif mylist[i][6] == '06' :
 
-                    print "SensorID6 ",mylist[i][7]+mylist[i][8]+mylist[i][9]
+                    #print "SensorID6 ",mylist[i][7]+mylist[i][8]+mylist[i][9]
                     pres = mylist[i][10]+mylist[i][11]
                     temp = mylist[i][12]
                     
                     pres_color6, dispPsi6 = displayPresValidation(pres)
-                    print pres_color6, dispPsi6 
+                    #print pres_color6, dispPsi6 
                     
                     temp_color6, disptemp6 = displayTempValidation(temp)
-                    print temp_color6, disptemp6
+                    #print temp_color6, disptemp6
                         
                     
                     #dispVar = "</c"+pres_color+" "+dispPsi+" /c"+temp_Color+" "+disptemp
@@ -826,12 +826,12 @@ def displayLEDBoardParameters(mylist):
             dispVar5 = pres_color5 + " " + dispPsi5 + " " + "\\C" + pres_color6 + dispPsi6 + " "
             dispVar6 = temp_color5 + disptemp5 + " " + "\\C" + temp_color6 + disptemp6 
 
-            print dispVar1
-            print dispVar2
-            print dispVar3
-            print dispVar4
-            print dispVar5
-            print dispVar6
+            #print dispVar1
+            #print dispVar2
+            #print dispVar3
+            #print dispVar4
+            #print dispVar5
+            #print dispVar6
                 
             dispVar =   "<\\C" + dispVar1 + "\\C" + dispVar2 + ">"           \
                         "<\\C" + dispVar3 + "\\C" + dispVar4 + ">"           \

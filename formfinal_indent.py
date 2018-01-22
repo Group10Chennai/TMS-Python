@@ -35,7 +35,7 @@ import logging.handlers
 
 
 
-LOG_FILENAME = '/home/pi/Documents/TMS-Git/TMS-Python/log/loggingRotatingFileExample.log'
+LOG_FILENAME = '/home/pi/Documents/TMS-Git/log/loggingRotatingFileExample.log'
 
 my_logger = logging.getLogger('myapp')
 hdlr = logging.FileHandler(LOG_FILENAME)
@@ -111,6 +111,10 @@ class Ui_Form(object):
     dispPsi    = "---"
     #temp_color1 = BROWN_CLR_TAG
     disptemp   = "---"
+
+    rows = 10
+    columns= 16
+    Previous_mylistvar = [['0' for x in range(columns)] for x in range(rows)]
     
     def displayColorSet(self, pres_color):
 
@@ -525,18 +529,41 @@ class Ui_Form(object):
 
         if ((myBleConn != None) and (status == "Success")):
 
+            #for identifying the 1st Record to server API
+            RecordSend = True
+            
             while loop == True:
 
-                print "callMethod3_BluetoothFunction", myBleConn, vehName, vehID, loop, status
+                #print "callMethod3_BluetoothFunction", myBleConn, vehName, vehID, loop, status
 
                 #mylist, vehName, BLEStatus = fun_main_Bluetooth(bleConn)
                 QtCore.QCoreApplication.processEvents()
                 self.endProcess()
-                
-                mylistvar, vehName, status = work.fun_main_Bluetooth(myBleConn, vehName, vehID, loop, status)
 
+
+                mylistvar, vehName, status = work.fun_main_Bluetooth(myBleConn, vehName, vehID, loop, status)
                 print "callMethod3_BluetoothFunction while", mylistvar, vehName, status
-                self.display_mylistvar(mylistvar, vehName, vehID, status)
+
+                
+                
+                if status == "Success":
+
+                    
+                    Status, BLEStatus = self.display_mylistvar(mylistvar, vehName, vehID, status, RecordSend)
+
+                    Previous_mylistvar = mylistvar
+                    if ((BLEStatus == False)):
+                        RecordSend = BLEStatus
+
+                elif status == "Failed":
+
+                    RecordSend  = True
+                    Status, BLEStatus = self.display_mylistvar(Previous_mylistvar, vehName, vehID, status, RecordSend)
+
+                    if ((BLEStatus == False)):
+                        RecordSend = BLEStatus
+
+                   
                 #print BLEStatus
                 QtCore.QCoreApplication.processEvents()
 
@@ -562,11 +589,18 @@ class Ui_Form(object):
         
 
 
-    def display_mylistvar(self, mylistvar, vehName, vehID, status):    
+    def display_mylistvar(self, mylistvar, vehName, vehID, status, RecordSend):    
 
 #        status = "Success"
 #        print "Status", status
 
+        #Current date and time
+        #t = datetime.utcnow()
+        curdate_time = time.strftime('%H:%M:%S %d/%m/%Y')
+        predate_time = curdate_time
+        self.label_Value_Time_Date.setText(predate_time)
+
+        
         if(status == "Success"):
             print "Call method 2 ", mylistvar
             #mylistVar from work.py
@@ -583,26 +617,37 @@ class Ui_Form(object):
             #              [0, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']]
 
 
-            #Current date and time
-            #t = datetime.utcnow()
-            curdate_time = time.strftime('%H:%M:%S %d/%m/%Y')
-            predate_time = curdate_time
-            self.label_Value_Time_Date.setText(predate_time)
             
-#           vehName = "SND 9406"
-            print "vehName", vehName
+            
+            #vehName = "SND 9406"
+            #print "vehName", vehName
 
-	    
+	    #Kiosk Display Parameters
             self.displayTPData(vehName, mylistvar)
-
-
             QtCore.QCoreApplication.processEvents()
-            work.display_Parameter(mylistvar, vehName, vehID, curdate_time)
 
-            return "Success"
+            #LED Display Parameters
+            work.display_Parameter_LED(mylistvar, vehName, vehID, curdate_time)
+
+            #Check for the first Record
+            if RecordSend == True:
+
+                RecordSend = False
+                #API Server 1st Record Updation parameters
+                work.display_Parameter_API(mylistvar, vehName, vehID, curdate_time)        
+
+                return "Success", RecordSend
+
+            return "Success", RecordSend
 
         elif (status == "Failed"):
-            return "Failed"
+
+            #API Server Last Record Updation parameters
+            work.display_Parameter_API(mylistvar, vehName, vehID, curdate_time)        
+
+            RecordSend = False
+
+            return "Failed", RecordSend
 
     def showdialog(message):
         print ("dialog ", message)
