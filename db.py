@@ -258,7 +258,7 @@ def select_TyreDetails_tyreId_by_VehId(conn, VehId1):
         #my_logger.info (" DB select_TireDetails_by_VehId ")
         try:
             cur = conn.cursor()
-            cur.execute("SELECT tireId, sensorUID FROM TireDetails WHERE vehId=?",(VehId1,))
+            cur.execute("SELECT tireId FROM TireDetails WHERE vehId=?",(VehId1,))
             
             rows = cur.fetchall()
             TyreDetails = None;
@@ -454,6 +454,8 @@ def update_Report_data_master_by_VehId(conn, vehId1, date_time):
         #conn.close()
         return None
 
+
+'''
 #Update Report_data_child by vehId Insert Query 
 
 def update_Report_data_child_by_report_data_master_id(conn, report_data_master_id1, vehId1, mylist, TyreIdList):
@@ -470,13 +472,9 @@ def update_Report_data_child_by_report_data_master_id(conn, report_data_master_i
        
                 
         rows = cur.fetchall()
+        
 
         for i in range(2, len(mylist)):
-
-            
-            
-
-
 
             position = mylist[i][6]
 
@@ -504,7 +502,7 @@ def update_Report_data_child_by_report_data_master_id(conn, report_data_master_i
                 tempint_Celcious  = (int(temp, 16) - 50)
                 disptemp = (int(tempint_Celcious))
 
-                sql = ''' INSERT INTO Report_data_child (report_data_master_id,
+                sql = '' INSERT INTO Report_data_child (report_data_master_id,
                                 vehId,
                                 tireId,
                                 tirePosition,
@@ -512,7 +510,7 @@ def update_Report_data_child_by_report_data_master_id(conn, report_data_master_i
                                 pressure,
                                 temp,
                                 sensor_status)
-                                VALUES(?,?,?,?,?,?,?,?) '''
+                                VALUES(?,?,?,?,?,?,?,?) ''
 
                               
 
@@ -531,7 +529,7 @@ def update_Report_data_child_by_report_data_master_id(conn, report_data_master_i
         #raise
         #conn.close()
         return None
-    '''
+    
     except sqlite3.Error as e:
         print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: ", VehId1)
         my_logger.error("Failed - sqlite3.Error and Accessing to DB table TyreDetails by Vehicle ID - Not Available: %s, %s ",e, VehId1)
@@ -541,6 +539,91 @@ def update_Report_data_child_by_report_data_master_id(conn, report_data_master_i
     '''
 
 
+
+#Update Report_data_child by vehId Insert Query Compare and insert
+
+def update_Report_data_child_by_report_data_master_id(conn, report_data_master_id1, vehId1, mylist, TyreIdList):
+    #pass vehId and update the data from Report_data_master table 
+    # If latest data is none - means data not exists -> Need to insert
+    # If latest data is not none - means data exists -> Need to update
+
+    #print mylist
+    #print vehId1
+
+    try:
+    
+        cur = conn.cursor()
+       
+                
+        rows = cur.fetchall()
+        
+
+        #Compare Sensor ID and location 
+        for v in range(len(TyreIdList)):
+                
+            for i in range (2, len(mylist)):
+
+                position = mylist[i][6]
+
+                TyreID = TyreIdList[v]
+                SensorID = TyreIdList[v+1]
+
+                
+                
+                if position != '00' and position != '0' :
+                    
+                                
+                    sensorid =  mylist[i][7]+mylist[i][8]+mylist[i][9]
+
+                    print "Values", sensorid, position, TyreID, SensorID, vehId1, report_data_master_id1
+
+                    if sensorid == SensorID:
+
+                        
+                    
+                        pres = mylist[i][10]+mylist[i][11]
+                        temp = mylist[i][12]
+
+                        print sensorid, pres, temp
+
+                        statstr = mylist[i][13]
+                        statint =  (int(statstr, 16))
+                        
+
+                        presint_Bar = ((int(pres, 16)*0.025))
+                        presint_Psi =  ((presint_Bar * 14.5038))
+                        dispPsi = str((presint_Psi))
+
+                        tempint_Celcious  = (int(temp, 16) - 50)
+                        disptemp = (int(tempint_Celcious))
+
+                        sql = ''' INSERT INTO Report_data_child (report_data_master_id,
+                                        vehId,
+                                        tireId,
+                                        tirePosition,
+                                        sensorUID,
+                                        pressure,
+                                        temp,
+                                        sensor_status)
+                                        VALUES(?,?,?,?,?,?,?,?) '''
+
+                                      
+
+                        print "Need to insert", (report_data_master_id1, vehId1, TyreID, position, sensorid, presint_Psi, tempint_Celcious, statint)
+                                                 
+                        cur = conn.cursor()
+                        cur.execute(sql, queryParam)
+                
+                
+        
+    except:
+        e = sys.exc_info()[0]
+        print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: ", e, vehId1)
+        my_logger.error("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: %s %s ", e, vehId1)
+        #raise
+        #conn.close()
+        return None
+    
 '''
 
 #Update Report_data_master by vehId Update and Insert Query 
@@ -646,19 +729,53 @@ def main():
         #select_DeviceDetails_by_rfiduid(conn, tag)
         #select_TyreDetails_by_VehId(conn, vehID)
         #conn.close()
-
+        DBTyreDetail = []
         
         #status = update_Latest_data_by_VehId(conn, vehID, date_timeDB, mylist)
         #print "Connecton Close", status, conn
 
         #report_data_master_id = update_Report_data_master_by_VehId(conn, vehID, date_timeDB)
 
-        TyreIDL = select_TyreDetails_tyreId_by_VehId(conn, vehID)
-        print TyreIDL
-        for i in range (len(TyreIDL)):
-            print TyreIDL[i]
+        #TyreIdList = select_TyreDetails_tyreId_by_VehId(conn, vehID)
+
+        #DBsensorVariable = select_TyreDetails_by_VehId(conn, vehID)
+        
+        report_data_master_id = 30
+        TyreDetail = [(1, u'382858'), (2, u'3826CC'), (3, u'381CE9'), (4, u'3818F9'), (5, u'39A6F9'), (6, u'5A16D9')]
+        DBtotalTyres = len(TyreDetail)
+        
+        TyreIDL = [(1,), (2,), (3,), (4,), (5,), (6,)]
+
+        #print DBsensorVariable
+        #print (TyreIDL)
+        #T = [x for xs in str(TyreIDL) for x in xs.split(',')]
+        #print T
+
+        if TyreDetail is not None:
+            for DBi in range(0, DBtotalTyres):
+                    
+                Tyre_row = TyreDetail[DBi]
+
+                SID = Tyre_row[1]
+                    
+                T = Tyre_row[0]          
+                        
+                #print SID1, L1
+                DBTyreDetail.append(T)
+                DBTyreDetail.append(SID)
+  
+                        
+            print DBTyreDetail
+                       
+        
+        
+                    
+        #print TyreIDL
+        #for i in range (len(TyreIDL)):
+            #print TyreIDL[i]
 
         #print "report_data_master_id", report_data_master_id
+        update_Report_data_child_by_report_data_master_id(conn, report_data_master_id, vehID, mylist, DBTyreDetail)
 
         #update_Report_data_child_by_report_data_master_id(conn, 1, vehID, mylist, TyreIDL)
 

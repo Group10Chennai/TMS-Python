@@ -449,28 +449,29 @@ class Ui_Form(object):
         while (loopStatus != False):
             print ("looping ")
             
-            myBleConn, vehName, vehID, status = self.callMethod2(loopRFIDUID)
+            myBleConn, vehName, vehID, status, AutoMode = self.callMethod2(loopRFIDUID)
             QtCore.QCoreApplication.processEvents()
 
             
             
             #time.sleep(1.5)
 
-            if ((myBleConn != None) and (status == "Success")):
+            if ((myBleConn != None) and (AutoMode == True)):
 
                 loop = True
                 #print "loopstatus: self.callMethod3_BluetoothFunction(myBleConn, loop, status)", myBleConn, loop, status 
 
-                self.callMethod3_BluetoothFunction(myBleConn, vehName, vehID, loop, status)
+                self.callMethod3_BluetoothFunction(myBleConn, vehName, vehID, loop, status, loopStatus)
                 
                 return myBleConn, vehName, vehID, status
 
-            elif (status == "Failed"):
+            #elif (status == "Failed"):
+            elif ((AutoMode == False)):
 
                 loopStatus = False
-                loop = False
+                loop = True
 
-                self.callMethod3_BluetoothFunction(myBleConn, vehName, vehID, loop, status)
+                self.callMethod3_BluetoothFunction(myBleConn, vehName, vehID, loop, status, loopStatus)
                 
                 return myBleConn, vehName, vehID, status
                         
@@ -498,12 +499,16 @@ class Ui_Form(object):
             if ((myBleConn != None) and (status == "Success")):
                 
                 #Check the Manual SCAN for one time 
-                status = "Failed"
-                print "CallMethod2 Check the Manual SCAN for one time "
-                return myBleConn, vehName, vehID, status
-            else:
+                #status = "Failed"
 
-                return None, vehName, vehID, status
+                AutoMode = False
+                
+                print "CallMethod2 Check the Manual SCAN for one time "
+                return myBleConn, vehName, vehID, status, AutoMode
+            else:
+                AutoMode = False
+                
+                return None, vehName, vehID, status, AutoMode
 
             
         #Automatic Condition
@@ -511,23 +516,27 @@ class Ui_Form(object):
             
             print "CallMethod2 Else", RFID_UID
             
+            
             myBleConn, vehName, vehID, status = work.fun_main(RFID_UID)
             #print "CallMethod2 Else: myBleConn", myBleConn
             
             if ((myBleConn != None) and (status == "Success")):
-                
-                return myBleConn, vehName, vehID, status
-            else:
 
-                return None, vehName, vehID, status
+                AutoMode = True
+                return myBleConn, vehName, vehID, status, AutoMode
+
+            else:
+                AutoMode = False
+                return None, vehName, vehID, status, AutoMode
 
             
 
 
-    def callMethod3_BluetoothFunction(self, myBleConn, vehName, vehID, loop, status):
-        
+    def callMethod3_BluetoothFunction(self, myBleConn, vehName, vehID, loop, status, loopStatus):
 
-        if ((myBleConn != None) and (status == "Success")):
+
+        #Automatic Mode
+        if ((myBleConn != None) and (status == "Success") and (loopStatus == True)):
 
             #for identifying the 1st Record to server API
             RecordSend = True
@@ -575,17 +584,72 @@ class Ui_Form(object):
                     loop = False
                     #myBleConn.close()
 
-        elif ((myBleConn != None) and (status == "Failed")):
 
+        
+        #Check for Manual Mode 
+        elif ((myBleConn != None) and (loopStatus == False)):
+
+
+            #for identifying the 1st Record to server API
+            RecordSend = True
+            
+            while loop == True:
+
+                print "callMethod3_BluetoothFunction Failed Status", myBleConn, vehName, vehID, loop, status
+
+                #print "callMethod3_BluetoothFunction", myBleConn, vehName, vehID, loop, status
+
+                #mylist, vehName, BLEStatus = fun_main_Bluetooth(bleConn)
+                QtCore.QCoreApplication.processEvents()
+                self.endProcess()
+
+
+                mylistvar, vehName, status = work.fun_main_Bluetooth(myBleConn, vehName, vehID, loop, status)
+                print "callMethod3_BluetoothFunction while", mylistvar, vehName, status
+
+                
+                
+                if status == "Success":
+
+                    
+                    Status, BLEStatus = self.display_mylistvar(mylistvar, vehName, vehID, status, RecordSend)
+
+                    Previous_mylistvar = mylistvar
+                    if ((BLEStatus == False)):
+                        RecordSend = BLEStatus
+
+                elif status == "Failed":
+
+                    RecordSend  = True
+                    Status, BLEStatus = self.display_mylistvar(Previous_mylistvar, vehName, vehID, status, RecordSend)
+
+                    if ((BLEStatus == False)):
+                        RecordSend = BLEStatus
+
+                   
+                #print BLEStatus
+                QtCore.QCoreApplication.processEvents()
+
+                statusAuto = self.radioButton.isChecked()
+                statusMan  = self.radioButton_2.isChecked()
+
+                
+                if (status == "Failed") or (statusAuto == True):
+                    loop = False
+                    #myBleConn.close()
+
+            '''        
+            
             print "callMethod3_BluetoothFunction Failed Status", myBleConn, vehName, vehID, loop, status
             QtCore.QCoreApplication.processEvents()
-            mylistvar, vehName, status = work.fun_main_Bluetooth(myBleConn, vehName, loop, status)
-
+            #mylistvar, vehName, status = work.fun_main_Bluetooth(myBleConn, vehName, loop, status)
+            mylistvar, vehName, status = work.fun_main_Bluetooth(myBleConn, vehName, vehID, loop, status)
 
             print "callMethod3_BluetoothFunction", myBleConn, vehName, vehID, loop, status
+            
             self.display_mylistvar(mylistvar, vehName, vehID, status)
             #print BLEStatus
-            
+            '''
         
 
 
@@ -839,41 +903,44 @@ class Ui_Form(object):
     
     def keypadEvent(self, bid):
         print (bid, self.numberString)
+        try:
+            if bid != "clear" and bid != "back" and len(self.lineEdit_bus_No.displayText()) > 3:
 
-        if bid != "clear" and bid != "back" and len(self.lineEdit_bus_No.displayText()) > 3:
+                print "Maximum bus no is 4 digits"
 
-            print "Maximum bus no is 4 digits"
+            else:
 
-        else:
+                if bid == "b1":
+                    self.numberString = self.numberString + "1"
+                if bid == "b2":
+                    self.numberString = self.numberString + "2"
+                if bid == "b3":
+                    self.numberString = self.numberString + "3"
+                if bid == "b4":
+                    self.numberString = self.numberString + "4"
+                if bid == "b5":
+                    self.numberString = self.numberString + "5"
+                if bid == "b6":
+                    self.numberString = self.numberString + "6"
+                if bid == "b7":
+                    self.numberString = self.numberString + "7"
+                if bid == "b8":
+                    self.numberString = self.numberString + "8"
+                if bid == "b9":
+                    self.numberString = self.numberString + "9"
+                if bid == "b0":
+                    self.numberString = self.numberString + "0"
+                if bid == "back":
+                    self.numberString = self.numberString[:-1]
+                if bid == "clear":
+                    self.numberString = ""
 
-            if bid == "b1":
-                self.numberString = self.numberString + "1"
-            if bid == "b2":
-                self.numberString = self.numberString + "2"
-            if bid == "b3":
-                self.numberString = self.numberString + "3"
-            if bid == "b4":
-                self.numberString = self.numberString + "4"
-            if bid == "b5":
-                self.numberString = self.numberString + "5"
-            if bid == "b6":
-                self.numberString = self.numberString + "6"
-            if bid == "b7":
-                self.numberString = self.numberString + "7"
-            if bid == "b8":
-                self.numberString = self.numberString + "8"
-            if bid == "b9":
-                self.numberString = self.numberString + "9"
-            if bid == "b0":
-                self.numberString = self.numberString + "0"
-            if bid == "back":
-                self.numberString = self.numberString[:-1]
-            if bid == "clear":
-                self.numberString = ""
-
-        print (self.numberString)
-        self.lineEdit_bus_No.setText(self.numberString)
-
+            print (self.numberString)
+            self.lineEdit_bus_No.setText(self.numberString)
+        except:
+            e = sys.exc_info()[0]
+            my_logger.error("Failed - keypadEvent %s ",e)
+            print ("Failed - keypadEvent  ",e)
     
     
     #def MainWindow(QMainWindow):
