@@ -80,11 +80,11 @@ def select_DeviceDetails_by_rfiduid(conn, rfiduid1):
     param conn: the Connection object
     param rfiduid:
     """
-    
-    if(rfiduid1 != None):
-    #print (" DB select_DeviceDetails_by_id")
-    #my_logger.info(" DB select_DeviceDetails_by_id")
-        try:
+    try:
+        if(rfiduid1 != None):
+        #print (" DB select_DeviceDetails_by_id")
+        #my_logger.info(" DB select_DeviceDetails_by_id")
+            
             cur = conn.cursor()
             cur.execute("SELECT vehId, vehName, BUID, RFUID FROM DeviceDetails WHERE RFUID=?",(rfiduid1,))
  
@@ -103,17 +103,17 @@ def select_DeviceDetails_by_rfiduid(conn, rfiduid1):
                 
                 return None
     
-        except sqlite3.Error as e:
+        
+        else:
+            print ("FFailed - Accessing to DB table DeviceDetails by RFID UID - None: ",rfiduid1)
+            my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - None: %s",(rfiduid1))
+                    
+            return None
+    except sqlite3.Error as e:
             print ("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: ",rfiduid1)
             my_logger.error("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  %s, %s ",e, rfiduid1)
             #raise
             return None
-    else:
-        print ("FFailed - Accessing to DB table DeviceDetails by RFID UID - None: ",rfiduid1)
-        my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - None: %s",(rfiduid1))
-                
-        return None
-
 
 #Query DB Select Deveice detail by rfiduid
 def select_DeviceDetails_by_vehNumber(conn, vehNo1):
@@ -122,10 +122,11 @@ def select_DeviceDetails_by_vehNumber(conn, vehNo1):
     param conn: the Connection object
     
     """
-    if(vehNo1 != None):
-    #print (" DB select_DeviceDetails_by_id")
-    #my_logger.info(" DB select_DeviceDetails_by_id")
-        try:
+    try:
+        if(vehNo1 != None):
+        #print (" DB select_DeviceDetails_by_id")
+        #my_logger.info(" DB select_DeviceDetails_by_id")
+            
             cur = conn.cursor()
             cur.execute("SELECT vehId, vehName, BUID, RFUID FROM DeviceDetails WHERE vehName like ?",("%"+vehNo1+"%",))
  
@@ -144,16 +145,18 @@ def select_DeviceDetails_by_vehNumber(conn, vehNo1):
                 
                 return None
     
-        except sqlite3.Error as e:
+        
+        else:
+            print ("FFailed - Accessing to DB table DeviceDetails by RFID UID - None: ",rfiduid1)
+            my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - None: %s",(rfiduid1))
+                    
+            return None
+        
+    except sqlite3.Error as e:
             print ("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: ",rfiduid1)
             my_logger.error("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  %s, %s ",e, rfiduid1)
             #raise
             return None
-    else:
-        print ("FFailed - Accessing to DB table DeviceDetails by RFID UID - None: ",rfiduid1)
-        my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - None: %s",(rfiduid1))
-                
-        return None
 
 
 #Query DB Select Deveice detail by vehName
@@ -163,10 +166,11 @@ def select_DeviceDetails_by_vehName(conn, vehName1):
     param conn: the Connection object
     
     """
-    if(vehName1 != None):
-    #print (" DB select_DeviceDetails_by_id")
-    #my_logger.info(" DB select_DeviceDetails_by_id")
-        try:
+    try:
+        if(vehName1 != None):
+        #print (" DB select_DeviceDetails_by_id")
+        #my_logger.info(" DB select_DeviceDetails_by_id")
+            
             cur = conn.cursor()
             cur.execute("SELECT vehId, vehName, BUID, RFUID FROM DeviceDetails WHERE vehName like ?",("%"+vehName1+"%",))
  
@@ -184,17 +188,18 @@ def select_DeviceDetails_by_vehName(conn, vehName1):
                 my_logger.warning("Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: %s",(vehName1))
                 
                 return None
-    
-        except sqlite3.Error as e:
+            
+        else:
+            print ("FFailed - Accessing to DB table DeviceDetails by Vehicle Name - None: ",vehName1)
+            my_logger.warning("Failed - Accessing to DB table DeviceDetails by Vehicle Name - None: %s",(vehName1))
+                    
+            return None
+
+    except sqlite3.Error as e:
             print ("Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: ",vehName1)
             my_logger.error("Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available:  %s, %s ",e, vehName1)
             #raise
             return None
-    else:
-        print ("FFailed - Accessing to DB table DeviceDetails by Vehicle Name - None: ",vehName1)
-        my_logger.warning("Failed - Accessing to DB table DeviceDetails by Vehicle Name - None: %s",(vehName1))
-                
-        return None
     
 
 def select_TyreDetails_by_VehId(conn, VehId1):
@@ -203,12 +208,11 @@ def select_TyreDetails_by_VehId(conn, VehId1):
     param conn: the Connection object
     param rfiduid:
     """
-    
-    if(VehId1 != None):
-        
-        TyreDetials = []
-        #my_logger.info (" DB select_TireDetails_by_VehId ")
-        try:
+    try:
+        if(VehId1 != None):
+            TyreDetials = []
+            #my_logger.info (" DB select_TireDetails_by_VehId ")
+            
             cur = conn.cursor()
             cur.execute("SELECT sensorUID, tirePosition FROM TireDetails WHERE vehId=?",(VehId1,))
             
@@ -231,19 +235,19 @@ def select_TyreDetails_by_VehId(conn, VehId1):
                 my_logger.warning("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: %s",(VehId1))
                 
                 return None
-    
-        except sqlite3.Error as e:
+            
+        else:
+            print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - None: ",VehId1)
+            my_logger.warning("Failed - Accessing to DB table TyreDetails by Vehicle ID - None %s",(VehId1))
+                    
+            return None
+
+    except sqlite3.Error as e:
             print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: ",VehId1)
             my_logger.error("Failed - sqlite3.Error and Accessing to DB table TyreDetails by Vehicle ID - Not Available: %s, %s ",e, VehId1)
             #raise
             #conn.close()
             return None
-    else:
-        print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - None: ",VehId1)
-        my_logger.warning("Failed - Accessing to DB table TyreDetails by Vehicle ID - None %s",(VehId1))
-                
-        return None
-
 
 def select_TyreDetails_tyreId_by_VehId(conn, VehId1):
     """
@@ -251,12 +255,12 @@ def select_TyreDetails_tyreId_by_VehId(conn, VehId1):
     param conn: the Connection object
     param rfiduid:
     """
-    
-    if(VehId1 != None):
+    try:
+        if(VehId1 != None):
         
-        TyreDetials = []
-        #my_logger.info (" DB select_TireDetails_by_VehId ")
-        try:
+            TyreDetials = []
+            #my_logger.info (" DB select_TireDetails_by_VehId ")
+        
             cur = conn.cursor()
             cur.execute("SELECT tireId FROM TireDetails WHERE vehId=?",(VehId1,))
             
@@ -279,17 +283,19 @@ def select_TyreDetails_tyreId_by_VehId(conn, VehId1):
                 
                 return None
     
-        except sqlite3.Error as e:
+        
+        else:
+            print ("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: ",VehId1)
+            my_logger.warning("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: %s",VehId1)
+                    
+            return None
+
+    except sqlite3.Error as e:
             print ("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: ",e, VehId1)
             my_logger.error("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: %s %s",e, VehId1)
             #raise
             #conn.close()
             return None
-    else:
-        print ("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: ",VehId1)
-        my_logger.warning("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: %s",VehId1)
-                
-        return None
 
     
 '''
@@ -400,6 +406,10 @@ def update_Latest_data_by_VehId(conn, vehId1, date_time,mylist):
                 cur.execute(sql, queryParam)
                 
                 print "Need to insert", (vehId1, date_time, position, sensorid, presint_Psi, tempint_Celcious, statint)
+
+            else :
+                print ("Failed - position - Not Available: ",position)
+                my_logger.error("Failed - position- Not Available: %s" ,position)   
 
         conn.commit()
 
@@ -613,8 +623,15 @@ def update_Report_data_child_by_report_data_master_id(conn, report_data_master_i
                                                  
                         cur = conn.cursor()
                         cur.execute(sql, queryParam)
-                
-                
+
+                    else:
+                        print ("Failed - sensorid and SensorID Not Equal: ", sensorid ,SensorID)
+                        my_logger.error("Failed - sensorid and SensorID Not Equal: %s %s", sensorid ,SensorID)   
+                        
+                else:
+                    print ("Failed - position - Not Available: ",position)
+                    my_logger.error("Failed - position- Not Available: %s" ,position)   
+                    
         
     except:
         e = sys.exc_info()[0]
@@ -688,99 +705,101 @@ def update_Report_data_master_by_VehId(conn, vehId1, date_time):
 #update_task(conn, (2, '2015-01-04', '2015-01-06',2))
 
 def main():
-    
-    database = "/opt/Aquire/sqlite/TPMS.db"
-    print (" DB Create a connection ")
-    
-    #create a connection to database
-    conn = create_db_connection(database)
 
-    date_time = time.strftime('%H:%M %d/%m/%Y')
-    print date_time
-    date_timeDB = int(datetime.datetime.now().strftime("%s")) * 1000
-    #print date_time
-    
-    #time.sleep(0.5)
-    #conn.close()
+    try:
+        database = "/opt/Aquire/sqlite/TPMS.db"
+        print (" DB Create a connection ")
+        
+        #create a connection to database
+        conn = create_db_connection(database)
 
-    #BluetoothSocketVariable = ('01', 'ba6b09', '000000', '00', '02', 'ba6d6d', '000000', '00', '03', '56a8cb', '000000', '00', '04', '56a6be', '000000', '00', '05', '56a781', '000000', '00', '06', '56a7c5', '000000', '00')
-    #tag = "e2000016351702081640767faa"
-    tag = None
-    vehID = 1
-
-    rows = 8
-    columns= 16
-    mylist = [['0' for x in range(columns)] for x in range(rows)]
-
-    mylist = [['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'], \
-              [0, 'a1', '41', '08', '63', '00', '06'], \
-              [0, 'a1', '41', '0f', '63', '00', '01', 'ba', '6b', '09', '01', '18', '70', '00'], \
-              [0, 'a1', '41', '0f', '63', '00', '02', 'ba', '6d', '6d', '01', '10', '00', '00'], \
-              [0, 'a1', '41', '0f', '63', '00', '03', '56', 'a8', 'cb', '01', '10', '80', '00'], \
-              [0, 'a1', '41', '0f', '63', '00', '04', '56', 'a6', 'be', '01', '10', '00', '00'], \
-              [0, 'a1', '41', '0f', '63', '00', '05', '56', 'a7', '81', '01', '10', '00', '00'], \
-              [0, 'a1', '41', '0f', '63', '00', '06', '56', 'a7', 'c5', '01', '10', '00', '00']]
-
-
-    TyreIDL = [(1, u'C0002393617'), (2, u'ROO83651416'), (3, u'C0209592617'), (4, u'R0152813916'), (5, u'R0218360917'), (6, u'R0039252716')]
-    TyreIDL = [(1,), (2,), (3,), (4,), (5,), (6,)]
-    #print conn
-    with conn:
-        #select_DeviceDetails_by_rfiduid(conn, tag)
-        #select_TyreDetails_by_VehId(conn, vehID)
+        date_time = time.strftime('%H:%M %d/%m/%Y')
+        print date_time
+        date_timeDB = int(datetime.datetime.now().strftime("%s")) * 1000
+        #print date_time
+        
+        #time.sleep(0.5)
         #conn.close()
-        DBTyreDetail = []
-        
-        #status = update_Latest_data_by_VehId(conn, vehID, date_timeDB, mylist)
-        #print "Connecton Close", status, conn
 
-        #report_data_master_id = update_Report_data_master_by_VehId(conn, vehID, date_timeDB)
+        #BluetoothSocketVariable = ('01', 'ba6b09', '000000', '00', '02', 'ba6d6d', '000000', '00', '03', '56a8cb', '000000', '00', '04', '56a6be', '000000', '00', '05', '56a781', '000000', '00', '06', '56a7c5', '000000', '00')
+        #tag = "e2000016351702081640767faa"
+        tag = None
+        vehID = 1
 
-        #TyreIdList = select_TyreDetails_tyreId_by_VehId(conn, vehID)
+        rows = 8
+        columns= 16
+        mylist = [['0' for x in range(columns)] for x in range(rows)]
 
-        #DBsensorVariable = select_TyreDetails_by_VehId(conn, vehID)
-        
-        report_data_master_id = 30
-        TyreDetail = [(1, u'382858'), (2, u'3826CC'), (3, u'381CE9'), (4, u'3818F9'), (5, u'39A6F9'), (6, u'5A16D9')]
-        DBtotalTyres = len(TyreDetail)
-        
+        mylist = [['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'], \
+                  [0, 'a1', '41', '08', '63', '00', '06'], \
+                  [0, 'a1', '41', '0f', '63', '00', '01', 'ba', '6b', '09', '01', '18', '70', '00'], \
+                  [0, 'a1', '41', '0f', '63', '00', '02', 'ba', '6d', '6d', '01', '10', '00', '00'], \
+                  [0, 'a1', '41', '0f', '63', '00', '03', '56', 'a8', 'cb', '01', '10', '80', '00'], \
+                  [0, 'a1', '41', '0f', '63', '00', '04', '56', 'a6', 'be', '01', '10', '00', '00'], \
+                  [0, 'a1', '41', '0f', '63', '00', '05', '56', 'a7', '81', '01', '10', '00', '00'], \
+                  [0, 'a1', '41', '0f', '63', '00', '06', '56', 'a7', 'c5', '01', '10', '00', '00']]
+
+
+        TyreIDL = [(1, u'C0002393617'), (2, u'ROO83651416'), (3, u'C0209592617'), (4, u'R0152813916'), (5, u'R0218360917'), (6, u'R0039252716')]
         TyreIDL = [(1,), (2,), (3,), (4,), (5,), (6,)]
+        #print conn
+        with conn:
+            #select_DeviceDetails_by_rfiduid(conn, tag)
+            #select_TyreDetails_by_VehId(conn, vehID)
+            #conn.close()
+            DBTyreDetail = []
+            
+            #status = update_Latest_data_by_VehId(conn, vehID, date_timeDB, mylist)
+            #print "Connecton Close", status, conn
 
-        #print DBsensorVariable
-        #print (TyreIDL)
-        #T = [x for xs in str(TyreIDL) for x in xs.split(',')]
-        #print T
+            #report_data_master_id = update_Report_data_master_by_VehId(conn, vehID, date_timeDB)
 
-        if TyreDetail is not None:
-            for DBi in range(0, DBtotalTyres):
-                    
-                Tyre_row = TyreDetail[DBi]
+            #TyreIdList = select_TyreDetails_tyreId_by_VehId(conn, vehID)
 
-                SID = Tyre_row[1]
-                    
-                T = Tyre_row[0]          
+            #DBsensorVariable = select_TyreDetails_by_VehId(conn, vehID)
+            
+            report_data_master_id = 30
+            TyreDetail = [(1, u'382858'), (2, u'3826CC'), (3, u'381CE9'), (4, u'3818F9'), (5, u'39A6F9'), (6, u'5A16D9')]
+            DBtotalTyres = len(TyreDetail)
+            
+            TyreIDL = [(1,), (2,), (3,), (4,), (5,), (6,)]
+
+            #print DBsensorVariable
+            #print (TyreIDL)
+            #T = [x for xs in str(TyreIDL) for x in xs.split(',')]
+            #print T
+
+            if TyreDetail is not None:
+                for DBi in range(0, DBtotalTyres):
                         
-                #print SID1, L1
-                DBTyreDetail.append(T)
-                DBTyreDetail.append(SID)
-  
+                    Tyre_row = TyreDetail[DBi]
+
+                    SID = Tyre_row[1]
                         
-            print DBTyreDetail
-                       
-        
-        
-                    
-        #print TyreIDL
-        #for i in range (len(TyreIDL)):
-            #print TyreIDL[i]
+                    T = Tyre_row[0]          
+                            
+                    #print SID1, L1
+                    DBTyreDetail.append(T)
+                    DBTyreDetail.append(SID)
+      
+                            
+                print DBTyreDetail
+                                       
+                               
+            #print TyreIDL
+            #for i in range (len(TyreIDL)):
+                #print TyreIDL[i]
 
-        #print "report_data_master_id", report_data_master_id
-        update_Report_data_child_by_report_data_master_id(conn, report_data_master_id, vehID, mylist, DBTyreDetail)
+            #print "report_data_master_id", report_data_master_id
+            update_Report_data_child_by_report_data_master_id(conn, report_data_master_id, vehID, mylist, DBTyreDetail)
 
-        #update_Report_data_child_by_report_data_master_id(conn, 1, vehID, mylist, TyreIDL)
+            #update_Report_data_child_by_report_data_master_id(conn, 1, vehID, mylist, TyreIDL)
 
-
-
+    except:
+        e = sys.exc_info()[0]
+        print ("Failed - db main function: ")
+        my_logger.error("Failed - db main function: ")
+    
         
                     
     conn.close()

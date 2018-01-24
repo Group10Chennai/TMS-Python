@@ -41,14 +41,20 @@ class Bluetoothctl:
 
     def get_output(self, command, pause = 0):
         """Run a command in bluetoothctl prompt, return output as a list of lines."""
-        self.child.send(command + "\n")
-        time.sleep(pause)
-        start_failed = self.child.expect(["bluetooth", pexpect.EOF])
+        try:
+            self.child.send(command + "\n")
+            time.sleep(pause)
+            start_failed = self.child.expect(["bluetooth", pexpect.EOF])
 
-        if start_failed:
-            raise BluetoothctlError("Bluetoothctl failed after running " + command)
+            if start_failed:
+                raise BluetoothctlError("Bluetoothctl failed after running " + command)
 
-        return self.child.before.split("\r\n")
+            return self.child.before.split("\r\n")
+
+        except:
+            e = sys.exc_info()[0]
+            my_logger.error("Failed - get_output %s ",e)
+            print ("Failed - get_output  ",e)
 
     def start_scan(self):
         """Start bluetooth scanning process."""
@@ -68,50 +74,59 @@ class Bluetoothctl:
     
     def parse_device_info(self, info_string):
         """Parse a string corresponding to a device."""
-        device = {}
-        block_list = ["[\x1b[0;", "removed"]
-        string_valid = not any(keyword in info_string for keyword in block_list)
+        try:
+            device = {}
+            block_list = ["[\x1b[0;", "removed"]
+            string_valid = not any(keyword in info_string for keyword in block_list)
 
-        if string_valid:
-            try:
-                device_position = info_string.index("Device")
-            except ValueError:
-                pass
-            else:
+            if string_valid:
+                try:
+                    device_position = info_string.index("Device")
+                except ValueError:
+                    pass
+                else:
                 
-                if device_position > -1:
-                    attribute_list = info_string[device_position:].split(" ", 2)
-                    device = {
-                        "mac_address": attribute_list[1],
-                        "name": attribute_list[2]
-                    }
+                    if device_position > -1:
+                        attribute_list = info_string[device_position:].split(" ", 2)
+                        device = {
+                            "mac_address": attribute_list[1],
+                            "name": attribute_list[2]
+                        }
 
-        return device
-    
+            return device
+
+        except:
+            e = sys.exc_info()[0]
+            my_logger.error("Failed - parse_device_info %s ",e)
+            print ("Failed - parse_device_info  ",e)
 
     def parse_device_info1(self, info_string):
         """Parse a string corresponding to a device."""
-        device = {}
-        block_list = ["[\x1b[0;", "removed"]
-        string_valid = not any(keyword in info_string for keyword in block_list)
+        try:
+            device = {}
+            block_list = ["[\x1b[0;", "removed"]
+            string_valid = not any(keyword in info_string for keyword in block_list)
 
-        if string_valid:
-            try:
-                device_position = info_string.index("Device")
-            except ValueError:
-                pass
-            else:
-                
-                if device_position > -1:
-                    attribute_list = info_string[device_position:].split(" ", 2)
-                    #device = {
-                        #"mac_address": attribute_list[1],
-                        #"name": attribute_list[2]
-                    #}
-                    device = attribute_list[1]
+            if string_valid:
+                try:
+                    device_position = info_string.index("Device")
+                except ValueError:
+                    pass
+                else:
                     
+                    if device_position > -1:
+                        attribute_list = info_string[device_position:].split(" ", 2)
+                        #device = {
+                            #"mac_address": attribute_list[1],
+                            #"name": attribute_list[2]
+                        #}
+                        device = attribute_list[1]
+            return device
 
-        return device
+        except:
+            e = sys.exc_info()[0]
+            my_logger.error("Failed - parse_device_info1 %s ",e)
+            print ("Failed - parse_device_info1  ",e)
     
     def get_available_devices(self):
         """Return a list of tuples of paired and discoverable devices."""
@@ -147,10 +162,17 @@ class Bluetoothctl:
 
     def get_discoverable_devices(self):
         """Filter paired devices out of available."""
-        available = self.get_available_devices()
-        paired = self.get_paired_devices()
+        try:
+            available = self.get_available_devices()
+            paired = self.get_paired_devices()
 
-        return [d for d in available if d not in paired]
+            return [d for d in available if d not in paired]
+
+        except:
+            e = sys.exc_info()[0]
+            my_logger.error("Failed - get_discoverable_devices %s ",e)
+            print ("Failed - get_discoverable_devices  ",e)
+            
 
     def get_device_info(self, mac_address):
         """Get device info by mac address."""

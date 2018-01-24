@@ -436,8 +436,8 @@ def Connect_Socket_Bluetooth_by_BUID( conn):
     print("Query the Bluetooth Controller to set TyreNo, Sensor ID")
     print "Connect_Socket_Bluetooth_by_BUID 1"
     #data = blecontroller.Query_Tpms_SET_TireID(conn)
-    if(conn != None):
-        try:
+    try:
+        if(conn != None):
             print("Query the Bluetooth Controller with 63 to read All TyreNo, Sensor ID, Pressure and Temp")
             TPMSID1 = blecontroller.TpmsTireDataPosition()
 
@@ -466,16 +466,16 @@ def Connect_Socket_Bluetooth_by_BUID( conn):
                 print ("Failed - BT Query the Bluetooth Controller with 63 to read All is None:",e, TPMSID1)
                 return None, "Failed"
             
-        except:
+        else:
+            my_logger.warning("Failed - BT Query the Bluetooth Controller BTConnection is None: %s",conn)
+            print ("Failed - BT Query the Bluetooth Controller BTConnection is None:",conn)
+            return None, "Failed"
+
+    except:
             e = sys.exc_info()[0]
             my_logger.error("Failed - BT Query the Bluetooth Controller with 63 to read All is None: %s, %s ",e, TPMSID1)
             print ("Failed - BT Query the Bluetooth Controller with 63 to read All is None:",e, TPMSID1)
             return None, "Failed"
-    else:
-        my_logger.warning("Failed - BT Query the Bluetooth Controller BTConnection is None: %s",conn)
-        print ("Failed - BT Query the Bluetooth Controller BTConnection is None:",conn)
-        return None, "Failed"
-    
     #print("Compare DB Sensor UID, tirePosition with Bluetooth TyreNo, TyreID")
 
     #compare_DBSensorUID_DBLocation_BTyreNo_BTyreID()
@@ -505,8 +505,7 @@ def configure_BTController(bleConn, DBSensorVariable):
                 print ("Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: ",DBSensorVariable[i+1], DBSensorVariable)
                 #return None
 
-            
-    
+           
     except:
         e = sys.exc_info()[0]
         my_logger.error("Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None: %s ",e)
@@ -1549,7 +1548,7 @@ def fun_main(RFIDTID):
                 my_logger.warning ("Failed - Database path Not Available ")
                 return None, "Failed - Database path Not Available ", None, "Failed"
         else:
-            my_logger.warning ("Failed - RFID Tag ID is not available in DB %s: ", tag_id)
+         #   my_logger.warning ("Failed - RFID Tag ID is not available in DB %s: ", tag_id)
             print ("Failed - RFID Tag ID is not available in DB %s: ", tag_id)
             return None, "Failed - No TagId Connection ", None, "Failed"
 
@@ -1628,11 +1627,9 @@ def display_Parameter_LED(mylist, vehName, vehID, date_time):
     #date_time = time.strftime('%H:%M:%S %d/%m/%Y')
     date_timeDB = int(datetime.datetime.now().strftime("%s")) * 1000
     print date_time
-    
-    if mylist != None:
 
-        try:
-
+    try:
+        if mylist != None:
             print("displayLEDBoard ")
             #Display this data in LED Display with Commands 
             dispVar = display.displayLEDBoardParameters(mylist)
@@ -1648,16 +1645,15 @@ def display_Parameter_LED(mylist, vehName, vehID, date_time):
                 print ("Failed - dispVar  not Available or None:", dispVar)
                 #return None, " dispVar  not Available or None", "Failed"
                             
-        except:
-            e = sys.exc_info()[0]
-            my_logger.error("Failed - dispVar  not Available or None :%s ",e)
-            print ("Failed - dispVar  not Available or None:%s ",e)
+                #return None, "dispVar  not Available or None", "Failed"
+        else:
+            my_logger.warning ("Failed - display_Parameter_LED.mylist  not Available or None: %s", mylist)
+            print ("Failed - display_Parameter_LED.mylist  not Available or None:", mylist)
 
-            #return None, "dispVar  not Available or None", "Failed"
-    else:
-        my_logger.warning ("Failed - display_Parameter_LED.mylist  not Available or None: %s", mylist)
-        print ("Failed - display_Parameter_LED.mylist  not Available or None:", mylist)
-
+    except:
+        e = sys.exc_info()[0]
+        my_logger.error("Failed - dispVar  not Available or None :%s ",e)
+        print ("Failed - dispVar  not Available or None:%s ",e)
 
 def display_Parameter_API(mylist, vehName, vehID, date_time):        
 

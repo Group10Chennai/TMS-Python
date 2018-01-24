@@ -212,18 +212,32 @@ def Tpms_SET_TireID(conn, TPMSET):
 
 #convert string to hex
 def toHex(s):
-    lst = []
-    for ch in s:
-        hv = hex(ord(ch)).replace('0x', '')
-        if len(hv) == 1:
-            hv = '0'+hv
-        lst.append(hv)
+    try:
+        lst = []
+        for ch in s:
+            hv = hex(ord(ch)).replace('0x', '')
+            if len(hv) == 1:
+                hv = '0'+hv
+            lst.append(hv)
     
-    return reduce(lambda x,y:x+y, lst)
+        return reduce(lambda x,y:x+y, lst)
+
+    except:
+            e = sys.exc_info()[0]
+            my_logger.error("Failed - toHex %s ",e)
+            print ("Failed - toHex  ",e)
+    
+
 
 #convert hex repr to string
 def toStr(s):
-    return s and chr(int(s[:2], base=16)) + toStr(s[2:]) or ''
+    try:
+        return s and chr(int(s[:2], base=16)) + toStr(s[2:]) or ''
+
+    except:
+            e = sys.exc_info()[0]
+            my_logger.error("Failed - toStr %s ",e)
+            print ("Failed - toStr  ",e)
 
    
 
@@ -358,46 +372,52 @@ def connect_ble(BUID1):
     
 
 def Query_TpmsTireDataPosition(s, TPMSID1):
-    
-    #TPMSID1 = TpmsTireDataPosition()
-    print binascii.b2a_hex(TPMSID1)
-    
-    #print "performing Bluetooth Communication..."
-    #s.send(TPMSID1)
-    data = ""
-    #while True:
-    #s.send(my_hex)
-    if(s != None):
-        if(TPMSID1 != None):
+
+    try:
+        #TPMSID1 = TpmsTireDataPosition()
+        print binascii.b2a_hex(TPMSID1)
         
-            while(True):
-                try:
-                    s.send(TPMSID1)
+        #print "performing Bluetooth Communication..."
+        #s.send(TPMSID1)
+        data = ""
+        #while True:
+        #s.send(my_hex)
+        if(s != None):
+            if(TPMSID1 != None):
             
-                    time.sleep(1)
+                while(True):
+                    try:
+                        s.send(TPMSID1)
+                
+                        time.sleep(1)
 
-                    data = s.recv(1024)
+                        data = s.recv(1024)
 
-                    #print binascii.b2a_hex(data)
-                    return data, "Success"
-                    break;
-                    
-                except bluetooth.btcommon.BluetoothError as e:
-                    print ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError",e)
-                    my_logger.error ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError : %s",e)  
-                    s.close()
-                    time.sleep(2)
-                    return None, "Failed"
-                    #pass
+                        #print binascii.b2a_hex(data)
+                        return data, "Success"
+                        break;
+                        
+                    except bluetooth.btcommon.BluetoothError as e:
+                        print ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError",e)
+                        my_logger.error ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError : %s",e)  
+                        s.close()
+                        time.sleep(2)
+                        return None, "Failed"
+                        #pass
+            else:
+                print ("Failed - Bluetooth Send and Receive Communication Query Command is None:",TPMSID1)
+                my_logger.warning("Failed - Bluetooth Send and Receive Communication Query Command is None: %s",TPMSID1)
+                s.close()
+                return None, "Failed"
         else:
-            print ("Failed - Bluetooth Send and Receive Communication Query Command is None:",TPMSID1)
-            my_logger.warning("Failed - Bluetooth Send and Receive Communication Query Command is None: %s",TPMSID1)
+            print ("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None:",TPMSID1)
+            my_logger.warning("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None: %s",TPMSID1)
             s.close()
             return None, "Failed"
-    else:
-        print ("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None:",TPMSID1)
-        my_logger.warning("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None: %s",TPMSID1)
-        s.close()
+
+    except:
+        print ("Failed - Query_TpmsTireDataPosition")
+        my_logger.error ("Failed - Query_TpmsTireDataPosition :")  
         return None, "Failed"
 
 #from parse import *

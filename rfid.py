@@ -81,11 +81,16 @@ def RFIDUHFQueryTag():
                 print "Hello"
 
             return rfidTID
+        
+        else:
+            #my_logger.error("Failed - RFID Id Not in Actual format %s:", QueryTag)
+            print ("Failed - RFID Id Not in Actual format :", QueryTag)
+            return None
            
 
     except:
         e = sys.exc_info()[0]
-        my_logger.error("Failed - RFID Query Tag %s, %s:",e, QueryTag)
+        #my_logger.error("Failed - RFID Query Tag %s, %s:",e, QueryTag)
         print ("Failed - RFID Query Tag :",e, QueryTag)
         return None
 
