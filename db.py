@@ -262,7 +262,7 @@ def select_TyreDetails_tyreId_by_VehId(conn, VehId1):
             #my_logger.info (" DB select_TireDetails_by_VehId ")
         
             cur = conn.cursor()
-            cur.execute("SELECT tireId FROM TireDetails WHERE vehId=?",(VehId1,))
+            cur.execute("SELECT tireId, sensorUID FROM TireDetails WHERE vehId=?",(VehId1,))
             
             rows = cur.fetchall()
             TyreDetails = None;
@@ -411,7 +411,7 @@ def update_Latest_data_by_VehId(conn, vehId1, date_time,mylist):
                 print ("Failed - position - Not Available: ",position)
                 my_logger.error("Failed - position- Not Available: %s" ,position)   
 
-        conn.commit()
+        #conn.commit()
 
     except sqlite3.Error as e:
         print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: ",VehId1)
@@ -429,33 +429,41 @@ def update_Report_data_master_by_VehId(conn, vehId1, date_time):
     # If latest data is none - means data not exists -> Need to insert
     # If latest data is not none - means data exists -> Need to update
 
+    
     #print mylist
     #print vehId1
-
+    print "Need to update_Report_data_master_by_VehId"
     try:
     
         cur = conn.cursor()
-
-    
 
         sql = ''' INSERT INTO Report_data_master (vehId,device_date_time,
                 count)
                 VALUES(?,?,?) '''
 
 
-        print "Need to insert"
+        #print "Need to insert"
         queryParam = (vehId1, date_time, 0)
         cur = conn.cursor()
         cur.execute(sql, queryParam)
 
+        conn.commit()
+
+        '''
+        cur = conn.cursor()
         cur.execute("SELECT report_data_master_id FROM Report_data_master WHERE vehId=?",(vehId1,))
         rows = cur.fetchall()
         r = len(rows)
                                   
-        conn.commit()
+        #conn.commit()
 
-        print "Report_data_master Id", rows[r-1] 
-        return rows[r-1]
+        print "Report_data_master Id rows", rows[r-1] 
+        listb = ",".join([str(a) for a in rows[r-1]])
+        
+        print "Report_data_master Id", listb 
+        return listb
+        #return DBTyreDetail
+        '''
         
     except sqlite3.Error as e:
         print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: ",VehId1)
@@ -463,6 +471,89 @@ def update_Report_data_master_by_VehId(conn, vehId1, date_time):
         #raise
         #conn.close()
         return None
+
+
+def select_Report_data_master_report_data_master_id_by_VehId(conn, VehId1):
+    """
+    Query tasks by priority
+    param conn: the Connection object
+    param rfiduid:
+    """
+
+    print "Report_data_master Id VehId1 Out", VehId1
+    try:
+        if(VehId1 != None):
+
+            print "Report_data_master Id VehId1", VehId1
+            
+            cur = conn.cursor()
+            cur.execute("SELECT report_data_master_id FROM Report_data_master WHERE vehId=?",(VehId1,))
+            rows = cur.fetchall()
+            r = len(rows)                              
+
+            #print "Rows", rows
+            #print "Report_data_master Id rows", rows[r-1] 
+            listb = ",".join([str(a) for a in rows[r-1]])
+        
+            print "Report_data_master Id", listb 
+            return listb
+
+        else:
+            print ("Failed - Querying Report_data_master in DB table report_data_master_id by VehId - Not Available: ",VehId1)
+            my_logger.warning("Failed - Querying Report_data_master in DB table report_data_master_id by VehId - Not Available: %s",VehId1)
+                
+            return None
+    
+
+    except sqlite3.Error as e:
+            print ("Failed - Querying Report_data_master in DB table report_data_master_id by VehId - Not Available: ",e, VehId1)
+            my_logger.warning("Failed - Querying Report_data_master in DB table report_data_master_id by VehId - Not Available: %s %s",e, VehId1)
+            #raise
+            #conn.close()
+            return None
+
+
+    try:
+        if(VehId1 != None):
+        
+            TyreDetials = []
+            #my_logger.info (" DB select_TireDetails_by_VehId ")
+        
+            cur = conn.cursor()
+            cur.execute("SELECT tireId, sensorUID FROM TireDetails WHERE vehId=?",(VehId1,))
+            
+            rows = cur.fetchall()
+            TyreDetails = None;
+            for row in rows:
+                TyreDetails = row
+                #print TyreDetails
+        
+            #return TyreDetials
+            #return rows
+
+            if (len(rows) != 0):
+                #print len(rows)
+                #print rows
+                return rows
+            else:
+                print ("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: ",VehId1)
+                my_logger.warning("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: %s",VehId1)
+                
+                return None
+    
+        
+        else:
+            print ("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: ",VehId1)
+            my_logger.warning("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: %s",VehId1)
+                    
+            return None
+
+    except sqlite3.Error as e:
+            print ("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: ",e, VehId1)
+            my_logger.error("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: %s %s",e, VehId1)
+            #raise
+            #conn.close()
+            return None
 
 
 '''
@@ -561,7 +652,9 @@ def update_Report_data_child_by_report_data_master_id(conn, report_data_master_i
     #print vehId1
 
     try:
-    
+
+        print "All Values", conn, report_data_master_id1, vehId1, TyreIdList
+        
         cur = conn.cursor()
        
                 
@@ -585,16 +678,17 @@ def update_Report_data_child_by_report_data_master_id(conn, report_data_master_i
                                 
                     sensorid =  mylist[i][7]+mylist[i][8]+mylist[i][9]
 
-                    print "Values", sensorid, position, TyreID, SensorID, vehId1, report_data_master_id1
+                    #print "Values", sensorid, position, TyreID, SensorID, vehId1, report_data_master_id1
 
                     if sensorid == SensorID:
 
                         
-                    
+                        #print "Values", sensorid, position, TyreID, SensorID, vehId1, report_data_master_id1
+                        
                         pres = mylist[i][10]+mylist[i][11]
                         temp = mylist[i][12]
-
-                        print sensorid, pres, temp
+                        
+                        #print sensorid, pres, temp
 
                         statstr = mylist[i][13]
                         statint =  (int(statstr, 16))
@@ -619,18 +713,25 @@ def update_Report_data_child_by_report_data_master_id(conn, report_data_master_i
 
                                       
 
-                        print "Need to insert", (report_data_master_id1, vehId1, TyreID, position, sensorid, presint_Psi, tempint_Celcious, statint)
-                                                 
+                        print "Need to insert", (report_data_master_id1, vehId1, TyreID, position, sensorid, presint_Psi, tempint_Celcious, statstr)
+
+                        queryParam = (report_data_master_id1, vehId1, TyreID, position, sensorid, presint_Psi, tempint_Celcious, statstr)
+                        #queryParam = (vehId1, date_time, position, sensorid, presint_Psi, tempint_Celcious, statint, 1, 0)
                         cur = conn.cursor()
                         cur.execute(sql, queryParam)
-
-                    else:
-                        print ("Failed - sensorid and SensorID Not Equal: ", sensorid ,SensorID)
-                        my_logger.error("Failed - sensorid and SensorID Not Equal: %s %s", sensorid ,SensorID)   
                         
-                else:
-                    print ("Failed - position - Not Available: ",position)
-                    my_logger.error("Failed - position- Not Available: %s" ,position)   
+                        
+                    #else:
+                        #print ("Failed - sensorid and SensorID Not Equal: ", sensorid ,SensorID)
+                        #my_logger.error("Failed - sensorid and SensorID Not Equal: %s %s", sensorid ,SensorID)   
+                        
+                #else:
+                    #print ("Failed - position - Not Available: ",position)
+                    #my_logger.error("Failed - position- Not Available: %s" ,position)
+
+        conn.commit()
+
+        return "Success"
                     
         
     except:
@@ -724,21 +825,32 @@ def main():
         #BluetoothSocketVariable = ('01', 'ba6b09', '000000', '00', '02', 'ba6d6d', '000000', '00', '03', '56a8cb', '000000', '00', '04', '56a6be', '000000', '00', '05', '56a781', '000000', '00', '06', '56a7c5', '000000', '00')
         #tag = "e2000016351702081640767faa"
         tag = None
-        vehID = 1
+        vehID = 87
 
         rows = 8
         columns= 16
         mylist = [['0' for x in range(columns)] for x in range(rows)]
 
-        mylist = [['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'], \
-                  [0, 'a1', '41', '08', '63', '00', '06'], \
-                  [0, 'a1', '41', '0f', '63', '00', '01', 'ba', '6b', '09', '01', '18', '70', '00'], \
-                  [0, 'a1', '41', '0f', '63', '00', '02', 'ba', '6d', '6d', '01', '10', '00', '00'], \
-                  [0, 'a1', '41', '0f', '63', '00', '03', '56', 'a8', 'cb', '01', '10', '80', '00'], \
-                  [0, 'a1', '41', '0f', '63', '00', '04', '56', 'a6', 'be', '01', '10', '00', '00'], \
-                  [0, 'a1', '41', '0f', '63', '00', '05', '56', 'a7', '81', '01', '10', '00', '00'], \
-                  [0, 'a1', '41', '0f', '63', '00', '06', '56', 'a7', 'c5', '01', '10', '00', '00']]
+        #mylist = [['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'], \
+        #          [0, 'a1', '41', '08', '63', '00', '06'], \
+        #          [0, 'a1', '41', '0f', '63', '00', '01', 'ba', '6b', '09', '01', '18', '70', '00'], \
+        #          [0, 'a1', '41', '0f', '63', '00', '02', 'ba', '6d', '6d', '01', '10', '00', '00'], \
+        #          [0, 'a1', '41', '0f', '63', '00', '03', '56', 'a8', 'cb', '01', '10', '80', '00'], \
+        #          [0, 'a1', '41', '0f', '63', '00', '04', '56', 'a6', 'be', '01', '10', '00', '00'], \
+        #          [0, 'a1', '41', '0f', '63', '00', '05', '56', 'a7', '81', '01', '10', '00', '00'], \
+        #          [0, 'a1', '41', '0f', '63', '00', '06', '56', 'a7', 'c5', '01', '10', '00', '00']]
 
+
+        mylist = [['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'], \
+                  [0, 'a1', '41', '08', '63', '00', '06'],
+                  [0, 'a1', '41', '0f', '63', '00', '01', '12', '34', '56', '00', '00', '00', '00'],\
+                  [0, 'a1', '41', '0f', '63', '00', '02', '54', '64', '56', '00', '00', '00', '00'],\
+                  [0, 'a1', '41', '0f', '63', '00', '03', '54', '64', '35', '00', '00', '00', '00'],\
+                  [0, 'a1', '41', '0f', '63', '00', '04', '45', '34', '12', '00', '00', '00', '00'],\
+                  [0, 'a1', '41', '0f', '63', '00', '05', '78', '78', '66', '00', '00', '00', '00'],\
+                  [0, 'a1', '41', '0f', '63', '00', '06', '45', '86', '58', '00', '00', '00', '00'],\
+                  ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'],\
+                  ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']]
 
         TyreIDL = [(1, u'C0002393617'), (2, u'ROO83651416'), (3, u'C0209592617'), (4, u'R0152813916'), (5, u'R0218360917'), (6, u'R0039252716')]
         TyreIDL = [(1,), (2,), (3,), (4,), (5,), (6,)]
@@ -752,14 +864,31 @@ def main():
             #status = update_Latest_data_by_VehId(conn, vehID, date_timeDB, mylist)
             #print "Connecton Close", status, conn
 
-            #report_data_master_id = update_Report_data_master_by_VehId(conn, vehID, date_timeDB)
+            update_Report_data_master_by_VehId(conn, vehID, date_timeDB)
 
-            #TyreIdList = select_TyreDetails_tyreId_by_VehId(conn, vehID)
+            #report_data_master_id1 = (24,)
+            #report_data_master_id2 = (24,)
+
+            #listb = ",".join([str(a) + ":" + str(b) for a, b in lista])
+            #listb = ",".join([str(a) for a in report_data_master_id])
+            #print listb
+
+            report_data_master_id = select_Report_data_master_report_data_master_id_by_VehId(conn, vehID)
+
+            #report_data_master_id2 = str(report_data_master_id2)
+
+            #report_data_master_id = str(report_data_master_id)
+
+            #print "report_data_master_id", report_data_master_id1, report_data_master_id2.split(',')
+            
+
+            TyreDetail = select_TyreDetails_tyreId_by_VehId(conn, vehID)
 
             #DBsensorVariable = select_TyreDetails_by_VehId(conn, vehID)
             
-            report_data_master_id = 30
-            TyreDetail = [(1, u'382858'), (2, u'3826CC'), (3, u'381CE9'), (4, u'3818F9'), (5, u'39A6F9'), (6, u'5A16D9')]
+            #report_data_master_id = 
+            #TyreDetail = [(1, u'382858'), (2, u'3826CC'), (3, u'381CE9'), (4, u'3818F9'), (5, u'39A6F9'), (6, u'5A16D9')]
+            
             DBtotalTyres = len(TyreDetail)
             
             TyreIDL = [(1,), (2,), (3,), (4,), (5,), (6,)]
@@ -795,6 +924,8 @@ def main():
 
             #update_Report_data_child_by_report_data_master_id(conn, 1, vehID, mylist, TyreIDL)
 
+
+            conn.close()
     except:
         e = sys.exc_info()[0]
         print ("Failed - db main function: ")

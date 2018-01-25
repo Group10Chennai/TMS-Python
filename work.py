@@ -71,7 +71,7 @@ BluetoothSocketVariable= []
 DBSensorVariable=[]
 
 
-database = "/opt/Aquire/sqlite/TPMS1.db"
+database = "/opt/Aquire/sqlite/TPMS.db"
 TID1 = "e2000016351702081640767f"
 #tag_id = "e2000016351702081640767f" #24
 #vehID = 32
@@ -1506,7 +1506,7 @@ def fun_main(RFIDTID):
                                         #RetValCompare = compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(bleConn, DBSensorVariable, None)
 
                                         if RetValCompare != None:
-                                            
+                                            print ("Success - Trying to connect Bluetooth vehName", vehName, vehID, "Success")
                                             return bleConn, vehName, vehID, "Success"
 
                                         else:
@@ -1625,7 +1625,7 @@ def display_Parameter_LED(mylist, vehName, vehID, date_time):
     #Current date and time
     #t = datetime.utcnow()
     #date_time = time.strftime('%H:%M:%S %d/%m/%Y')
-    date_timeDB = int(datetime.datetime.now().strftime("%s")) * 1000
+    #date_timeDB = int(datetime.datetime.now().strftime("%s")) * 1000
     print date_time
 
     try:
@@ -1657,13 +1657,17 @@ def display_Parameter_LED(mylist, vehName, vehID, date_time):
 
 def display_Parameter_API(mylist, vehName, vehID, date_time):        
 
+        DBTyreDetail = []
+        date_timeDB = int(datetime.datetime.now().strftime("%s")) * 1000
         #update to the live server            
         try:
 
             #update to the live server
             RetVal = apiupdate.prepareJsonString(int(vehID), mylist)
-            
 
+            print ("RetVal - RetVal is RetVal : ",RetVal)
+            
+            '''
             #Data not send to server then it has to Update to the Record data
             if RetVal == None:
 
@@ -1671,29 +1675,53 @@ def display_Parameter_API(mylist, vehName, vehID, date_time):
                 try:
                                     
                     dbConn = db.create_db_connection(database)
+                    print ("Success - dbConn is Created : ",dbConn)
                     #with dbConn: 
-                    if dbConn:
+                    with dbConn:
 
+                        print ("Success - dbConn is Created Inside : ", vehName, vehID, date_timeDB)
                         #Update the Report_data_master Table by VehId
-                        report_data_master_id = db.update_Report_data_master_by_VehId(conn, vehID, date_time)
-
+                        report_data_master_id = db.update_Report_data_master_by_VehId(dbConn, vehID, date_timeDB)
+                        print ("Success - report_data_master_id is Created : ", vehID,report_data_master_id)
+                        print ("Success - dbConn is Created : ",dbConn)
                         
                         #Query the TyreId and SensorUID by unsig VehID
-                        TyreIDList = db.select_TyreDetails_tyreId_by_VehId(conn, vehID)
+                        TyreDetail = db.select_TyreDetails_tyreId_by_VehId(dbConn, vehID)
+                        print ("Success - select_TyreDetails_tyreId_by_VehId is Created : ",TyreDetail)
+                        print ("Success - dbConn is Created : ",dbConn)
 
 
-                        #Compare the 
+                        DBtotalTyres = len(TyreDetail)
+            
+                        if TyreDetail is not None:
+                            for DBi in range(0, DBtotalTyres):
+                                    
+                                Tyre_row = TyreDetail[DBi]
 
+                                SID = Tyre_row[1]
+                                    
+                                T = Tyre_row[0]          
+                                        
+                                #print SID1, L1
+                                DBTyreDetail.append(T)
+                                DBTyreDetail.append(SID)
+      
+                            
+                            print DBTyreDetail
+
+                        print ("Success - dbConn is Created : ",dbConn)
 
                         #update the Report_data_master_child Table by report_data_master_id               
-                        db.update_Report_data_child_by_report_data_master_id(conn, report_data_master_id1, vehID, mylist, TyreIDList)
+                        ret = db.update_Report_data_child_by_report_data_master_id(dbConn, report_data_master_id, vehID, mylist, DBTyreDetail)
+                        #update_Report_data_child_by_report_data_master_id(conn, report_data_master_id, vehID, mylist, DBTyreDetail)
 
-                        dbConn.close()
+                        print ("Success - dbConn is Created : ",dbConn, ret)
+                        #dbConn.close()
 
-                    else:
-                        dbConn.close()
-                        my_logger.error("Failed - dbConn is None :%s ",dbConn)
-                        print ("Failed - dbConn is None : ",dbConn)
+                    #else:
+                        #dbConn.close()
+                        #my_logger.error("Failed - dbConn is None :%s ",dbConn)
+                        #print ("Failed - dbConn is None : ",dbConn)
 
                 except:
                     e = sys.exc_info()[0]
@@ -1705,6 +1733,70 @@ def display_Parameter_API(mylist, vehName, vehID, date_time):
             elif RetVal == "Success":
                 my_logger.error("Success - prepareJsonString : ")
                 print ("Success - prepareJsonStringis None : ")
+
+            '''
+
+            if RetVal == None:
+
+                database = "/opt/Aquire/sqlite/TPMS.db"
+                conn = db.create_db_connection(database)
+
+                                
+                with conn:
+                    
+                    print ("Success - dbConn is Created conn: ",conn)
+                    
+
+                    db.update_Report_data_master_by_VehId(conn, vehID, date_timeDB)
+
+                    
+                    print "report_data_master_id"
+                    report_data_master_id = db.select_Report_data_master_report_data_master_id_by_VehId(conn, vehID)
+                        
+                    
+
+                    print "report_data_master_id", report_data_master_id
+                    
+
+                    TyreDetail = db.select_TyreDetails_tyreId_by_VehId(conn, vehID)
+
+                    
+                    
+                    DBtotalTyres = len(TyreDetail)
+
+                    if TyreDetail is not None:
+                        for DBi in range(0, DBtotalTyres):
+                                
+                            Tyre_row = TyreDetail[DBi]
+
+                            SID = Tyre_row[1]
+                                
+                            T = Tyre_row[0]          
+                                    
+                            #print SID1, L1
+                            DBTyreDetail.append(T)
+                            DBTyreDetail.append(SID)
+              
+                                    
+                        print DBTyreDetail
+                                               
+                                       
+                    #print TyreIDL
+                    #for i in range (len(TyreIDL)):
+                        #print TyreIDL[i]
+
+                    #print "report_data_master_id", report_data_master_id
+                    DBStatus = db.update_Report_data_child_by_report_data_master_id(conn, report_data_master_id, vehID, mylist, DBTyreDetail)
+
+
+                    if DBStatus == "Success":
+
+                        time.sleep(0.10)
+                        conn.close()
+                    
+
+            else:
+                print ("Failed - dbConn is Error conn: ")
                  
         except:
             e = sys.exc_info()[0]

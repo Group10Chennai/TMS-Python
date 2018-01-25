@@ -35,6 +35,8 @@ def postLiveData(data):
         response = requests.post(url, data=data_json, headers=headers)
         pprint.pprint(response.json())
 
+        return "Success"
+
     except:
         e = sys.exc_info()[0]
         my_logger.error("Failed - postLiveData(data) None or Not Connected to URL: %s ",e)
@@ -286,9 +288,14 @@ def prepareJsonString(vehId, mylist):
                 }
 
         print data
-        postLiveData(data)
+        PostRet = postLiveData(data)
 
-        return "Success"
+        if PostRet == "Success":
+
+            return "Success"
+
+        else:
+            return None
 
     except:
         e = sys.exc_info()[0]

@@ -520,7 +520,7 @@ class Ui_Form(object):
 
                     AutoMode = False
                     
-                    print "CallMethod2 Check the Manual SCAN for one time "
+                    print "CallMethod2 Check the Manual SCAN for one time ", vehName, vehID, status, AutoMode
                     return myBleConn, vehName, vehID, status, AutoMode
                 else:
                     AutoMode = False
@@ -577,7 +577,7 @@ class Ui_Form(object):
 
                     
                     
-                    if status == "Success":
+                    if status == "Success" and mylistvar != None:
 
                         
                         Status, BLEStatus = self.display_mylistvar(mylistvar, vehName, vehID, status, RecordSend)
@@ -586,7 +586,7 @@ class Ui_Form(object):
                         if ((BLEStatus == False)):
                             RecordSend = BLEStatus
 
-                    elif status == "Failed":
+                    elif status == "Failed" and mylistvar == None:
 
                         RecordSend  = True
                         Status, BLEStatus = self.display_mylistvar(Previous_mylistvar, vehName, vehID, status, RecordSend)
