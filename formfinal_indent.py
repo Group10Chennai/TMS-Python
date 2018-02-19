@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'form - Copy - Copy.ui'
@@ -44,6 +45,7 @@ hdlr.setFormatter(formatter)
 my_logger.addHandler(hdlr) 
 my_logger.setLevel(logging.DEBUG)
 
+my_logger.disabled = True
 
 loopStatus = ""
 sec = 2
@@ -137,7 +139,7 @@ class Ui_Form(object):
         except:
             e = sys.exc_info()[0]
             my_logger.error("Error - displayColorSet: %s %s", e, pres_color)
-            print ("Error - displayColorSet:",e, pres_color)
+            #print ("Error - displayColorSet:",e, pres_color)
 
             return None
     
@@ -145,11 +147,12 @@ class Ui_Form(object):
     def displayTPData(self, vehName, mylist):
 
         try:
-            print "display method ", mylist
+            #print "display method "
+            #print "display method ", mylist
             #_translate = QtCore.QCoreApplication.translate
 
             for i in range (2, len(mylist)):
-                print i, mylist[i][6]
+                #print i, mylist[i][6]
                 #if (mylist[i][6] != 0) | (mylist[i][6] != 00):
 
                 #pressure = str(utlities.pressureToBarPsiConvertion(str(mylist[i][10] + mylist[i][11])))
@@ -169,11 +172,11 @@ class Ui_Form(object):
 
                     pres_color, dispPsi = display.displayPresValidation(pres)
                     pres_color1 = self.displayColorSet(pres_color)
-                    print "01 - Pressure", pres_color, dispPsi, pres_color1
+                    #print "01 - Pressure", pres_color, dispPsi, pres_color1
                     
                     temp_color, disptemp = display.displayTempValidation(temp)    
                     temp_color1 = self.displayColorSet(temp_color)
-                    print "01 - Temp", temp_color, disptemp, temp_color1
+                    #print "01 - Temp", temp_color, disptemp, temp_color1
                     
                     #position = "FL"
                     self.lineEdit_Value_Press_FL.setText((dispPsi))
@@ -189,11 +192,11 @@ class Ui_Form(object):
 
                     pres_color, dispPsi = display.displayPresValidation(pres)                
                     pres_color1 = self.displayColorSet(pres_color)
-                    print "02 - Pressure", pres_color, dispPsi, pres_color1
+                    #print "02 - Pressure", pres_color, dispPsi, pres_color1
                     
                     temp_color, disptemp = display.displayTempValidation(temp)    
                     temp_color1 = self.displayColorSet(temp_color)
-                    print "02 - Temp", temp_color, disptemp, temp_color1
+                    ##print "02 - Temp", temp_color, disptemp, temp_color1
                     
                     #position = "FR"
                     self.lineEdit_Value_Press_FR.setText((dispPsi))
@@ -209,11 +212,11 @@ class Ui_Form(object):
 
                     pres_color, dispPsi = display.displayPresValidation(pres)
                     pres_color1 = self.displayColorSet(pres_color)
-                    print "03 - Pressure", pres_color, dispPsi, pres_color1                
+                    #print "03 - Pressure", pres_color, dispPsi, pres_color1                
                     
                     temp_color, disptemp = display.displayTempValidation(temp)    
                     temp_color1 = self.displayColorSet(temp_color)
-                    print "03 - Temp", temp_color, disptemp, temp_color1
+                    #print "03 - Temp", temp_color, disptemp, temp_color1
                     
                     #position = "RLO"
                     self.lineEdit_Value_Press_RLO.setText((dispPsi))
@@ -229,11 +232,11 @@ class Ui_Form(object):
 
                     pres_color, dispPsi = display.displayPresValidation(pres)
                     pres_color1 = self.displayColorSet(pres_color)
-                    print "04 - Pressure", pres_color, dispPsi, pres_color1
+                    #print "04 - Pressure", pres_color, dispPsi, pres_color1
                     
                     temp_color, disptemp = display.displayTempValidation(temp)    
                     temp_color1 = self.displayColorSet(temp_color)
-                    print "04 - Temp", temp_color, disptemp, temp_color1
+                    #print "04 - Temp", temp_color, disptemp, temp_color1
                     
                     #position = "RLI"
                     self.lineEdit_Value_Press_RLI.setText((dispPsi))
@@ -249,11 +252,11 @@ class Ui_Form(object):
 
                     pres_color, dispPsi = display.displayPresValidation(pres)
                     pres_color1 = self.displayColorSet(pres_color)
-                    print "05 - Pressure", pres_color, dispPsi, pres_color1
+                    #print "05 - Pressure", pres_color, dispPsi, pres_color1
                     
                     temp_color, disptemp = display.displayTempValidation(temp)    
                     temp_color1 = self.displayColorSet(temp_color)
-                    print "05 - Temp", temp_color, disptemp, temp_color1
+                    #print "05 - Temp", temp_color, disptemp, temp_color1
                     
                     #position = "RRI"
                     self.lineEdit_Value_Press_RRI.setText((dispPsi))
@@ -270,11 +273,11 @@ class Ui_Form(object):
 
                     pres_color, dispPsi = display.displayPresValidation(pres)
                     pres_color1 = self.displayColorSet(pres_color)
-                    print "06 - Pressure", pres_color, dispPsi, pres_color1
+                    #print "06 - Pressure", pres_color, dispPsi, pres_color1
                     
                     temp_color, disptemp = display.displayTempValidation(temp)    
                     temp_color1 = self.displayColorSet(temp_color)
-                    print "06 - Temp", temp_color, disptemp, temp_color1
+                    ##print "06 - Temp", temp_color, disptemp, temp_color1
                     
                     #position = "RRO"
                     self.lineEdit_Value_Press_RRO.setText((dispPsi))
@@ -285,13 +288,13 @@ class Ui_Form(object):
        
                     
 
-            print "end of display method"
+            #print "end of display method"
             self.lineEdit_Value_BusNumber.setText(vehName)
 
         except:
             e = sys.exc_info()[0]
             my_logger.error("Failed - displayTPData %s ",e)
-            print ("Failed - displayTPData ",e)
+            #print ("Failed - displayTPData ",e)
             
             
             
@@ -371,14 +374,14 @@ class Ui_Form(object):
         try:
             statusAuto = self.radioButton.isChecked()
             statusMan  = self.radioButton_2.isChecked()
-            print "optionID,  self.radiobutton.isChecked()",optionID,  statusAuto, statusMan
+            #print "optionID,  self.radiobutton.isChecked()",optionID,  statusAuto, statusMan
 
             #self.radioButton.setChecked(True)
 
             QtCore.QCoreApplication.processEvents()
                 
             if (optionID == "Automatic") and (statusAuto == True):
-                print "Automatic Mode Enabled"
+                #print "Automatic Mode Enabled"
 
                 self.endProcess()
 
@@ -408,7 +411,7 @@ class Ui_Form(object):
                 loopStatus = True
                 RFID_UID = ""
                 #self.callMethod2()
-                print "Option Click Loopstatus",loopStatus 
+                #print "Option Click Loopstatus",loopStatus 
                 optionReturn = self.loopFun(loopStatus, RFID_UID)
                 QtCore.QCoreApplication.processEvents()
                 
@@ -441,7 +444,7 @@ class Ui_Form(object):
                 
                 loopStatus = False
                 loop = False
-                print "Option Click Loopstatus",loopStatus
+                #print "Option Click Loopstatus",loopStatus
 
                 #optionReturn = self.loopFun(loopStatus, RFID_UID)
 
@@ -457,9 +460,9 @@ class Ui_Form(object):
     def loopFun(self, loopStatus, loopRFIDUID):
         #global loopStatus
         try:
-            print "loopstatus: ", loopStatus 
+            #print "loopstatus: ", loopStatus 
             while (loopStatus != False):
-                print ("looping ")
+                #print ("looping ")
                 
                 myBleConn, vehName, vehID, status, AutoMode = self.callMethod2(loopRFIDUID)
                 QtCore.QCoreApplication.processEvents()
@@ -493,7 +496,7 @@ class Ui_Form(object):
         except:
             e = sys.exc_info()[0]
             my_logger.error("Failed - loopFun %s ",e)
-            print ("Failed - loopFun ",e)
+            #print ("Failed - loopFun ",e)
         
 
     def callMethod2(self, RFID_UID):
@@ -502,14 +505,14 @@ class Ui_Form(object):
             #global RFID_UID
             #Call method 2 in work.py
             #Returns mylist
-            print "method 2 RFID_UID ", RFID_UID
+            #print "method 2 RFID_UID ", RFID_UID
             QtCore.QCoreApplication.processEvents()
 
 
             #Manual Condition
             if (RFID_UID != None) and (RFID_UID != ""):
                 
-                print "CallMethod2 (RFID_UID != None) or (RFID_UID != ):", RFID_UID
+                #print "CallMethod2 (RFID_UID != None) or (RFID_UID != ):", RFID_UID
                 myBleConn, vehName, vehID, status = work.fun_main(RFID_UID)
                 #print "CallMethod2 (RFID_UID != None) or (RFID_UID != ): myBleConn", myBleConn
 
@@ -531,7 +534,7 @@ class Ui_Form(object):
             #Automatic Condition
             elif (RFID_UID == None) or (RFID_UID == ""):
                 
-                print "CallMethod2 Else", RFID_UID
+                #print "CallMethod2 Else", RFID_UID
                 
                 
                 myBleConn, vehName, vehID, status = work.fun_main(RFID_UID)
@@ -549,7 +552,7 @@ class Ui_Form(object):
         except:
             e = sys.exc_info()[0]
             my_logger.error("Failed - callMethod2 %s ",e)
-            print ("Failed - callMethod2 ",e)
+            #print ("Failed - callMethod2 ",e)
         
             
 
@@ -562,18 +565,18 @@ class Ui_Form(object):
 
                 #for identifying the 1st Record to server API
                 RecordSend = True
-                
+
                 while loop == True:
 
                     #print "callMethod3_BluetoothFunction", myBleConn, vehName, vehID, loop, status
 
                     #mylist, vehName, BLEStatus = fun_main_Bluetooth(bleConn)
-                    QtCore.QCoreApplication.processEvents()
-                    self.endProcess()
+                    #QtCore.QCoreApplication.processEvents()
+                    #self.endProcess()
 
 
                     mylistvar, vehName, status = work.fun_main_Bluetooth(myBleConn, vehName, vehID, loop, status)
-                    print "callMethod3_BluetoothFunction while", mylistvar, vehName, status
+                    #print "callMethod3_BluetoothFunction while", mylistvar, vehName, status
 
                     
                     
@@ -603,6 +606,12 @@ class Ui_Form(object):
 
                     
                     if (status == "Failed") or (statusMan == True):
+                        #vehName="----"
+                        #vehID=""
+                        #curdate_time=""
+                        #mylistvar=""
+                        #work.display_Parameter_LED(mylistvar, vehName, vehID, curdate_time)
+                        display.displayLEDBoard_Null()
                         loop = False
                         #myBleConn.close()
 
@@ -617,17 +626,17 @@ class Ui_Form(object):
                 
                 while loop == True:
 
-                    print "callMethod3_BluetoothFunction Failed Status", myBleConn, vehName, vehID, loop, status
+                    #print "callMethod3_BluetoothFunction Failed Status", myBleConn, vehName, vehID, loop, status
 
-                    #print "callMethod3_BluetoothFunction", myBleConn, vehName, vehID, loop, status
+                        #print "callMethod3_BluetoothFunction", myBleConn, vehName, vehID, loop, status
 
-                    #mylist, vehName, BLEStatus = fun_main_Bluetooth(bleConn)
+                        #mylist, vehName, BLEStatus = fun_main_Bluetooth(bleConn)
                     QtCore.QCoreApplication.processEvents()
                     self.endProcess()
 
 
                     mylistvar, vehName, status = work.fun_main_Bluetooth(myBleConn, vehName, vehID, loop, status)
-                    print "callMethod3_BluetoothFunction while", mylistvar, vehName, status
+                    #print "callMethod3_BluetoothFunction while", mylistvar, vehName, status
 
                     
                     
@@ -657,6 +666,7 @@ class Ui_Form(object):
 
                     
                     if (status == "Failed") or (statusAuto == True):
+                        display.displayLEDBoard_Null()
                         loop = False
                         #myBleConn.close()
 
@@ -675,7 +685,7 @@ class Ui_Form(object):
         except:
             e = sys.exc_info()[0]
             my_logger.error("Failed - callMethod3_BluetoothFunction %s ",e)
-            print ("Failed - callMethod3_BluetoothFunction ",e)
+            #print ("Failed - callMethod3_BluetoothFunction ",e)
 
 
     def display_mylistvar(self, mylistvar, vehName, vehID, status, RecordSend):    
@@ -693,7 +703,7 @@ class Ui_Form(object):
 
             
             if(status == "Success"):
-                print "Call method 2 ", mylistvar
+                #print "Call method 2 ", mylistvar
                 #mylistVar from work.py
 
                 
@@ -747,7 +757,7 @@ class Ui_Form(object):
 
             
     def showdialog(message):
-        print ("dialog ", message)
+        #print ("dialog ", message)
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
 
@@ -764,17 +774,17 @@ class Ui_Form(object):
            #Call method 1 in work.py to verify the vehicle exists or not
            # If exists return rfuid
            # If not exists display a message
-           print "Call method 1:  " + self.lineEdit_bus_No.displayText()
+           #print "Call method 1:  " + self.lineEdit_bus_No.displayText()
         
            if(len(self.lineEdit_bus_No.displayText()) > 0):
 
-               print "Call method 1: " + self.lineEdit_bus_No.displayText()
+               #print "Call method 1: " + self.lineEdit_bus_No.displayText()
             
             
                #RFID = work.fun_vehName(self.lineEdit_bus_No.displayText())
                RFID = work.fun_VehName(self.lineEdit_bus_No.displayText())
 
-               print RFID
+               #print RFID
                return RFID
         
                 # For testing
@@ -785,7 +795,7 @@ class Ui_Form(object):
        except:
            e = sys.exc_info()[0]
            my_logger.error("Failed - callMethod1 %s ",e)
-           print ("Failed - callMethod1 ",e)	
+           #print ("Failed - callMethod1 ",e)	
 
     def endProcess(self):
         try:
@@ -808,7 +818,7 @@ class Ui_Form(object):
             self.lineEdit_Value_Press_RRO.setText("")
             self.lineEdit_Value_Temp_RRO.setText("")
 
-            print ("Cleared all the text boxes")
+            #print ("Cleared all the text boxes")
 
         except:
             e = sys.exc_info()[0]
@@ -939,7 +949,7 @@ class Ui_Form(object):
         except:
             e = sys.exc_info()[0]
             my_logger.error("Failed - btnClick %s ",e)
-            print ("Failed - btnClick ",e)	
+            #print ("Failed - btnClick ",e)	
     
 
 
@@ -1687,6 +1697,7 @@ if __name__ == "__main__":
     statusOption = "Automatic"
     ui.radioButton.setChecked(True)
 
+    print "TPMS Application Starting"
     while True:
               
         ui.optionClick(statusOption)

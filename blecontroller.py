@@ -27,6 +27,8 @@ hdlr.setFormatter(formatter)
 my_logger.addHandler(hdlr) 
 my_logger.setLevel(logging.DEBUG)
 
+my_logger.disabled = True
+
 Tyredata = []
 T = []
 tyreDetail = []
@@ -53,7 +55,7 @@ def TpmsTireDataPosition():
                 #Append checksum to the Query List
                 TPMSQueryAllTyre = TpmsModuleQueryID + TpmsCksm
                 TPMSQueryAllTyre = TPMSQueryAllTyre.strip()
-                print TPMSQueryAllTyre
+                #print TPMSQueryAllTyre
             else:
                 my_logger.warning("Failed - Bluetooth Query checksum not Avalable: ",TpmsCksm)
                 print("Failed - Bluetooth Query checksum not Avalable: ",TpmsCksm)
@@ -69,13 +71,13 @@ def TpmsTireDataPosition():
 
         else:
             my_logger.warning("Failed - Bluetooth Query Command Value not Avalable: %s",TpmsModuleQuery)
-            print("Failed - Bluetooth Query Command Value not Avalable: ",TpmsModuleQuery)
+            #print("Failed - Bluetooth Query Command Value not Avalable: ",TpmsModuleQuery)
             return None
 
     except:
         e = sys.exc_info()[0]
         my_logger.error("Failed - Bluetooth Query Command Value Error: %s, %s ",e, TpmsModuleQuery)
-        print ("Failed - Bluetooth Query Command Value Error:",e, TpmsModuleQuery)
+        ##print ("Failed - Bluetooth Query Command Value Error:",e, TpmsModuleQuery)
 
         return None
 
@@ -120,7 +122,7 @@ def Tpms_Tire_SET_Position1(L1, SID1):
             
             my_hex_TPMS = TPMSQueryAddTyre.decode('hex')
             #print my_hex_TPMS       
-            print binascii.b2a_hex(my_hex_TPMS)
+            ##print binascii.b2a_hex(my_hex_TPMS)
 
             return my_hex_TPMS
         
@@ -166,7 +168,7 @@ def Tpms_SET_TireID(conn, TPMSET):
 
                         hex_data = binascii.b2a_hex(data)
                         RcvResponse =  hex_data[10:12]
-                        print hex_data, RcvResponse
+                        #print hex_data, RcvResponse
                         
                         if (RcvResponse == "aa"):
                             #print binascii.b2a_hex(data)
@@ -180,19 +182,19 @@ def Tpms_SET_TireID(conn, TPMSET):
                        
                         
                     except bluetooth.btcommon.BluetoothError as e:
-                        print ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError",e)
+                        #print ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError",e)
                         my_logger.error ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError %s",e)  
                         #conn.close()
                         time.sleep(2)
                         return None, "Falied"
                         pass
             else:
-                print ("Failed - Bluetooth Send and Receive Communication Query Command is None:",TPMSET)
+                #print ("Failed - Bluetooth Send and Receive Communication Query Command is None:",TPMSET)
                 my_logger.warning("Failed - Bluetooth Send and Receive Communication Query Command is None: %s",TPMSET)
                 #conn.close()
                 return None, "Falied"
         else:
-            print ("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None:",TPMSET)
+            #print ("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None:",TPMSET)
             my_logger.warning("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None: %s",TPMSET)
             #conn.close()
             return None, "Falied"
@@ -247,7 +249,7 @@ def TpmsCalcChecksum(TpmsModuleQuery1):
     try:
         count = len(TpmsModuleQuery1)
         #print TpmsModuleQuery1
-        
+#        
         i = 0
         cksm = 0
         if(TpmsModuleQuery1 != None):
@@ -273,7 +275,7 @@ def TpmsCalcChecksum(TpmsModuleQuery1):
             return low
         else:
             my_logger.warning("Failed - Bluetooth Query Command for Checksum is Not Available: %s", TpmsModuleQuery1)
-            print ("Failed - Bluetooth Query Command for Checksum is Not Available: ", TpmsModuleQuery1)
+            #print ("Failed - Bluetooth Query Command for Checksum is Not Available: ", TpmsModuleQuery1)
             return None
     
     except:
@@ -285,7 +287,7 @@ def TpmsCalcChecksum(TpmsModuleQuery1):
 
 def connect_ble(BUID1):
     
-    print "performing inquiry..."
+    #print "performing inquiry..."
     #serverMACAddress = '00:13:EF:C0:02:1E'
     port = 1
     
@@ -304,7 +306,7 @@ def connect_ble(BUID1):
             while(True):        
                 print BUID1
                 try:
-                    print "performing Bluetooth Socket Creation..."
+                    #print "performing Bluetooth Socket Creation..."
                     bleCon = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
                     #return bleCon
                     break;
@@ -317,15 +319,15 @@ def connect_ble(BUID1):
                     return None
                     pass 
 
-            print "trying to connect to %s on 0x%X" % (BUID1, port)
+            ##print "trying to connect to %s on 0x%X" % (BUID1, port)
 
             if(bleCon is not None):
                 while(True):
                     try:
                         bleCon.connect((BUID1, port))
                             
-                        print "connected to %s on 0x%X" % (BUID1, port)
-                        print "performing Bluetooth Communication..."
+                        #print "connected to %s on 0x%X" % (BUID1, port)
+                        #print "performing Bluetooth Communication..."
                         return bleCon
                         break;
 
@@ -349,7 +351,7 @@ def connect_ble(BUID1):
                 #return None
             else:
                 my_logger.warning("Failed - Bluetooth Connection Socket is Not Avalable: %s", BUID1)
-                print ("Failed - Bluetooth Connection Socket is Not Avalable: %s", BUID1)
+                #print ("Failed - Bluetooth Connection Socket is Not Avalable: %s", BUID1)
                 return None
                 
         else:
@@ -375,13 +377,13 @@ def Query_TpmsTireDataPosition(s, TPMSID1):
 
     try:
         #TPMSID1 = TpmsTireDataPosition()
-        print binascii.b2a_hex(TPMSID1)
+        #print binascii.b2a_hex(TPMSID1)
         
-        #print "performing Bluetooth Communication..."
-        #s.send(TPMSID1)
+            #print "performing Bluetooth Communication..."
+            #s.send(TPMSID1)
         data = ""
-        #while True:
-        #s.send(my_hex)
+            #while True:
+                #s.send(my_hex)
         if(s != None):
             if(TPMSID1 != None):
             
@@ -398,14 +400,14 @@ def Query_TpmsTireDataPosition(s, TPMSID1):
                         break;
                         
                     except bluetooth.btcommon.BluetoothError as e:
-                        print ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError",e)
+                        #print ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError",e)
                         my_logger.error ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError : %s",e)  
                         s.close()
                         time.sleep(2)
                         return None, "Failed"
                         #pass
             else:
-                print ("Failed - Bluetooth Send and Receive Communication Query Command is None:",TPMSID1)
+                #print ("Failed - Bluetooth Send and Receive Communication Query Command is None:",TPMSID1)
                 my_logger.warning("Failed - Bluetooth Send and Receive Communication Query Command is None: %s",TPMSID1)
                 s.close()
                 return None, "Failed"
@@ -474,62 +476,68 @@ def ParseBluetoothTyre(data):
             hexstr1 = [hexstr[i:i+2] for i in range(0,len(hexstr), 2)]
             #print "len", len(hexstr1), "Hexstr1",hexstr1
 
+            i=0
+            if ((hexstr1[i]  == 'aa') and (hexstr1[i+1]  == 'a1') and (hexstr1[i+2]  == '41') and (hexstr1[i+3]  == '08') and (len(hexstr1) <= 98)):
             
-            for i in range(len(hexstr1)):
-                
-                if(hexstr1[i]  == 'aa') and (hexstr1[i+1]  == 'a1') and (hexstr1[i+2]  == '41'):
-                    TPMS_Data = [0]
-                    TPMSIdx = TPMSIdx + 1
-                    #print "TPMSIdx", TPMSIdx
-                    TPMSIdxx = 0
-                    TPMSIdxxx = 0
-                    TPMS_MAXBUFLEN = 0
-                    ReadTPMS = 1
-                    ReadTPMS1 = 0
+                for i in range(len(hexstr1)):
+                #for i in range(98):
                     
-                elif(ReadTPMS == 1):
-                    
-                    TPMS_Data.append(hexstr1[i])
-                    #TPMS_Data [TPMSIdxx] = hexstr1[i]
-                    #TPMS_Data=[list(x) for x in hexstr1[i]]
-                    TPMSIdxx = TPMSIdxx + 1
-                    #print str(TPMSIdxx)
-                    #print "ReadTPMS", ReadTPMS
-                    
-
-                    if TPMSIdxx == 3:
-                        #print "TPMSIdxx", TPMSIdxx
-                        TPMS_MAXBUFLEN = (hexstr1[i])
-                        TPMS_Total_Tyres = (hexstr1[i])
-                        #print "TPMS_MAXBUFLEN", TPMS_MAXBUFLEN
-                        
-                        if TPMS_MAXBUFLEN =='0f':
-                            
-                            TPMS_MAXBUFLEN = 15
-                            print "TPMS_MAXBUFLEN", TPMS_MAXBUFLEN
-                            
-                    elif(TPMSIdxx >4):
-                        
-                        if (TPMSIdxx >= int(TPMS_MAXBUFLEN)-2 ):
-                            
-                            ReadTPMS = 0
-
-                            import copy
-                            TPMS_Data1 = copy.copy(TPMS_Data)
-                            #TPMS_Data1 = TPMS_Data
-                            #print TPMS_Data
-                            #print TPMS_Data1
-
-                    if  ReadTPMS == 0:
-                        #print "ReadTPMS, TPMSIdx",ReadTPMS, TPMSIdx
+                    if(hexstr1[i]  == 'aa') and (hexstr1[i+1]  == 'a1') and (hexstr1[i+2]  == '41'):
+                        TPMS_Data = [0]
+                        TPMSIdx = TPMSIdx + 1
+                        #print "TPMSIdx", TPMSIdx
                         TPMSIdxx = 0
+                        TPMSIdxxx = 0
+                        TPMS_MAXBUFLEN = 0
+                        ReadTPMS = 1
+                        ReadTPMS1 = 0
+                        
+                    elif(ReadTPMS == 1):
+                        
+                        TPMS_Data.append(hexstr1[i])
+                        #TPMS_Data [TPMSIdxx] = hexstr1[i]
+                        #TPMS_Data=[list(x) for x in hexstr1[i]]
+                        TPMSIdxx = TPMSIdxx + 1
+                        #print str(TPMSIdxx)
+                        #print "ReadTPMS", ReadTPMS
+                        
 
-                        for j in range(16):
-                            mylist[TPMSIdx] =  TPMS_Data1
-                
-            print "mylist",  mylist
-            return mylist
-        
+                        if TPMSIdxx == 3:
+                            #print "TPMSIdxx", TPMSIdxx
+                            TPMS_MAXBUFLEN = (hexstr1[i])
+                            TPMS_Total_Tyres = (hexstr1[i])
+                            #print "TPMS_MAXBUFLEN", TPMS_MAXBUFLEN
+                            
+                            if TPMS_MAXBUFLEN =='0f':
+                                
+                                TPMS_MAXBUFLEN = 15
+                                #print "TPMS_MAXBUFLEN", TPMS_MAXBUFLEN
+                                
+                        elif(TPMSIdxx >4):
+                            
+                            if (TPMSIdxx >= int(TPMS_MAXBUFLEN)-2 ):
+                                
+                                ReadTPMS = 0
+
+                                import copy
+                                TPMS_Data1 = copy.copy(TPMS_Data)
+                                #TPMS_Data1 = TPMS_Data
+                                #print TPMS_Data
+                                #print TPMS_Data1
+
+                        if  ReadTPMS == 0:
+                            #print "ReadTPMS, TPMSIdx",ReadTPMS, TPMSIdx
+                            TPMSIdxx = 0
+
+                            for j in range(16):
+                                mylist[TPMSIdx] =  TPMS_Data1
+                    
+                #print "mylist",  mylist
+                return mylist
+            else :
+                #print ("Failed - Data not in format")
+                return None
+            
         else:
             print ("Failed - Bluetooth ParseBluetoothTyre data None:")
             my_logger.warning("Failed - Bluetooth ParseBluetoothTyre data None:")

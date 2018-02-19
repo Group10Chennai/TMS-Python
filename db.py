@@ -55,6 +55,7 @@ hdlr.setFormatter(formatter)
 my_logger.addHandler(hdlr) 
 my_logger.setLevel(logging.DEBUG)
 
+my_logger.disabled = True
 
 #def create database connection
 def create_db_connection(db_file):
@@ -141,14 +142,14 @@ def select_DeviceDetails_by_vehNumber(conn, vehNo1):
                 return vehDetails
             else:
                 print ("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: ",rfiduid1)
-                my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: %s",(rfiduid1))
+                my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: %s",rfiduid1)
                 
                 return None
     
         
         else:
             print ("FFailed - Accessing to DB table DeviceDetails by RFID UID - None: ",rfiduid1)
-            my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - None: %s",(rfiduid1))
+            my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - None: %s",rfiduid1)
                     
             return None
         

@@ -224,6 +224,7 @@ class Bluetoothctl:
         """Try to disconnect to a device by mac address."""
         try:
             out = self.get_output("disconnect " + mac_address, 2)
+            print "mac disconnected*******"
         except BluetoothctlError, e:
             print(e)
             return None

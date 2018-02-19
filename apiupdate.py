@@ -23,24 +23,29 @@ hdlr.setFormatter(formatter)
 my_logger.addHandler(hdlr) 
 my_logger.setLevel(logging.DEBUG)
 
+my_logger.disabled = True
+
 def postLiveData(data):
 
     try:
-    
+        
         #url = 'http://172.16.0.151:8080/TMS/api/tms/saveTPMSLatestData'
-        url = 'https://qas.placer.in/TMS/api/tms/saveTPMSLatestData'
+        #url = 'https://qas.placer.in/TMS/api/tms/saveTPMSLatestData'
+        url = 'https://tpms-api.placer.in/TMS/api/tms/saveTPMSLatestData'
 
         data_json = json.dumps(data)
         headers = {'Content-type': 'application/json'}
         response = requests.post(url, data=data_json, headers=headers)
         pprint.pprint(response.json())
-
+        
+        #print data_json
         return "Success"
 
     except:
-        e = sys.exc_info()[0]
-        my_logger.error("Failed - postLiveData(data) None or Not Connected to URL: %s ",e)
-        print ("Failed - postLiveData(data) None or Not Connected to URL: ",e)
+        errObj = traceback.format_exc()
+        #e = sys.exc_info()[0]
+        my_logger.error("Failed - postLiveData(data) None or Not Connected to URL: %s ",errObj)
+        print ("Failed - postLiveData(data) None or Not Connected to URL: ",errObj)
 
         return None
 
@@ -102,7 +107,8 @@ def prepareJsonString(vehId, mylist):
     disptemp = ""
 
     current_milli_time = lambda: int(round(time.time() * 1000))
-
+    
+    #print mylist
     try:
         
         for i in range (2, len(mylist)):
@@ -113,90 +119,91 @@ def prepareJsonString(vehId, mylist):
             if mylist[i][6] == '01':
                 position = "FL"
 
-                sensorUID = mylist[i][7] + mylist[i][8] + mylist[i][9]
-                pressure = mylist[i][10] + mylist[i][11]
-                temp = mylist[i][12]
-                status = mylist[i][13]
+                sensorUID = (mylist[i][7] + mylist[i][8] + mylist[i][9])
+                pressure = (mylist[i][10] + mylist[i][11])
+                temp = (mylist[i][12])
+                status = (mylist[i][13])
                 
                 pres_color, dispPsi = display.displayPresValidation(pressure)
 
                 temp_color, disptemp = display.displayTempValidation(temp)
-
+                
                 if dispPsi == "---":
-                    dispPsi = pressure
+                    dispPsi = str(pressure)
                 if disptemp == "---":
-                    disptemp = temp
-
+                    disptemp = str(temp)
+                
                 #print "URL Update", sensorUID, dispPsi, temp, status
 
                 # We need tyreId also
                 # If possible get the tyreId from DB By querying sensorId
                 #Otherwise I'll do it from Backend
 
-                tyres.append(prepareTyre(position, sensorUID, pressure, temp, status))
+                tyres.append(prepareTyre(position, sensorUID, dispPsi, disptemp, status))
                 
             if mylist[i][6] == '02':
                 
                 position = "FR"
 
-                sensorUID = mylist[i][7] + mylist[i][8] + mylist[i][9]
-                pressure = mylist[i][10] + mylist[i][11]
-                temp = mylist[i][12]
-                status = mylist[i][13]
+                sensorUID = (mylist[i][7] + mylist[i][8] + mylist[i][9])
+                pressure = (mylist[i][10] + mylist[i][11])
+                temp = (mylist[i][12])
+                status = (mylist[i][13])
                 
                 pres_color, dispPsi = display.displayPresValidation(pressure)
 
                 temp_color, disptemp = display.displayTempValidation(temp)
-
+                
                 if dispPsi == "---":
-                    dispPsi = pressure
+                    dispPsi = str(pressure)
                 if disptemp == "---":
-                    disptemp = temp
-
+                    disptemp = str(temp)
+                
                 #print "URL Update", sensorUID, dispPsi, temp, status
 
                 # We need tyreId also
                 # If possible get the tyreId from DB By querying sensorId
                 #Otherwise I'll do it from Backend
 
-                tyres.append(prepareTyre(position, sensorUID, pressure, temp, status))
+                tyres.append(prepareTyre(position, sensorUID, dispPsi, disptemp, status))
+                
             if mylist[i][6] == '03':
                 position = "RLO"
 
-                sensorUID = mylist[i][7] + mylist[i][8] + mylist[i][9]
-                pressure = mylist[i][10] + mylist[i][11]
-                temp = mylist[i][12]
-                status = mylist[i][13]
+                sensorUID = (mylist[i][7] + mylist[i][8] + mylist[i][9])
+                pressure = (mylist[i][10] + mylist[i][11])
+                temp = (mylist[i][12])
+                status = (mylist[i][13])
                 
                 pres_color, dispPsi = display.displayPresValidation(pressure)
 
                 temp_color, disptemp = display.displayTempValidation(temp)
-
+                
                 if dispPsi == "---":
                     dispPsi = pressure
                 if disptemp == "---":
                     disptemp = temp
-
+                
                 #print "URL Update", sensorUID, dispPsi, temp, status
 
                 # We need tyreId also
                 # If possible get the tyreId from DB By querying sensorId
                 #Otherwise I'll do it from Backend
 
-                tyres.append(prepareTyre(position, sensorUID, pressure, temp, status))
+                tyres.append(prepareTyre(position, sensorUID, dispPsi, disptemp, status))
                 
             if mylist[i][6] == '04':
                 position = "RLI"
 
-                sensorUID = mylist[i][7] + mylist[i][8] + mylist[i][9]
-                pressure = mylist[i][10] + mylist[i][11]
-                temp = mylist[i][12]
-                status = mylist[i][13]
+                sensorUID = (mylist[i][7] + mylist[i][8] + mylist[i][9])
+                pressure = (mylist[i][10] + mylist[i][11])
+                temp = (mylist[i][12])
+                status = (mylist[i][13])
                 
                 pres_color, dispPsi = display.displayPresValidation(pressure)
 
                 temp_color, disptemp = display.displayTempValidation(temp)
-
+                
                 if dispPsi == "---":
                     dispPsi = pressure
                 if disptemp == "---":
@@ -208,21 +215,21 @@ def prepareJsonString(vehId, mylist):
                 # If possible get the tyreId from DB By querying sensorId
                 #Otherwise I'll do it from Backend
 
-                tyres.append(prepareTyre(position, sensorUID, pressure, temp, status))
+                tyres.append(prepareTyre(position, sensorUID, dispPsi, disptemp, status))
 
                 
             if mylist[i][6] == '05':
                 position = "RRI"
 
-                sensorUID = mylist[i][7] + mylist[i][8] + mylist[i][9]
-                pressure = mylist[i][10] + mylist[i][11]
-                temp = mylist[i][12]
-                status = mylist[i][13]
+                sensorUID = (mylist[i][7] + mylist[i][8] + mylist[i][9])
+                pressure = (mylist[i][10] + mylist[i][11])
+                temp = (mylist[i][12])
+                status = (mylist[i][13])
                 
                 pres_color, dispPsi = display.displayPresValidation(pressure)
 
                 temp_color, disptemp = display.displayTempValidation(temp)
-
+                
                 if dispPsi == "---":
                     dispPsi = pressure
                 if disptemp == "---":
@@ -240,10 +247,10 @@ def prepareJsonString(vehId, mylist):
             if mylist[i][6] == '06':
                 position = "RRO"
 
-                sensorUID = mylist[i][7] + mylist[i][8] + mylist[i][9]
-                pressure = mylist[i][10] + mylist[i][11]
-                temp = mylist[i][12]
-                status = mylist[i][13]
+                sensorUID = (mylist[i][7] + mylist[i][8] + mylist[i][9])
+                pressure = (mylist[i][10] + mylist[i][11])
+                temp = (mylist[i][12])
+                status = (mylist[i][13])
                 
                 pres_color, dispPsi = display.displayPresValidation(pressure)
 
@@ -287,7 +294,7 @@ def prepareJsonString(vehId, mylist):
                 "vehId": vehId
                 }
 
-        print data
+        #print data
         PostRet = postLiveData(data)
 
         if PostRet == "Success":
@@ -308,18 +315,19 @@ def prepareTyre(position, sensorUID, pressure, temp, status):
     
     return {"sensorUID": sensorUID, "position": position, "pressure": pressure, "temp": temp, "status": status }
 
-'''
+
 #main function
-mylistVar = [ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], \
-              [0, 'a1', '41', '08', '63', '00', '05'], \
-              [0, 'a1', '41', '0f', '63', '00', '01', 'ba', '6b', '09', '01', '50', '78', '00'], \
-              [0, 'a1', '41', '0f', '63', '00', '02', 'ba', '6d', '6d', '01', '25', '58', '00'], \
-              [0, 'a1', '41', '0f', '63', '00', '03', '56', 'a8', 'cb', '01', '30', '70', '00'], \
-              [0, 'a1', '41', '0f', '63', '00', '04', '56', 'a6', 'be', '01', '45', '65', '00'], \
-              [0, 'a1', '41', '0f', '63', '00', '05', '56', 'a7', '81', '00', '00', '00', '00'], \
-              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+if __name__ == "__main__":
+    mylistVar = [ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], \
+                  [0, 'a1', '41', '08', '63', '00', '05'], \
+                  [0, 'a1', '41', '0f', '63', '00', '01', 'ba', '6b', '09', '01', '50', '78', '00'], \
+                  [0, 'a1', '41', '0f', '63', '00', '02', 'ba', '6d', '6d', '01', '25', '58', '00'], \
+                  [0, 'a1', '41', '0f', '63', '00', '03', '56', 'a8', 'cb', '01', '30', '70', '00'], \
+                  [0, 'a1', '41', '0f', '63', '00', '04', '56', 'a6', 'be', '01', '45', '65', '00'], \
+                  [0, 'a1', '41', '0f', '63', '00', '05', '56', 'a7', '81', '00', '00', '00', '00'], \
+                  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
-prepareJsonString(2, mylistVar)
+    prepareJsonString(2, mylistVar)
 
-'''
+
 

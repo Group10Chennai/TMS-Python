@@ -35,6 +35,8 @@ hdlr.setFormatter(formatter)
 my_logger.addHandler(hdlr) 
 my_logger.setLevel(logging.DEBUG)
 
+my_logger.disabled = True
+
 #Variable Decleration
 s = 'hello'
 data = []
@@ -51,10 +53,10 @@ def RFIDUHFQueryTag():
     try:
 
         QueryTag = "040001DB4B"
-
+        #time.sleep(3)
         my_hex = QueryTag.decode('hex')
-        #print my_hex        
-        print binascii.b2a_hex(my_hex)
+            #print my_hex        
+        #print binascii.b2a_hex(my_hex)
 
 #        while True:
         serial.write(my_hex)
@@ -73,7 +75,7 @@ def RFIDUHFQueryTag():
             #rfid = binascii.b2a_hex(data)
             rfidTID_hex = binascii.b2a_hex(data)
             #print rfidTID_hex
-            rfidTID = rfidTID_hex [12:36]
+            rfidTID = rfidTID_hex [12:37]
             #RFID TAG ID Data
             print rfidTID
 
@@ -84,7 +86,7 @@ def RFIDUHFQueryTag():
         
         else:
             #my_logger.error("Failed - RFID Id Not in Actual format %s:", QueryTag)
-            print ("Failed - RFID Id Not in Actual format :", QueryTag)
+            #print ("Failed - RFID Id Not in Actual format :", QueryTag)
             return None
            
 
@@ -95,5 +97,5 @@ def RFIDUHFQueryTag():
         return None
 
 if __name__ == "__main__":  
-    
-    RFIDUHFQueryTag()
+    while True:
+        RFIDUHFQueryTag()

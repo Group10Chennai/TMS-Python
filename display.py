@@ -29,7 +29,7 @@ hdlr.setFormatter(formatter)
 my_logger.addHandler(hdlr) 
 my_logger.setLevel(logging.DEBUG)
 
-
+my_logger.disabled = True
 
 def udpSocket(message):
 
@@ -39,9 +39,9 @@ def udpSocket(message):
     UDP_PORT = 19000
     MESSAGE = message
    
-    print "UDP target IP:", UDP_IP
-    print "UDP target port:", UDP_PORT
-    print "message:", MESSAGE
+    #print "UDP target IP:", UDP_IP
+    #print "UDP target port:", UDP_PORT
+    #print "message:", MESSAGE
    
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
     sock.sendto(MESSAGE, (UDP_IP, UDP_PORT))
@@ -263,11 +263,11 @@ def displayTempValidation(temp):
             disptemp = str(int(tempint_Celcious)).zfill(3)
                         
             #Staturated Temperature Celcious value between 50 to 45 Should be Yellow Color
-            if tempint_Celcious <= 50 and tempint_Celcious >= 30:
+            if tempint_Celcious <= 40 and tempint_Celcious >= 10:
                 temp_color = Green
 
             #Staturated Temperature Celcious value is above 50 Should be Red Color   
-            elif tempint_Celcious > 50 or tempint_Celcious < 30:
+            elif tempint_Celcious > 40:
                 temp_color = Red
            
         #Check for the Valid temp is 00
@@ -333,7 +333,40 @@ def displayLEDBoard(vehName, dispCmd, date_time, dispVar):
         my_logger.error("Failed - displayLEDBoard:%s ",e)
         print ("Failed - displayLEDBoard: ",e)
 
+
+def displayLEDBoard_Null():
+    try:
+        dispCmd = ""
+
+        vehName = "--------"
+
+        date_time = ""
         
+    
+        mylist = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], \
+                  [0, '00', '00', '00', '00', '00', '00'], \
+                  [0, '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00'], \
+                  [0, '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00'], \
+                  [0, '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00'], \
+                  [0, '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00'], \
+                  [0, '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00'], \
+                  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+
+       
+        dispVar = displayLEDBoardParameters(mylist)
+    #print dispVar
+
+    #dispVar = "<\\c2 122\\c1 70\\c1 106\\c2 38><\\c1 110\\c1 62\\c3 118\\c1 51><\\c4 ---\\c4 ---\\c7 ---\\c7 --->"
+    
+  
+
+        displayLEDBoard(vehName, dispCmd, date_time, dispVar)
+
+		
+    except:
+        e = sys.exc_info()[0]
+        my_logger.error("Failed - displayLEDBoard_Null:%s ",e)
+        print ("Failed - displayLEDBoard_Null: ",e)
 
 '''
 def displayLEDBoardParameters(mylist):
@@ -838,7 +871,7 @@ def displayLEDBoardParameters(mylist):
                         "<\\C" + dispVar5 + "\\C" + dispVar6 + ">"           
                         
             
-            print dispVar
+            #print dispVar
 
             return dispVar
 
@@ -876,7 +909,7 @@ if __name__ == "__main__":
     #udpSocket(message1)
     #udpSocketReceive()
 
-    dispCmd = "Sarojini Nagar"
+    dispCmd = "SND"
 
     vehName = "SND 9406"
 
@@ -900,5 +933,6 @@ if __name__ == "__main__":
     
    
 
-    displayLEDBoard(vehName, dispCmd, date_time, dispVar)
-
+    #displayLEDBoard(vehName, dispCmd, date_time, dispVar)
+    displayLEDBoard_Null()
+    
