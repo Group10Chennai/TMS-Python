@@ -464,7 +464,7 @@ class Ui_Form(object):
             while (loopStatus != False):
                 #print ("looping ")
                 
-                myBleConn, vehName, vehID, status, AutoMode = self.callMethod2(loopRFIDUID)
+                myBleConn, vehName, vehID, status, AutoMode,Buf_mylist = self.callMethod2(loopRFIDUID)
                 QtCore.QCoreApplication.processEvents()
 
                 
@@ -475,8 +475,8 @@ class Ui_Form(object):
 
                     loop = True
                     #print "loopstatus: self.callMethod3_BluetoothFunction(myBleConn, loop, status)", myBleConn, loop, status 
-
-                    self.callMethod3_BluetoothFunction(myBleConn, vehName, vehID, loop, status, loopStatus)
+                    print "call method3 from loopfun"
+                    self.callMethod3_BluetoothFunction(myBleConn, vehName, vehID, loop, status, loopStatus,Buf_mylist)
                     
                     return myBleConn, vehName, vehID, status
 
@@ -486,7 +486,7 @@ class Ui_Form(object):
                     loopStatus = False
                     loop = True
 
-                    self.callMethod3_BluetoothFunction(myBleConn, vehName, vehID, loop, status, loopStatus)
+                    self.callMethod3_BluetoothFunction(myBleConn, vehName, vehID, loop, status, loopStatus,Buf_mylist)
                     
                     return myBleConn, vehName, vehID, status
                             
@@ -507,6 +507,7 @@ class Ui_Form(object):
             #Returns mylist
             #print "method 2 RFID_UID ", RFID_UID
             QtCore.QCoreApplication.processEvents()
+            Buf_mylist = [['0' for x in range(16)] for x in range(10)]
 
 
             #Manual Condition
@@ -523,12 +524,12 @@ class Ui_Form(object):
 
                     AutoMode = False
                     
-                    print "CallMethod2 Check the Manual SCAN for one time ", vehName, vehID, status, AutoMode
-                    return myBleConn, vehName, vehID, status, AutoMode
+                    #print "CallMethod2 Check the Manual SCAN for one time ", vehName, vehID, status, AutoMode
+                    return myBleConn, vehName, vehID, status, AutoMode,Buf_mylist
                 else:
                     AutoMode = False
                     
-                    return None, vehName, vehID, status, AutoMode
+                    return None, vehName, vehID, status, AutoMode,Buf_mylist
 
                 
             #Automatic Condition
@@ -543,11 +544,11 @@ class Ui_Form(object):
                 if ((myBleConn != None) and (status == "Success")):
 
                     AutoMode = True
-                    return myBleConn, vehName, vehID, status, AutoMode
+                    return myBleConn, vehName, vehID, status, AutoMode,Buf_mylist
 
                 else:
                     AutoMode = False
-                    return None, vehName, vehID, status, AutoMode
+                    return None, vehName, vehID, status, AutoMode,Buf_mylist
 
         except:
             e = sys.exc_info()[0]
@@ -557,15 +558,17 @@ class Ui_Form(object):
             
 
 
-    def callMethod3_BluetoothFunction(self, myBleConn, vehName, vehID, loop, status, loopStatus):
+    def callMethod3_BluetoothFunction(self, myBleConn, vehName, vehID, loop, status, loopStatus,Buf_mylist):
 
         try:
             #Automatic Mode
             if ((myBleConn != None) and (status == "Success") and (loopStatus == True)):
+                #print "inside callmethod3"
 
                 #for identifying the 1st Record to server API
                 RecordSend = True
-
+                #display.displayLEDBoard_Null()
+                Buffer_data = False
                 while loop == True:
 
                     #print "callMethod3_BluetoothFunction", myBleConn, vehName, vehID, loop, status
@@ -578,21 +581,92 @@ class Ui_Form(object):
                     mylistvar, vehName, status = work.fun_main_Bluetooth(myBleConn, vehName, vehID, loop, status)
                     #print "callMethod3_BluetoothFunction while", mylistvar, vehName, status
 
+                    #print "after fun_main bluetooth"
+                    if Buffer_data == False:
+                        Buf_mylist = mylistvar
+                    
+                    if (Buffer_data == True and mylistvar != None):
+                        
+                        for i in range (2,8):
+                            #print "Inside for loop"
+                            if ( mylistvar[i][6] == '01' ):
+                                #print "01"
+                                Buf_mylist[i][6] = '01'
+                                if (mylistvar[i][10] != '00' or mylistvar[i][11] != '00' or mylistvar[i][12] != '00'):
+                                    if(mylistvar[i][10] != Buf_mylist[i][10] or mylistvar[i][11] != Buf_mylist[i][11] or  mylistvar[i][12] !=  Buf_mylist[i][12]):
+                                        Buf_mylist[i][10] = mylistvar[i][10]
+                                        Buf_mylist[i][11] = mylistvar[i][11]
+                                        Buf_mylist[i][12] = mylistvar[i][12]
+                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                            elif ( mylistvar[i][6] == '02' ):
+                                #print "02"
+                                Buf_mylist[i][6] = '02'
+                                if (mylistvar[i][10] != '00' or mylistvar[i][11] != '00' or mylistvar[i][12] != '00'):
+                                    if(mylistvar[i][10] != Buf_mylist[i][10] or mylistvar[i][11] != Buf_mylist[i][11] or  mylistvar[i][12] !=  Buf_mylist[i][12]):
+                                        Buf_mylist[i][10] = mylistvar[i][10]
+                                        Buf_mylist[i][11] = mylistvar[i][11]
+                                        Buf_mylist[i][12] = mylistvar[i][12]
+                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                            elif ( mylistvar[i][6] == '03' ):
+                                #print "03"
+                                Buf_mylist[i][6] = '03'
+                                if (mylistvar[i][10] != '00' or mylistvar[i][11] != '00' or mylistvar[i][12] != '00'):
+                                    if(mylistvar[i][10] != Buf_mylist[i][10] or mylistvar[i][11] != Buf_mylist[i][11] or  mylistvar[i][12] !=  Buf_mylist[i][12]):
+                                        Buf_mylist[i][10] = mylistvar[i][10]
+                                        Buf_mylist[i][11] = mylistvar[i][11]
+                                        Buf_mylist[i][12] = mylistvar[i][12]
+                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                            elif ( mylistvar[i][6] == '04' ):
+                                #print "04"
+                                Buf_mylist[i][6] = '04'
+                                if (mylistvar[i][10] != '00' or mylistvar[i][11] != '00' or mylistvar[i][12] != '00'):
+                                    if(mylistvar[i][10] != Buf_mylist[i][10] or mylistvar[i][11] != Buf_mylist[i][11] or  mylistvar[i][12] !=  Buf_mylist[i][12]):
+                                        Buf_mylist[i][10] = mylistvar[i][10]
+                                        Buf_mylist[i][11] = mylistvar[i][11]
+                                        Buf_mylist[i][12] = mylistvar[i][12]
+                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                            elif ( mylistvar[i][6] == '05' ):
+                                #print "05"
+                                Buf_mylist[i][6] = '05'
+                                if (mylistvar[i][10] != '00' or mylistvar[i][11] != '00' or mylistvar[i][12] != '00'):
+                                    if(mylistvar[i][10] != Buf_mylist[i][10] or mylistvar[i][11] != Buf_mylist[i][11] or  mylistvar[i][12] !=  Buf_mylist[i][12]):
+                                        Buf_mylist[i][10] = mylistvar[i][10]
+                                        Buf_mylist[i][11] = mylistvar[i][11]
+                                        Buf_mylist[i][12] = mylistvar[i][12]
+                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                            elif ( mylistvar[i][6] == '06' ):
+                                #print "06"
+                                Buf_mylist[i][6] = '06'
+                                if (mylistvar[i][10] != '00' or mylistvar[i][11] != '00' or mylistvar[i][12] != '00'):
+                                    if(mylistvar[i][10] != Buf_mylist[i][10] or mylistvar[i][11] != Buf_mylist[i][11] or  mylistvar[i][12] !=  Buf_mylist[i][12]):
+                                        Buf_mylist[i][10] = mylistvar[i][10]
+                                        Buf_mylist[i][11] = mylistvar[i][11]
+                                        Buf_mylist[i][12] = mylistvar[i][12]
+                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                    else:
+                        print "Failed : My list None"
+
+
+                    Buffer_data = True
+
+                    #print "Buf_mylist",Buf_mylist
                     
                     
                     if status == "Success" and mylistvar != None:
 
                         
-                        Status, BLEStatus = self.display_mylistvar(mylistvar, vehName, vehID, status, RecordSend)
+                        #Status, BLEStatus = self.display_mylistvar(mylistvar, vehName, vehID, status, RecordSend)
+                        Status, BLEStatus = self.display_mylistvar(Buf_mylist, vehName, vehID, status, RecordSend)
 
                         Previous_mylistvar = mylistvar
                         if ((BLEStatus == False)):
                             RecordSend = BLEStatus
 
                     elif status == "Failed" and mylistvar == None:
-
+                        print "connection failed"
                         RecordSend  = True
-                        Status, BLEStatus = self.display_mylistvar(Previous_mylistvar, vehName, vehID, status, RecordSend)
+                        #Status, BLEStatus = self.display_mylistvar(Previous_mylistvar, vehName, vehID, status, RecordSend)
+                        Status, BLEStatus = self.display_mylistvar(Buf_mylist, vehName, vehID, status, RecordSend)
 
                         if ((BLEStatus == False)):
                             RecordSend = BLEStatus
@@ -606,14 +680,11 @@ class Ui_Form(object):
 
                     
                     if (status == "Failed") or (statusMan == True):
-                        #vehName="----"
-                        #vehID=""
-                        #curdate_time=""
-                        #mylistvar=""
-                        #work.display_Parameter_LED(mylistvar, vehName, vehID, curdate_time)
                         display.displayLEDBoard_Null()
                         loop = False
                         #myBleConn.close()
+                    else:
+                        continue
 
 
             
@@ -623,7 +694,8 @@ class Ui_Form(object):
 
                 #for identifying the 1st Record to server API
                 RecordSend = True
-                
+                Buffer_data = False
+
                 while loop == True:
 
                     #print "callMethod3_BluetoothFunction Failed Status", myBleConn, vehName, vehID, loop, status
@@ -638,25 +710,94 @@ class Ui_Form(object):
                     mylistvar, vehName, status = work.fun_main_Bluetooth(myBleConn, vehName, vehID, loop, status)
                     #print "callMethod3_BluetoothFunction while", mylistvar, vehName, status
 
+                    if Buffer_data == False:
+                        Buf_mylist = mylistvar
+
+                    if (Buffer_data == True and mylistvar != None):
+                        
+                        for i in range (2,8):
+                            #print "Inside for loop"
+                            if ( mylistvar[i][6] == '01' ):
+                                #print "01"
+                                Buf_mylist[i][6] = '01'
+                                if (mylistvar[i][10] != '00' or mylistvar[i][11] != '00' or mylistvar[i][12] != '00'):
+                                    if(mylistvar[i][10] != Buf_mylist[i][10] or mylistvar[i][11] != Buf_mylist[i][11] or  mylistvar[i][12] !=  Buf_mylist[i][12]):
+                                        Buf_mylist[i][10] = mylistvar[i][10]
+                                        Buf_mylist[i][11] = mylistvar[i][11]
+                                        Buf_mylist[i][12] = mylistvar[i][12]
+                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                            elif ( mylistvar[i][6] == '02' ):
+                                #print "02"
+                                Buf_mylist[i][6] = '02'
+                                if (mylistvar[i][10] != '00' or mylistvar[i][11] != '00' or mylistvar[i][12] != '00'):
+                                    if(mylistvar[i][10] != Buf_mylist[i][10] or mylistvar[i][11] != Buf_mylist[i][11] or  mylistvar[i][12] !=  Buf_mylist[i][12]):
+                                        Buf_mylist[i][10] = mylistvar[i][10]
+                                        Buf_mylist[i][11] = mylistvar[i][11]
+                                        Buf_mylist[i][12] = mylistvar[i][12]
+                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                            elif ( mylistvar[i][6] == '03' ):
+                                #print "03"
+                                Buf_mylist[i][6] = '03'
+                                if (mylistvar[i][10] != '00' or mylistvar[i][11] != '00' or mylistvar[i][12] != '00'):
+                                    if(mylistvar[i][10] != Buf_mylist[i][10] or mylistvar[i][11] != Buf_mylist[i][11] or  mylistvar[i][12] !=  Buf_mylist[i][12]):
+                                        Buf_mylist[i][10] = mylistvar[i][10]
+                                        Buf_mylist[i][11] = mylistvar[i][11]
+                                        Buf_mylist[i][12] = mylistvar[i][12]
+                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                            elif ( mylistvar[i][6] == '04' ):
+                                #print "04"
+                                Buf_mylist[i][6] = '04'
+                                if (mylistvar[i][10] != '00' or mylistvar[i][11] != '00' or mylistvar[i][12] != '00'):
+                                    if(mylistvar[i][10] != Buf_mylist[i][10] or mylistvar[i][11] != Buf_mylist[i][11] or  mylistvar[i][12] !=  Buf_mylist[i][12]):
+                                        Buf_mylist[i][10] = mylistvar[i][10]
+                                        Buf_mylist[i][11] = mylistvar[i][11]
+                                        Buf_mylist[i][12] = mylistvar[i][12]
+                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                            elif ( mylistvar[i][6] == '05' ):
+                                #print "05"
+                                Buf_mylist[i][6] = '05'
+                                if (mylistvar[i][10] != '00' or mylistvar[i][11] != '00' or mylistvar[i][12] != '00'):
+                                    if(mylistvar[i][10] != Buf_mylist[i][10] or mylistvar[i][11] != Buf_mylist[i][11] or  mylistvar[i][12] !=  Buf_mylist[i][12]):
+                                        Buf_mylist[i][10] = mylistvar[i][10]
+                                        Buf_mylist[i][11] = mylistvar[i][11]
+                                        Buf_mylist[i][12] = mylistvar[i][12]
+                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                            elif ( mylistvar[i][6] == '06' ):
+                                #print "06"
+                                Buf_mylist[i][6] = '06'
+                                if (mylistvar[i][10] != '00' or mylistvar[i][11] != '00' or mylistvar[i][12] != '00'):
+                                    if(mylistvar[i][10] != Buf_mylist[i][10] or mylistvar[i][11] != Buf_mylist[i][11] or  mylistvar[i][12] !=  Buf_mylist[i][12]):
+                                        Buf_mylist[i][10] = mylistvar[i][10]
+                                        Buf_mylist[i][11] = mylistvar[i][11]
+                                        Buf_mylist[i][12] = mylistvar[i][12]
+                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                            
+                            
+                    else:
+                        print "Failed : My list None"
+
+                    Buffer_data = True
+
+                    #print "Buf_mylist",Buf_mylist
                     
-                    
-                    if status == "Success":
+                    if status == "Success" and mylistvar != None:
 
                         
-                        Status, BLEStatus = self.display_mylistvar(mylistvar, vehName, vehID, status, RecordSend)
+                        #Status, BLEStatus = self.display_mylistvar(mylistvar, vehName, vehID, status, RecordSend)
+                        Status, BLEStatus = self.display_mylistvar(Buf_mylist, vehName, vehID, status, RecordSend)
 
                         Previous_mylistvar = mylistvar
                         if ((BLEStatus == False)):
                             RecordSend = BLEStatus
 
-                    elif status == "Failed":
-
+                    elif status == "Failed" and mylistvar == None:
+                        print "connection failed"
                         RecordSend  = True
-                        Status, BLEStatus = self.display_mylistvar(Previous_mylistvar, vehName, vehID, status, RecordSend)
+                        #Status, BLEStatus = self.display_mylistvar(Previous_mylistvar, vehName, vehID, status, RecordSend)
+                        Status, BLEStatus = self.display_mylistvar(Buf_mylist, vehName, vehID, status, RecordSend)
 
                         if ((BLEStatus == False)):
                             RecordSend = BLEStatus
-
                        
                     #print BLEStatus
                     QtCore.QCoreApplication.processEvents()
@@ -669,6 +810,8 @@ class Ui_Form(object):
                         display.displayLEDBoard_Null()
                         loop = False
                         #myBleConn.close()
+                    else:
+                        continue
 
                 '''        
                 

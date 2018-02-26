@@ -45,6 +45,7 @@ def udpSocket(message):
    
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
     sock.sendto(MESSAGE, (UDP_IP, UDP_PORT))
+    sock.close()
 
 
 
@@ -932,7 +933,8 @@ if __name__ == "__main__":
     #dispVar = "<\\c2 122\\c1 70\\c1 106\\c2 38><\\c1 110\\c1 62\\c3 118\\c1 51><\\c4 ---\\c4 ---\\c7 ---\\c7 --->"
     
    
-
-    #displayLEDBoard(vehName, dispCmd, date_time, dispVar)
+    #while(True):
+     #   time.sleep(1)
+      #  displayLEDBoard(vehName, dispCmd, date_time, dispVar)
     displayLEDBoard_Null()
     

@@ -524,8 +524,8 @@ def configure_BTController(bleConn, DBSensorVariable):
            
 def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, BluetoothSocketVariable):
 
-    print "compare_DBSensorUID_DBLocation_BTyreNo_BTyreID DBSensorVariable",DBSensorVariable
-    print "compare_DBSensorUID_DBLocation_BTyreNo_BTyreID BluetoothSocketVariable",BluetoothSocketVariable
+    #print "compare_DBSensorUID_DBLocation_BTyreNo_BTyreID DBSensorVariable",DBSensorVariable
+    #print "compare_DBSensorUID_DBLocation_BTyreNo_BTyreID BluetoothSocketVariable",BluetoothSocketVariable
     
     #BTtotalTyres = int(BluetoothSocketVariable[0])
     #print "Total Tyres:", BTtotalTyres
@@ -546,7 +546,7 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
                 elif(DBSensorVariable[i] == "02"):
                     _DBSensorID2 =  DBSensorVariable[i-1]
                     _DBLocation2 =  DBSensorVariable[i]
-                    print "in DBSensorVariable[i] ",_DBLocation2, _DBSensorID2
+                    #print "in DBSensorVariable[i] ",_DBLocation2, _DBSensorID2
 
                 #Check 03 Location and Related Sensor ID
                 elif(DBSensorVariable[i] == "03"):
@@ -705,7 +705,7 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
                                 
                                 if(_DBSensorID1 == _BTSensorID1):
                                     #print "in if ", _BTLocation1, _BTSensorID1
-                                    print ("BTSensorID1 and DBSensorID1 are Same", _BTSensorID1, _DBSensorID1)
+                                    #print ("BTSensorID1 and DBSensorID1 are Same", _BTSensorID1, _DBSensorID1)
                                     RetVal = "Success"
                                     #continue
                                 elif (_DBSensorID1 != _BTSensorID1):
@@ -715,16 +715,16 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
 
                                     if RetVal == "aa":
                                         RetVal = "Success"
-                                        print "Successfully Assigned Sensor"
+                                        #print "Successfully Assigned Sensor"
                                         continue
                                     else:
                                         return None
                             else:
-                                print "BluetoothSocketVariable SensorID Not Assigned"
+                                #print "BluetoothSocketVariable SensorID Not Assigned"
                                 RetVal = assignNewSensorToBTC(conn, _DBLocation1, _DBSensorID1)
                                 if RetVal == "aa":
                                     RetVal = "Success"
-                                    print "Successfully Assigned Sensor"
+                                    #print "Successfully Assigned Sensor"
                                     continue
                                 else:
                                    return None
@@ -759,7 +759,7 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
                                 
                                 if(_DBSensorID2 == _BTSensorID2):
                                     #print "in if ", _BTLocation2, _BTSensorID2
-                                    print ("BTSensorID2 and DBSensorID2 are Same", _BTSensorID2, _DBSensorID2)
+                                    #print ("BTSensorID2 and DBSensorID2 are Same", _BTSensorID2, _DBSensorID2)
                                     RetVal = "Success"
                                     continue
                                 elif (_DBSensorID2 != _BTSensorID2):
@@ -769,7 +769,7 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
 
                                     if RetVal == "aa":
                                         RetVal = "Success"
-                                        print "Successfully Assigned Sensor"
+                                        #print "Successfully Assigned Sensor"
                                         continue
                                     else:
                                         return None
@@ -778,7 +778,7 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
                                 RetVal = assignNewSensorToBTC(conn, _DBLocation2, _DBSensorID2)
                                 if RetVal == "aa":
                                     RetVal = "Success"
-                                    print "Successfully Assigned Sensor"
+                                    #print "Successfully Assigned Sensor"
                                     continue
                                 else:
                                     return None
@@ -811,7 +811,7 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
                                 
                                 if(_DBSensorID3 == _BTSensorID3):
                                     #print "in if ", _BTLocation3, _BTSensorID3
-                                    print ("BTSensorID3 and DBSensorID3 are Same", _BTSensorID3, _DBSensorID3)
+                                    #print ("BTSensorID3 and DBSensorID3 are Same", _BTSensorID3, _DBSensorID3)
                                     RetVal = "Success"
                                     continue
                                 elif (_DBSensorID3 != _BTSensorID3):
@@ -821,7 +821,7 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
 
                                     if RetVal == "aa":
                                         RetVal = "Success"
-                                        print "Successfully Assigned Sensor"
+                                        #print "Successfully Assigned Sensor"
                                         continue
                                     else:
                                         return None
@@ -830,7 +830,7 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
                                 RetVal = assignNewSensorToBTC(conn, _DBLocation3, _DBSensorID3)
                                 if RetVal == "aa":
                                     RetVal = "Success"
-                                    print "Successfully Assigned Sensor"
+                                    #print "Successfully Assigned Sensor"
                                     continue
                                 else:
                                     return None
@@ -866,27 +866,27 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
                                 
                                 if(_DBSensorID4 == _BTSensorID4):
                                     #print "in if ", _BTLocation4, _BTSensorID4
-                                    print ("BTSensorID4 and DBSensorID4 are Same", _BTSensorID4, _DBSensorID4)
+                                    #print ("BTSensorID4 and DBSensorID4 are Same", _BTSensorID4, _DBSensorID4)
                                     RetVal = "Success"
                                     continue
                                 elif (_DBSensorID4 != _BTSensorID4):
                                     #print "in else ", _BTLocation4, _BTSensorID4
-                                    print ("BTSensorID4 and DBSensorID4 are Not Same", _BTSensorID4, _DBSensorID4)
+                                    #print ("BTSensorID4 and DBSensorID4 are Not Same", _BTSensorID4, _DBSensorID4)
                                     RetVal = assignNewSensorToBTC(conn, _DBLocation4, _DBSensorID4)
 
                                     if RetVal == "aa":
                                         RetVal = "Success"
-                                        print "Successfully Assigned Sensor"
+                                        #print "Successfully Assigned Sensor"
                                         continue
                                     else:
                                         return None
                             else:
-                                print "BluetoothSocketVariable SensorID Not Assigned"
+                                #print "BluetoothSocketVariable SensorID Not Assigned"
                                 RetVal = assignNewSensorToBTC(conn, _DBLocation4, _DBSensorID4)
 
                                 if RetVal == "aa":
                                     RetVal = "Success"
-                                    print "Successfully Assigned Sensor"
+                                    #print "Successfully Assigned Sensor"
                                     continue
                                 else:
                                     return None
@@ -921,28 +921,28 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
                                 
                                 if(_DBSensorID5 == _BTSensorID5):
                                     #print "in if ", _BTLocation5, _BTSensorID5
-                                    print ("BTSensorID5 and DBSensorID5 are Same", _BTSensorID5, _DBSensorID5)
+                                    #print ("BTSensorID5 and DBSensorID5 are Same", _BTSensorID5, _DBSensorID5)
                                     RetVal = "Success"
                                     continue
 
                                 elif (_DBSensorID5 != _BTSensorID5):
                                     #print "in else ", _BTLocation5, _BTSensorID5
-                                    print ("BTSensorID5 and DBSensorID5 are Not Same", _BTSensorID5, _DBSensorID5)
+                                    #print ("BTSensorID5 and DBSensorID5 are Not Same", _BTSensorID5, _DBSensorID5)
                                     RetVal = assignNewSensorToBTC(conn, _DBLocation5, _DBSensorID5)
 
                                     if RetVal == "aa":
                                         RetVal = "Success"
-                                        print "Successfully Assigned Sensor"
+                                        #print "Successfully Assigned Sensor"
                                         continue
                                     else:
                                         return None
                             else:
-                                print "BluetoothSocketVariable SensorID Not Assigned"
+                                #print "BluetoothSocketVariable SensorID Not Assigned"
                                 RetVal = assignNewSensorToBTC(conn, _DBLocation5, _DBSensorID5)
 
                                 if RetVal == "aa":
                                     RetVal = "Success"
-                                    print "Successfully Assigned Sensor"
+                                    #print "Successfully Assigned Sensor"
                                     continue
                                 else:
                                     return None
@@ -979,28 +979,28 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
                                 
                                 if(_DBSensorID6 == _BTSensorID6):
                                     #print "in if ", _BTLocation6, _BTSensorID6
-                                    print ("BTSensorID6 and DBSensorID6 are Same", _BTSensorID6, _DBSensorID6)
+                                    #print ("BTSensorID6 and DBSensorID6 are Same", _BTSensorID6, _DBSensorID6)
                                     RetVal = "Success"
                                     continue
                                 elif (_DBSensorID6 != _BTSensorID6):
                                     #print "in else ", _BTLocation6, _BTSensorID6
-                                    print ("BTSensorID6 and DBSensorID6 are Not Same", _BTSensorID6, _DBSensorID6)
+                                    #print ("BTSensorID6 and DBSensorID6 are Not Same", _BTSensorID6, _DBSensorID6)
                                     RetVal = assignNewSensorToBTC(conn, _DBLocation6, _DBSensorID6)
 
                                     if RetVal == "aa":
                                         RetVal = "Success"
-                                        print "Successfully Assigned Sensor"
+                                        #print "Successfully Assigned Sensor"
                                         continue
                                     else:
                                         return None
                             else:
                                 #print "BluetoothSocketVariable SensorID Not Assigned"
-                                print ("BTSensorID6 and DBSensorID6 are Not Same", _BTSensorID6, _DBSensorID6)
+                                #print ("BTSensorID6 and DBSensorID6 are Not Same", _BTSensorID6, _DBSensorID6)
                                 RetVal = assignNewSensorToBTC(conn, _DBLocation6, _DBSensorID6)
 
                                 if RetVal == "aa":
                                     RetVal = "Success"
-                                    print "Successfully Assigned Sensor"
+                                    #print "Successfully Assigned Sensor"
                                     continue
                                 else:
                                     return None
@@ -1111,7 +1111,7 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
 
                     if RetVal == "aa":
                         RetVal = "Success"
-                        print "Successfully Assigned Sensor"
+                        #print "Successfully Assigned Sensor"
                         continue
                     else:
                         return None
@@ -1125,7 +1125,7 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
 
                     if RetVal == "aa":
                         RetVal = "Success"
-                        print "Successfully Assigned Sensor"
+                        #print "Successfully Assigned Sensor"
                         continue
                     else:
                         return None
@@ -1139,7 +1139,7 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
 
                     if RetVal == "aa":
                         RetVal = "Success"
-                        print "Successfully Assigned Sensor"
+                        #print "Successfully Assigned Sensor"
                         continue
                     else:
                         return None
@@ -1153,7 +1153,7 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
 
                     if RetVal == "aa":
                         RetVal = "Success"
-                        print "Successfully Assigned Sensor"
+                        p#rint "Successfully Assigned Sensor"
                         continue
                     else:
                         return None
@@ -1167,7 +1167,7 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
 
                     if RetVal == "aa":
                         RetVal = "Success"
-                        print "Successfully Assigned Sensor"
+                        #print "Successfully Assigned Sensor"
                         continue
                     else:
                         return None
@@ -1181,7 +1181,7 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
 
                     if RetVal == "aa":
                         RetVal = "Success"
-                        print "Successfully Assigned Sensor"
+                        #print "Successfully Assigned Sensor"
                         continue
                     else:
                         return None
@@ -1506,7 +1506,7 @@ def fun_main(RFIDTID):
                                 bleConn = blecontroller.connect_ble(BUID)
 
                                 if bleConn != None:
-                                    print ("Success - Trying to connect Bluetooth BUID", BUID, bleConn)
+                                    #print ("Success - Trying to connect Bluetooth BUID", BUID, bleConn)
 
                                     BluetoothSocketVariable, BLEstatus = Connect_Socket_Bluetooth_by_BUID(bleConn)                                  
 
@@ -1592,7 +1592,7 @@ def fun_main_Bluetooth(bleConn, vehName, vehID, loop, status):
                 if (mylist != None) and (status == "Success"):
 
                     #print("Configure BT SensorUID, tirePosition based on DB After ", mylist)
-                    time.sleep(0.2)
+                    #time.sleep(0.2)
                     #bleConn.close()
                                     
                     #Dummy
@@ -1606,7 +1606,7 @@ def fun_main_Bluetooth(bleConn, vehName, vehID, loop, status):
                     #            [0, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']]
 
                             
-                    return mylist, vehName, "Success"
+                    return mylist, vehName, status
 
                 elif (mylist == None) :
                     return mylist, vehName, status

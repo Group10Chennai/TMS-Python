@@ -539,7 +539,7 @@ def ParseBluetoothTyre(data):
                 return None
             
         else:
-            print ("Failed - Bluetooth ParseBluetoothTyre data None:")
+            #print ("Failed - Bluetooth ParseBluetoothTyre data None:")
             my_logger.warning("Failed - Bluetooth ParseBluetoothTyre data None:")
             return None
         
@@ -547,7 +547,7 @@ def ParseBluetoothTyre(data):
     except:
         e = sys.exc_info()[0]
         my_logger.error("Failed - Bluetooth ParseBluetoothTyre data None:")
-        print ("Failed - Bluetooth ParseBluetoothTyre data None:")
+        #print ("Failed - Bluetooth ParseBluetoothTyre data None:")
 
         return None
         
