@@ -129,8 +129,10 @@ def prepareJsonString(vehId, mylist):
                 temp_color, disptemp = display.displayTempValidation(temp)
                 
                 if dispPsi == "---":
+                    pressure = "0000"
                     dispPsi = str(pressure)
                 if disptemp == "---":
+                    temp = "00"
                     disptemp = str(temp)
                 
                 #print "URL Update", sensorUID, dispPsi, temp, status
@@ -155,8 +157,10 @@ def prepareJsonString(vehId, mylist):
                 temp_color, disptemp = display.displayTempValidation(temp)
                 
                 if dispPsi == "---":
+                    pressure = "0000"
                     dispPsi = str(pressure)
                 if disptemp == "---":
+                    temp = "00"
                     disptemp = str(temp)
                 
                 #print "URL Update", sensorUID, dispPsi, temp, status
@@ -180,8 +184,10 @@ def prepareJsonString(vehId, mylist):
                 temp_color, disptemp = display.displayTempValidation(temp)
                 
                 if dispPsi == "---":
+                    pressure = "0000"
                     dispPsi = pressure
                 if disptemp == "---":
+                    temp = "00"
                     disptemp = temp
                 
                 #print "URL Update", sensorUID, dispPsi, temp, status
@@ -205,8 +211,10 @@ def prepareJsonString(vehId, mylist):
                 temp_color, disptemp = display.displayTempValidation(temp)
                 
                 if dispPsi == "---":
+                    pressure = "0000"
                     dispPsi = pressure
                 if disptemp == "---":
+                    temp = "00"
                     disptemp = temp
 
                 #print "URL Update", sensorUID, dispPsi, temp, status
@@ -231,8 +239,10 @@ def prepareJsonString(vehId, mylist):
                 temp_color, disptemp = display.displayTempValidation(temp)
                 
                 if dispPsi == "---":
+                    pressure = "0000"
                     dispPsi = pressure
                 if disptemp == "---":
+                    temp = "00"
                     disptemp = temp
 
                 #print "URL Update", sensorUID, dispPsi, temp, status
@@ -257,8 +267,10 @@ def prepareJsonString(vehId, mylist):
                 temp_color, disptemp = display.displayTempValidation(temp)
 
                 if dispPsi == "---":
+                    pressure = "0000"
                     dispPsi = pressure
                 if disptemp == "---":
+                    temp = "00"
                     disptemp = temp
 
                 #print "URL Update", sensorUID, dispPsi, temp, status

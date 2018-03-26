@@ -226,18 +226,26 @@ def displayPresValidation(pres):
             
             presint_Psi = utlities.pressureToBarPsiConvertion(pres)
             dispPsi = str(presint_Psi).zfill(3)
-                        
-                        
-            #Staturated PSI value between 121 to 125 Should be Green Color
-            if (presint_Psi) <= 135 and presint_Psi >= 120:
 
-                pres_color = Green
-                #print pres_color
-                        
-            
-            #Staturated PSI value between 114 to below Should be Red Color
-            elif presint_Psi < 120 or presint_Psi > 135:
-                pres_color = Red
+
+                               
+            if presint_Psi >= 0 and presint_Psi <= 200:       
+                #Staturated PSI value between 121 to 125 Should be Green Color
+                if (presint_Psi) <= 135 and presint_Psi >= 120:
+
+                    pres_color = Green
+                    #print pres_color
+                            
+                
+                #Staturated PSI value between 114 to below Should be Red Color
+                elif presint_Psi < 120 or presint_Psi > 135:
+                    pres_color = Red
+
+            else:
+                pres_color = Blue
+                dispPsi = "---"
+                #print "else",pres_color, dispPsi 
+                return  pres_color, dispPsi
 
                                     
         #Check for the Valid Pres is 0000
@@ -262,15 +270,20 @@ def displayTempValidation(temp):
 
             tempint_Celcious  = utlities.temperatureToCelciousConvertion(temp)
             disptemp = str(int(tempint_Celcious)).zfill(3)
-                        
-            #Staturated Temperature Celcious value between 50 to 45 Should be Yellow Color
-            if tempint_Celcious <= 40 and tempint_Celcious >= 10:
-                temp_color = Green
 
-            #Staturated Temperature Celcious value is above 50 Should be Red Color   
-            elif tempint_Celcious > 40:
-                temp_color = Red
-           
+            if tempint_Celcious <= 120:     
+                #Staturated Temperature Celcious value between 50 to 45 Should be Yellow Color
+                if tempint_Celcious <= 40 and tempint_Celcious >= 10:
+                    temp_color = Green
+
+                #Staturated Temperature Celcious value is above 50 Should be Red Color   
+                elif tempint_Celcious > 40:
+                    temp_color = Red
+            else:
+                temp_color = Blue
+                disptemp = "---"
+                return  temp_color, disptemp
+               
         #Check for the Valid temp is 00
         else:
             temp_color = Blue
@@ -307,6 +320,10 @@ def displayLEDBoard(vehName, dispCmd, date_time, dispVar):
     #            "<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">" +   \
     #            "<\c"+nC+" "+"---"  +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +"\c"+nC+" "+"---" +">"
 
+    dispCmd = ""
+
+    date_time = ""
+    
     try:
         
         if (vehName != None) & (dispVar != None):
@@ -318,11 +335,13 @@ def displayLEDBoard(vehName, dispCmd, date_time, dispVar):
             #print vehNc
 
             dispc = dispCmd + " " + str(date_time)
-
+            
             dispCmd1  = "<\\C"+ nC + dispc + " " + ">"
+         
             #print dispCmd1
 
         display = startChar + vehNc + dispCmd1 + dispVar + endChar
+        #display = startChar + vehNc + dispVar + endChar
 
         #print display
 
@@ -935,6 +954,6 @@ if __name__ == "__main__":
    
     #while(True):
      #   time.sleep(1)
-      #  displayLEDBoard(vehName, dispCmd, date_time, dispVar)
+    #displayLEDBoard(vehName, dispCmd, date_time, dispVar)
     displayLEDBoard_Null()
     

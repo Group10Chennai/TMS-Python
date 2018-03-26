@@ -475,7 +475,7 @@ class Ui_Form(object):
 
                     loop = True
                     #print "loopstatus: self.callMethod3_BluetoothFunction(myBleConn, loop, status)", myBleConn, loop, status 
-                    print "call method3 from loopfun"
+                    #print "call method3 from loopfun"
                     self.callMethod3_BluetoothFunction(myBleConn, vehName, vehID, loop, status, loopStatus,Buf_mylist)
                     
                     return myBleConn, vehName, vehID, status
@@ -597,7 +597,7 @@ class Ui_Form(object):
                                         Buf_mylist[i][10] = mylistvar[i][10]
                                         Buf_mylist[i][11] = mylistvar[i][11]
                                         Buf_mylist[i][12] = mylistvar[i][12]
-                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                                        #print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
                             elif ( mylistvar[i][6] == '02' ):
                                 #print "02"
                                 Buf_mylist[i][6] = '02'
@@ -606,7 +606,7 @@ class Ui_Form(object):
                                         Buf_mylist[i][10] = mylistvar[i][10]
                                         Buf_mylist[i][11] = mylistvar[i][11]
                                         Buf_mylist[i][12] = mylistvar[i][12]
-                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                                        #print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
                             elif ( mylistvar[i][6] == '03' ):
                                 #print "03"
                                 Buf_mylist[i][6] = '03'
@@ -615,7 +615,7 @@ class Ui_Form(object):
                                         Buf_mylist[i][10] = mylistvar[i][10]
                                         Buf_mylist[i][11] = mylistvar[i][11]
                                         Buf_mylist[i][12] = mylistvar[i][12]
-                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                                        #print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
                             elif ( mylistvar[i][6] == '04' ):
                                 #print "04"
                                 Buf_mylist[i][6] = '04'
@@ -624,7 +624,7 @@ class Ui_Form(object):
                                         Buf_mylist[i][10] = mylistvar[i][10]
                                         Buf_mylist[i][11] = mylistvar[i][11]
                                         Buf_mylist[i][12] = mylistvar[i][12]
-                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                                        #print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
                             elif ( mylistvar[i][6] == '05' ):
                                 #print "05"
                                 Buf_mylist[i][6] = '05'
@@ -633,7 +633,7 @@ class Ui_Form(object):
                                         Buf_mylist[i][10] = mylistvar[i][10]
                                         Buf_mylist[i][11] = mylistvar[i][11]
                                         Buf_mylist[i][12] = mylistvar[i][12]
-                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                                        #print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
                             elif ( mylistvar[i][6] == '06' ):
                                 #print "06"
                                 Buf_mylist[i][6] = '06'
@@ -642,17 +642,19 @@ class Ui_Form(object):
                                         Buf_mylist[i][10] = mylistvar[i][10]
                                         Buf_mylist[i][11] = mylistvar[i][11]
                                         Buf_mylist[i][12] = mylistvar[i][12]
-                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                                        #print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
                     else:
-                        print "Failed : My list None"
+                        mylistvar = None
+                        #print "Failed : My list None"
 
 
                     Buffer_data = True
 
                     #print "Buf_mylist",Buf_mylist
+                    statusAuto = self.radioButton.isChecked()
+                    statusMan  = self.radioButton_2.isChecked()
                     
-                    
-                    if status == "Success" and mylistvar != None:
+                    if status == "Success" and mylistvar != None or statusMan == False:
 
                         
                         #Status, BLEStatus = self.display_mylistvar(mylistvar, vehName, vehID, status, RecordSend)
@@ -662,8 +664,8 @@ class Ui_Form(object):
                         if ((BLEStatus == False)):
                             RecordSend = BLEStatus
 
-                    elif status == "Failed" and mylistvar == None:
-                        print "connection failed"
+                    if status == "Failed" and mylistvar == None or statusMan == True:
+                        #print "connection failed"
                         RecordSend  = True
                         #Status, BLEStatus = self.display_mylistvar(Previous_mylistvar, vehName, vehID, status, RecordSend)
                         Status, BLEStatus = self.display_mylistvar(Buf_mylist, vehName, vehID, status, RecordSend)
@@ -675,12 +677,12 @@ class Ui_Form(object):
                     #print BLEStatus
                     QtCore.QCoreApplication.processEvents()
 
-                    statusAuto = self.radioButton.isChecked()
-                    statusMan  = self.radioButton_2.isChecked()
+                    
 
                     
                     if (status == "Failed") or (statusMan == True):
                         display.displayLEDBoard_Null()
+                        self.endProcess()
                         loop = False
                         #myBleConn.close()
                     else:
@@ -725,7 +727,7 @@ class Ui_Form(object):
                                         Buf_mylist[i][10] = mylistvar[i][10]
                                         Buf_mylist[i][11] = mylistvar[i][11]
                                         Buf_mylist[i][12] = mylistvar[i][12]
-                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                                        #print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
                             elif ( mylistvar[i][6] == '02' ):
                                 #print "02"
                                 Buf_mylist[i][6] = '02'
@@ -734,7 +736,7 @@ class Ui_Form(object):
                                         Buf_mylist[i][10] = mylistvar[i][10]
                                         Buf_mylist[i][11] = mylistvar[i][11]
                                         Buf_mylist[i][12] = mylistvar[i][12]
-                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                                        #print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
                             elif ( mylistvar[i][6] == '03' ):
                                 #print "03"
                                 Buf_mylist[i][6] = '03'
@@ -743,7 +745,7 @@ class Ui_Form(object):
                                         Buf_mylist[i][10] = mylistvar[i][10]
                                         Buf_mylist[i][11] = mylistvar[i][11]
                                         Buf_mylist[i][12] = mylistvar[i][12]
-                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                                        #print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
                             elif ( mylistvar[i][6] == '04' ):
                                 #print "04"
                                 Buf_mylist[i][6] = '04'
@@ -752,7 +754,7 @@ class Ui_Form(object):
                                         Buf_mylist[i][10] = mylistvar[i][10]
                                         Buf_mylist[i][11] = mylistvar[i][11]
                                         Buf_mylist[i][12] = mylistvar[i][12]
-                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                                        #print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
                             elif ( mylistvar[i][6] == '05' ):
                                 #print "05"
                                 Buf_mylist[i][6] = '05'
@@ -761,7 +763,7 @@ class Ui_Form(object):
                                         Buf_mylist[i][10] = mylistvar[i][10]
                                         Buf_mylist[i][11] = mylistvar[i][11]
                                         Buf_mylist[i][12] = mylistvar[i][12]
-                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                                        #print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
                             elif ( mylistvar[i][6] == '06' ):
                                 #print "06"
                                 Buf_mylist[i][6] = '06'
@@ -770,17 +772,20 @@ class Ui_Form(object):
                                         Buf_mylist[i][10] = mylistvar[i][10]
                                         Buf_mylist[i][11] = mylistvar[i][11]
                                         Buf_mylist[i][12] = mylistvar[i][12]
-                                        print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
+                                        #print  "Values are " ,Buf_mylist[i][10],mylistvar[i][10],Buf_mylist[i][11], mylistvar[i][11],Buf_mylist[i][12] , mylistvar[i][12]
                             
                             
                     else:
-                        print "Failed : My list None"
+                        mylistvar = None
+                        #print "Failed : My list None"
 
                     Buffer_data = True
 
                     #print "Buf_mylist",Buf_mylist
-                    
-                    if status == "Success" and mylistvar != None:
+                    statusAuto = self.radioButton.isChecked()
+                    statusMan  = self.radioButton_2.isChecked()
+
+                    if status == "Success" and mylistvar != None or statusAuto == False:
 
                         
                         #Status, BLEStatus = self.display_mylistvar(mylistvar, vehName, vehID, status, RecordSend)
@@ -790,8 +795,8 @@ class Ui_Form(object):
                         if ((BLEStatus == False)):
                             RecordSend = BLEStatus
 
-                    elif status == "Failed" and mylistvar == None:
-                        print "connection failed"
+                    if status == "Failed" and mylistvar == None or statusAuto == True:
+                        #print "connection failed"
                         RecordSend  = True
                         #Status, BLEStatus = self.display_mylistvar(Previous_mylistvar, vehName, vehID, status, RecordSend)
                         Status, BLEStatus = self.display_mylistvar(Buf_mylist, vehName, vehID, status, RecordSend)
@@ -802,12 +807,11 @@ class Ui_Form(object):
                     #print BLEStatus
                     QtCore.QCoreApplication.processEvents()
 
-                    statusAuto = self.radioButton.isChecked()
-                    statusMan  = self.radioButton_2.isChecked()
-
+                    
                     
                     if (status == "Failed") or (statusAuto == True):
                         display.displayLEDBoard_Null()
+                        self.endProcess()
                         loop = False
                         #myBleConn.close()
                     else:
@@ -1054,7 +1058,7 @@ class Ui_Form(object):
                     print ("Please enter 4 digits bus no", self.lineEdit_bus_No.displayText())
 
                 else:
-                    print ("Call work.py -> function(): ", self.lineEdit_bus_No.displayText())
+                    #print ("Call work.py -> function(): ", self.lineEdit_bus_No.displayText())
 
                     if(len(self.lineEdit_bus_No.displayText()) > 0):
                         # Checking for RFID_UID
@@ -1083,7 +1087,7 @@ class Ui_Form(object):
 
             elif btnEvent == "Done" :
                 #Clicked Done Button
-                print("inside else done")
+                #print("inside else done")
                 loopStatus = True
                 self.numberString = ""
                 self.lineEdit_bus_No.setText("")
@@ -1131,12 +1135,12 @@ class Ui_Form(object):
                 if bid == "clear":
                     self.numberString = ""
 
-            print (self.numberString)
+            #print (self.numberString)
             self.lineEdit_bus_No.setText(self.numberString)
         except:
             e = sys.exc_info()[0]
             my_logger.error("Failed - keypadEvent %s ",e)
-            print ("Failed - keypadEvent  ",e)
+            #print ("Failed - keypadEvent  ",e)
     
     
     #def MainWindow(QMainWindow):
