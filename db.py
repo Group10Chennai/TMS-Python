@@ -215,7 +215,7 @@ def select_TyreDetails_by_VehId(conn, VehId1):
             #my_logger.info (" DB select_TireDetails_by_VehId ")
             
             cur = conn.cursor()
-            cur.execute("SELECT sensorUID, tirePosition FROM TireDetails WHERE vehId=?",(VehId1,))
+            cur.execute("SELECT sensorUID, tirePosition FROM TireDetails WHERE sensorId !=0 and vehId=?",(VehId1,))
             
             
             rows = cur.fetchall()
@@ -654,7 +654,7 @@ def update_Report_data_child_by_report_data_master_id(conn, report_data_master_i
 
     try:
 
-        print "All Values", conn, report_data_master_id1, vehId1, TyreIdList
+        #print "All Values", conn, report_data_master_id1, vehId1, TyreIdList
         
         cur = conn.cursor()
        
@@ -700,6 +700,8 @@ def update_Report_data_child_by_report_data_master_id(conn, report_data_master_i
                         dispPsi = str((presint_Psi))
 
                         tempint_Celcious  = (int(temp, 16) - 50)
+                        if tempint_Celcious == -50:
+                            tempint_Celcious = 0 
                         disptemp = (int(tempint_Celcious))
 
                         sql = ''' INSERT INTO Report_data_child (report_data_master_id,
@@ -714,7 +716,7 @@ def update_Report_data_child_by_report_data_master_id(conn, report_data_master_i
 
                                       
 
-                        print "Need to insert", (report_data_master_id1, vehId1, TyreID, position, sensorid, presint_Psi, tempint_Celcious, statstr)
+                        #print "Need to insert", (report_data_master_id1, vehId1, TyreID, position, sensorid, presint_Psi, tempint_Celcious, statstr)
 
                         queryParam = (report_data_master_id1, vehId1, TyreID, position, sensorid, presint_Psi, tempint_Celcious, statstr)
                         #queryParam = (vehId1, date_time, position, sensorid, presint_Psi, tempint_Celcious, statint, 1, 0)

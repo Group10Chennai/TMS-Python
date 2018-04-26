@@ -319,7 +319,7 @@ def connect_ble(BUID1):
                     return None
                     pass 
 
-            ##print "trying to connect to %s on 0x%X" % (BUID1, port)
+            print "trying to connect to %s on 0x%X" , (BUID1, port)
 
             if(bleCon is not None):
                 while(True):

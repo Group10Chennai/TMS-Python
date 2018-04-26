@@ -271,7 +271,7 @@ def displayTempValidation(temp):
             tempint_Celcious  = utlities.temperatureToCelciousConvertion(temp)
             disptemp = str(int(tempint_Celcious)).zfill(3)
 
-            if tempint_Celcious <= 120:     
+            if tempint_Celcious <= 120 and tempint_Celcious >= 0:     
                 #Staturated Temperature Celcious value between 50 to 45 Should be Yellow Color
                 if tempint_Celcious <= 40 and tempint_Celcious >= 10:
                     temp_color = Green
@@ -954,6 +954,7 @@ if __name__ == "__main__":
    
     #while(True):
      #   time.sleep(1)
+      #  displayLEDBoard(vehName, dispCmd, date_time, dispVar)
     #displayLEDBoard(vehName, dispCmd, date_time, dispVar)
     displayLEDBoard_Null()
     

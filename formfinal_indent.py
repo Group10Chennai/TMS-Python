@@ -889,13 +889,15 @@ class Ui_Form(object):
                 return "Success", RecordSend
 
             elif (status == "Failed"):
+                if RecordSend == True:
+                    #API Server Last Record Updation parameters
+                    work.display_Parameter_API(mylistvar, vehName, vehID, curdate_time)        
 
-                #API Server Last Record Updation parameters
-                work.display_Parameter_API(mylistvar, vehName, vehID, curdate_time)        
+                    RecordSend = False
 
-                RecordSend = False
-
-                return "Failed", RecordSend
+                    return "Failed", RecordSend
+                else:
+                    return "Failed", RecordSend
 
         except:
             e = sys.exc_info()[0]

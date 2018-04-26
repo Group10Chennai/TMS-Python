@@ -36,10 +36,16 @@ def postLiveData(data):
         data_json = json.dumps(data)
         headers = {'Content-type': 'application/json'}
         response = requests.post(url, data=data_json, headers=headers)
-        pprint.pprint(response.json())
+        #pprint.pprint(response.json())
+        apiResp = response.json()
+
+        if(apiResp.get('displayMsg') == "Success"):
+            return "Success"
+        else:
+            return None
         
         #print data_json
-        return "Success"
+        #return "Success"
 
     except:
         errObj = traceback.format_exc()

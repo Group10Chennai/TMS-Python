@@ -1776,7 +1776,7 @@ def display_Parameter_API(mylist, vehName, vehID, date_time):
                         
                     
 
-                    print "report_data_master_id", report_data_master_id
+                    #print "report_data_master_id", report_data_master_id
                     
 
                     TyreDetail = db.select_TyreDetails_tyreId_by_VehId(conn, vehID)
@@ -1799,7 +1799,7 @@ def display_Parameter_API(mylist, vehName, vehID, date_time):
                             DBTyreDetail.append(SID)
               
                                     
-                        print DBTyreDetail
+                        #print DBTyreDetail
                                                
                                        
                     #print TyreIDL
@@ -1817,7 +1817,9 @@ def display_Parameter_API(mylist, vehName, vehID, date_time):
                     
 
             else:
-                print ("Failed - dbConn is Error conn: ")
+                e = sys.exc_info()[0]
+                my_logger.error("Failed - prepareJsonString :%s ",e)
+                #print ("Failed - dbConn is Error conn: ")
                  
         except:
             e = sys.exc_info()[0]
