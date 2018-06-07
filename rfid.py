@@ -23,9 +23,9 @@ import logging.handlers
 
 #Serial Enable
 serial = serial.Serial("/dev/ttyS0", baudrate = 9600, timeout = 0.2)
+#serial = serial.Serial("/dev/ttyUSB0", baudrate = 57600, timeout = 0.2)
 
-
-
+'''
 LOG_FILENAME = '/home/pi/Documents/TMS-Git/log/loggingRotatingFileExample.log'
 
 my_logger = logging.getLogger('myapp')
@@ -34,8 +34,9 @@ formatter = logging.Formatter('%(asctime)s :%(levelname)s :%(message)s :')
 hdlr.setFormatter(formatter)
 my_logger.addHandler(hdlr) 
 my_logger.setLevel(logging.DEBUG)
+'''
 
-my_logger.disabled = True
+#my_logger.disabled = True
 
 #Variable Decleration
 s = 'hello'
@@ -77,7 +78,7 @@ def RFIDUHFQueryTag():
             #print rfidTID_hex
             rfidTID = rfidTID_hex [12:37]
             #RFID TAG ID Data
-            print rfidTID
+            #print rfidTID
 
             if rfidTID == TID1:
                 print "Hello"
@@ -93,7 +94,7 @@ def RFIDUHFQueryTag():
     except:
         e = sys.exc_info()[0]
         #my_logger.error("Failed - RFID Query Tag %s, %s:",e, QueryTag)
-        print ("Failed - RFID Query Tag :",e, QueryTag)
+        #print ("Failed - RFID Query Tag :",e, QueryTag)
         return None
 
 if __name__ == "__main__":  

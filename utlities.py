@@ -68,7 +68,7 @@ def displayPresValidation(pres):
 
     except:
         e = sys.exc_info()[0]
-        my_logger.error("Failed - Pressure Calculation:%s ",e)
-        print ("Failed - Pressure Calculation: ",e)
+        #my_logger.error("Failed - Pressure Calculation:%s ",e)
+        #print ("Failed - Pressure Calculation: ",e)
 
         return None

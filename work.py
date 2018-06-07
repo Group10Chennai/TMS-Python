@@ -31,7 +31,7 @@ import logging
 import logging.handlers
 
 
-
+'''
 LOG_FILENAME = '/home/pi/Documents/TMS-Git/log/loggingRotatingFileExample.log'
 
 my_logger = logging.getLogger('myapp')
@@ -40,8 +40,9 @@ formatter = logging.Formatter('%(asctime)s :%(levelname)s :%(message)s :')
 hdlr.setFormatter(formatter)
 my_logger.addHandler(hdlr) 
 my_logger.setLevel(logging.DEBUG)
+'''
 
-my_logger.disabled = True
+#my_logger.disabled = True
 '''
 #Creating Object for bluetoothctl
 autopair = BtAutoPair.BtAutoPair()
@@ -101,14 +102,16 @@ def db_DeviceDetails_by_rfiduid(conn, tag_id):
                         vehID = vehDetail[0]
                         
                     else:
-                        my_logger.warning ("Failed - vehID is Not Available %s", vehDetail[0])
+			True
+                        #my_logger.warning ("Failed - vehID is Not Available %s", vehDetail[0])
                         
                     #Check vehName
                     if(vehDetail[1] != None):
                         vehName = vehDetail[1].strip()
                         
                     else:
-                        my_logger.warning ("Failed - vehName is Not Available %s", vehDetail[1].strip())
+			True
+                        #my_logger.warning ("Failed - vehName is Not Available %s", vehDetail[1].strip())
                         
                     #Check BUID and Mac Address Length
                     if((vehDetail[2] != None) &(len(vehDetail[2].strip()) == 17)):
@@ -117,38 +120,40 @@ def db_DeviceDetails_by_rfiduid(conn, tag_id):
                         #print("RFUID length : ",(len(vehDetail[3].strip())))
                               
                     else:
-                        my_logger.warning ("Failed - BUID is Not Available %s", vehDetail[2])
+			True
+                        #my_logger.warning ("Failed - BUID is Not Available %s", vehDetail[2])
                         
                     #Check RFUID and tagid Length
                     if((vehDetail[3] != None) & (len(vehDetail[3].strip()) == 25)):
                         RFUID = vehDetail[3].strip()
                         
                     else:
-                        my_logger.warning ("Failed - RFUID is Not Available %s", vehDetail[3])
+			True
+                        #my_logger.warning ("Failed - RFUID is Not Available %s", vehDetail[3])
                         
                     
                     if(vehID, vehName, BUID, RFUID != None):                   
-                        my_logger.info ("If vehID : %s, vehName : %s, BUID : %s, RFUID : %s are Available", vehID, vehName, BUID, RFUID)
+                       # my_logger.info ("If vehID : %s, vehName : %s, BUID : %s, RFUID : %s are Available", vehID, vehName, BUID, RFUID)
                         #print ("If vehID : , vehName : , BUID : , RFUID :  are Available", vehID, vehName, BUID, RFUID)
                         #Add Response Class
                         return vehID, vehName, BUID, RFUID
                         #return  vehDetail
                     else:
-                        my_logger.warning ("Failed - If vehID : %s, vehName : %s, BUID : %s, RFUID : %s  are NONE", vehID, vehName, BUID, RFUID) 
+                        #my_logger.warning ("Failed - If vehID : %s, vehName : %s, BUID : %s, RFUID : %s  are NONE", vehID, vehName, BUID, RFUID) 
                         #Add Response Class
                         #print ("Failed - If vehID : , vehName : , BUID : , RFUID :   are NONE")
                         return None                
                 else:
-                    my_logger.warning ("Failed - db.select_DeviceDetails_by_rfiduid vehDetail None : %s." , vehDetail) 
+                    #my_logger.warning ("Failed - db.select_DeviceDetails_by_rfiduid vehDetail None : %s." , vehDetail) 
                     #Add Response Class
                     return None
                 #print vehID, vehName, BUID, RFUID       
         else:
-            my_logger.warning ("Failed - Connection to DB is None " )
+            #my_logger.warning ("Failed - Connection to DB is None " )
             return None
     except:
         e = sys.exc_info()[0]
-        my_logger.error(e)
+        #my_logger.error(e)
         #print ("Failed - Bluetooth Parse data Attribute Value not Avalable:",e)
 
         return None
@@ -238,7 +243,7 @@ def db_DeviceDetails_by_vehID(DBconn, vehID1):
             DBtotalTyres = len(TyreDetail)
             #print DBtotalTyres
         else:
-            my_logger.warning("Failed - db_DeviceDetails_by_vehID - DBconn: %s ", data)
+            #my_logger.warning("Failed - db_DeviceDetails_by_vehID - DBconn: %s ", data)
             #print ("Failed - db_DeviceDetails_by_vehID - DBconn:  ", data)
             return None
         
@@ -414,20 +419,20 @@ def db_DeviceDetails_by_vehID(DBconn, vehID1):
                         return DBTyreDetail
 
                 elif(DBi > 6):
-                    my_logger.warning("Failed - DB Select TyreDetails by VehId in DBtotalTyres is more than 6: %s, %s ",DBi, DBtotalTyres)
+                    #my_logger.warning("Failed - DB Select TyreDetails by VehId in DBtotalTyres is more than 6: %s, %s ",DBi, DBtotalTyres)
                     #print ("Failed - DB Select TyreDetails by VehId in DBtotalTyres is more than 6:",DBi, DBtotalTyres)
                     return None   
                     
 
         elif TyreDetail is None:
-            my_logger.warning("Failed - DB Select TyreDetails by VehId in TyreDetail is None: %s",TyreDetail)
-            print ("Failed - DB Select TyreDetails by VehId in TyreDetail is None:",TyreDetail)
+            #my_logger.warning("Failed - DB Select TyreDetails by VehId in TyreDetail is None: %s",TyreDetail)
+            #print ("Failed - DB Select TyreDetails by VehId in TyreDetail is None:",TyreDetail)
             return None 
 
     except:
-        e = sys.exc_info()[0]
-        my_logger.error("Failed - DB Select TyreDetails by VehId is not available: %s, %s ",e, VehId)
-        print ("Failed - DB Select TyreDetails by VehId is not available:",e, VehId)
+        #e = sys.exc_info()[0]
+        #my_logger.error("Failed - DB Select TyreDetails by VehId is not available: %s, %s ",e, VehId)
+        #print ("Failed - DB Select TyreDetails by VehId is not available:",e, VehId)
         return None
         
         #print("Close a database connection to the DB file .db")
@@ -466,22 +471,22 @@ def Connect_Socket_Bluetooth_by_BUID( conn):
                     return BluetoothSocketVariable1, BLEstatus
                 
                 else:
-                    my_logger.warning("Failed - BT Query Data not Available from the Bluetooth Controller: %s ", data)
-                    print ("Failed - BT Query Data not Available from the Bluetooth Controller:", data)
+                    #my_logger.warning("Failed - BT Query Data not Available from the Bluetooth Controller: %s ", data)
+                    #print ("Failed - BT Query Data not Available from the Bluetooth Controller:", data)
                     return None, "Failed"
             else:
-                my_logger.warning("Failed - BT Query the Bluetooth Controller with 63 to read All is None: %s, %s ",e, TPMSID1)
+                #my_logger.warning("Failed - BT Query the Bluetooth Controller with 63 to read All is None: %s, %s ",e, TPMSID1)
                 #print ("Failed - BT Query the Bluetooth Controller with 63 to read All is None:",e, TPMSID1)
                 return None, "Failed"
             
         else:
-            my_logger.warning("Failed - BT Query the Bluetooth Controller BTConnection is None: %s",conn)
+            #my_logger.warning("Failed - BT Query the Bluetooth Controller BTConnection is None: %s",conn)
             #print ("Failed - BT Query the Bluetooth Controller BTConnection is None:",conn)
             return None, "Failed"
 
     except:
-            e = sys.exc_info()[0]
-            my_logger.error("Failed - BT Query the Bluetooth Controller with 63 to read All is None: %s, %s ",e, TPMSID1)
+            #e = sys.exc_info()[0]
+            #my_logger.error("Failed - BT Query the Bluetooth Controller with 63 to read All is None: %s, %s ",e, TPMSID1)
             #print ("Failed - BT Query the Bluetooth Controller with 63 to read All is None:",e, TPMSID1)
             return None, "Failed"
     #print("Compare DB Sensor UID, tirePosition with Bluetooth TyreNo, TyreID")
@@ -509,14 +514,15 @@ def configure_BTController(bleConn, DBSensorVariable):
             if RetValConf == "aa":
                 continue
             else:
-                my_logger.warning("Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: %s, %s, %s",DBSensorVariable[i+1], DBSensorVariable[i], RetValConf)
+		True
+                #my_logger.warning("Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: %s, %s, %s",DBSensorVariable[i+1], DBSensorVariable[i], RetValConf)
                 #print ("Failed - BT Query the Bluetooth Controller to configure Sensor ID, Location - RetValConf is None or FF: ",DBSensorVariable[i+1], DBSensorVariable)
                 #return None
 
            
     except:
         e = sys.exc_info()[0]
-        my_logger.error("Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None: %s ",e)
+        #my_logger.error("Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None: %s ",e)
         #print ("Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None: ",e)
 
         return None
@@ -614,7 +620,7 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
                     print "in BluetoothSocketVariable[v] ",_BTLocation6, _BTSensorID6
             '''
         else:
-            my_logger.warning("Failed - DBSensorVariable is None %s",DBSensorVariable)
+            #my_logger.warning("Failed - DBSensorVariable is None %s",DBSensorVariable)
             #print ("Failed - DBSensorVariable is None",DBSensorVariable)
             return None
 
@@ -1153,7 +1159,7 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
 
                     if RetVal == "aa":
                         RetVal = "Success"
-                        p#rint "Successfully Assigned Sensor"
+                        #print "Successfully Assigned Sensor"
                         continue
                     else:
                         return None
@@ -1196,12 +1202,12 @@ def compare_DBSensorUID_DBLocation_BTyreNo_BTyreID(conn, DBSensorVariable, Bluet
         
         else:
             #print ("Failed - mylist and Bluetooth conn are None:",mylist,conn)
-            my_logger.warning("Failed - mylist and Bluetooth conn are None: %s %s",mylist,conn)
+            #my_logger.warning("Failed - mylist and Bluetooth conn are None: %s %s",mylist,conn)
             return None
 
     except:
-        e = sys.exc_info()[0]
-        my_logger.error("Failed - compare_DBSensorUID_DBLocation_BTyreNo_BTyreID:%s, %s, %s ",e, DBSensorVariable, BluetoothSocketVariable)
+       # e = sys.exc_info()[0]
+        #my_logger.error("Failed - compare_DBSensorUID_DBLocation_BTyreNo_BTyreID:%s, %s, %s ",e, DBSensorVariable, BluetoothSocketVariable)
         #print ("Failed - compare_DBSensorUID_DBLocation_BTyreNo_BTyreID: ",e, DBSensorVariable, BluetoothSocketVariable)
         return None
                 
@@ -1225,24 +1231,24 @@ def assignNewSensorToBTC(conn, location, sensorUID):
                     return data
 
                 else:
-                    my_logger.warning("Failed - Bluetooth Query to Send and Receive Command Not Available: %s",TMSSET)
-                    print("Failed - Bluetooth Query to Send and Receive Command Not Available: %s",TMSSET)
+                    #my_logger.warning("Failed - Bluetooth Query to Send and Receive Command Not Available: %s",TMSSET)
+                    #print("Failed - Bluetooth Query to Send and Receive Command Not Available: %s",TMSSET)
                     return None
             else:
-                my_logger.warning("Failed - Bluetooth Query to assignNewSensorToBTC(Location, Sensor ID) not Avalable: %s, %s",location, sensorUID)
+                #my_logger.warning("Failed - Bluetooth Query to assignNewSensorToBTC(Location, Sensor ID) not Avalable: %s, %s",location, sensorUID)
                 #print ("Failed - Bluetooth Query to assignNewSensorToBTC(Location, Sensor ID) not Avalable: ",location, sensorUID)
                 return None
         else:
             
-            my_logger.warning("Failed - Bluetooth Connection Socket is Not Avalable: %s", BUID)
-            print ("Failed - Bluetooth Connection Socket is Not Avalable: %s", BUID)
+            #my_logger.warning("Failed - Bluetooth Connection Socket is Not Avalable: %s", BUID)
+            #print ("Failed - Bluetooth Connection Socket is Not Avalable: %s", BUID)
             return None
 
 
     except:
-        e = sys.exc_info()[0]
-        my_logger.error("Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:%s, %s, %s ",e, location, sensorUID )
-        print ("Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None: ",e, location, sensorUID )
+        #e = sys.exc_info()[0]
+        #my_logger.error("Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None:%s, %s, %s ",e, location, sensorUID )
+        #print ("Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None: ",e, location, sensorUID )
 
         return None
                 
@@ -1297,33 +1303,33 @@ def fun_VehName(vehName):
                         RFUID = vehDetails1[3]
                         
 
-                        print RFUID
+                        #print RFUID
 
                         return RFUID
                     else:
-                        my_logger.warning("Failed - vehDetails1 : %s",vehDetails1)
+                        #my_logger.warning("Failed - vehDetails1 : %s",vehDetails1)
                         #print("Failed - vehDetails1 : ",vehDetails1)
                         return None
                 else:
                     dbConn.close()
-                    my_logger.warning("Failed - dbConn : %s",dbConn)
-                    print("Failed - dbConn : ",dbConn)
+                    #my_logger.warning("Failed - dbConn : %s",dbConn)
+                    #print("Failed - dbConn : ",dbConn)
                     return None
 
             else:
-                my_logger.warning("Failed - database : %s",database)
-                print("Failed - database : ",database)
+                #my_logger.warning("Failed - database : %s",database)
+                #print("Failed - database : ",database)
                 return None
                 
         else:
-            my_logger.warning("Failed - vehName : %s",vehName)
+            #my_logger.warning("Failed - vehName : %s",vehName)
             #print("Failed - vehName : ",vehName)
             return None
         
     except:
-        e = sys.exc_info()[0]
-        my_logger.error("Failed - GUI Attribute to Set (vehName) None:%s, %s ",e, vehName )
-        print ("Failed - GUI Attribute to Set (vehName) None: ",e, vehName )
+        #e = sys.exc_info()[0]
+        #my_logger.error("Failed - GUI Attribute to Set (vehName) None:%s, %s ",e, vehName )
+        #print ("Failed - GUI Attribute to Set (vehName) None: ",e, vehName )
 
         return None
     
@@ -1349,7 +1355,7 @@ def bluetoothctlObjectPair(BUID):
 
         if BUID != None:
 
-            print "BUID :", BUID
+           # print "BUID :", BUID
 
             #check for Paired Bluetooth MAC Address
             paired = bl.get_paired_devices()
@@ -1399,17 +1405,17 @@ def bluetoothctlObjectPair(BUID):
 
                     if pair == True:
                         
-                        my_logger.error("Success - Successfully Paird with the New BUID: %s ", BUID )
+                        #my_logger.error("Success - Successfully Paird with the New BUID: %s ", BUID )
                         #print ("Success - Successfully Paird with the New BUID: ", BUID )
                         return "Success"
                     else:
                         
-                        my_logger.error("Failed - Not Paird with the New BUID: %s ", BUID )
+                        #my_logger.error("Failed - Not Paird with the New BUID: %s ", BUID )
                         #print ("Failed - Not Paird with the New BUID: ", BUID )
                         return None 
                 else:
                     
-                    my_logger.error("Failed - Not Availabel in Discoverable devices list BUID: %s ", BUID )
+                    #my_logger.error("Failed - Not Availabel in Discoverable devices list BUID: %s ", BUID )
                     print ("Failed - Not Availabel in Discoverable devices list BUID: ", BUID )
                     return None
                     
@@ -1421,19 +1427,19 @@ def bluetoothctlObjectPair(BUID):
                 return "Success"
 
             else:
-                my_logger.error("Failed - Not Availabel or Error value in Paired devices list BUID: %s ", BUID )
+                #my_logger.error("Failed - Not Availabel or Error value in Paired devices list BUID: %s ", BUID )
                 #print ("Failed - Not Availabel or Error value in Paired devices list BUID: ", BUID )
                 return None    
                 
 
         else:
-            my_logger.error("Failed - BluetoothctlObjectPair BUID is None: %s ", BUID )
-            print ("Failed - BluetoothctlObjectPair BUID is None: ", BUID )
+           #my_logger.error("Failed - BluetoothctlObjectPair BUID is None: %s ", BUID )
+            #print ("Failed - BluetoothctlObjectPair BUID is None: ", BUID )
             return None    
             
     except:
-        e = sys.exc_info()[0]
-        my_logger.error("Failed - BluetoothctlObjectPair:%s, %s ",e, BUID )
+        #e = sys.exc_info()[0]
+        #my_logger.error("Failed - BluetoothctlObjectPair:%s, %s ",e, BUID )
         print ("Failed - BluetoothctlObjectPair: ",e, BUID )
 
         return None
@@ -1485,11 +1491,11 @@ def fun_main(RFIDTID):
                             dbConn.close()
 
                             if DBSensorVariable == None:
-                                my_logger.warning ("Vehicle ID Related Sensors is None :%s ", DBSensorVariable)
+                                #my_logger.warning ("Vehicle ID Related Sensors is None :%s ", DBSensorVariable)
                                 return None, "Vehicle ID Related Sensors is None "+DBSensorVariable, vehID, "Failed"
                                     
                         else:
-                            my_logger.warning ("Failed - Vehicle ID not Available or None Function :%s ", vehID)
+                            #my_logger.warning ("Failed - Vehicle ID not Available or None Function :%s ", vehID)
                             return None, "Failed - Vehicle ID not Available or None "+ vehID , "Failed"
 
 
@@ -1503,7 +1509,7 @@ def fun_main(RFIDTID):
 
                             if RetValBLE == "Success":                                
 
-                                bleConn = blecontroller.connect_ble(BUID)
+                                bleConn = blecontroller.connect_ble(BUID,vehName)
 
                                 if bleConn != None:
                                     #print ("Success - Trying to connect Bluetooth BUID", BUID, bleConn)
@@ -1522,41 +1528,41 @@ def fun_main(RFIDTID):
 
                                         else:
                                             ##print ("Failed - RetValCompare is None", RetValCompare)
-                                            my_logger.warning ("Failed - RetValCompare is None : %s", RetValCompare)
+                                            #my_logger.warning ("Failed - RetValCompare is None : %s", RetValCompare)
                                             return None, "Failed - RetValCompare is None", None, "Failed"
 
                                     else:
                                         #print ("Failed - BluetoothSocketVariable is None", BluetoothSocketVariable)
-                                        my_logger.warning ("Failed - BluetoothSocketVariable is None : %s", BluetoothSocketVariable)
+                                        #my_logger.warning ("Failed - BluetoothSocketVariable is None : %s", BluetoothSocketVariable)
                                         return None, "Failed - BluetoothSocketVariable is None", None, "Failed"
 
                                 else:
                                     #print ("Failed - Trying to connect Bluetooth BUID", BUID, bleConn)
-                                    my_logger.warning ("Failed - Trying to connect Bluetooth BUID: %s %s", BUID, bleConn)
+                                    #my_logger.warning ("Failed - Trying to connect Bluetooth BUID: %s %s", BUID, bleConn)
                                     bleConn.close()
                                     return None, "Failed - Trying to connect Bluetooth BUID ", None, "Failed"
 
                             else:
                                 #print ("Failed - bluetoothctlObjectPair in None: ", BUID)
-                                my_logger.warning ("Failed - bluetoothctlObjectPair in None %s: ", BUID)
+                                #my_logger.warning ("Failed - bluetoothctlObjectPair in None %s: ", BUID)
                                 return None, "Failed - bluetoothctlObjectPair in None: ", None, "Failed"
                                 
                         else:
                             print ("Failed - Trying to connect Bluetooth BUID is None")
-                            my_logger.warning ("Failed - Trying to connect Bluetooth BUID is None")
+                            #my_logger.warning ("Failed - Trying to connect Bluetooth BUID is None")
                             bleConn.close()
                             return None, "Failed - Trying to connect Bluetooth BUID in None " +BUID, None, "Failed"
 
                             
                     else:
-                        my_logger.warning ("Failed - RFID Tag ID is not available in DB :%s ", tag_id)
+                        #my_logger.warning ("Failed - RFID Tag ID is not available in DB :%s ", tag_id)
                         return None, "Failed - RFID Tag ID is not available in DB "+ tag_id, None, "Failed"
                 else:
                     dbConn.close()
-                    my_logger.warning ("Failed - No DB Connection ")
+                    #my_logger.warning ("Failed - No DB Connection ")
                     return None, "Failed - No DB Connection ", None, "Failed"
             else: 
-                my_logger.warning ("Failed - Database path Not Available ")
+                #my_logger.warning ("Failed - Database path Not Available ")
                 return None, "Failed - Database path Not Available ", None, "Failed"
         else:
          #   my_logger.warning ("Failed - RFID Tag ID is not available in DB %s: ", tag_id)
@@ -1564,9 +1570,9 @@ def fun_main(RFIDTID):
             return None, "Failed - No TagId Connection ", None, "Failed"
 
     except:
-        e = sys.exc_info()[0]
-        my_logger.error("Failed - Main Function Crashed:fun_main(RFIDTID) %s ",e)
-        print ("Failed - Main Function Crashed:fun_main(RFIDTID) ",e)
+        #e = sys.exc_info()[0]
+        #my_logger.error("Failed - Main Function Crashed:fun_main(RFIDTID) %s ",e)
+        #print ("Failed - Main Function Crashed:fun_main(RFIDTID) ",e)
         #dbConn.close()
         
         return None, "Failed - Main Function Crashed:fun_main(RFIDTID) ", None, "Failed"
@@ -1612,22 +1618,22 @@ def fun_main_Bluetooth(bleConn, vehName, vehID, loop, status):
                     return mylist, vehName, status
 
                 else:
-                    my_logger.warning ("Failed - Connect_Socket_Bluetooth_by_BUID is None %s %s", mylist, status)
-                    print ("Failed - Connect_Socket_Bluetooth_by_BUID is None", mylist, status)
+                    #my_logger.warning ("Failed - Connect_Socket_Bluetooth_by_BUID is None %s %s", mylist, status)
+                    #print ("Failed - Connect_Socket_Bluetooth_by_BUID is None", mylist, status)
                     return None, "Failed - Connect_Socket_Bluetooth_by_BUID is None", "Failed" 
                                 
             else:
-                my_logger.warning ("Failed - fun_main_Bluetooth status: %s", status)
+                #my_logger.warning ("Failed - fun_main_Bluetooth status: %s", status)
                 #print ("Failed - fun_main_Bluetooth status: ", status)
                 return None, "Failed - fun_main_Bluetooth status:", "Failed"   
         else:
-            my_logger.warning ("Failed - bleConn  not Available or None Function : ")
+            #my_logger.warning ("Failed - bleConn  not Available or None Function : ")
             bleConn.close()
             return None, "Failed - bleConn  not Available or None Function : ", "Failed"
             
     except:
-        e = sys.exc_info()[0]
-        my_logger.error("Failed - Main Function Crashed:%s ",e)
+        #e = sys.exc_info()[0]
+        #my_logger.error("Failed - Main Function Crashed:%s ",e)
         print ("Failed - Main Function Crashed: ",e)
 
         return None, "Failed - Main Function Crashed: " , "Failed"
@@ -1657,7 +1663,8 @@ def display_Parameter_LED(mylist, vehName, vehID, date_time):
                 display.displayLEDBoard(vehName, dispCommand, date_time, dispVar)
 
             else:
-                my_logger.warning ("Failed - dispVar  not Available or None: %s", dispVar)
+		True
+                #my_logger.warning ("Failed - dispVar  not Available or None: %s", dispVar)
                 #print ("Failed - dispVar  not Available or None:", dispVar)
                 #return None, " dispVar  not Available or None", "Failed"
                             
@@ -1668,13 +1675,14 @@ def display_Parameter_LED(mylist, vehName, vehID, date_time):
            # print "Display variables None"'''
             
         else:
-            my_logger.warning ("Failed - display_Parameter_LED.mylist  not Available or None: %s", mylist)
+	    True
+            #my_logger.warning ("Failed - display_Parameter_LED.mylist  not Available or None: %s", mylist)
             #print ("Failed - display_Parameter_LED.mylist  not Available or None:", mylist)
 
     except:
         e = sys.exc_info()[0]
-        my_logger.error("Failed - dispVar  not Available or None :%s ",e)
-        print ("Failed - dispVar  not Available or None:%s ",e)
+       	#my_logger.error("Failed - dispVar  not Available or None :%s ",e)
+        #print ("Failed - dispVar  not Available or None:%s ",e)
 
 def display_Parameter_API(mylist, vehName, vehID, date_time):        
 
@@ -1818,13 +1826,13 @@ def display_Parameter_API(mylist, vehName, vehID, date_time):
 
             else:
                 e = sys.exc_info()[0]
-                my_logger.error("Failed - prepareJsonString :%s ",e)
+                #my_logger.error("Failed - prepareJsonString :%s ",e)
                 #print ("Failed - dbConn is Error conn: ")
                  
         except:
             e = sys.exc_info()[0]
-            my_logger.error("Failed - prepareJsonString :%s ",e)
-            print ("Failed - prepareJsonString ",e)
+            #my_logger.error("Failed - prepareJsonString :%s ",e)
+            #print ("Failed - prepareJsonString ",e)
 
             #return None, "dispVar  not Available or None", "Failed"
                         

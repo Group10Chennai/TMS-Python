@@ -18,6 +18,7 @@ import glob
 import logging
 import logging.handlers
 
+
 LOG_FILENAME = '/home/pi/Documents/TMS-Git/log/loggingRotatingFileExample.log'
 
 my_logger = logging.getLogger('myapp')
@@ -27,7 +28,7 @@ hdlr.setFormatter(formatter)
 my_logger.addHandler(hdlr) 
 my_logger.setLevel(logging.DEBUG)
 
-my_logger.disabled = True
+#my_logger.disabled = True
 
 Tyredata = []
 T = []
@@ -57,7 +58,7 @@ def TpmsTireDataPosition():
                 TPMSQueryAllTyre = TPMSQueryAllTyre.strip()
                 #print TPMSQueryAllTyre
             else:
-                my_logger.warning("Failed - Bluetooth Query checksum not Avalable: ",TpmsCksm)
+                #my_logger.warning("Failed - Bluetooth Query checksum not Avalable: ",TpmsCksm)
                 print("Failed - Bluetooth Query checksum not Avalable: ",TpmsCksm)
                 return None
 
@@ -70,13 +71,13 @@ def TpmsTireDataPosition():
             return  my_hex_TPMS
 
         else:
-            my_logger.warning("Failed - Bluetooth Query Command Value not Avalable: %s",TpmsModuleQuery)
+            #my_logger.warning("Failed - Bluetooth Query Command Value not Avalable: %s",TpmsModuleQuery)
             #print("Failed - Bluetooth Query Command Value not Avalable: ",TpmsModuleQuery)
             return None
 
     except:
         e = sys.exc_info()[0]
-        my_logger.error("Failed - Bluetooth Query Command Value Error: %s, %s ",e, TpmsModuleQuery)
+        #my_logger.error("Failed - Bluetooth Query Command Value Error: %s, %s ",e, TpmsModuleQuery)
         ##print ("Failed - Bluetooth Query Command Value Error:",e, TpmsModuleQuery)
 
         return None
@@ -99,7 +100,7 @@ def Tpms_Tire_SET_Position1(L1, SID1):
             TpmsSET1.append('00')
             TpmsSET1.append('00')
         else:
-            my_logger.warning("Failed - Bluetooth Query to SET Tyre Position1(Location, Sensor ID) not Avalable: %s, %s",L1, SID1)
+            #my_logger.warning("Failed - Bluetooth Query to SET Tyre Position1(Location, Sensor ID) not Avalable: %s, %s",L1, SID1)
             print ("Failed - Bluetooth Query to SET Tyre Position1(Location, Sensor ID) not Avalable: ",L1, SID1)
             return None
 
@@ -116,7 +117,7 @@ def Tpms_Tire_SET_Position1(L1, SID1):
                 TPMSQueryAddTyre = TpmsSET+(TpmsCksm)
                 #print TPMSQueryAddTyre
             else:
-                my_logger.warning("Failed - Bluetooth Query checksum not Avalable: ",TpmsCksm)
+                #my_logger.warning("Failed - Bluetooth Query checksum not Avalable: ",TpmsCksm)
                 print("Failed - Bluetooth Query checksum not Avalable: ",TpmsCksm)
                 return None
             
@@ -127,13 +128,13 @@ def Tpms_Tire_SET_Position1(L1, SID1):
             return my_hex_TPMS
         
         else:
-            my_logger.warning("Failed - Bluetooth Query to SET Tyre Position1(Location, Sensor ID) not Avalable: %s, %s, %s",L1, SID1, TpmsSET1)
+            #my_logger.warning("Failed - Bluetooth Query to SET Tyre Position1(Location, Sensor ID) not Avalable: %s, %s, %s",L1, SID1, TpmsSET1)
             print ("Failed - Bluetooth Query to SET Tyre Position1(Location, Sensor ID) not Avalable: ",L1, SID1, TpmsSET1)
             return None
         
     except:
         e = sys.exc_info()[0]
-        my_logger.error("Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None: %s, %s, %s",e, L1, SID1 )
+        #my_logger.error("Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None: %s, %s, %s",e, L1, SID1 )
         print ("Failed - Bluetooth Query Attribute to Set (Location, Sensor ID) None: ",e, L1, SID1 )
 
         return None 
@@ -145,7 +146,7 @@ def Tpms_SET_TireID(conn, TPMSET):
     #TPMSID1 = TpmsTireDataPosition()
     #print binascii.b2a_hex(TPMSET)
     
-    print "performing Bluetooth Communication..."
+    #print "performing Bluetooth Communication..."
     #s.send(TPMSID1)
 
     #while True:
@@ -175,34 +176,34 @@ def Tpms_SET_TireID(conn, TPMSET):
                             return RcvResponse
                             break;
                         else:
-                            print ("Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa:",hex_data, RcvResponse)
-                            my_logger.warning("Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: %s %s",hex_data, RcvResponse)
+                            #print ("Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa:",hex_data, RcvResponse)
+                            #my_logger.warning("Failed - Bluetooth Send and Receive Communication RcvResponse is Not Valuable aa: %s %s",hex_data, RcvResponse)
                             #conn.close()   
                             return None, "Falied"
                        
                         
                     except bluetooth.btcommon.BluetoothError as e:
                         #print ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError",e)
-                        my_logger.error ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError %s",e)  
+                        #my_logger.error ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError %s",e)  
                         #conn.close()
                         time.sleep(2)
                         return None, "Falied"
                         pass
             else:
                 #print ("Failed - Bluetooth Send and Receive Communication Query Command is None:",TPMSET)
-                my_logger.warning("Failed - Bluetooth Send and Receive Communication Query Command is None: %s",TPMSET)
+                #my_logger.warning("Failed - Bluetooth Send and Receive Communication Query Command is None: %s",TPMSET)
                 #conn.close()
                 return None, "Falied"
         else:
             #print ("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None:",TPMSET)
-            my_logger.warning("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None: %s",TPMSET)
+            #my_logger.warning("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None: %s",TPMSET)
             #conn.close()
             return None, "Falied"
     
     except:
         e = sys.exc_info()[0]
-        my_logger.error("Failed - Bluetooth performing Bluetooth Communication...: %s", e)
-        print ("Failed - performing Bluetooth Communication...:", e)
+        #my_logger.error("Failed - Bluetooth performing Bluetooth Communication...: %s", e)
+        #print ("Failed - performing Bluetooth Communication...:", e)
 
         return None    
     
@@ -226,8 +227,8 @@ def toHex(s):
 
     except:
             e = sys.exc_info()[0]
-            my_logger.error("Failed - toHex %s ",e)
-            print ("Failed - toHex  ",e)
+            #my_logger.error("Failed - toHex %s ",e)
+            #print ("Failed - toHex  ",e)
     
 
 
@@ -238,8 +239,8 @@ def toStr(s):
 
     except:
             e = sys.exc_info()[0]
-            my_logger.error("Failed - toStr %s ",e)
-            print ("Failed - toStr  ",e)
+            #my_logger.error("Failed - toStr %s ",e)
+            #print ("Failed - toStr  ",e)
 
    
 
@@ -274,18 +275,18 @@ def TpmsCalcChecksum(TpmsModuleQuery1):
 
             return low
         else:
-            my_logger.warning("Failed - Bluetooth Query Command for Checksum is Not Available: %s", TpmsModuleQuery1)
+            #my_logger.warning("Failed - Bluetooth Query Command for Checksum is Not Available: %s", TpmsModuleQuery1)
             #print ("Failed - Bluetooth Query Command for Checksum is Not Available: ", TpmsModuleQuery1)
             return None
     
     except:
         e = sys.exc_info()[0]
-        my_logger.error("Failed - Bluetooth Query Command for Checksum Query is Not Available:%s %s ",e, TpmsModuleQuery1)
-        print ("Failed - Bluetooth Query Command for Checksum Query is Not Available: ", e,TpmsModuleQuery1)
+        #my_logger.error("Failed - Bluetooth Query Command for Checksum Query is Not Available:%s %s ",e, TpmsModuleQuery1)
+        #print ("Failed - Bluetooth Query Command for Checksum Query is Not Available: ", e,TpmsModuleQuery1)
         return None
 
 
-def connect_ble(BUID1):
+def connect_ble(BUID1,vehName):
     
     #print "performing inquiry..."
     #serverMACAddress = '00:13:EF:C0:02:1E'
@@ -304,7 +305,7 @@ def connect_ble(BUID1):
     try:
         if(BUID1 != None):
             while(True):        
-                print BUID1
+                #print BUID1
                 try:
                     #print "performing Bluetooth Socket Creation..."
                     bleCon = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
@@ -312,14 +313,14 @@ def connect_ble(BUID1):
                     break;
 
                 except bluetooth.btcommon.BluetoothError as e:
-                    my_logger.error("Failed - Bluetooth Socket Creation: %s", e)
-                    print ("Failed - Bluetooth Socket Creation: ", e)
+                    #my_logger.error("Failed - Bluetooth Socket Creation: %s", e)
+                    #print ("Failed - Bluetooth Socket Creation: ", e)
                     bleCon.close()
                     time.sleep(2)
                     return None
                     pass 
 
-            print "trying to connect to %s on 0x%X" , (BUID1, port)
+            #print "trying to connect to %s on 0x%X" , (BUID1, port)
 
             if(bleCon is not None):
                 while(True):
@@ -332,8 +333,8 @@ def connect_ble(BUID1):
                         break;
 
                     except bluetooth.btcommon.BluetoothError as e:
-                        print ("Failed Trying to connect on %s on 0x%X" % (BUID1, port),e)
-                        my_logger.error("Failed - Trying to connect %s",e)  
+                        #print ("Failed Trying to connect on %s on 0x%X" % (BUID1, port),e)
+                        my_logger.error("*B101* Failed Bluetooth Connection on Vehicle : %s, BUID %s",vehName, BUID1)  
                         time.sleep(2)
                         bleCon.close()
                         return None
@@ -350,8 +351,9 @@ def connect_ble(BUID1):
                 #my_logger.error(e)  
                 #return None
             else:
-                my_logger.warning("Failed - Bluetooth Connection Socket is Not Avalable: %s", BUID1)
-                #print ("Failed - Bluetooth Connection Socket is Not Avalable: %s", BUID1)
+		my_logger.warning("Failed - Bluetooth MAC Address is Not Avalable: %s , %s",vehName,BUID1)
+                #my_logger.warning("Failed - Bluetooth Connection Socket is Not Avalable: %s", BUID1)
+                print ("Failed - Bluetooth Connection Socket is Not Avalable: %s", BUID1)
                 return None
                 
         else:
@@ -363,7 +365,7 @@ def connect_ble(BUID1):
     except:
         e = sys.exc_info()[0]
         my_logger.error("Failed - Bluetooth MAC Address is Not Avalable: %s %s ", e, BUID1)
-        print ("Failed - Bluetooth MAC Address is Not Avalable: ", e, BUID1)
+        print ("Failed - Bluetooth MAC Address is Not Available: ", e, BUID1)
 
         return None
     
@@ -401,25 +403,25 @@ def Query_TpmsTireDataPosition(s, TPMSID1):
                         
                     except bluetooth.btcommon.BluetoothError as e:
                         #print ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError",e)
-                        my_logger.error ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError : %s",e)  
+                        #my_logger.error ("Failed - Bluetooth Send and Receive Communication bluetooth.btcommon.BluetoothError : %s",e)  
                         s.close()
                         time.sleep(2)
                         return None, "Failed"
                         #pass
             else:
                 #print ("Failed - Bluetooth Send and Receive Communication Query Command is None:",TPMSID1)
-                my_logger.warning("Failed - Bluetooth Send and Receive Communication Query Command is None: %s",TPMSID1)
+                #my_logger.warning("Failed - Bluetooth Send and Receive Communication Query Command is None: %s",TPMSID1)
                 s.close()
                 return None, "Failed"
         else:
-            print ("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None:",TPMSID1)
-            my_logger.warning("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None: %s",TPMSID1)
+            #print ("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None:",TPMSID1)
+            #my_logger.warning("Failed - Bluetooth Send and Receive Communication Bluetooth Connection is None: %s",TPMSID1)
             s.close()
             return None, "Failed"
 
     except:
-        print ("Failed - Query_TpmsTireDataPosition")
-        my_logger.error ("Failed - Query_TpmsTireDataPosition :")  
+        #print ("Failed - Query_TpmsTireDataPosition")
+        #my_logger.error ("Failed - Query_TpmsTireDataPosition :")  
         return None, "Failed"
 
 #from parse import *
@@ -540,13 +542,13 @@ def ParseBluetoothTyre(data):
             
         else:
             #print ("Failed - Bluetooth ParseBluetoothTyre data None:")
-            my_logger.warning("Failed - Bluetooth ParseBluetoothTyre data None:")
+            #my_logger.warning("Failed - Bluetooth ParseBluetoothTyre data None:")
             return None
         
 
     except:
         e = sys.exc_info()[0]
-        my_logger.error("Failed - Bluetooth ParseBluetoothTyre data None:")
+        #my_logger.error("Failed - Bluetooth ParseBluetoothTyre data None:")
         #print ("Failed - Bluetooth ParseBluetoothTyre data None:")
 
         return None

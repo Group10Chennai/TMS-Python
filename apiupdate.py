@@ -13,7 +13,7 @@ import logging
 import logging.handlers
 
 
-
+'''
 LOG_FILENAME = '/home/pi/Documents/TMS-Git/log/loggingRotatingFileExample.log'
 
 my_logger = logging.getLogger('myapp')
@@ -22,8 +22,9 @@ formatter = logging.Formatter('%(asctime)s :%(levelname)s :%(message)s :')
 hdlr.setFormatter(formatter)
 my_logger.addHandler(hdlr) 
 my_logger.setLevel(logging.DEBUG)
+'''
 
-my_logger.disabled = True
+#my_logger.disabled = True
 
 def postLiveData(data):
 
@@ -50,8 +51,8 @@ def postLiveData(data):
     except:
         errObj = traceback.format_exc()
         #e = sys.exc_info()[0]
-        my_logger.error("Failed - postLiveData(data) None or Not Connected to URL: %s ",errObj)
-        print ("Failed - postLiveData(data) None or Not Connected to URL: ",errObj)
+        #my_logger.error("Failed - postLiveData(data) None or Not Connected to URL: %s ",errObj)
+        #print ("Failed - postLiveData(data) None or Not Connected to URL: ",errObj)
 
         return None
 
@@ -324,8 +325,8 @@ def prepareJsonString(vehId, mylist):
 
     except:
         e = sys.exc_info()[0]
-        my_logger.error("Failed - prepareJsonString(vehId, mylist) None:%s, %s ",e, "Failed")
-        print ("Failed - prepareJsonString(vehId, mylist) None: ",e, "Failed")
+        #my_logger.error("Failed - prepareJsonString(vehId, mylist) None:%s, %s ",e, "Failed")
+       #print ("Failed - prepareJsonString(vehId, mylist) None: ",e, "Failed")
 
         return None
         

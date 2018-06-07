@@ -19,7 +19,7 @@ import utlities
 import glob
 import logging
 import logging.handlers
-
+'''
 LOG_FILENAME = '/home/pi/Documents/TMS-Git/log/loggingRotatingFileExample.log'
 
 my_logger = logging.getLogger('myapp')
@@ -28,8 +28,8 @@ formatter = logging.Formatter('%(asctime)s :%(levelname)s :%(message)s :')
 hdlr.setFormatter(formatter)
 my_logger.addHandler(hdlr) 
 my_logger.setLevel(logging.DEBUG)
-
-my_logger.disabled = True
+'''
+#my_logger.disabled = True
 
 def udpSocket(message):
 
@@ -257,8 +257,8 @@ def displayPresValidation(pres):
 
     except:
         e = sys.exc_info()[0]
-        my_logger.error("Failed - Pressure Calculation:%s ",e)
-        print ("Failed - Pressure Calculation: ",e)
+        #my_logger.error("Failed - Pressure Calculation:%s ",e)
+        #print ("Failed - Pressure Calculation: ",e)
 
         return None, None
 
@@ -293,8 +293,8 @@ def displayTempValidation(temp):
 
     except:
         e = sys.exc_info()[0]
-        my_logger.error("Failed - Temperature Calculation:%s ",e)
-        print ("Failed - Temperature Calculation: ",e)
+        #my_logger.error("Failed - Temperature Calculation:%s ",e)
+        #print ("Failed - Temperature Calculation: ",e)
         return None, None
 
 
@@ -350,8 +350,8 @@ def displayLEDBoard(vehName, dispCmd, date_time, dispVar):
 
     except:
         e = sys.exc_info()[0]
-        my_logger.error("Failed - displayLEDBoard:%s ",e)
-        print ("Failed - displayLEDBoard: ",e)
+        #my_logger.error("Failed - displayLEDBoard:%s ",e)
+        #print ("Failed - displayLEDBoard: ",e)
 
 
 def displayLEDBoard_Null():
@@ -385,8 +385,8 @@ def displayLEDBoard_Null():
 		
     except:
         e = sys.exc_info()[0]
-        my_logger.error("Failed - displayLEDBoard_Null:%s ",e)
-        print ("Failed - displayLEDBoard_Null: ",e)
+        #my_logger.error("Failed - displayLEDBoard_Null:%s ",e)
+        #print ("Failed - displayLEDBoard_Null: ",e)
 
 '''
 def displayLEDBoardParameters(mylist):
@@ -896,14 +896,14 @@ def displayLEDBoardParameters(mylist):
             return dispVar
 
         else:
-            print ("Failed - LED Display parameters is None:",mylist)
-            my_logger.warning("Failed - LED Display parameters is None: %s",mylist)
+            #print ("Failed - LED Display parameters is None:",mylist)
+            #my_logger.warning("Failed - LED Display parameters is None: %s",mylist)
             return None
         
     except:
         e = sys.exc_info()[0]
-        my_logger.error("Failed - LED Display parameters is None:%s %s ",e, mylist)
-        print ("Failed - LED Display parameters is None: ",e, mylist)
+       # my_logger.error("Failed - LED Display parameters is None:%s %s ",e, mylist)
+        #print ("Failed - LED Display parameters is None: ",e, mylist)
 
 
 

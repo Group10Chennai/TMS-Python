@@ -35,7 +35,7 @@ import logging
 import logging.handlers
 
 
-
+'''
 LOG_FILENAME = '/home/pi/Documents/TMS-Git/log/loggingRotatingFileExample.log'
 
 my_logger = logging.getLogger('myapp')
@@ -46,7 +46,7 @@ my_logger.addHandler(hdlr)
 my_logger.setLevel(logging.DEBUG)
 
 my_logger.disabled = True
-
+'''
 loopStatus = ""
 sec = 2
 loopStatus = False
@@ -138,7 +138,7 @@ class Ui_Form(object):
 
         except:
             e = sys.exc_info()[0]
-            my_logger.error("Error - displayColorSet: %s %s", e, pres_color)
+            #my_logger.error("Error - displayColorSet: %s %s", e, pres_color)
             #print ("Error - displayColorSet:",e, pres_color)
 
             return None
@@ -293,7 +293,7 @@ class Ui_Form(object):
 
         except:
             e = sys.exc_info()[0]
-            my_logger.error("Failed - displayTPData %s ",e)
+            #my_logger.error("Failed - displayTPData %s ",e)
             #print ("Failed - displayTPData ",e)
             
             
@@ -453,8 +453,8 @@ class Ui_Form(object):
         
         except:
             e = sys.exc_info()[0]
-            my_logger.error("Failed - optionClick %s ",e)
-            print ("Failed - optionClick ",e)
+            #my_logger.error("Failed - optionClick %s ",e)
+            #print ("Failed - optionClick ",e)
             
 
     def loopFun(self, loopStatus, loopRFIDUID):
@@ -495,7 +495,7 @@ class Ui_Form(object):
 
         except:
             e = sys.exc_info()[0]
-            my_logger.error("Failed - loopFun %s ",e)
+            #my_logger.error("Failed - loopFun %s ",e)
             #print ("Failed - loopFun ",e)
         
 
@@ -552,7 +552,7 @@ class Ui_Form(object):
 
         except:
             e = sys.exc_info()[0]
-            my_logger.error("Failed - callMethod2 %s ",e)
+            #my_logger.error("Failed - callMethod2 %s ",e)
             #print ("Failed - callMethod2 ",e)
         
             
@@ -831,7 +831,7 @@ class Ui_Form(object):
                 '''
         except:
             e = sys.exc_info()[0]
-            my_logger.error("Failed - callMethod3_BluetoothFunction %s ",e)
+            #my_logger.error("Failed - callMethod3_BluetoothFunction %s ",e)
             #print ("Failed - callMethod3_BluetoothFunction ",e)
 
 
@@ -901,8 +901,8 @@ class Ui_Form(object):
 
         except:
             e = sys.exc_info()[0]
-            my_logger.error("Failed - display_mylistvar %s ",e)
-            print ("Failed - display_mylistvar ",e)
+            #my_logger.error("Failed - display_mylistvar %s ",e)
+            #print ("Failed - display_mylistvar ",e)
 
             
     def showdialog(message):
@@ -943,7 +943,7 @@ class Ui_Form(object):
 
        except:
            e = sys.exc_info()[0]
-           my_logger.error("Failed - callMethod1 %s ",e)
+           #my_logger.error("Failed - callMethod1 %s ",e)
            #print ("Failed - callMethod1 ",e)	
 
     def endProcess(self):
@@ -971,8 +971,8 @@ class Ui_Form(object):
 
         except:
             e = sys.exc_info()[0]
-            my_logger.error("Failed - endProcess %s ",e)
-            print ("Failed - endProcess ",e)	
+            #my_logger.error("Failed - endProcess %s ",e)
+            #print ("Failed - endProcess ",e)	
     
     '''
     def btnClick(self, btnEvent):
@@ -1097,14 +1097,14 @@ class Ui_Form(object):
 
         except:
             e = sys.exc_info()[0]
-            my_logger.error("Failed - btnClick %s ",e)
+            #my_logger.error("Failed - btnClick %s ",e)
             #print ("Failed - btnClick ",e)	
     
 
 
     
     def keypadEvent(self, bid):
-        print (bid, self.numberString)
+        #print (bid, self.numberString)
         try:
             if bid != "clear" and bid != "back" and len(self.lineEdit_bus_No.displayText()) > 3:
 
@@ -1141,7 +1141,7 @@ class Ui_Form(object):
             self.lineEdit_bus_No.setText(self.numberString)
         except:
             e = sys.exc_info()[0]
-            my_logger.error("Failed - keypadEvent %s ",e)
+            #my_logger.error("Failed - keypadEvent %s ",e)
             #print ("Failed - keypadEvent  ",e)
     
     

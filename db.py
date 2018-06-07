@@ -23,7 +23,7 @@ import logging.handlers
 
 
 
-LOG_FILENAME = '/home/pi/Documents/TMS-Git/log/loggingRotatingFileExample.log'
+
 '''
 # Set up a specific logger with our desired output level
 #LOG_FILENAME = 'example.log'
@@ -46,16 +46,17 @@ my_logger.addHandler(handler)
 my_logger = logging.basicConfig(format='%(asctime)s :%(levelname)s: %(message)s',filename=LOG_FILENAME,level=logging.DEBUG)
 my_logger = logging.getLogger('MyLogger')
 '''
-
-
+'''
+LOG_FILENAME = '/home/pi/Documents/TMS-Git/log/loggingRotatingFileExample.log'
 my_logger = logging.getLogger('myapp')
 hdlr = logging.FileHandler(LOG_FILENAME)
 formatter = logging.Formatter('%(asctime)s :%(levelname)s :%(message)s :')
 hdlr.setFormatter(formatter)
 my_logger.addHandler(hdlr) 
 my_logger.setLevel(logging.DEBUG)
+'''
 
-my_logger.disabled = True
+#my_logger.disabled = True
 
 #def create database connection
 def create_db_connection(db_file):
@@ -63,11 +64,11 @@ def create_db_connection(db_file):
     
     try:
         conn = sqlite3.connect(db_file)
-        my_logger.info(" Create a connection to DB ")
+        #my_logger.info(" Create a connection to DB ")
         return conn
     except sqlite3.Error as e:
         print ("Failed - Create a connection to DB to the path: ", db_file)
-        my_logger.error("Failed - Create a connection to DB to the path: %s", db_file)
+        #my_logger.error("Failed - Create a connection to DB to the path: %s", db_file)
         #raise
         return None
 
@@ -94,25 +95,25 @@ def select_DeviceDetails_by_rfiduid(conn, rfiduid1):
             for row in rows:
                 if(row != None):
                     vehDetails = row
-                    print vehDetails
+                    #print vehDetails
             if (vehDetails != None):
                 
                 return vehDetails
             else:
-                print ("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: ",rfiduid1)
-                my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: %s",(rfiduid1))
+                #print ("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: ",rfiduid1)
+                #my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: %s",(rfiduid1))
                 
                 return None
     
         
         else:
-            print ("FFailed - Accessing to DB table DeviceDetails by RFID UID - None: ",rfiduid1)
-            my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - None: %s",(rfiduid1))
+            #print ("FFailed - Accessing to DB table DeviceDetails by RFID UID - None: ",rfiduid1)
+            #my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - None: %s",(rfiduid1))
                     
             return None
     except sqlite3.Error as e:
-            print ("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: ",rfiduid1)
-            my_logger.error("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  %s, %s ",e, rfiduid1)
+            #print ("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: ",rfiduid1)
+            #my_logger.error("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  %s, %s ",e, rfiduid1)
             #raise
             return None
 
@@ -141,21 +142,21 @@ def select_DeviceDetails_by_vehNumber(conn, vehNo1):
                 
                 return vehDetails
             else:
-                print ("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: ",rfiduid1)
-                my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: %s",rfiduid1)
+                #print ("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: ",rfiduid1)
+                #my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: %s",rfiduid1)
                 
                 return None
     
         
         else:
-            print ("FFailed - Accessing to DB table DeviceDetails by RFID UID - None: ",rfiduid1)
-            my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - None: %s",rfiduid1)
+            #print ("FFailed - Accessing to DB table DeviceDetails by RFID UID - None: ",rfiduid1)
+            #my_logger.warning("Failed - Accessing to DB table DeviceDetails by RFID UID - None: %s",rfiduid1)
                     
             return None
         
     except sqlite3.Error as e:
-            print ("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: ",rfiduid1)
-            my_logger.error("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  %s, %s ",e, rfiduid1)
+            #print ("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available: ",rfiduid1)
+            #my_logger.error("Failed - Accessing to DB table DeviceDetails by RFID UID - Not Available:  %s, %s ",e, rfiduid1)
             #raise
             return None
 
@@ -185,20 +186,20 @@ def select_DeviceDetails_by_vehName(conn, vehName1):
                 
                 return vehDetails
             else:
-                print ("Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: ",vehName1)
-                my_logger.warning("Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: %s",(vehName1))
+               # print ("Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: ",vehName1)
+               # my_logger.warning("Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: %s",(vehName1))
                 
                 return None
             
         else:
-            print ("FFailed - Accessing to DB table DeviceDetails by Vehicle Name - None: ",vehName1)
-            my_logger.warning("Failed - Accessing to DB table DeviceDetails by Vehicle Name - None: %s",(vehName1))
+            #print ("FFailed - Accessing to DB table DeviceDetails by Vehicle Name - None: ",vehName1)
+            #my_logger.warning("Failed - Accessing to DB table DeviceDetails by Vehicle Name - None: %s",(vehName1))
                     
             return None
 
     except sqlite3.Error as e:
-            print ("Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: ",vehName1)
-            my_logger.error("Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available:  %s, %s ",e, vehName1)
+           # print ("Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available: ",vehName1)
+           # my_logger.error("Failed - Accessing to DB table DeviceDetails by Vehicle Name - Not Available:  %s, %s ",e, vehName1)
             #raise
             return None
     
@@ -232,20 +233,20 @@ def select_TyreDetails_by_VehId(conn, VehId1):
                 #print rows
                 return rows
             else:
-                print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: ",VehId1)
-                my_logger.warning("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: %s",(VehId1))
+              #  print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: ",VehId1)
+              #  my_logger.warning("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: %s",(VehId1))
                 
                 return None
             
         else:
-            print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - None: ",VehId1)
-            my_logger.warning("Failed - Accessing to DB table TyreDetails by Vehicle ID - None %s",(VehId1))
+            #print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - None: ",VehId1)
+            #my_logger.warning("Failed - Accessing to DB table TyreDetails by Vehicle ID - None %s",(VehId1))
                     
             return None
 
     except sqlite3.Error as e:
-            print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: ",VehId1)
-            my_logger.error("Failed - sqlite3.Error and Accessing to DB table TyreDetails by Vehicle ID - Not Available: %s, %s ",e, VehId1)
+            #print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: ",VehId1)
+            #my_logger.error("Failed - sqlite3.Error and Accessing to DB table TyreDetails by Vehicle ID - Not Available: %s, %s ",e, VehId1)
             #raise
             #conn.close()
             return None
@@ -279,21 +280,21 @@ def select_TyreDetails_tyreId_by_VehId(conn, VehId1):
                 #print rows
                 return rows
             else:
-                print ("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: ",VehId1)
-                my_logger.warning("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: %s",VehId1)
+                #print ("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: ",VehId1)
+                #my_logger.warning("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: %s",VehId1)
                 
                 return None
     
         
         else:
-            print ("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: ",VehId1)
-            my_logger.warning("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: %s",VehId1)
+            #print ("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: ",VehId1)
+            #my_logger.warning("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: %s",VehId1)
                     
             return None
 
     except sqlite3.Error as e:
-            print ("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: ",e, VehId1)
-            my_logger.error("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: %s %s",e, VehId1)
+            #print ("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: ",e, VehId1)
+            #my_logger.error("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: %s %s",e, VehId1)
             #raise
             #conn.close()
             return None
@@ -355,8 +356,8 @@ def update_Latest_data_by_VehId(conn, vehId1, date_time,mylist):
     # If latest data is none - means data not exists -> Need to insert
     # If latest data is not none - means data exists -> Need to update
 
-    print mylist
-    print vehId1
+    #print mylist
+    #print vehId1
 
     try:
     
@@ -406,17 +407,18 @@ def update_Latest_data_by_VehId(conn, vehId1, date_time,mylist):
                 cur = conn.cursor()
                 cur.execute(sql, queryParam)
                 
-                print "Need to insert", (vehId1, date_time, position, sensorid, presint_Psi, tempint_Celcious, statint)
+                #print "Need to insert", (vehId1, date_time, position, sensorid, presint_Psi, tempint_Celcious, statint)
 
             else :
-                print ("Failed - position - Not Available: ",position)
-                my_logger.error("Failed - position- Not Available: %s" ,position)   
+		True
+                #print ("Failed - position - Not Available: ",position)
+                #my_logger.error("Failed - position- Not Available: %s" ,position)   
 
         #conn.commit()
 
     except sqlite3.Error as e:
-        print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: ",VehId1)
-        my_logger.error("Failed - sqlite3.Error and Accessing to DB table TyreDetails by Vehicle ID - Not Available: %s, %s ",e, VehId1)
+        #print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: ",VehId1)
+        #my_logger.error("Failed - sqlite3.Error and Accessing to DB table TyreDetails by Vehicle ID - Not Available: %s, %s ",e, VehId1)
         #raise
         #conn.close()
         return None
@@ -433,7 +435,7 @@ def update_Report_data_master_by_VehId(conn, vehId1, date_time):
     
     #print mylist
     #print vehId1
-    print "Need to update_Report_data_master_by_VehId"
+    #print "Need to update_Report_data_master_by_VehId"
     try:
     
         cur = conn.cursor()
@@ -467,8 +469,8 @@ def update_Report_data_master_by_VehId(conn, vehId1, date_time):
         '''
         
     except sqlite3.Error as e:
-        print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: ",VehId1)
-        my_logger.error("Failed - sqlite3.Error and Accessing to DB table TyreDetails by Vehicle ID - Not Available: %s, %s ",e, VehId1)
+        #print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: ",VehId1)
+        #my_logger.error("Failed - sqlite3.Error and Accessing to DB table TyreDetails by Vehicle ID - Not Available: %s, %s ",e, VehId1)
         #raise
         #conn.close()
         return None
@@ -481,11 +483,11 @@ def select_Report_data_master_report_data_master_id_by_VehId(conn, VehId1):
     param rfiduid:
     """
 
-    print "Report_data_master Id VehId1 Out", VehId1
+    #print "Report_data_master Id VehId1 Out", VehId1
     try:
         if(VehId1 != None):
 
-            print "Report_data_master Id VehId1", VehId1
+            #print "Report_data_master Id VehId1", VehId1
             
             cur = conn.cursor()
             cur.execute("SELECT report_data_master_id FROM Report_data_master WHERE vehId=?",(VehId1,))
@@ -496,19 +498,19 @@ def select_Report_data_master_report_data_master_id_by_VehId(conn, VehId1):
             #print "Report_data_master Id rows", rows[r-1] 
             listb = ",".join([str(a) for a in rows[r-1]])
         
-            print "Report_data_master Id", listb 
+            #print "Report_data_master Id", listb 
             return listb
 
         else:
-            print ("Failed - Querying Report_data_master in DB table report_data_master_id by VehId - Not Available: ",VehId1)
-            my_logger.warning("Failed - Querying Report_data_master in DB table report_data_master_id by VehId - Not Available: %s",VehId1)
+            #print ("Failed - Querying Report_data_master in DB table report_data_master_id by VehId - Not Available: ",VehId1)
+            #my_logger.warning("Failed - Querying Report_data_master in DB table report_data_master_id by VehId - Not Available: %s",VehId1)
                 
             return None
     
 
     except sqlite3.Error as e:
-            print ("Failed - Querying Report_data_master in DB table report_data_master_id by VehId - Not Available: ",e, VehId1)
-            my_logger.warning("Failed - Querying Report_data_master in DB table report_data_master_id by VehId - Not Available: %s %s",e, VehId1)
+            #print ("Failed - Querying Report_data_master in DB table report_data_master_id by VehId - Not Available: ",e, VehId1)
+            #my_logger.warning("Failed - Querying Report_data_master in DB table report_data_master_id by VehId - Not Available: %s %s",e, VehId1)
             #raise
             #conn.close()
             return None
@@ -537,21 +539,21 @@ def select_Report_data_master_report_data_master_id_by_VehId(conn, VehId1):
                 #print rows
                 return rows
             else:
-                print ("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: ",VehId1)
-                my_logger.warning("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: %s",VehId1)
+               # print ("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: ",VehId1)
+                #my_logger.warning("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: %s",VehId1)
                 
                 return None
     
         
         else:
-            print ("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: ",VehId1)
-            my_logger.warning("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: %s",VehId1)
+            #print ("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: ",VehId1)
+            #my_logger.warning("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: %s",VehId1)
                     
             return None
 
     except sqlite3.Error as e:
-            print ("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: ",e, VehId1)
-            my_logger.error("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: %s %s",e, VehId1)
+            #print ("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: ",e, VehId1)
+            #my_logger.error("Failed - Querying TyreId in DB table TyreDetails by VehId - Not Available: %s %s",e, VehId1)
             #raise
             #conn.close()
             return None
@@ -738,9 +740,9 @@ def update_Report_data_child_by_report_data_master_id(conn, report_data_master_i
                     
         
     except:
-        e = sys.exc_info()[0]
-        print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: ", e, vehId1)
-        my_logger.error("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: %s %s ", e, vehId1)
+        #e = sys.exc_info()[0]
+        #print ("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: ", e, vehId1)
+        #my_logger.error("Failed - Accessing to DB table TyreDetails by Vehicle ID - Not Available: %s %s ", e, vehId1)
         #raise
         #conn.close()
         return None
@@ -812,13 +814,13 @@ def main():
 
     try:
         database = "/opt/Aquire/sqlite/TPMS.db"
-        print (" DB Create a connection ")
+        #print (" DB Create a connection ")
         
         #create a connection to database
         conn = create_db_connection(database)
 
         date_time = time.strftime('%H:%M %d/%m/%Y')
-        print date_time
+        #print date_time
         date_timeDB = int(datetime.datetime.now().strftime("%s")) * 1000
         #print date_time
         
@@ -915,7 +917,7 @@ def main():
                     DBTyreDetail.append(SID)
       
                             
-                print DBTyreDetail
+                #print DBTyreDetail
                                        
                                
             #print TyreIDL
@@ -931,8 +933,8 @@ def main():
             conn.close()
     except:
         e = sys.exc_info()[0]
-        print ("Failed - db main function: ")
-        my_logger.error("Failed - db main function: ")
+        #print ("Failed - db main function: ")
+        #my_logger.error("Failed - db main function: ")
     
         
                     
