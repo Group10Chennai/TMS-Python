@@ -22,7 +22,9 @@ import logging.handlers
 
 
 #Serial Enable
-serial = serial.Serial("/dev/ttyS0", baudrate = 9600, timeout = 0.2)
+serial = serial.Serial("/dev/ttyS0", baudrate = 9600, timeout = 0.5)
+#serial = serial.Serial("/dev/serial0", baudrate = 9600, timeout = 0.2)
+
 #serial = serial.Serial("/dev/ttyUSB0", baudrate = 57600, timeout = 0.2)
 
 '''
@@ -94,7 +96,7 @@ def RFIDUHFQueryTag():
     except:
         e = sys.exc_info()[0]
         #my_logger.error("Failed - RFID Query Tag %s, %s:",e, QueryTag)
-        #print ("Failed - RFID Query Tag :",e, QueryTag)
+        print ("Failed - RFID Query Tag :",e, QueryTag)
         return None
 
 if __name__ == "__main__":  

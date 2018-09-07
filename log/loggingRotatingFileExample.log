@@ -1,1 +1,5 @@
-2018-06-07 16:20:32,017 :ERROR :*B101* Failed Bluetooth Connection on Vehicle : SND 0000, BUID 00:13:EF:C0:01:3C :
+2018-09-07 12:42:56,827#:#ERROR#:#B101# Failed Bluetooth Connection on Vehicle #SND 9392,#BUID 00:13:EF:C0:01:92#
+2018-09-07 14:53:12,150#:#ERROR#:#B101# Failed Bluetooth Connection on Vehicle #SND 8596,#BUID 00:13:EF:C0:01:66#
+2018-09-07 14:59:04,343#:#ERROR#:#B101# Failed Bluetooth Connection on Vehicle #SND 9462,#BUID 00:13:EF:C0:01:50#
+2018-09-07 14:59:13,143#:#ERROR#:#B101# Failed Bluetooth Connection on Vehicle #SND 9462,#BUID 00:13:EF:C0:01:50#
+2018-09-07 14:59:21,893#:#ERROR#:#B101# Failed Bluetooth Connection on Vehicle #SND 9462,#BUID 00:13:EF:C0:01:50#

@@ -23,7 +23,7 @@ LOG_FILENAME = '/home/pi/Documents/TMS-Git/log/loggingRotatingFileExample.log'
 
 my_logger = logging.getLogger('myapp')
 hdlr = logging.FileHandler(LOG_FILENAME)
-formatter = logging.Formatter('%(asctime)s :%(levelname)s :%(message)s :')
+formatter = logging.Formatter('%(asctime)s#:#%(levelname)s#:#%(message)s#')
 hdlr.setFormatter(formatter)
 my_logger.addHandler(hdlr) 
 my_logger.setLevel(logging.DEBUG)
@@ -334,7 +334,7 @@ def connect_ble(BUID1,vehName):
 
                     except bluetooth.btcommon.BluetoothError as e:
                         #print ("Failed Trying to connect on %s on 0x%X" % (BUID1, port),e)
-                        my_logger.error("*B101* Failed Bluetooth Connection on Vehicle : %s, BUID %s",vehName, BUID1)  
+                        my_logger.error("B101# Failed Bluetooth Connection on Vehicle #%s,#BUID %s",vehName, BUID1)  
                         time.sleep(2)
                         bleCon.close()
                         return None

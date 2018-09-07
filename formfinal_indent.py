@@ -681,6 +681,7 @@ class Ui_Form(object):
 
                     
                     if (status == "Failed") or (statusMan == True):
+                        time.sleep(3)
                         display.displayLEDBoard_Null()
                         self.endProcess()
                         loop = False
@@ -810,6 +811,7 @@ class Ui_Form(object):
                     
                     
                     if (status == "Failed") or (statusAuto == True):
+                        time.sleep(3)
                         display.displayLEDBoard_Null()
                         self.endProcess()
                         loop = False
