@@ -1805,7 +1805,8 @@ def display_Parameter_API(mylist, vehName, vehID, date_time):
                             #print SID1, L1
                             DBTyreDetail.append(T)
                             DBTyreDetail.append(SID)
-              
+                    else:
+                        True              
                                     
                         #print DBTyreDetail
                                                
@@ -1820,9 +1821,10 @@ def display_Parameter_API(mylist, vehName, vehID, date_time):
 
                     if DBStatus == "Success":
 
-                        time.sleep(0.10)
+                        time.sleep(0.50)
                         conn.close()
-                    
+                    else:
+                        True
 
             else:
                 e = sys.exc_info()[0]

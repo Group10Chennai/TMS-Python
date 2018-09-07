@@ -698,10 +698,10 @@ def update_Report_data_child_by_report_data_master_id(conn, report_data_master_i
                         
 
                         presint_Bar = ((int(pres, 16)*0.025))
-                        presint_Psi =  ((presint_Bar * 14.5038))
+                        presint_Psi = int(round(presint_Bar * 14.5038))
                         dispPsi = str((presint_Psi))
 
-                        tempint_Celcious  = (int(temp, 16) - 50)
+                        tempint_Celcious  = round(int(temp, 16) - 50)
                         if tempint_Celcious == -50:
                             tempint_Celcious = 0 
                         disptemp = (int(tempint_Celcious))
@@ -726,11 +726,13 @@ def update_Report_data_child_by_report_data_master_id(conn, report_data_master_i
                         cur.execute(sql, queryParam)
                         
                         
-                    #else:
+                    else:
+                        True
                         #print ("Failed - sensorid and SensorID Not Equal: ", sensorid ,SensorID)
                         #my_logger.error("Failed - sensorid and SensorID Not Equal: %s %s", sensorid ,SensorID)   
                         
-                #else:
+                else:
+                    True
                     #print ("Failed - position - Not Available: ",position)
                     #my_logger.error("Failed - position- Not Available: %s" ,position)
 
