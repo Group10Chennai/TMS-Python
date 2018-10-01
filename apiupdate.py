@@ -332,7 +332,7 @@ def prepareJsonString(vehId, mylist):
         
 def prepareTyre(position, sensorUID, pressure, temp, status):
     
-    return {"sensorUID": sensorUID, "position": position, "pressure": pressure, "temp": temp, "status": status }
+    return {"sensorUID": sensorUID, "position": position, "pressure": pressure, "temp": temp, "sensor_status": status }
 
 
 #main function
