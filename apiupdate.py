@@ -346,7 +346,7 @@ if __name__ == "__main__":
                   [0, 'a1', '41', '0f', '63', '00', '05', '56', 'a7', '81', '00', '00', '00', '00'], \
                   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
-    prepareJsonString(2, mylistVar)
+    prepareJsonString(87, mylistVar)
 
 
 
