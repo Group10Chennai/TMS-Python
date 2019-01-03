@@ -1,3 +1,22 @@
+Date : 03/01/19		Ver : TPMS_V01.002	By : Mathan
+Changes: 
+	Added Errorlog.py
+		this module can create a error log from any module
+	Modi : blecontroller.py
+		line : 339 
+		my_logger changed to logger
+	       apiupdate.py
+		Line : 335
+		Added conditions to check sensor status and generate error log
+	       db.py
+		Line : 729
+		break added
+
+	        Line :  (update_Report_data_child_by_report_data_master_id)
+		Pressure and Temp conversion
+
+
+
 Date : 01/10/18      Ver : TPMS_V01.001     By : Mathan
 Changes : 
   Module : apiupdate.py

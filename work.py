@@ -1692,7 +1692,7 @@ def display_Parameter_API(mylist, vehName, vehID, date_time):
         try:
 
             #update to the live server
-            RetVal = apiupdate.prepareJsonString(int(vehID), mylist)
+            RetVal = apiupdate.prepareJsonString(int(vehID) ,vehName , mylist)
 
             #print ("RetVal - RetVal is RetVal : ",RetVal)
             

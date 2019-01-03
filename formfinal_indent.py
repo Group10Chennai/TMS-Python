@@ -881,6 +881,7 @@ class Ui_Form(object):
 
                 #Check for the first Record
                 if RecordSend == True:
+                    #print "api update*-**", mylistvar
 
                     RecordSend = False
                     #API Server 1st Record Updation parameters

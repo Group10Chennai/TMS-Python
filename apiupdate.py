@@ -9,9 +9,11 @@ import sys
 import display
 
 import glob
-import logging
-import logging.handlers
+#import logging
+#import logging.handlers
+import ErrorLog
 
+logger = ErrorLog.get_logger1('apiupdate')
 
 '''
 LOG_FILENAME = '/home/pi/Documents/TMS-Git/log/loggingRotatingFileExample.log'
@@ -104,7 +106,7 @@ def prepareJsonString(vehId, mylist):
 
 
 
-def prepareJsonString(vehId, mylist):
+def prepareJsonString(vehId,vehName , mylist):
 
     tyres = []
 
@@ -137,10 +139,10 @@ def prepareJsonString(vehId, mylist):
                 
                 if dispPsi == "---":
                     pressure = "0000"
-                    dispPsi = str(pressure)
+                    dispPsi = pressure
                 if disptemp == "---":
                     temp = "00"
-                    disptemp = str(temp)
+                    disptemp = temp
                 
                 #print "URL Update", sensorUID, dispPsi, temp, status
 
@@ -148,7 +150,7 @@ def prepareJsonString(vehId, mylist):
                 # If possible get the tyreId from DB By querying sensorId
                 #Otherwise I'll do it from Backend
 
-                tyres.append(prepareTyre(position, sensorUID, dispPsi, disptemp, status))
+                tyres.append(prepareTyre(position, sensorUID, dispPsi, disptemp, status,vehName))
                 
             if mylist[i][6] == '02':
                 
@@ -165,10 +167,10 @@ def prepareJsonString(vehId, mylist):
                 
                 if dispPsi == "---":
                     pressure = "0000"
-                    dispPsi = str(pressure)
+                    dispPsi = pressure
                 if disptemp == "---":
                     temp = "00"
-                    disptemp = str(temp)
+                    disptemp = temp
                 
                 #print "URL Update", sensorUID, dispPsi, temp, status
 
@@ -176,7 +178,7 @@ def prepareJsonString(vehId, mylist):
                 # If possible get the tyreId from DB By querying sensorId
                 #Otherwise I'll do it from Backend
 
-                tyres.append(prepareTyre(position, sensorUID, dispPsi, disptemp, status))
+                tyres.append(prepareTyre(position, sensorUID, dispPsi, disptemp, status,vehName))
                 
             if mylist[i][6] == '03':
                 position = "RLO"
@@ -203,7 +205,7 @@ def prepareJsonString(vehId, mylist):
                 # If possible get the tyreId from DB By querying sensorId
                 #Otherwise I'll do it from Backend
 
-                tyres.append(prepareTyre(position, sensorUID, dispPsi, disptemp, status))
+                tyres.append(prepareTyre(position, sensorUID, dispPsi, disptemp, status,vehName))
                 
             if mylist[i][6] == '04':
                 position = "RLI"
@@ -230,7 +232,7 @@ def prepareJsonString(vehId, mylist):
                 # If possible get the tyreId from DB By querying sensorId
                 #Otherwise I'll do it from Backend
 
-                tyres.append(prepareTyre(position, sensorUID, dispPsi, disptemp, status))
+                tyres.append(prepareTyre(position, sensorUID, dispPsi, disptemp, status,vehName))
 
                 
             if mylist[i][6] == '05':
@@ -258,7 +260,7 @@ def prepareJsonString(vehId, mylist):
                 # If possible get the tyreId from DB By querying sensorId
                 #Otherwise I'll do it from Backend
 
-                tyres.append(prepareTyre(position, sensorUID, dispPsi, disptemp, status))
+                tyres.append(prepareTyre(position, sensorUID, dispPsi, disptemp, status,vehName))
 
                 
             if mylist[i][6] == '06':
@@ -286,7 +288,7 @@ def prepareJsonString(vehId, mylist):
                 # If possible get the tyreId from DB By querying sensorId
                 #Otherwise I'll do it from Backend
 
-                tyres.append(prepareTyre(position, sensorUID, dispPsi, disptemp, status))
+                tyres.append(prepareTyre(position, sensorUID, dispPsi, disptemp, status,vehName))
 
             '''   
             sensorUID = mylist[i][7] + mylist[i][8] + mylist[i][9]
@@ -330,8 +332,16 @@ def prepareJsonString(vehId, mylist):
 
         return None
         
-def prepareTyre(position, sensorUID, pressure, temp, status):
-    
+def prepareTyre(position, sensorUID, pressure, temp, status ,vehName):
+    if(status == '40'):
+        logger.error("S104# Sensor not Responding Over 15mins or Not Available #%s,#Pos-%s,SensorID %s",vehName,position,sensorUID)  
+        #print "sensor issue - pos", position
+    elif(status == '80'):
+        logger.warning("S103# Sensor Internal Battery Low #%s,#Pos-%s,SensorID %s",vehName,position,sensorUID)  
+        #print "Battery low - pos", position
+    elif(status == 'c0'):
+        logger.warning("S105# Sensor Battery low and Not responding #%s,#Pos-%s,SensorID %s",vehName,position,sensorUID) 
+        #print "not avail and battery low - position " ,position
     return {"sensorUID": sensorUID, "position": position, "pressure": pressure, "temp": temp, "sensor_status": status }
 
 

@@ -15,10 +15,12 @@ import time
 
 
 import glob
-import logging
-import logging.handlers
+#import logging
+#import logging.handlers
+import ErrorLog
 
-
+logger = ErrorLog.get_logger('blecontroller')
+'''
 LOG_FILENAME = '/home/pi/Documents/TMS-Git/log/loggingRotatingFileExample.log'
 
 my_logger = logging.getLogger('myapp')
@@ -27,7 +29,7 @@ formatter = logging.Formatter('%(asctime)s#:#%(levelname)s#:#%(message)s#')
 hdlr.setFormatter(formatter)
 my_logger.addHandler(hdlr) 
 my_logger.setLevel(logging.DEBUG)
-
+'''
 #my_logger.disabled = True
 
 Tyredata = []
@@ -334,7 +336,7 @@ def connect_ble(BUID1,vehName):
 
                     except bluetooth.btcommon.BluetoothError as e:
                         #print ("Failed Trying to connect on %s on 0x%X" % (BUID1, port),e)
-                        my_logger.error("B101# Failed Bluetooth Connection on Vehicle #%s,#BUID %s",vehName, BUID1)  
+                        logger.error("B101# Failed Bluetooth Connection on Vehicle #%s,#BUID %s",vehName, BUID1)  
                         time.sleep(2)
                         bleCon.close()
                         return None
@@ -473,7 +475,7 @@ def ParseBluetoothTyre(data):
             #hexstr = "aaa14108630006fdaaa1410f63000139a9cb01524e004daaa1410f63000239a93d01555200c7aaa1410f63000339a813015b4e009faaa1410f63000439aa8f0000000074aaa1410f63000538247a00000000d9aaa1410f6300065a168000000000f4"
 
 
-            #hexstr = "aaa14108630006fdaaa1410f63000139a9cb0158520057aaa1410f63000239a93d015b5500d0aaa1410f63000339a813015f5200a7aaa1410f63000439aa8f01655e0038aaa1410f63000538247a01594e0081aaa1410f6300065a168001715600bc"
+            #hexstr = "aaa14108630006fdaaa1410f63000139a9cb0158528057aaa1410f630002578506015b5540d0aaa1410f630003546435015f52c0a7aaa1410f63000439aa8f01655e0038aaa1410f63000545865801594e0081aaa1410f6300065a168001715600bc"
             
             hexstr1 = [hexstr[i:i+2] for i in range(0,len(hexstr), 2)]
             #print "len", len(hexstr1), "Hexstr1",hexstr1

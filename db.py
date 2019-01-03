@@ -11,6 +11,7 @@ import string
 import time
 import datetime
 import sys
+import display
 
 from pip._vendor.pkg_resources import null_ns_handler
 
@@ -409,8 +410,8 @@ def update_Latest_data_by_VehId(conn, vehId1, date_time,mylist):
                 
                 #print "Need to insert", (vehId1, date_time, position, sensorid, presint_Psi, tempint_Celcious, statint)
 
-            else :
-		True
+            else:
+                True
                 #print ("Failed - position - Not Available: ",position)
                 #my_logger.error("Failed - position- Not Available: %s" ,position)   
 
@@ -653,7 +654,11 @@ def update_Report_data_child_by_report_data_master_id(conn, report_data_master_i
 
     #print mylist
     #print vehId1
-
+    dispPsi_db = ""
+    disptemp_db = ""
+    pres_color_db =""
+    temp_color_db =""
+    
     try:
 
         #print "All Values", conn, report_data_master_id1, vehId1, TyreIdList
@@ -665,7 +670,8 @@ def update_Report_data_child_by_report_data_master_id(conn, report_data_master_i
         
 
         #Compare Sensor ID and location 
-        for v in range(len(TyreIdList)):
+        for v in range(0,len(TyreIdList),2):
+            #print "v----",v
                 
             for i in range (2, len(mylist)):
 
@@ -695,8 +701,8 @@ def update_Report_data_child_by_report_data_master_id(conn, report_data_master_i
 
                         statstr = mylist[i][13]
                         statint =  (int(statstr, 16))
-                        
 
+         
                         presint_Bar = ((int(pres, 16)*0.025))
                         presint_Psi = int(round(presint_Bar * 14.5038))
                         dispPsi = str((presint_Psi))
@@ -705,7 +711,7 @@ def update_Report_data_child_by_report_data_master_id(conn, report_data_master_i
                         if tempint_Celcious == -50:
                             tempint_Celcious = 0 
                         disptemp = (int(tempint_Celcious))
-
+                        
                         sql = ''' INSERT INTO Report_data_child (report_data_master_id,
                                         vehId,
                                         tireId,
@@ -721,10 +727,12 @@ def update_Report_data_child_by_report_data_master_id(conn, report_data_master_i
                         #print "Need to insert", (report_data_master_id1, vehId1, TyreID, position, sensorid, presint_Psi, tempint_Celcious, statstr)
 
                         queryParam = (report_data_master_id1, vehId1, TyreID, position, sensorid, presint_Psi, tempint_Celcious, statstr)
+
+                        #queryParam = (report_data_master_id1, vehId1, TyreID, position, sensorid, dispPsi_db, disptemp_db, statstr)
                         #queryParam = (vehId1, date_time, position, sensorid, presint_Psi, tempint_Celcious, statint, 1, 0)
                         cur = conn.cursor()
                         cur.execute(sql, queryParam)
-                        
+                        break;
                         
                     else:
                         True
@@ -841,7 +849,7 @@ def main():
         #mylist = [['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'], \
         #          [0, 'a1', '41', '08', '63', '00', '06'], \
         #          [0, 'a1', '41', '0f', '63', '00', '01', 'ba', '6b', '09', '01', '18', '70', '00'], \
-        #          [0, 'a1', '41', '0f', '63', '00', '02', 'ba', '6d', '6d', '01', '10', '00', '00'], \
+        #          [0, 'a1', '41', '0f', '63', '00', '02', '57', '85', '06', '01', '10', '00', '00'], \
         #          [0, 'a1', '41', '0f', '63', '00', '03', '56', 'a8', 'cb', '01', '10', '80', '00'], \
         #          [0, 'a1', '41', '0f', '63', '00', '04', '56', 'a6', 'be', '01', '10', '00', '00'], \
         #          [0, 'a1', '41', '0f', '63', '00', '05', '56', 'a7', '81', '01', '10', '00', '00'], \
@@ -851,7 +859,7 @@ def main():
         mylist = [['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'], \
                   [0, 'a1', '41', '08', '63', '00', '06'],
                   [0, 'a1', '41', '0f', '63', '00', '01', '12', '34', '56', '00', '00', '00', '00'],\
-                  [0, 'a1', '41', '0f', '63', '00', '02', '54', '64', '56', '00', '00', '00', '00'],\
+                  [0, 'a1', '41', '0f', '63', '00', '02', '57', '85', '06', '01', '56', '55', '00'],\
                   [0, 'a1', '41', '0f', '63', '00', '03', '54', '64', '35', '00', '00', '00', '00'],\
                   [0, 'a1', '41', '0f', '63', '00', '04', '45', '34', '12', '00', '00', '00', '00'],\
                   [0, 'a1', '41', '0f', '63', '00', '05', '78', '78', '66', '00', '00', '00', '00'],\
